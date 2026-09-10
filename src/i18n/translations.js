@@ -1,3 +1,4 @@
+
 export const translations = {
   es: {
     // Top Bar
@@ -24,17 +25,57 @@ export const translations = {
     fullCalendar: "Calendario completo",
     viewServiceDetails: "Ver página del servicio",
     bookShort: "Reservar",
+    menuAndServices: "Menú & Servicios",
     
     // Hero
     heroBadge: "SANTUARIO EN MIRAMAR, LA HABANA",
     heroTitle1: "El Arte del Bienestar &",
     heroTitle2: "Relajación Absoluta",
     heroSubtitle: "Sumérgete en un oasis sensorial privado en el corazón de Miramar. Masajes terapéuticos, circuito termal, Japanese Head Spa y rituales holísticos diseñados para renovar tu cuerpo y espíritu.",
-    heroCtaBook: "Reservar Cita Ahora",
-    heroCtaExplore: "Explorar Rituales",
-    heroClientsCount: "+12,000 Clientes Felices",
-    heroRating: "4.9 / 5 estrellas en La Habana",
-    
+    heroCtaBook: "Reservar Cita Online",
+    heroCtaExplore: "Ver Tratamientos",
+    trustCabins: "Cabinas Privadas Climatizadas",
+    trustTherapists: "Terapeutas Certificadas",
+    trustWhatsApp: "Confirmación por WhatsApp",
+    badgePrivateSuite: "Suite Privada",
+    badgePrivateSuiteDesc: "Aromaterapia & Cóctel de Bienvenida",
+
+    // Media Row
+    mediaRecognition: "Reconocido por clientes de todo el mundo en La Habana",
+
+    // About Split
+    aboutTag: "Conoce Nuestro Universo",
+    aboutTitle: "¿Qué es Momentos Spa?",
+    aboutDesc: "Un refugio privado en Miramar creado para quienes comprenden que el descanso no es un lujo, sino una necesidad vital de renovación.",
+    aboutExploreBtn: "Explorar Rituales",
+    exclusiveLocation: "Ubicación Exclusiva",
+    aboutQuote: "\"Cuidar de tu salud y serenidad debe ser tan constante como tu respiración. Por eso en Momentos Spa cada detalle, desde el aroma al entrar hasta la temperatura de las toallas, está pensado en ti.\"",
+    aboutBullet1: "Cabinas 100% privadas y climatizadas",
+    aboutBullet2: "Aceites botánicos esenciales de grado terapéutico",
+    aboutBullet3: "Atención personalizada con reserva previa",
+
+    // Metrics Banner
+    metric1Num: "98%",
+    metric1Label: "SATISFACCIÓN",
+    metric1Sub: "Clientes que repiten su visita cada mes",
+    metric2Num: "15+",
+    metric2Label: "TERAPEUTAS",
+    metric2Sub: "Especialistas certificadas en salud & belleza",
+    metric3Num: "6,000+",
+    metric3Label: "SESIONES",
+    metric3Sub: "Experiencias de bienestar completadas",
+    metric4Num: "5 DÍAS",
+    metric4Label: "MIÉ - DOM",
+    metric4Sub: "Horarios extendidos de 10am a 7pm",
+
+    // Packages
+    packagesBadge: "⭐ EXPERIENCIAS EXCLUSIVAS",
+    packagesTitle: "Nuestros Rituales Signature Más Solicitados",
+    packagesSubtitle: "Selección de tratamientos holísticos diseñados para brindar la máxima desconexión y revitalización sensorial.",
+    packagesViewDetail: "Ver detalle completo",
+    packagesBookNow: "Reservar este Ritual",
+    packagesIncludesTag: "Incluye sesión completa, aromaterapia y copa de degustación.",
+
     // Catalog
     catalogTag: "Catálogo Completo",
     catalogTitle: "Tratamientos & Tarifas",
@@ -43,16 +84,120 @@ export const translations = {
     durationLabel: "Duración",
     priceLabel: "Precio",
     fromPrice: "Desde",
-    
-    // Categories
-    cat_masajes: "Masajes & Terapias",
-    cat_circuitos: "Circuitos & Jacuzzi",
-    cat_parejas: "Rituales en Pareja",
-    cat_headspa: "Japanese Head Spa",
-    cat_faciales: "Faciales & Corporales",
-    cat_estetica: "Uñas & Mirada",
-    cat_peluqueria: "Peluquería & Salón",
-    
+
+    // Benefits Section
+    benefitsTag: "RENOVACIÓN TOTAL",
+    benefitsTitle: "Beneficios de Nuestro Santuario Terapéutico",
+    benefitsSubtitle: "Cada tratamiento en Momentos Spa está formulado con técnicas clínicas y botánicas para maximizar tu bienestar.",
+    benefit1Title: "Alivio del Dolor & Tensión Muscular",
+    benefit1Desc: "Liberación de contracturas cervicales, lumbares y sobrecargas del día a día mediante maniobras descontracturantes profundas.",
+    benefit2Title: "Regeneración Celular & Oxigenación",
+    benefit2Desc: "La termoterapia en sauna y jacuzzi estimula la microcirculación y favorece la desintoxicación profunda del organismo.",
+    benefit3Title: "Salud Mental, Sueño Profundo & Calma",
+    benefit3Desc: "Reducción radical de cortisol y estimulación de endorfinas para combatir el insomnio y la fatiga mental.",
+    benefit4Title: "Atmósfera de Privacidad & Exclusividad",
+    benefit4Desc: "Cabinas suite individuales y para parejas con climatización independiente y luz tenue sin interrupciones.",
+
+    // Timeline
+    timelineTag: "TU VIAJE SENSORIAL",
+    timelineTitle: "Tu Día Perfecto de Spa en 4 Fases",
+    timelineSubtitle: "Diseñado para que disfrutes sin prisas desde que entras por nuestro jardín en Miramar.",
+    time1Title: "10:00 AM • Llegada & Test Sensorial",
+    time1Desc: "Bienvenida en nuestro salón climatizado, infusión relajante y selección de aceites esenciales personalizados.",
+    time2Title: "10:30 AM • Terapia Principal en Cabina",
+    time2Desc: "Sesión de masaje terapéutico o Japanese Head Spa en camilla con toallas precalentadas.",
+    time3Title: "11:45 AM • Circuito Termal & Jacuzzi",
+    time3Desc: "Inmersión en hidromasaje con sales marinas minerales y sesión de sauna seco de cedro.",
+    time4Title: "12:30 PM • Reposo con Copa & Aperitivo",
+    time4Desc: "Degustación de frutas frescas, bombones y vino en nuestra terraza privada antes de regresar a la ciudad.",
+
+    // Comparison Table
+    comparisonTag: "ESTÁNDARES DE CALIDAD",
+    comparisonTitle: "¿Por qué Momentos Spa es Diferente?",
+    comparisonSubtitle: "Compara los detalles que convierten nuestra experiencia en el santuario predilecto de La Habana.",
+    compCol1: "Experiencia",
+    compCol2: "Momentos Spa Miramar",
+    compCol3: "Spas Tradicionales",
+    compRow1Feature: "Privacidad en Cabina",
+    compRow1Us: "100% Suite privada individual o en pareja",
+    compRow1Them: "Salas compartidas con cortinas",
+    compRow2Feature: "Japanese Head Spa",
+    compRow2Us: "Cascada Halo tibia y shiatsu capilar",
+    compRow2Them: "No disponible en la mayoría",
+    compRow3Feature: "Circuito de Hidroterapia",
+    compRow3Us: "Jacuzzi privado con sales + sauna de cedro",
+    compRow3Them: "Acceso limitado o compartido",
+    compRow4Feature: "Reserva & Confirmación",
+    compRow4Us: "Inmediata vía WhatsApp y Calendario",
+    compRow4Them: "Llamadas lentas o sin respuesta",
+    compRow5Feature: "Ubicación & Parqueo",
+    compRow5Us: "Miramar residencial con parqueo vigilado",
+    compRow5Them: "Zonas concurridas con difícil acceso",
+
+    // Testimonials
+    testimonialsTag: "TESTIMONIOS REALES",
+    testimonialsTitle: "Lo Que Dicen Quienes Nos Visitan",
+    testimonialsSubtitle: "Más de 12,000 huéspedes locales e internacionales han encontrado su pausa en Miramar.",
+    review1Name: "Alejandro Gómez",
+    review1Location: "La Habana, Cuba",
+    review1Text: "\"El Head Spa japonés es otro nivel. La cascada tibia de agua en el cuero cabelludo me quitó el dolor de cabeza y el estrés de semanas. La atención de las terapeutas es impecable.\"",
+    review2Name: "Claire Dupont",
+    review2Location: "París, Francia",
+    review2Text: "\"Reservamos el paquete de pareja para nuestro aniversario durante nuestro viaje a La Habana. El jacuzzi privado, los masajes y la copa de vino crearon un recuerdo inolvidable.\"",
+    review3Name: "Marco Rossi",
+    review3Location: "Milán, Italia",
+    review3Text: "\"Excelente masaje descontracturante. La presión exacta y la cabina muy fresca y limpia. Sin duda el mejor spa de Miramar.\"",
+
+    // FAQ
+    faqTag: "RESOLVEMOS TUS DUDAS",
+    faqTitle: "Preguntas Frecuentes",
+    faqSubtitle: "Todo lo que necesitas saber antes de tu cita de bienestar.",
+    faq1Q: "¿Cómo se confirma la reserva?",
+    faq1A: "Al completar el formulario en la web, se envía tu solicitud directamente a nuestro WhatsApp oficial (+53 59710688), donde nuestra recepcionista te confirma la cita en pocos minutos.",
+    faq2Q: "¿Cuáles son los días y horarios de apertura?",
+    faq2A: "Abrimos de Miércoles a Domingo de 10:00 AM a 7:00 PM. Lunes y Martes cerramos por mantenimiento general de instalaciones y descanso del equipo.",
+    faq3Q: "¿Qué debo llevar a mi cita?",
+    faq3A: "Nada en absoluto. En Momentos Spa te proporcionamos toallas precalentadas, batas de felpa, pantuflas desechables, gorros y productos de ducha botánicos de alta gama.",
+    faq4Q: "¿Puedo reservar para dos personas en la misma cabina?",
+    faq4A: "¡Sí! Contamos con cabinas suites dobles especialmente diseñadas para parejas o amigos/as que deseen recibir su tratamiento al unísono.",
+    faq5Q: "¿Dónde están ubicados exactamente en Miramar?",
+    faq5A: "Nos encontramos en Calle 44 #111 e/ 3ra y 1ra A, Miramar, Playa, La Habana. Contamos con parqueo privado vigilado gratuito para nuestros clientes.",
+    faq6Q: "¿Qué métodos de pago aceptan?",
+    faq6A: "Aceptamos pagos en efectivo (USD, EUR, MLC, CUP a la tasa del día) y transferencias bancarias nacionales o internacionales.",
+
+    // Location & Contact
+    locationTag: "ENCUÉNTRANOS EN LA HABANA",
+    locationTitle: "Visítanos en el Corazón de Miramar",
+    locationSubtitle: "Una zona residencial tranquila, segura y rodeada de jardines en Calle 44 #111.",
+    addressTitle: "Dirección",
+    addressDesc: "Calle 44 #111 e/ 3ra y 1ra A, Miramar, Playa, La Habana, Cuba.",
+    phoneTitle: "Teléfono / WhatsApp",
+    phoneDesc: "+53 59710688 (Atención continua)",
+    hoursTitle: "Horario de Atención",
+    hoursDesc: "Miércoles a Domingo: 10:00 AM - 7:00 PM (Lunes y Martes Cerrado)",
+    mapsBtn: "Abrir en Google Maps",
+    mapsDirections: "A sólo 2 cuadras de 3ra Avenida y a pocos minutos de los principales hoteles de Miramar.",
+
+    // Footer
+    footerSlogan: "Santuario de salud, relajación y estética en Miramar, La Habana. Tratamientos holísticos en cabinas privadas climatizadas.",
+    footerLinksTitle: "Navegación",
+    footerContactTitle: "Contacto & Reservas",
+    footerHoursTitle: "Días de Atención",
+    footerRights: "Todos los derechos reservados. Momentos Spa Habana.",
+    footerAdminLink: "Panel Administrativo",
+
+    // WhatsApp Bubble
+    bubbleOnline: "En línea",
+    bubbleQuickResponse: "Respuesta rápida",
+    bubbleGreeting: "¡Hola! ✨ Bienvenido/a a Momentos Spa en Miramar. ¿En qué podemos consentirte hoy?",
+    bubbleQuickOptions: "Opciones rápidas",
+    bubbleOption1: "📅 Consultar disponibilidad de citas",
+    bubbleOption2: "💆‍♂️ Preguntar por paquetes para parejas",
+    bubbleOption3: "✨ Información de Japanese Head Spa",
+    bubblePlaceholder: "Escribe tu consulta aquí...",
+    bubbleSend: "Enviar",
+    bubbleTooltip: "Chatea con nosotros (+53 59710688)",
+
     // Service Detail Page
     backToCatalog: "Volver al catálogo",
     reserveByWhatsApp: "Reservar por WhatsApp (+53 59710688)",
@@ -64,15 +209,15 @@ export const translations = {
     privateHeatedCabin: "Cabina privada climatizada y toallas precalentadas",
     aromatherapyWelcome: "Aromaterapia botánica y degustación de vino o té",
     privateParking: "Parqueo privado gratuito y atención personalizada",
-    
-    // Packages
-    signaturePackagesTag: "Experiencias Signature",
-    signaturePackagesTitle: "Nuestros Rituales Más Exclusivos",
-    packageIncludes: "Incluye sesión completa, aromaterapia y copa de degustación.",
-    
+    therapistTip: "Consejo del Terapeuta",
+
     // Booking Modal
     modalBookingTitle: "Reservar Cita en Momentos Spa",
     modalBookingSubtitle: "Selecciona el ritual, horario y déjanos tus datos. Tu cita se confirmará instantáneamente vía WhatsApp.",
+    step1Title: "1. Tratamiento",
+    step2Title: "2. Fecha & Hora",
+    step3Title: "3. Usuario",
+    step4Title: "4. Confirmación",
     selectServiceLabel: "1. Selecciona el Ritual o Servicio",
     selectDateLabel: "2. Selecciona el Día (Miércoles a Domingo)",
     selectTimeLabel: "3. Horario Disponible",
@@ -81,17 +226,42 @@ export const translations = {
     phonePlaceholder: "Teléfono / WhatsApp móvil",
     emailPlaceholder: "Correo electrónico",
     notesPlaceholder: "Petición especial o notas adicionales (opcional)...",
-    confirmBookingWhatsApp: "Confirmar Reserva vía WhatsApp",
+    confirmBookingWhatsApp: "Confirmar y Enviar a WhatsApp",
     closedNotice: "El spa abre de Miércoles a Domingo. Lunes y Martes cerramos por mantenimiento y descanso del personal.",
     whatsappRedirectNotice: "Se abrirá tu WhatsApp para enviar la confirmación directamente a nuestra recepción (+53 59710688).",
-    
+    authRequiredTitle: "Registro de Usuario Requerido",
+    authRequiredDesc: "Para garantizar la seriedad de las citas y la seguridad de nuestras instalaciones en Miramar, es necesario crear tu usuario con tu nombre, correo y celular.",
+    createAccountBtn: "Crear Cuenta Nueva",
+    haveAccountBtn: "Ya tengo cuenta (Ingresar)",
+    bookingSuccessTitle: "¡Solicitud de Reserva Registrada!",
+    bookingSuccessDesc: "Tu cita ha sido guardada en nuestro sistema y enviada a nuestro WhatsApp (+53 59710688).",
+    finishAndClose: "Finalizar y Cerrar",
+    btnBack: "Atrás",
+    btnContinue: "Continuar",
+
+    // Auth Modal
+    loginTitle: "Iniciar Sesión",
+    registerTitle: "Crear Cuenta de Cliente",
+    authSubtitle: "Accede a tu historial de reservas y gestiona tus citas.",
+    nameLabel: "Nombre Completo",
+    emailLabel: "Correo Electrónico",
+    phoneLabel: "Celular / WhatsApp",
+    passwordLabel: "Contraseña",
+    loginSubmit: "Entrar a mi Cuenta",
+    registerSubmit: "Crear mi Cuenta",
+    noAccountPrompt: "¿No tienes cuenta aún?",
+    haveAccountPrompt: "¿Ya tienes una cuenta registrada?",
+    createOneHere: "Regístrate aquí",
+    loginHere: "Inicia sesión aquí",
+
     // Common
     language: "Idioma",
     selectLanguage: "Seleccionar idioma",
     close: "Cerrar",
     save: "Guardar",
     delete: "Eliminar",
-    cancel: "Cancelar"
+    cancel: "Cancelar",
+    change: "Cambiar"
   },
 
   en: {
@@ -119,17 +289,57 @@ export const translations = {
     fullCalendar: "Full calendar",
     viewServiceDetails: "View service page",
     bookShort: "Book",
+    menuAndServices: "Menu & Services",
     
     // Hero
     heroBadge: "SANCTUARY IN MIRAMAR, HAVANA",
     heroTitle1: "The Art of Wellness &",
     heroTitle2: "Absolute Relaxation",
     heroSubtitle: "Immerse yourself in a private sensory oasis in the heart of Miramar. Therapeutic massages, thermal circuit, Japanese Head Spa and holistic rituals designed to renew body and soul.",
-    heroCtaBook: "Book Appointment Now",
-    heroCtaExplore: "Explore Rituals",
-    heroClientsCount: "+12,000 Happy Clients",
-    heroRating: "4.9 / 5 stars in Havana",
-    
+    heroCtaBook: "Book Appointment Online",
+    heroCtaExplore: "View Treatments",
+    trustCabins: "Private Air-Conditioned Suites",
+    trustTherapists: "Certified Master Therapists",
+    trustWhatsApp: "Instant WhatsApp Confirmation",
+    badgePrivateSuite: "Private Suite",
+    badgePrivateSuiteDesc: "Aromatherapy & Welcome Cocktail",
+
+    // Media Row
+    mediaRecognition: "Acclaimed by guests from around the globe visiting Havana",
+
+    // About Split
+    aboutTag: "Discover Our Sanctuary",
+    aboutTitle: "What is Momentos Spa?",
+    aboutDesc: "A private retreat in Miramar crafted for those who realize relaxation is not a luxury, but a vital essential for renewal.",
+    aboutExploreBtn: "Explore Rituals",
+    exclusiveLocation: "Exclusive Location",
+    aboutQuote: "\"Caring for your health and inner peace should be as natural as breathing. At Momentos Spa, every detail—from the welcome scent to the warm towels—is tailored for you.\"",
+    aboutBullet1: "100% private, climate-controlled suites",
+    aboutBullet2: "Therapeutic-grade botanical essential oils",
+    aboutBullet3: "Personalized attention by prior appointment",
+
+    // Metrics Banner
+    metric1Num: "98%",
+    metric1Label: "SATISFACTION",
+    metric1Sub: "Clients who return every month",
+    metric2Num: "15+",
+    metric2Label: "THERAPISTS",
+    metric2Sub: "Certified health & beauty practitioners",
+    metric3Num: "6,000+",
+    metric3Label: "SESSIONS",
+    metric3Sub: "Completed wellness experiences",
+    metric4Num: "5 DAYS",
+    metric4Label: "WED - SUN",
+    metric4Sub: "Extended hours from 10am to 7pm",
+
+    // Packages
+    packagesBadge: "⭐ SIGNATURE EXPERIENCES",
+    packagesTitle: "Our Most Sought-After Signature Rituals",
+    packagesSubtitle: "Handpicked holistic therapies engineered for maximum disconnection and sensory revitalization.",
+    packagesViewDetail: "View full details",
+    packagesBookNow: "Book this Ritual",
+    packagesIncludesTag: "Includes full session, aromatherapy and welcome tasting.",
+
     // Catalog
     catalogTag: "Complete Catalog",
     catalogTitle: "Treatments & Rates",
@@ -138,16 +348,120 @@ export const translations = {
     durationLabel: "Duration",
     priceLabel: "Price",
     fromPrice: "From",
-    
-    // Categories
-    cat_masajes: "Massages & Therapies",
-    cat_circuitos: "Thermal Circuits & Jacuzzi",
-    cat_parejas: "Couples Rituals",
-    cat_headspa: "Japanese Head Spa",
-    cat_faciales: "Facials & Body Care",
-    cat_estetica: "Nails & Lash/Brow Design",
-    cat_peluqueria: "Hair Salon & Styling",
-    
+
+    // Benefits Section
+    benefitsTag: "TOTAL RENEWAL",
+    benefitsTitle: "Benefits of Our Therapeutic Sanctuary",
+    benefitsSubtitle: "Every treatment at Momentos Spa blends clinical and botanical techniques to elevate your well-being.",
+    benefit1Title: "Muscle Tension & Pain Relief",
+    benefit1Desc: "Deep target therapy easing neck, back and everyday stress contractures.",
+    benefit2Title: "Cellular Detox & Oxygenation",
+    benefit2Desc: "Sauna and jacuzzi hydrotherapy stimulate circulation and deep cellular rejuvenation.",
+    benefit3Title: "Mental Health & Deep Sleep",
+    benefit3Desc: "Proven cortisol reduction and endorphin boost to conquer insomnia and mental fatigue.",
+    benefit4Title: "Total Privacy & Seclusion",
+    benefit4Desc: "Individual and couples suites with independent climate control, dim lights and zero interruptions.",
+
+    // Timeline
+    timelineTag: "YOUR SENSORY JOURNEY",
+    timelineTitle: "Your Perfect Spa Day in 4 Steps",
+    timelineSubtitle: "Crafted to unwind without rushing from the moment you step through our Miramar garden.",
+    time1Title: "10:00 AM • Arrival & Sensory Test",
+    time1Desc: "Welcome in our air-conditioned lounge, soothing herbal infusion and personalized oil selection.",
+    time2Title: "10:30 AM • Signature Therapy in Suite",
+    time2Desc: "Deep massage or Japanese Head Spa on massage tables with preheated towels.",
+    time3Title: "11:45 AM • Thermal Circuit & Jacuzzi",
+    time3Desc: "Mineral bath immersion in hydromassage jacuzzi followed by cedar dry sauna session.",
+    time4Title: "12:30 PM • Repose with Wine & Treats",
+    time4Desc: "Fresh fruit, fine chocolates and wine tasting in our private veranda before heading back.",
+
+    // Comparison Table
+    comparisonTag: "QUALITY STANDARDS",
+    comparisonTitle: "Why is Momentos Spa Different?",
+    comparisonSubtitle: "Compare the subtleties that make our sanctuary Havana's foremost wellness destination.",
+    compCol1: "Feature",
+    compCol2: "Momentos Spa Miramar",
+    compCol3: "Standard Spas",
+    compRow1Feature: "Suite Privacy",
+    compRow1Us: "100% Private suites (single or couple)",
+    compRow1Them: "Shared rooms separated by curtains",
+    compRow2Feature: "Japanese Head Spa",
+    compRow2Us: "Warm Halo waterfall and cranial shiatsu",
+    compRow2Them: "Unavailable in most facilities",
+    compRow3Feature: "Thermal Hydrotherapy",
+    compRow3Us: "Private jacuzzi with salts + cedar sauna",
+    compRow3Them: "Limited or crowded shared access",
+    compRow4Feature: "Booking & Confirmation",
+    compRow4Us: "Instant via WhatsApp and online Calendar",
+    compRow4Them: "Slow phone calls or unanswered messages",
+    compRow5Feature: "Location & Parking",
+    compRow5Us: "Peaceful Miramar with secure private parking",
+    compRow5Them: "Congested streets with difficult parking",
+
+    // Testimonials
+    testimonialsTag: "AUTHENTIC REVIEWS",
+    testimonialsTitle: "What Our Guests Say",
+    testimonialsSubtitle: "Over 12,000 local and international guests have discovered true serenity in Miramar.",
+    review1Name: "Alejandro Gómez",
+    review1Location: "Havana, Cuba",
+    review1Text: "\"The Japanese Head Spa is truly on another level. The warm water waterfall completely washed away weeks of tension and headaches. The therapists are world-class.\"",
+    review2Name: "Claire Dupont",
+    review2Location: "Paris, France",
+    review2Text: "\"We booked the couple's package for our anniversary while in Havana. The private jacuzzi, massages and glass of wine created an unforgettable memory.\"",
+    review3Name: "Marco Rossi",
+    review3Location: "Milan, Italy",
+    review3Text: "\"Superb deep tissue massage. The exact pressure requested, pristine and fresh cabin. Hands down the finest spa in Miramar.\"",
+
+    // FAQ
+    faqTag: "ANSWERS TO YOUR QUESTIONS",
+    faqTitle: "Frequently Asked Questions",
+    faqSubtitle: "Everything you need to know ahead of your relaxation appointment.",
+    faq1Q: "How is the appointment confirmed?",
+    faq1A: "Upon filling out the booking form, your request is sent instantly to our official WhatsApp (+53 59710688), where our concierge confirms your slot in minutes.",
+    faq2Q: "What are your opening days and hours?",
+    faq2A: "We are open Wednesday through Sunday from 10:00 AM to 7:00 PM. Closed Mondays and Tuesdays for thorough sanitization and staff rest.",
+    faq3Q: "What should I bring to my appointment?",
+    faq3A: "Nothing at all. We provide pre-warmed luxury towels, plush bathrobes, disposable slippers, shower caps and premium botanical shower amenities.",
+    faq4Q: "Can two people share the same cabin?",
+    faq4A: "Yes! We feature double suite cabins specially designed for couples or friends who wish to enjoy treatments side-by-side.",
+    faq5Q: "Where are you located in Miramar?",
+    faq5A: "Calle 44 #111 b/ 3rd and 1st A, Miramar, Playa, Havana. We offer free on-site guarded private parking.",
+    faq6Q: "Which payment methods do you accept?",
+    faq6A: "We accept cash (USD, EUR, MLC, CUP at current rates) as well as national and international bank transfers.",
+
+    // Location & Contact
+    locationTag: "FIND US IN HAVANA",
+    locationTitle: "Visit Us in the Heart of Miramar",
+    locationSubtitle: "A calm, secure residential oasis bordered by lush trees on 44th Street #111.",
+    addressTitle: "Address",
+    addressDesc: "Calle 44 #111 b/ 3rd and 1st A, Miramar, Playa, Havana, Cuba.",
+    phoneTitle: "Phone / WhatsApp",
+    phoneDesc: "+53 59710688 (Continuous customer care)",
+    hoursTitle: "Opening Hours",
+    hoursDesc: "Wednesday to Sunday: 10:00 AM - 7:00 PM (Monday & Tuesday Closed)",
+    mapsBtn: "Open in Google Maps",
+    mapsDirections: "Just 2 blocks from 3rd Avenue and minutes away from Miramar's top hotels.",
+
+    // Footer
+    footerSlogan: "Sanctuary of wellness, relaxation and aesthetic care in Miramar, Havana. Holistic treatments in private climate-controlled cabins.",
+    footerLinksTitle: "Navigation",
+    footerContactTitle: "Contact & Bookings",
+    footerHoursTitle: "Opening Days",
+    footerRights: "All rights reserved. Momentos Spa Havana.",
+    footerAdminLink: "Admin Dashboard",
+
+    // WhatsApp Bubble
+    bubbleOnline: "Online",
+    bubbleQuickResponse: "Fast response",
+    bubbleGreeting: "Hello! ✨ Welcome to Momentos Spa in Miramar. How can we pamper you today?",
+    bubbleQuickOptions: "Quick Options",
+    bubbleOption1: "📅 Inquire about appointment availability",
+    bubbleOption2: "💆‍♂️ Ask about couple packages",
+    bubbleOption3: "✨ Japanese Head Spa details",
+    bubblePlaceholder: "Type your question here...",
+    bubbleSend: "Send",
+    bubbleTooltip: "Chat with us (+53 59710688)",
+
     // Service Detail Page
     backToCatalog: "Back to catalog",
     reserveByWhatsApp: "Book via WhatsApp (+53 59710688)",
@@ -159,15 +473,15 @@ export const translations = {
     privateHeatedCabin: "Private air-conditioned cabin and heated towels",
     aromatherapyWelcome: "Botanical aromatherapy and wine or herbal tea tasting",
     privateParking: "Complimentary private parking and personalized care",
-    
-    // Packages
-    signaturePackagesTag: "Signature Experiences",
-    signaturePackagesTitle: "Our Most Exclusive Rituals",
-    packageIncludes: "Includes full session, aromatherapy and welcome tasting.",
-    
+    therapistTip: "Therapist Recommendation",
+
     // Booking Modal
     modalBookingTitle: "Book Appointment at Momentos Spa",
     modalBookingSubtitle: "Choose your ritual, preferred time and contact info. Your booking will be confirmed instantly via WhatsApp.",
+    step1Title: "1. Treatment",
+    step2Title: "2. Date & Time",
+    step3Title: "3. Guest Account",
+    step4Title: "4. Confirmation",
     selectServiceLabel: "1. Select Ritual or Service",
     selectDateLabel: "2. Choose Date (Wednesday to Sunday)",
     selectTimeLabel: "3. Available Time Slot",
@@ -176,17 +490,42 @@ export const translations = {
     phonePlaceholder: "Mobile / WhatsApp number",
     emailPlaceholder: "Email address",
     notesPlaceholder: "Special requests or notes (optional)...",
-    confirmBookingWhatsApp: "Confirm Booking via WhatsApp",
+    confirmBookingWhatsApp: "Confirm & Send via WhatsApp",
     closedNotice: "The spa is open Wednesday through Sunday. Closed Monday and Tuesday for staff rest and facility maintenance.",
     whatsappRedirectNotice: "WhatsApp will open to send your reservation directly to our reception (+53 59710688).",
-    
+    authRequiredTitle: "Guest Registration Required",
+    authRequiredDesc: "To ensure verified reservations and privacy for our Miramar sanctuary, please provide your name, email and phone number.",
+    createAccountBtn: "Create New Account",
+    haveAccountBtn: "I already have an account",
+    bookingSuccessTitle: "Booking Request Registered!",
+    bookingSuccessDesc: "Your appointment has been registered and forwarded to our WhatsApp reception (+53 59710688).",
+    finishAndClose: "Finish and Close",
+    btnBack: "Back",
+    btnContinue: "Continue",
+
+    // Auth Modal
+    loginTitle: "Sign In",
+    registerTitle: "Create Guest Account",
+    authSubtitle: "Access your appointment history and booking details.",
+    nameLabel: "Full Name",
+    emailLabel: "Email Address",
+    phoneLabel: "Phone / WhatsApp",
+    passwordLabel: "Password",
+    loginSubmit: "Sign In to Account",
+    registerSubmit: "Create Account",
+    noAccountPrompt: "Don't have an account yet?",
+    haveAccountPrompt: "Already registered?",
+    createOneHere: "Register here",
+    loginHere: "Sign in here",
+
     // Common
     language: "Language",
     selectLanguage: "Select language",
     close: "Close",
     save: "Save",
     delete: "Delete",
-    cancel: "Cancel"
+    cancel: "Cancel",
+    change: "Change"
   },
 
   it: {
@@ -214,17 +553,57 @@ export const translations = {
     fullCalendar: "Calendario completo",
     viewServiceDetails: "Vedi pagina del servizio",
     bookShort: "Prenota",
+    menuAndServices: "Menu & Servizi",
     
     // Hero
     heroBadge: "SANTUARIO A MIRAMAR, L'AVANA",
     heroTitle1: "L'Arte del Benessere &",
     heroTitle2: "Rilassamento Assoluto",
     heroSubtitle: "Immergiti in un'oasi sensoriale privata nel cuore di Miramar. Massaggi terapeutici, circuito termale, Japanese Head Spa e rituali olistici per rigenerare corpo e spirito.",
-    heroCtaBook: "Prenota Ora",
-    heroCtaExplore: "Esplora Rituali",
-    heroClientsCount: "+12.000 Clienti Soddisfatti",
-    heroRating: "4.9 / 5 stelle a L'Avana",
-    
+    heroCtaBook: "Prenota Appuntamento Online",
+    heroCtaExplore: "Vedi Trattamenti",
+    trustCabins: "Cabine Private Climatizzate",
+    trustTherapists: "Terapeute Certificate",
+    trustWhatsApp: "Conferma Immediata via WhatsApp",
+    badgePrivateSuite: "Suite Privata",
+    badgePrivateSuiteDesc: "Aromaterapia & Cocktail di Benvenuto",
+
+    // Media Row
+    mediaRecognition: "Riconosciuto da ospiti di tutto il mondo all'Avana",
+
+    // About Split
+    aboutTag: "Scopri il Nostro Santuario",
+    aboutTitle: "Cos'è Momentos Spa?",
+    aboutDesc: "Un rifugio esclusivo a Miramar creato per chi sa che il relax non è un lusso, ma una necessità vitale.",
+    aboutExploreBtn: "Esplora Rituali",
+    exclusiveLocation: "Posizione Esclusiva",
+    aboutQuote: "\"Prendersi cura della propria salute e serenità deve essere naturale come respirare. A Momentos Spa ogni dettaglio è pensato per te.\"",
+    aboutBullet1: "Cabine suite 100% private e climatizzate",
+    aboutBullet2: "Oli essenziali botanici di grado terapeutico",
+    aboutBullet3: "Assistenza esclusiva su prenotazione",
+
+    // Metrics Banner
+    metric1Num: "98%",
+    metric1Label: "SODDISFAZIONE",
+    metric1Sub: "Clienti che ritornano ogni mese",
+    metric2Num: "15+",
+    metric2Label: "TERAPEUTE",
+    metric2Sub: "Specialiste in salute e bellezza",
+    metric3Num: "6.000+",
+    metric3Label: "SESSIONI",
+    metric3Sub: "Esperienze di benessere completate",
+    metric4Num: "5 GIORNI",
+    metric4Label: "MER - DOM",
+    metric4Sub: "Orario esteso dalle 10:00 alle 19:00",
+
+    // Packages
+    packagesBadge: "⭐ ESPERIENZE SIGNATURE",
+    packagesTitle: "I Nostri Rituali Più Esclusivi",
+    packagesSubtitle: "Selezione di terapie olistiche create per offrirti il massimo distacco e relax sensoriale.",
+    packagesViewDetail: "Vedi dettagli completi",
+    packagesBookNow: "Prenota questo Rituale",
+    packagesIncludesTag: "Include sessione completa, aromaterapia e calice di benvenuto.",
+
     // Catalog
     catalogTag: "Catalogo Completo",
     catalogTitle: "Trattamenti & Tariffe",
@@ -233,16 +612,120 @@ export const translations = {
     durationLabel: "Durata",
     priceLabel: "Prezzo",
     fromPrice: "A partire da",
-    
-    // Categories
-    cat_masajes: "Massaggi & Terapie",
-    cat_circuitos: "Circuiti Termali & Idromassaggio",
-    cat_parejas: "Rituali di Coppia",
-    cat_headspa: "Japanese Head Spa",
-    cat_faciales: "Trattamenti Viso & Corpo",
-    cat_estetica: "Unghie, Ciglia & Sopracciglia",
-    cat_peluqueria: "Parrucchiere & Salone",
-    
+
+    // Benefits Section
+    benefitsTag: "RINNOVAMENTO TOTALE",
+    benefitsTitle: "Benefici del Nostro Santuario Terapeutico",
+    benefitsSubtitle: "Ogni trattamento a Momentos Spa combina tecniche cliniche e botaniche per elevare il tuo benessere.",
+    benefit1Title: "Sollievo dal Dolore e Tensioni",
+    benefit1Desc: "Scioglimento delle contratture cervicali e lombari accumulate nello stress quotidiano.",
+    benefit2Title: "Detossificazione & Ossigenazione",
+    benefit2Desc: "L'idroterapia e la sauna stimolano la microcircolazione e il drenaggio profondo.",
+    benefit3Title: "Salute Mentale e Sonno Profondo",
+    benefit3Desc: "Riduzione del cortisolo e rilascio di endorfine contro ansia e insonnia.",
+    benefit4Title: "Totale Riservatezza & Intimità",
+    benefit4Desc: "Cabine suite individuali e di coppia climatizzate con illuminazione soffusa.",
+
+    // Timeline
+    timelineTag: "IL TUO VIAGGIO SENSORIALE",
+    timelineTitle: "La Tua Giornata Spa in 4 Fasi",
+    timelineSubtitle: "Pensato per farti rilassare senza fretta fin dall'ingresso nel nostro giardino a Miramar.",
+    time1Title: "10:00 • Accoglienza & Test Sensoriale",
+    time1Desc: "Benvenuto nella lounge, tisana rilassante e scelta dell'olio essenziale botanico.",
+    time2Title: "10:30 • Trattamento Principale in Suite",
+    time2Desc: "Massaggio profondo o Japanese Head Spa con asciugamani preriscaldati.",
+    time3Title: "11:45 • Circuito Termale & Jacuzzi",
+    time3Desc: "Bagno idromassaggio ai sali marini e sessione nella sauna secca di cedro.",
+    time4Title: "12:30 • Relax con Vino e Dolcezze",
+    time4Desc: "Frutta fresca, cioccolatini e calice di vino nella veranda privata.",
+
+    // Comparison Table
+    comparisonTag: "STANDARD DI ECCELLENZA",
+    comparisonTitle: "Perché Momentos Spa è Diverso?",
+    comparisonSubtitle: "Scopri i dettagli che rendono il nostro santuario il punto di riferimento a L'Avana.",
+    compCol1: "Caratteristica",
+    compCol2: "Momentos Spa Miramar",
+    compCol3: "Spa Convenzionali",
+    compRow1Feature: "Privacy in Cabina",
+    compRow1Us: "100% Suite privata singola o di coppia",
+    compRow1Them: "Sale condivise divise da tende",
+    compRow2Feature: "Japanese Head Spa",
+    compRow2Us: "Cascata calda Halo e shiatsu craniale",
+    compRow2Them: "Non disponibile nella maggior parte",
+    compRow3Feature: "Idroterapia Termale",
+    compRow3Us: "Jacuzzi privata ai sali + sauna di cedro",
+    compRow3Them: "Accesso limitato o condiviso",
+    compRow4Feature: "Prenotazione & Assistenza",
+    compRow4Us: "Immediata su WhatsApp e Calendario",
+    compRow4Them: "Chiamate lente o nessuna risposta",
+    compRow5Feature: "Posizione & Parcheggio",
+    compRow5Us: "Miramar tranquilla con parcheggio custodito",
+    compRow5Them: "Strade congestionate e senza parcheggio",
+
+    // Testimonials
+    testimonialsTag: "RECENSIONI REALI",
+    testimonialsTitle: "Cosa Dicono i Nostri Ospiti",
+    testimonialsSubtitle: "Oltre 12.000 ospiti italiani e internazionali si sono rigenerati a Miramar.",
+    review1Name: "Alejandro Gómez",
+    review1Location: "L'Avana, Cuba",
+    review1Text: "\"L'Head Spa giapponese è spettacolare. La cascata d'acqua calda sul cuoio capelluto mi ha tolto settimane di tensione.\"",
+    review2Name: "Claire Dupont",
+    review2Location: "Parigi, Francia",
+    review2Text: "\"Abbiamo prenotato il rituale di coppia per il nostro anniversario. Jacuzzi privata, massaggi eccellenti e grande gentilezza.\"",
+    review3Name: "Marco Rossi",
+    review3Location: "Milano, Italia",
+    review3Text: "\"Ottimo massaggio decontratturante. Pressione perfetta, cabina pulitissima e molto fresca. Senza dubbio la migliore spa di Miramar.\"",
+
+    // FAQ
+    faqTag: "DOMANDE COMUNI",
+    faqTitle: "Domande Frequenti",
+    faqSubtitle: "Tutto ciò che occorre sapere prima del tuo appuntamento.",
+    faq1Q: "Come viene confermata la prenotazione?",
+    faq1A: "Inviando il modulo, la richiesta arriva direttamente sul nostro WhatsApp ufficiale (+53 59710688) dove l'accoglienza ti risponde in pochi istanti.",
+    faq2Q: "Quali sono i giorni e gli orari di apertura?",
+    faq2A: "Siamo aperti dal mercoledì alla domenica dalle 10:00 alle 19:00. Chiusi lunedì e martedì per riposo e sanificazione.",
+    faq3Q: "Cosa devo portare con me?",
+    faq3A: "Assolutamente nulla. Forniamo asciugamani caldi, accappatoi morbidi, ciabattine e prodotti botanici per la doccia.",
+    faq4Q: "Possiamo fare il trattamento in due nella stessa cabina?",
+    faq4A: "Sì! Abbiamo suite doppie concepite appositamente per coppie o amici per trattamenti in contemporanea.",
+    faq5Q: "Dove vi trovate esattamente a Miramar?",
+    faq5A: "In Calle 44 #111 tra 3ra e 1ra A, Miramar, Playa, L'Avana. Parcheggio privato custodito gratuito.",
+    faq6Q: "Quali metodi di pagamento accettate?",
+    faq6A: "Accettiamo contanti (EUR, USD, MLC, CUP) e bonifici bancari nazionali o internazionali.",
+
+    // Location & Contact
+    locationTag: "DOVE SIAMO A L'AVANA",
+    locationTitle: "Vieni a Trovarci nel Cuore di Miramar",
+    locationSubtitle: "Una zona tranquilla, sicura ed elegante in Calle 44 #111.",
+    addressTitle: "Indirizzo",
+    addressDesc: "Calle 44 #111 tra 3ra e 1ra A, Miramar, Playa, L'Avana, Cuba.",
+    phoneTitle: "Telefono / WhatsApp",
+    phoneDesc: "+53 59710688 (Assistenza continua)",
+    hoursTitle: "Orari di Apertura",
+    hoursDesc: "Mercoledì a Domenica: 10:00 - 19:00 (Lunedì e Martedì Chiuso)",
+    mapsBtn: "Apri su Google Maps",
+    mapsDirections: "A soli 2 isolati dalla 3ra Avenida, vicino ai principali hotel di Miramar.",
+
+    // Footer
+    footerSlogan: "Santuario del benessere, relax ed estetica a Miramar, L'Avana. Trattamenti esclusivi in suite private climatizzate.",
+    footerLinksTitle: "Navigazione",
+    footerContactTitle: "Contatto & Prenotazioni",
+    footerHoursTitle: "Giorni di Apertura",
+    footerRights: "Tutti i diritti riservati. Momentos Spa Habana.",
+    footerAdminLink: "Pannello Admin",
+
+    // WhatsApp Bubble
+    bubbleOnline: "Online",
+    bubbleQuickResponse: "Risposta rapida",
+    bubbleGreeting: "Ciao! ✨ Benvenuto a Momentos Spa a Miramar. Come possiamo coccolarti oggi?",
+    bubbleQuickOptions: "Opzioni rapide",
+    bubbleOption1: "📅 Disponibilità appuntamenti",
+    bubbleOption2: "💆‍♂️ Pacchetti speciali di coppia",
+    bubbleOption3: "✨ Info Japanese Head Spa",
+    bubblePlaceholder: "Scrivi la tua richiesta qui...",
+    bubbleSend: "Invia",
+    bubbleTooltip: "Chatta con noi (+53 59710688)",
+
     // Service Detail Page
     backToCatalog: "Torna al catalogo",
     reserveByWhatsApp: "Prenota via WhatsApp (+53 59710688)",
@@ -254,15 +737,15 @@ export const translations = {
     privateHeatedCabin: "Cabina privata climatizzata e asciugamani riscaldati",
     aromatherapyWelcome: "Aromaterapia botanica e degustazione di vino o tisana",
     privateParking: "Parcheggio privato gratuito e assistenza personalizzata",
-    
-    // Packages
-    signaturePackagesTag: "Esperienze Signature",
-    signaturePackagesTitle: "I Nostri Rituali Più Esclusivi",
-    packageIncludes: "Include sessione completa, aromaterapia e calice di benvenuto.",
-    
+    therapistTip: "Consiglio della Terapeuta",
+
     // Booking Modal
     modalBookingTitle: "Prenota Appuntamento a Momentos Spa",
     modalBookingSubtitle: "Seleziona il rituale, l'orario e inserisci i tuoi dati. La prenotazione sarà confermata immediatamente su WhatsApp.",
+    step1Title: "1. Trattamento",
+    step2Title: "2. Data & Ora",
+    step3Title: "3. Utente",
+    step4Title: "4. Conferma",
     selectServiceLabel: "1. Seleziona Rituale o Servizio",
     selectDateLabel: "2. Scegli la Data (Mercoledì a Domenica)",
     selectTimeLabel: "3. Orario Disponibile",
@@ -271,17 +754,42 @@ export const translations = {
     phonePlaceholder: "Telefono / WhatsApp mobile",
     emailPlaceholder: "Indirizzo email",
     notesPlaceholder: "Richieste speciali o note aggiuntive (opzionale)...",
-    confirmBookingWhatsApp: "Conferma Prenotazione via WhatsApp",
+    confirmBookingWhatsApp: "Conferma e Invia su WhatsApp",
     closedNotice: "La spa è aperta dal mercoledì alla domenica. Chiusa lunedì e martedì per riposo e manutenzione.",
     whatsappRedirectNotice: "Si aprirà WhatsApp per inviare la richiesta direttamente alla nostra reception (+53 59710688).",
-    
+    authRequiredTitle: "Registrazione Utente Richiesta",
+    authRequiredDesc: "Per garantire la serietà delle prenotazioni a Miramar, inserisci nome, email e cellulare.",
+    createAccountBtn: "Crea Nuovo Account",
+    haveAccountBtn: "Ho già un account (Accedi)",
+    bookingSuccessTitle: "Richiesta di Prenotazione Registrata!",
+    bookingSuccessDesc: "La tua richiesta è stata salvata ed inviata alla nostra reception su WhatsApp (+53 59710688).",
+    finishAndClose: "Concludi e Chiudi",
+    btnBack: "Indietro",
+    btnContinue: "Continua",
+
+    // Auth Modal
+    loginTitle: "Accedi",
+    registerTitle: "Crea Account Cliente",
+    authSubtitle: "Gestisci le tue prenotazioni e visualizza la tua cronologia.",
+    nameLabel: "Nome e Cognome",
+    emailLabel: "Indirizzo Email",
+    phoneLabel: "Telefono / WhatsApp",
+    passwordLabel: "Password",
+    loginSubmit: "Accedi al mio Account",
+    registerSubmit: "Crea Account",
+    noAccountPrompt: "Non hai ancora un account?",
+    haveAccountPrompt: "Hai già un account registrato?",
+    createOneHere: "Registrati qui",
+    loginHere: "Accedi qui",
+
     // Common
     language: "Lingua",
     selectLanguage: "Seleziona lingua",
     close: "Chiudi",
     save: "Salva",
     delete: "Elimina",
-    cancel: "Annulla"
+    cancel: "Annulla",
+    change: "Cambia"
   },
 
   fr: {
@@ -309,17 +817,57 @@ export const translations = {
     fullCalendar: "Calendrier complet",
     viewServiceDetails: "Voir la page du service",
     bookShort: "Réserver",
+    menuAndServices: "Menu & Soins",
     
     // Hero
     heroBadge: "SANCTUAIRE À MIRAMAR, LA HAVANE",
     heroTitle1: "L'Art du Bien-être &",
     heroTitle2: "Relaxation Absolue",
     heroSubtitle: "Plongez dans une oasis sensorielle privée au cœur de Miramar. Massages thérapeutiques, circuit thermal, Japanese Head Spa et rituels holistiques conçus pour renouveler votre corps et votre esprit.",
-    heroCtaBook: "Réserver Maintenant",
-    heroCtaExplore: "Explorer les Rituels",
-    heroClientsCount: "+12 000 Clients Heureux",
-    heroRating: "4.9 / 5 étoiles à La Havane",
-    
+    heroCtaBook: "Réserver en Ligne",
+    heroCtaExplore: "Découvrir les Soins",
+    trustCabins: "Suites Privées Climatisées",
+    trustTherapists: "Thérapeutes Certifiées",
+    trustWhatsApp: "Confirmation Immédiate par WhatsApp",
+    badgePrivateSuite: "Suite Privée",
+    badgePrivateSuiteDesc: "Aromathérapie & Verre d'Accueil",
+
+    // Media Row
+    mediaRecognition: "Plébiscité par des voyageurs du monde entier à La Havane",
+
+    // About Split
+    aboutTag: "Découvrez Notre Sanctuaire",
+    aboutTitle: "Qu'est-ce que Momentos Spa ?",
+    aboutDesc: "Un havre exclusif à Miramar conçu pour ceux qui savent que la détente n'est pas un luxe, mais un besoin vital de renouvellement.",
+    aboutExploreBtn: "Explorer les Rituels",
+    exclusiveLocation: "Emplacement Exclusif",
+    aboutQuote: "\"Prendre soin de sa santé et de sa sérénité doit être aussi naturel que respirer. À Momentos Spa, chaque détail est pensé pour vous.\"",
+    aboutBullet1: "Cabines suites 100% privées et climatisées",
+    aboutBullet2: "Huiles essentielles botaniques de qualité thérapeutique",
+    aboutBullet3: "Accueil sur mesure sur réservation préalable",
+
+    // Metrics Banner
+    metric1Num: "98%",
+    metric1Label: "SATISFACTION",
+    metric1Sub: "Clients qui reviennent chaque mois",
+    metric2Num: "15+",
+    metric2Label: "THÉRAPEUTES",
+    metric2Sub: "Spécialistes certifiées santé et beauté",
+    metric3Num: "6 000+",
+    metric3Label: "SÉANCES",
+    metric3Sub: "Expériences de bien-être réalisées",
+    metric4Num: "5 JOURS",
+    metric4Label: "MER - DIM",
+    metric4Sub: "Horaires étendus de 10h à 19h",
+
+    // Packages
+    packagesBadge: "⭐ EXPÉRIENCES SIGNATURE",
+    packagesTitle: "Nos Rituels les Plus Convoités",
+    packagesSubtitle: "Sélection de soins holistiques pour une déconnexion et une revitalisation sensorielle absolues.",
+    packagesViewDetail: "Voir tous les détails",
+    packagesBookNow: "Réserver ce Rituel",
+    packagesIncludesTag: "Comprend séance complète, aromathérapie et verre de bienvenue.",
+
     // Catalog
     catalogTag: "Catalogue Complet",
     catalogTitle: "Soins & Tarifs",
@@ -328,16 +876,120 @@ export const translations = {
     durationLabel: "Durée",
     priceLabel: "Tarif",
     fromPrice: "À partir de",
-    
-    // Categories
-    cat_masajes: "Massages & Thérapies",
-    cat_circuitos: "Circuits Thermaux & Jacuzzi",
-    cat_parejas: "Rituels en Duo",
-    cat_headspa: "Japanese Head Spa",
-    cat_faciales: "Soins Visage & Corps",
-    cat_estetica: "Onglerie & Beauté du Regard",
-    cat_peluqueria: "Coiffure & Salon",
-    
+
+    // Benefits Section
+    benefitsTag: "RÉGÉNÉRATION TOTALE",
+    benefitsTitle: "Bienfaits de Notre Sanctuaire Thérapeutique",
+    benefitsSubtitle: "Chaque soin à Momentos Spa conjugue techniques cliniques et botaniques pour sublimer votre vitalité.",
+    benefit1Title: "Soulagement Musculaire & Anti-Tension",
+    benefit1Desc: "Délitement des tensions cervicales et dorsales accumulées au quotidien.",
+    benefit2Title: "Détoxification & Oxygénation Cellulaire",
+    benefit2Desc: "L'hydrothérapie en jacuzzi et le sauna stimulent la circulation et la détoxification en profondeur.",
+    benefit3Title: "Santé Mentale & Sommeil Réparateur",
+    benefit3Desc: "Baisse notable du cortisol et libération d'endorphines apaisantes.",
+    benefit4Title: "Intimité Absolue & Sérénité",
+    benefit4Desc: "Suites privées individuelles et pour couples à température idéale et lumière tamisée.",
+
+    // Timeline
+    timelineTag: "VOTRE VOYAGE SENSORIEL",
+    timelineTitle: "Votre Journée Spa Idéale en 4 Étapes",
+    timelineSubtitle: "Conçu pour savourer chaque instant dès vos premiers pas dans notre jardin à Miramar.",
+    time1Title: "10:00 • Accueil & Diagnostic Sensoriel",
+    time1Desc: "Bienvenue dans notre salon climatisé, infusion relaxante et sélection des huiles botaniques.",
+    time2Title: "10:30 • Soin Signature en Suite",
+    time2Desc: "Massage profond ou Japanese Head Spa sur table avec serviettes chauffées.",
+    time3Title: "11:45 • Circuit Thermal & Jacuzzi",
+    time3Desc: "Bain à remous aux sels minéraux suivi d'une séance dans le sauna sec en cèdre.",
+    time4Title: "12:30 • Détente avec Vin & Gourmandises",
+    time4Desc: "Fruits frais, chocolats et verre de vin sur notre terrasse privée.",
+
+    // Comparison Table
+    comparisonTag: "STANDARDS D'EXCELLENCE",
+    comparisonTitle: "Pourquoi Momentos Spa est Unique ?",
+    comparisonSubtitle: "Découvrez les subtilités qui font de notre sanctuaire la référence de La Havane.",
+    compCol1: "Prestation",
+    compCol2: "Momentos Spa Miramar",
+    compCol3: "Spas Classiques",
+    compRow1Feature: "Intimité en Cabine",
+    compRow1Us: "100% Suite privée solo ou duo",
+    compRow1Them: "Espaces collectifs séparés par des rideaux",
+    compRow2Feature: "Japanese Head Spa",
+    compRow2Us: "Cascade Halo tiède et shiatsu crânien",
+    compRow2Them: "Indisponible dans la majorité des spas",
+    compRow3Feature: "Circuit d'Hydrothérapie",
+    compRow3Us: "Jacuzzi privé aux sels + sauna en cèdre",
+    compRow3Them: "Accès restreint ou partagé",
+    compRow4Feature: "Réservation & Réactivité",
+    compRow4Us: "Immédiate par WhatsApp et Calendrier",
+    compRow4Them: "Appels sans réponse et attente",
+    compRow5Feature: "Emplacement & Stationnement",
+    compRow5Us: "Quartier résidentiel calme avec parking gardé",
+    compRow5Them: "Rues encombrées sans parking",
+
+    // Testimonials
+    testimonialsTag: "AVIS VÉRIFIÉS",
+    testimonialsTitle: "Ce Que Disent Nos Visiteurs",
+    testimonialsSubtitle: "Plus de 12 000 visiteurs cubains et internationaux ont trouvé leur havre de paix à Miramar.",
+    review1Name: "Alejandro Gómez",
+    review1Location: "La Havane, Cuba",
+    review1Text: "\"Le Head Spa japonais est extraordinaire. La cascade d'eau tiède sur le cuir chevelu a effacé des semaines de fatigue.\"",
+    review2Name: "Claire Dupont",
+    review2Location: "Paris, France",
+    review2Text: "\"Nous avons réservé la formule duo pour notre anniversaire. Jacuzzi privatif, massages d'exception et accueil chaleureux.\"",
+    review3Name: "Marco Rossi",
+    review3Location: "Milan, Italie",
+    review3Text: "\"Superbe massage décontracturant. Pression parfaite, cabine d'une propreté irréprochable. De loin le meilleur spa de Miramar.\"",
+
+    // FAQ
+    faqTag: "VOS QUESTIONS",
+    faqTitle: "Foire Aux Questions",
+    faqSubtitle: "Tout ce qu'il faut savoir avant votre séance de ressourcement.",
+    faq1Q: "Comment se confirme la réservation ?",
+    faq1A: "Dès validation du formulaire, votre demande est transmise à notre WhatsApp (+53 59710688) où notre réception vous répond en quelques minutes.",
+    faq2Q: "Quels sont les jours et horaires d'ouverture ?",
+    faq2A: "Nous sommes ouverts du mercredi au dimanche de 10h00 à 19h00. Fermé lundi et mardi pour entretien et repos.",
+    faq3Q: "Que dois-je apporter pour mon soin ?",
+    faq3A: "Rien du tout. Nous mettons à votre disposition peignoirs moelleux, serviettes chaudes, chaussons et soins de douche.",
+    faq4Q: "Peut-on être deux dans la même cabine ?",
+    faq4A: "Oui ! Nous disposons de suites doubles spécialement aménagées pour les couples ou ami(e)s.",
+    faq5Q: "Où êtes-vous situés à Miramar ?",
+    faq5A: "Au 44e Rue #111 entre 3e et 1re A, Miramar, Playa, La Havane. Parking privé gardé gratuit.",
+    faq6Q: "Quels modes de paiement acceptez-vous ?",
+    faq6A: "Paiements en espèces (EUR, USD, MLC, CUP au taux du jour) ainsi que virements bancaires.",
+
+    // Location & Contact
+    locationTag: "NOUS TROUVER À LA HAVANE",
+    locationTitle: "Rendez-nous Visite au Cœur de Miramar",
+    locationSubtitle: "Un environnement résidentiel préservé et verdoyant à la Rue 44 #111.",
+    addressTitle: "Adresse",
+    addressDesc: "Rue 44 #111 e/ 3e et 1re A, Miramar, Playa, La Havane, Cuba.",
+    phoneTitle: "Téléphone / WhatsApp",
+    phoneDesc: "+53 59710688 (Assistance continue)",
+    hoursTitle: "Horaires d'Ouverture",
+    hoursDesc: "Mercredi au Dimanche : 10h00 - 19h00 (Fermé Lundi & Mardi)",
+    mapsBtn: "Ouvrir dans Google Maps",
+    mapsDirections: "À 2 rues de la 3e Avenue, à proximité immédiate des grands hôtels de Miramar.",
+
+    // Footer
+    footerSlogan: "Sanctuaire de bien-être, détente et soins esthétiques à Miramar, La Havane. Soins holistiques en suites privées climatisées.",
+    footerLinksTitle: "Navigation",
+    footerContactTitle: "Contact & Réservations",
+    footerHoursTitle: "Jours d'Accueil",
+    footerRights: "Tous droits réservés. Momentos Spa Habana.",
+    footerAdminLink: "Espace Admin",
+
+    // WhatsApp Bubble
+    bubbleOnline: "En ligne",
+    bubbleQuickResponse: "Réponse rapide",
+    bubbleGreeting: "Bonjour ! ✨ Bienvenue à Momentos Spa à Miramar. En quoi pouvons-nous prendre soin de vous aujourd'hui ?",
+    bubbleQuickOptions: "Options rapides",
+    bubbleOption1: "📅 Vérifier les créneaux disponibles",
+    bubbleOption2: "💆‍♂️ Demander les formules duo / couple",
+    bubbleOption3: "✨ Détails du Japanese Head Spa",
+    bubblePlaceholder: "Écrivez votre message ici...",
+    bubbleSend: "Envoyer",
+    bubbleTooltip: "Discutez avec nous (+53 59710688)",
+
     // Service Detail Page
     backToCatalog: "Retour au catalogue",
     reserveByWhatsApp: "Réserver via WhatsApp (+53 59710688)",
@@ -349,15 +1001,15 @@ export const translations = {
     privateHeatedCabin: "Cabine privée climatisée et serviettes chauffées",
     aromatherapyWelcome: "Aromathérapie botanique et dégustation de vin ou tisane",
     privateParking: "Parking privé gratuit et accueil personnalisé",
-    
-    // Packages
-    signaturePackagesTag: "Expériences Signature",
-    signaturePackagesTitle: "Nos Rituels les Plus Exclusifs",
-    packageIncludes: "Comprend séance complète, aromathérapie et verre de bienvenue.",
-    
+    therapistTip: "Conseil de la Thérapeute",
+
     // Booking Modal
     modalBookingTitle: "Réserver un Soin à Momentos Spa",
     modalBookingSubtitle: "Choisissez votre rituel, date et coordonnées. Votre rendez-vous sera confirmé immédiatement par WhatsApp.",
+    step1Title: "1. Soin",
+    step2Title: "2. Date & Heure",
+    step3Title: "3. Compte",
+    step4Title: "4. Confirmation",
     selectServiceLabel: "1. Choisissez le Rituel ou Soin",
     selectDateLabel: "2. Choisissez la Date (Mercredi au Dimanche)",
     selectTimeLabel: "3. Créneau Horaire Disponible",
@@ -366,17 +1018,42 @@ export const translations = {
     phonePlaceholder: "Téléphone mobile / WhatsApp",
     emailPlaceholder: "Adresse e-mail",
     notesPlaceholder: "Demande particulière ou remarques (facultatif)...",
-    confirmBookingWhatsApp: "Confirmer la Réservation sur WhatsApp",
+    confirmBookingWhatsApp: "Confirmer et Envoyer par WhatsApp",
     closedNotice: "Le spa est ouvert du mercredi au dimanche. Fermé lundi et mardi pour repos et entretien.",
     whatsappRedirectNotice: "WhatsApp s'ouvrira pour envoyer votre demande directement à notre réception (+53 59710688).",
-    
+    authRequiredTitle: "Inscription Client Requise",
+    authRequiredDesc: "Pour assurer la fiabilité des créneaux dans notre sanctuaire de Miramar, merci de renseigner votre nom, e-mail et mobile.",
+    createAccountBtn: "Créer un Nouveau Compte",
+    haveAccountBtn: "J'ai déjà un compte (Connexion)",
+    bookingSuccessTitle: "Demande de Réservation Enregistrée !",
+    bookingSuccessDesc: "Votre rendez-vous a été enregistré et transmis à notre réception WhatsApp (+53 59710688).",
+    finishAndClose: "Terminer et Fermer",
+    btnBack: "Retour",
+    btnContinue: "Continuer",
+
+    // Auth Modal
+    loginTitle: "Connexion",
+    registerTitle: "Créer un Compte Client",
+    authSubtitle: "Consultez l'historique de vos soins et gérez vos rendez-vous.",
+    nameLabel: "Nom Complet",
+    emailLabel: "Adresse E-mail",
+    phoneLabel: "Téléphone / WhatsApp",
+    passwordLabel: "Mot de passe",
+    loginSubmit: "Se Connecter",
+    registerSubmit: "Créer mon Compte",
+    noAccountPrompt: "Pas encore de compte ?",
+    haveAccountPrompt: "Déjà inscrit ?",
+    createOneHere: "Inscrivez-vous ici",
+    loginHere: "Connectez-vous ici",
+
     // Common
     language: "Langue",
     selectLanguage: "Sélectionner la langue",
     close: "Fermer",
     save: "Enregistrer",
     delete: "Supprimer",
-    cancel: "Annuler"
+    cancel: "Annuler",
+    change: "Modifier"
   },
 
   ru: {
@@ -404,17 +1081,57 @@ export const translations = {
     fullCalendar: "Полное расписание",
     viewServiceDetails: "Подробнее об услуге",
     bookShort: "Запись",
+    menuAndServices: "Меню и Услуги",
     
     // Hero
     heroBadge: "СПА В МИРАМАРЕ, ГАВАНА",
     heroTitle1: "Искусство Здоровья &",
     heroTitle2: "Абсолютная Релаксация",
     heroSubtitle: "Погрузитесь в частный сенсорный оазис в самом престижном районе Гаваны. Лечебный массаж, гидромассажный комплекс, Japanese Head Spa и холистические ритуалы для тела и души.",
-    heroCtaBook: "Записаться Сейчас",
-    heroCtaExplore: "Посмотреть Ритуалы",
-    heroClientsCount: "+12 000 Довольных Клиентов",
-    heroRating: "4.9 / 5 звезд в Гаване",
-    
+    heroCtaBook: "Онлайн Запись на Процедуру",
+    heroCtaExplore: "Посмотреть Услуги",
+    trustCabins: "Приватные Люкс-Кабинеты",
+    trustTherapists: "Сертифицированные Мастера",
+    trustWhatsApp: "Быстрое Подтверждение в WhatsApp",
+    badgePrivateSuite: "Приватный Сьют",
+    badgePrivateSuiteDesc: "Ароматерапия и Приветственный Напиток",
+
+    // Media Row
+    mediaRecognition: "Высокая оценка гостей со всего мира, посещающих Гавану",
+
+    // About Split
+    aboutTag: "О Нашем Спа-Центре",
+    aboutTitle: "Что Такое Momentos Spa?",
+    aboutDesc: "Уединенный оазис в Мирамаре для тех, кто понимает: качественный отдых — это не роскошь, а главная основа здоровья и энергии.",
+    aboutExploreBtn: "Посмотреть Ритуалы",
+    exclusiveLocation: "Престижный Район",
+    aboutQuote: "\"Забота о своем здоровье и спокойствии должна быть столь же естественной, как дыхание. В Momentos Spa каждая деталь продумана для вашего абсолютного комфорта.\"",
+    aboutBullet1: "100% индивидуальные кабинеты с климат-контролем",
+    aboutBullet2: "Натуральные терапевтические масла и экстракты",
+    aboutBullet3: "Персональное внимание по предварительной записи",
+
+    // Metrics Banner
+    metric1Num: "98%",
+    metric1Label: "ДОВОЛЬНЫХ ГОСТЕЙ",
+    metric1Sub: "Постоянные клиенты возвращаются каждый месяц",
+    metric2Num: "15+",
+    metric2Label: "МАСТЕРОВ",
+    metric2Sub: "Дипломированные специалисты в области красоты",
+    metric3Num: "6 000+",
+    metric3Label: "ПРОЦЕДУР",
+    metric3Sub: "Проведено оздоровительных сеансов",
+    metric4Num: "5 ДНЕЙ",
+    metric4Label: "СР - ВС",
+    metric4Sub: "Расширенный график работы с 10:00 до 19:00",
+
+    // Packages
+    packagesBadge: "⭐ ФИРМЕННЫЕ ПРОГРАММЫ",
+    packagesTitle: "Наши Самые Популярные Ритуалы",
+    packagesSubtitle: "Эксклюзивные холистические программы для глубокого восстановления сил и гармонии.",
+    packagesViewDetail: "Подробнее о ритуале",
+    packagesBookNow: "Записаться на Ритуал",
+    packagesIncludesTag: "Включает полную процедуру, ароматерапию и комплимент от спа.",
+
     // Catalog
     catalogTag: "Полный Каталог",
     catalogTitle: "Процедуры и Цены",
@@ -423,16 +1140,120 @@ export const translations = {
     durationLabel: "Длительность",
     priceLabel: "Стоимость",
     fromPrice: "От",
-    
-    // Categories
-    cat_masajes: "Массажи и Терапия",
-    cat_circuitos: "Термальная Зона и Джакузи",
-    cat_parejas: "Ритуалы для Двоих",
-    cat_headspa: "Japanese Head Spa",
-    cat_faciales: "Уход за Лицом и Телом",
-    cat_estetica: "Ногтевой Сервис и Взгляд",
-    cat_peluqueria: "Парикмахерский Салон",
-    
+
+    // Benefits Section
+    benefitsTag: "ПОЛНОЕ ОБНОВЛЕНИЕ",
+    benefitsTitle: "Преимущества Нашего Терапевтического Спа",
+    benefitsSubtitle: "Каждая процедура в Momentos Spa основана на проверенных мануальных и растительных методиках.",
+    benefit1Title: "Снятие Мышечных Зажимов и Болей",
+    benefit1Desc: "Глубокая проработка шейно-воротниковой зоны и спины для избавления от накопленной усталости.",
+    benefit2Title: "Детоксикация и Клеточное Дыхание",
+    benefit2Desc: "Кедровая сауна и гидромассаж активизируют кровоток и выводят токсины.",
+    benefit3Title: "Ментальный Покой и Глубокий Сон",
+    benefit3Desc: "Снижение уровня стресса и выработка эндорфинов против бессонницы.",
+    benefit4Title: "Абсолютная Приватность и Уют",
+    benefit4Desc: "Одиночные и парные люкс-кабинеты с мягким светом и приятной музыкой без посторонних.",
+
+    // Timeline
+    timelineTag: "ВАШЕ СЕНСОРНОЕ ПУТЕШЕСТВИЕ",
+    timelineTitle: "Идеальный Спа-День в 4 Этапа",
+    timelineSubtitle: "Продумано так, чтобы вы наслаждались каждой минутой без спешки.",
+    time1Title: "10:00 • Встреча и Подбор Ароматов",
+    time1Desc: "Приветствие в лаундже, расслабляющий травяной чай и персональный тест масел.",
+    time2Title: "10:30 • Основная Процедура в Сьюте",
+    time2Desc: "Массаж или японский спа для головы на удобной кушетке с подогретыми полотенцами.",
+    time3Title: "11:45 • Термальная Зона и Джакузи",
+    time3Desc: "Гидромассаж с минеральными солями и сеанс в ароматной кедровой сауне.",
+    time4Title: "12:30 • Отдых с Бокалом Вина и Угощениями",
+    time4Desc: "Свежие фрукты, шоколад и бокал вина на террасе перед возвращением в город.",
+
+    // Comparison Table
+    comparisonTag: "СТАНДАРТЫ КАЧЕСТВА",
+    comparisonTitle: "Почему Выбирают Momentos Spa?",
+    comparisonSubtitle: "Убедитесь в деталях, которые делают наш спа-центр лучшим в Гаване.",
+    compCol1: "Параметр",
+    compCol2: "Momentos Spa Miramar",
+    compCol3: "Обычные Спа-Салоны",
+    compRow1Feature: "Приватность Кабинетов",
+    compRow1Us: "100% Закрытый люкс-сьют для одного или пары",
+    compRow1Them: "Общие залы с тканевыми шторками",
+    compRow2Feature: "Japanese Head Spa",
+    compRow2Us: "Теплый водный водопад Halo и шиацу головы",
+    compRow2Them: "Отсутствует в большинстве салонов",
+    compRow3Feature: "Гидротермальная Зона",
+    compRow3Us: "Частное джакузи с солями + сауна из кедра",
+    compRow3Them: "Ограниченный доступ или общий бассейн",
+    compRow4Feature: "Запись и Подтверждение",
+    compRow4Us: "Мгновенно через WhatsApp и Календарь",
+    compRow4Them: "Долгие звонки без ответа",
+    compRow5Feature: "Расположение и Парковка",
+    compRow5Us: "Тихий зеленый Мирамар с охраняемой парковкой",
+    compRow5Them: "Шумные улицы без удобной парковки",
+
+    // Testimonials
+    testimonialsTag: "РЕАЛЬНЫЕ ОТЗЫВЫ",
+    testimonialsTitle: "Что Говорят Наши Клиенты",
+    testimonialsSubtitle: "Более 12 000 гостей восстановили душевные и физические силы в Мирамаре.",
+    review1Name: "Алехандро Гомес",
+    review1Location: "Гавана, Куба",
+    review1Text: "\"Японский Head Spa — это восторг. Теплый водопад по коже головы полностью снял накопленный стресс. Мастера работают великолепно.\"",
+    review2Name: "Клэр Дюпон",
+    review2Location: "Париж, Франция",
+    review2Text: "\"Забронировали парную программу на годовщину во время поездки в Гавану. Джакузи, массаж и вино оставили прекрасные воспоминания.\"",
+    review3Name: "Марко Росси",
+    review3Location: "Милан, Италия",
+    review3Text: "\"Отличный глубокий массаж. Идеальное давление, чистейший прохладный кабинет. Без сомнения лучший спа в районе Мирамар.\"",
+
+    // FAQ
+    faqTag: "ОТВЕТЫ НА ВОПРОСЫ",
+    faqTitle: "Часто Задаваемые Вопросы",
+    faqSubtitle: "Все, что нужно знать перед посещением нашего спа.",
+    faq1Q: "Как подтверждается запись?",
+    faq1A: "После отправки формы заявка поступает в наш официальный WhatsApp (+53 59710688), где администратор подтверждает визит за несколько минут.",
+    faq2Q: "Какой график работы спа-центра?",
+    faq2A: "Мы открыты со среды по воскресенье с 10:00 до 19:00. Понедельник и вторник — санитарные и выходные дни.",
+    faq3Q: "Что необходимо взять с собой?",
+    faq3A: "Ничего брать не нужно. Мы предоставляем подогретые полотенца, мягкие халаты, тапочки и премиальные косметические средства.",
+    faq4Q: "Можно ли записаться вдвоем в один кабинет?",
+    faq4A: "Да! У нас есть просторные двухместные сьюты для пар и друзей, желающих пройти сеанс одновременно.",
+    faq5Q: "Где именно вы находитесь?",
+    faq5A: "Улица 44 #111 между 3 и 1-й А, район Мирамар, Плайя, Гавана. Для гостей есть бесплатная охраняемая парковка.",
+    faq6Q: "Какие способы оплаты принимаются?",
+    faq6A: "Оплата наличными (USD, EUR, MLC, CUP по текущему курсу) или банковским переводом.",
+
+    // Location & Contact
+    locationTag: "МЫ В ГАВАНЕ",
+    locationTitle: "Ждем Вас в Самом Сердце Мирамара",
+    locationSubtitle: "Тихий, безопасный и зеленый посольский район на 44-й улице #111.",
+    addressTitle: "Адрес",
+    addressDesc: "Улица 44 #111 между 3 и 1-й А, Мирамар, Плайя, Гавана, Куба.",
+    phoneTitle: "Телефон / WhatsApp",
+    phoneDesc: "+53 59710688 (Круглосуточный прием сообщений)",
+    hoursTitle: "Часы Работы",
+    hoursDesc: "Среда — Воскресенье: 10:00 - 19:00 (Понедельник и Вторник — выходные)",
+    mapsBtn: "Открыть на Google Maps",
+    mapsDirections: "Всего 2 квартала от 3-й авеню, рядом с главными отелями Мирамара.",
+
+    // Footer
+    footerSlogan: "Оазис здоровья, отдыха и эстетики в Мирамаре, Гавана. Комплексные спа-программы в уединенных кондиционированных люкс-кабинетах.",
+    footerLinksTitle: "Разделы Сайта",
+    footerContactTitle: "Контакты и Запись",
+    footerHoursTitle: "Рабочие Дни",
+    footerRights: "Все права защищены. Momentos Spa Habana.",
+    footerAdminLink: "Панель Управления",
+
+    // WhatsApp Bubble
+    bubbleOnline: "В сети",
+    bubbleQuickResponse: "Быстрый ответ",
+    bubbleGreeting: "Здравствуйте! ✨ Добро пожаловать в Momentos Spa в Мирамаре. Какую процедуру желаете выбрать?",
+    bubbleQuickOptions: "Быстрые вопросы",
+    bubbleOption1: "📅 Узнать свободное время для записи",
+    bubbleOption2: "💆‍♂️ Программы для пар",
+    bubbleOption3: "✨ Узнать о Japanese Head Spa",
+    bubblePlaceholder: "Напишите ваш вопрос здесь...",
+    bubbleSend: "Отправить",
+    bubbleTooltip: "Написать в WhatsApp (+53 59710688)",
+
     // Service Detail Page
     backToCatalog: "Вернуться в каталог",
     reserveByWhatsApp: "Записаться через WhatsApp (+53 59710688)",
@@ -444,15 +1265,15 @@ export const translations = {
     privateHeatedCabin: "Приватный кабинет с климат-контролем и подогретыми полотенцами",
     aromatherapyWelcome: "Ботаническая ароматерапия и дегустация вина или чая",
     privateParking: "Бесплатная охраняемая парковка и персональное внимание",
-    
-    // Packages
-    signaturePackagesTag: "Фирменные Программы",
-    signaturePackagesTitle: "Наши Самые Эксклюзивные Ритуалы",
-    packageIncludes: "Включает полную процедуру, ароматерапию и комплимент от спа.",
-    
+    therapistTip: "Рекомендация Мастера",
+
     // Booking Modal
     modalBookingTitle: "Запись на Процедуру в Momentos Spa",
     modalBookingSubtitle: "Выберите ритуал, желаемое время и контакты. Ваша бронь будет мгновенно подтверждена через WhatsApp.",
+    step1Title: "1. Процедура",
+    step2Title: "2. Дата и Время",
+    step3Title: "3. Данные",
+    step4Title: "4. Подтверждение",
     selectServiceLabel: "1. Выберите Ритуал или Процедуру",
     selectDateLabel: "2. Выберите Дату (Со Среды по Воскресенье)",
     selectTimeLabel: "3. Свободное Время",
@@ -461,17 +1282,42 @@ export const translations = {
     phonePlaceholder: "Номер телефона / WhatsApp",
     emailPlaceholder: "Электронная почта",
     notesPlaceholder: "Пожелания или комментарии (необязательно)...",
-    confirmBookingWhatsApp: "Подтвердить Запись через WhatsApp",
+    confirmBookingWhatsApp: "Подтвердить и Отправить в WhatsApp",
     closedNotice: "Спа-центр работает со среды по воскресенье. Понедельник и вторник — выходные дни.",
     whatsappRedirectNotice: "Откроется WhatsApp для отправки заявки прямо нашему администратору (+53 59710688).",
-    
+    authRequiredTitle: "Требуется Регистрация Гостя",
+    authRequiredDesc: "Для подтверждения записи и сохранения приватности введите ваше имя, e-mail и телефон.",
+    createAccountBtn: "Создать Новый Аккаунт",
+    haveAccountBtn: "У меня уже есть аккаунт (Войти)",
+    bookingSuccessTitle: "Заявка на Бронирование Принята!",
+    bookingSuccessDesc: "Ваш визит зарегистрирован и передан администратору в WhatsApp (+53 59710688).",
+    finishAndClose: "Завершить и Закрыть",
+    btnBack: "Назад",
+    btnContinue: "Далее",
+
+    // Auth Modal
+    loginTitle: "Вход в Аккаунт",
+    registerTitle: "Регистрация Гостя",
+    authSubtitle: "Просматривайте историю визитов и управляйте бронированиями.",
+    nameLabel: "Имя и Фамилия",
+    emailLabel: "Электронная Почта",
+    phoneLabel: "Телефон / WhatsApp",
+    passwordLabel: "Пароль",
+    loginSubmit: "Войти",
+    registerSubmit: "Зарегистрироваться",
+    noAccountPrompt: "Еще нет аккаунта?",
+    haveAccountPrompt: "Уже зарегистрированы?",
+    createOneHere: "Создать аккаунт",
+    loginHere: "Войти здесь",
+
     // Common
     language: "Язык",
     selectLanguage: "Выберите язык",
     close: "Закрыть",
     save: "Сохранить",
     delete: "Удалить",
-    cancel: "Отмена"
+    cancel: "Отмена",
+    change: "Изменить"
   },
 
   de: {
@@ -499,17 +1345,57 @@ export const translations = {
     fullCalendar: "Vollständiger Kalender",
     viewServiceDetails: "Zur Leistungsseite",
     bookShort: "Buchen",
+    menuAndServices: "Menü & Behandlungen",
     
     // Hero
     heroBadge: "SANCTUARY IN MIRAMAR, HAVANNA",
     heroTitle1: "Die Kunst des Wohlbefindens &",
     heroTitle2: "Absolute Entspannung",
     heroSubtitle: "Tauchen Sie ein in eine private Oase der Sinne im Herzen von Miramar. Therapeutische Massagen, Thermalbad, Japanese Head Spa und ganzheitliche Rituale zur Regeneration von Körper und Geist.",
-    heroCtaBook: "Jetzt Termin Buchen",
-    heroCtaExplore: "Rituale Entdecken",
-    heroClientsCount: "+12.000 Zufriedene Kunden",
-    heroRating: "4.9 / 5 Sterne in Havanna",
-    
+    heroCtaBook: "Online Termin Buchen",
+    heroCtaExplore: "Behandlungen Ansehen",
+    trustCabins: "Private Klimatisierte Suiten",
+    trustTherapists: "Zertifizierte Therapeutinnen",
+    trustWhatsApp: "Sofortige Bestätigung via WhatsApp",
+    badgePrivateSuite: "Private Suite",
+    badgePrivateSuiteDesc: "Aromatherapie & Willkommens-Drink",
+
+    // Media Row
+    mediaRecognition: "Geschätzt von internationalen Reisenden aus aller Welt in Havanna",
+
+    // About Split
+    aboutTag: "Lernen Sie Uns Kennen",
+    aboutTitle: "Was ist Momentos Spa?",
+    aboutDesc: "Ein exklusiver Rückzugsort in Miramar für Menschen, die wissen, dass Erholung kein Luxus, sondern eine Lebensnotwendigkeit ist.",
+    aboutExploreBtn: "Rituale Entdecken",
+    exclusiveLocation: "Exklusive Lage",
+    aboutQuote: "\"Die Fürsorge für die eigene Gesundheit und innere Ruhe sollte so natürlich sein wie das Atmen. Bei Momentos Spa ist jedes Detail auf Sie abgestimmt.\"",
+    aboutBullet1: "100% private, klimatisierte Suiten",
+    aboutBullet2: "Naturreine botanische ätherische Öle",
+    aboutBullet3: "Individuelle Betreuung nach Terminvereinbarung",
+
+    // Metrics Banner
+    metric1Num: "98%",
+    metric1Label: "ZUFRIEDENHEIT",
+    metric1Sub: "Gäste, die jeden Monat wiederkommen",
+    metric2Num: "15+",
+    metric2Label: "THERAPEUTINNEN",
+    metric2Sub: "Zertifizierte Fachkräfte für Gesundheit & Beauty",
+    metric3Num: "6.000+",
+    metric3Label: "SITZUNGEN",
+    metric3Sub: "Abgeschlossene Wellness-Erlebnisse",
+    metric4Num: "5 TAGE",
+    metric4Label: "MI - SO",
+    metric4Sub: "Erweiterte Öffnungszeiten von 10 bis 19 Uhr",
+
+    // Packages
+    packagesBadge: "⭐ SIGNATURE ERLEBNISSE",
+    packagesTitle: "Unsere Beliebtesten Signature-Rituale",
+    packagesSubtitle: "Ausgewählte ganzheitliche Therapien für vollkommene Entschleunigung und sensorische Revitalisierung.",
+    packagesViewDetail: "Details ansehen",
+    packagesBookNow: "Dieses Ritual Buchen",
+    packagesIncludesTag: "Beinhaltet komplette Behandlung, Aromatherapie und Willkommensgetränk.",
+
     // Catalog
     catalogTag: "Kompletter Katalog",
     catalogTitle: "Behandlungen & Preise",
@@ -518,16 +1404,120 @@ export const translations = {
     durationLabel: "Dauer",
     priceLabel: "Preis",
     fromPrice: "Ab",
-    
-    // Categories
-    cat_masajes: "Massagen & Therapien",
-    cat_circuitos: "Thermen & Whirlpool",
-    cat_parejas: "Paar-Rituale",
-    cat_headspa: "Japanese Head Spa",
-    cat_faciales: "Gesichts- & Körperpflege",
-    cat_estetica: "Nägel & Wimpern-/Brauendesign",
-    cat_peluqueria: "Friseur & Salon",
-    
+
+    // Benefits Section
+    benefitsTag: "VOLLKOMMENE ERNEUERUNG",
+    benefitsTitle: "Vorteile Unserer Therapeutischen Oase",
+    benefitsSubtitle: "Jede Behandlung bei Momentos Spa verbindet klinische und botanische Techniken für Ihr Wohlbefinden.",
+    benefit1Title: "Linderung von Schmerzen & Verspannungen",
+    benefit1Desc: "Lösen von Nacken- und Rückenblockaden durch tiefenwirksame manuelle Griffe.",
+    benefit2Title: "Zelluläre Entgiftung & Sauerstoffversorgung",
+    benefit2Desc: "Die Kombination aus Sauna und Whirlpool regt Durchblutung und Tiefenreinigung an.",
+    benefit3Title: "Seelische Ruhe & Erholsamer Schlaf",
+    benefit3Desc: "Signifikante Cortisolsenkung und Freisetzung wohltuender Endorphine.",
+    benefit4Title: "Absolute Privatsphäre & Diskretion",
+    benefit4Desc: "Einzel- und Paarsuiten mit eigenem Klimasystem und sanfter Beleuchtung ohne Störungen.",
+
+    // Timeline
+    timelineTag: "IHRE SINNESREISE",
+    timelineTitle: "Ihr Perfekter Spa-Tag in 4 Phasen",
+    timelineSubtitle: "Entwickelt, um ohne jede Eile die Ruhe unseres Gartens in Miramar zu genießen.",
+    time1Title: "10:00 • Ankunft & Sensorischer Test",
+    time1Desc: "Empfang im klimatisierten Salon, beruhigender Tee und Auswahl der ätherischen Öle.",
+    time2Title: "10:30 • Hauptbehandlung in der Suite",
+    time2Desc: "Tiefenmassage oder Japanese Head Spa auf vorgewärmten Komfortliegen.",
+    time3Title: "11:45 • Thermalkreislauf & Whirlpool",
+    time3Desc: "Hydromassage mit Mineralsalzen gefolgt von Zedernholz-Trockensauna.",
+    time4Title: "12:30 • Entspannung mit Wein & Snacks",
+    time4Desc: "Frische Früchte, Pralinen und ein Glas Wein auf unserer privaten Veranda.",
+
+    // Comparison Table
+    comparisonTag: "QUALITÄTSSTANDARDS",
+    comparisonTitle: "Warum Momentos Spa Einzigartig ist",
+    comparisonSubtitle: "Entdecken Sie die Nuancen, die unser Refugium zu Havannas erster Adresse machen.",
+    compCol1: "Merkmal",
+    compCol2: "Momentos Spa Miramar",
+    compCol3: "Klassische Spas",
+    compRow1Feature: "Privatsphäre der Suiten",
+    compRow1Us: "100% Private Suite für Einzelgäste oder Paare",
+    compRow1Them: "Gemeinschaftsräume nur durch Vorhänge getrennt",
+    compRow2Feature: "Japanese Head Spa",
+    compRow2Us: "Warme Halo-Wasserkaskade und Shiatsu-Massage",
+    compRow2Them: "In den meisten Spas nicht verfügbar",
+    compRow3Feature: "Hydrotherapie & Sauna",
+    compRow3Us: "Privater Whirlpool mit Salzen + Zeder-Sauna",
+    compRow3Them: "Eingeschränkter oder überfüllter Zugang",
+    compRow4Feature: "Buchung & Bestätigung",
+    compRow4Us: "Sofort via WhatsApp und Online-Kalender",
+    compRow4Them: "Langsame Telefonate ohne Rückruf",
+    compRow5Feature: "Lage & Parkplätze",
+    compRow5Us: "Ruhiges Miramar mit bewachtem Parkplatz",
+    compRow5Them: "Hektische Straßen ohne Parkmöglichkeiten",
+
+    // Testimonials
+    testimonialsTag: "ECHTE ERFAHRUNGEN",
+    testimonialsTitle: "Was Unsere Gäste Berichten",
+    testimonialsSubtitle: "Über 12.000 Gäste aus Kuba und aller Welt haben bei uns neue Energie geschöpft.",
+    review1Name: "Alejandro Gómez",
+    review1Location: "Havanna, Kuba",
+    review1Text: "\"Das japanische Head Spa ist Weltklasse. Das warme Wasser über der Kopfhaut hat wochenlange Verspannungen sofort gelöst.\"",
+    review2Name: "Claire Dupont",
+    review2Location: "Paris, Frankreich",
+    review2Text: "\"Wir haben das Paarpaket für unser Jubiläum während unserer Kubareise gebucht. Privater Whirlpool, tolle Massagen und herrlicher Wein.\"",
+    review3Name: "Marco Rossi",
+    review3Location: "Mailand, Italien",
+    review3Text: "\"Hervorragende Tiefengewebsmassage. Genau der richtige Druck, sauberste und kühle Kabine. Das mit Abstand beste Spa in Miramar.\"",
+
+    // FAQ
+    faqTag: "HÄUFIGE FRAGEN",
+    faqTitle: "Fragen & Antworten",
+    faqSubtitle: "Alles Wissenswerte vor Ihrem Wohlfühltermin.",
+    faq1Q: "Wie wird der Termin bestätigt?",
+    faq1A: "Nach Absenden des Formulars geht Ihre Anfrage direkt an unseren offiziellen WhatsApp-Service (+53 59710688), wo unser Empfang innerhalb weniger Minuten bestätigt.",
+    faq2Q: "An welchen Tagen ist geöffnet?",
+    faq2A: "Wir haben von Mittwoch bis Sonntag von 10:00 bis 19:00 Uhr geöffnet. Montag und Dienstag sind Ruhetage für gründliche Pflege und Erholung.",
+    faq3Q: "Was muss ich mitbringen?",
+    faq3A: "Überhaupt nichts. Wir stellen vorgewärmte Handtücher, flauschige Bademäntel, Einwegslipper und erstklassige Pflegeprodukte bereit.",
+    faq4Q: "Können zwei Personen denselben Raum nutzen?",
+    faq4A: "Ja! Wir verfügen über geräumige Doppelsuiten speziell für Paare oder Freund(inn)en für gleichzeitige Behandlungen.",
+    faq5Q: "Wo genau in Miramar befindet sich das Spa?",
+    faq5A: "Calle 44 #111 zw. 3ra u. 1ra A, Miramar, Playa, Havanna. Kostenloser bewachter Parkplatz vorhanden.",
+    faq6Q: "Welche Zahlungsmittel werden akzeptiert?",
+    faq6A: "Barzahlung (EUR, USD, MLC, CUP zum Tageskurs) sowie nationale und internationale Banküberweisungen.",
+
+    // Location & Contact
+    locationTag: "STANDORT IN HAVANNA",
+    locationTitle: "Besuchen Sie Uns im Herzen von Miramar",
+    locationSubtitle: "Eine ruhige, grüne und sichere Wohngegend in der Calle 44 #111.",
+    addressTitle: "Adresse",
+    addressDesc: "Calle 44 #111 zw. 3ra u. 1ra A, Miramar, Playa, Havanna, Kuba.",
+    phoneTitle: "Telefon / WhatsApp",
+    phoneDesc: "+53 59710688 (Durchgehender Gästeservice)",
+    hoursTitle: "Öffnungszeiten",
+    hoursDesc: "Mittwoch bis Sonntag: 10:00 - 19:00 Uhr (Montag & Dienstag geschlossen)",
+    mapsBtn: "In Google Maps Öffnen",
+    mapsDirections: "Nur 2 Straßen von der 3ra Avenida entfernt, nahe den führenden Hotels von Miramar.",
+
+    // Footer
+    footerSlogan: "Zufluchtsort für Gesundheit, Entspannung und Ästhetik in Miramar, Havanna. Ganzheitliche Behandlungen in privaten Suiten.",
+    footerLinksTitle: "Navigation",
+    footerContactTitle: "Kontakt & Buchung",
+    footerHoursTitle: "Öffnungstage",
+    footerRights: "Alle Rechte vorbehalten. Momentos Spa Habana.",
+    footerAdminLink: "Admin-Bereich",
+
+    // WhatsApp Bubble
+    bubbleOnline: "Online",
+    bubbleQuickResponse: "Schnelle Antwort",
+    bubbleGreeting: "Hallo! ✨ Willkommen bei Momentos Spa in Miramar. Wie dürfen wir Sie heute verwöhnen?",
+    bubbleQuickOptions: "Schnelloptionen",
+    bubbleOption1: "📅 Freie Termine anfragen",
+    bubbleOption2: "💆‍♂️ Paar-Pakete entdecken",
+    bubbleOption3: "✨ Japanese Head Spa Details",
+    bubblePlaceholder: "Ihre Nachricht hier eingeben...",
+    bubbleSend: "Senden",
+    bubbleTooltip: "Mit uns chatten (+53 59710688)",
+
     // Service Detail Page
     backToCatalog: "Zurück zum Katalog",
     reserveByWhatsApp: "Über WhatsApp buchen (+53 59710688)",
@@ -539,15 +1529,15 @@ export const translations = {
     privateHeatedCabin: "Private klimatisierte Kabine und vorgewärmte Handtücher",
     aromatherapyWelcome: "Botanische Aromatherapie und Wein- oder Kräuterteeverkostung",
     privateParking: "Kostenloser privater Parkplatz und persönliche Betreuung",
-    
-    // Packages
-    signaturePackagesTag: "Signature-Erlebnisse",
-    signaturePackagesTitle: "Unsere Exklusivsten Rituale",
-    packageIncludes: "Beinhaltet komplette Behandlung, Aromatherapie und Willkommensgetränk.",
-    
+    therapistTip: "Empfehlung der Therapeutin",
+
     // Booking Modal
     modalBookingTitle: "Termin bei Momentos Spa Buchen",
     modalBookingSubtitle: "Wählen Sie Ritual, Wunschzeit und Ihre Daten. Ihre Buchung wird sofort via WhatsApp bestätigt.",
+    step1Title: "1. Behandlung",
+    step2Title: "2. Datum & Zeit",
+    step3Title: "3. Gastkonto",
+    step4Title: "4. Bestätigung",
     selectServiceLabel: "1. Ritual oder Behandlung Wählen",
     selectDateLabel: "2. Datum Wählen (Mittwoch bis Sonntag)",
     selectTimeLabel: "3. Verfügbare Uhrzeit",
@@ -556,16 +1546,41 @@ export const translations = {
     phonePlaceholder: "Mobiltelefon / WhatsApp",
     emailPlaceholder: "E-Mail-Adresse",
     notesPlaceholder: "Besondere Wünsche oder Anmerkungen (optional)...",
-    confirmBookingWhatsApp: "Buchung via WhatsApp Bestätigen",
+    confirmBookingWhatsApp: "Bestätigen & via WhatsApp Senden",
     closedNotice: "Das Spa ist von Mittwoch bis Sonntag geöffnet. Montag und Dienstag wegen Pflege und Erholung geschlossen.",
     whatsappRedirectNotice: "WhatsApp öffnet sich, um die Buchung direkt an unseren Empfang zu senden (+53 59710688).",
-    
+    authRequiredTitle: "Gästeregistrierung Erforderlich",
+    authRequiredDesc: "Um die Verbindlichkeit der Termine in Miramar zu gewährleisten, geben Sie bitte Name, E-Mail und Telefonnummer an.",
+    createAccountBtn: "Neues Konto Erstellen",
+    haveAccountBtn: "Ich habe bereits ein Konto",
+    bookingSuccessTitle: "Buchungsanfrage Erfasst!",
+    bookingSuccessDesc: "Ihr Termin wurde im System hinterlegt und an unseren WhatsApp-Empfang übermittelt (+53 59710688).",
+    finishAndClose: "Abschließen und Schließen",
+    btnBack: "Zurück",
+    btnContinue: "Weiter",
+
+    // Auth Modal
+    loginTitle: "Anmelden",
+    registerTitle: "Gästekonto Erstellen",
+    authSubtitle: "Sehen Sie Ihre Buchungshistorie ein und verwalten Sie Termine.",
+    nameLabel: "Vollständiger Name",
+    emailLabel: "E-Mail-Adresse",
+    phoneLabel: "Telefon / WhatsApp",
+    passwordLabel: "Passwort",
+    loginSubmit: "In Mein Konto Einloggen",
+    registerSubmit: "Konto Erstellen",
+    noAccountPrompt: "Noch kein Konto?",
+    haveAccountPrompt: "Bereits registriert?",
+    createOneHere: "Hier registrieren",
+    loginHere: "Hier anmelden",
+
     // Common
     language: "Sprache",
     selectLanguage: "Sprache wählen",
     close: "Schließen",
     save: "Speichern",
     delete: "Löschen",
-    cancel: "Abbrechen"
+    cancel: "Abbrechen",
+    change: "Ändern"
   }
 };

@@ -69,15 +69,15 @@ export default function HeroSection({ onOpenBooking }) {
             <div className="pt-3 flex flex-wrap items-center gap-4 sm:gap-6 text-xs text-cream-200/90 font-medium">
               <span className="flex items-center gap-1.5">
                 <CheckCircle2 className="w-4 h-4 text-gold" />
-                Cabinas Privadas Climatizadas
+                {t('trustCabins', 'Cabinas Privadas Climatizadas')}
               </span>
               <span className="flex items-center gap-1.5">
                 <CheckCircle2 className="w-4 h-4 text-gold" />
-                Terapeutas Certificadas
+                {t('trustTherapists', 'Terapeutas Certificadas')}
               </span>
               <span className="flex items-center gap-1.5">
                 <CheckCircle2 className="w-4 h-4 text-gold" />
-                Confirmación por WhatsApp
+                {t('trustWhatsApp', 'Confirmación por WhatsApp')}
               </span>
             </div>
 
@@ -91,8 +91,8 @@ export default function HeroSection({ onOpenBooking }) {
             <Star className="w-5 h-5 fill-gold text-gold" />
           </div>
           <div>
-            <div className="text-xs font-bold text-stone-900">4.9 / 5 Estrellas</div>
-            <div className="text-[11px] text-stone-500">+1,500 Clientes Satisfechos</div>
+            <div className="text-xs font-bold text-stone-900">4.9 / 5 {t('reviewsLabel', 'Estrellas')}</div>
+            <div className="text-[11px] text-stone-500">{t('badgePrivateSuiteDesc', 'Aromaterapia & Cóctel de Bienvenida')}</div>
           </div>
         </div>
 

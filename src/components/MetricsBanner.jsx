@@ -1,11 +1,13 @@
 import React from 'react';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function MetricsBanner() {
+  const { t } = useLanguage();
   const metrics = [
-    { number: "98%", label: "SATISFACCIÓN", sub: "Clientes que repiten su visita cada mes" },
-    { number: "15+", label: "TERAPEUTAS", sub: "Especialistas certificadas en salud & belleza" },
-    { number: "6,000+", label: "SESIONES", sub: "Experiencias de bienestar completadas" },
-    { number: "5 DÍAS", label: "MIÉ - DOM", sub: "Horarios extendidos de 10am a 7pm" }
+    { number: t('metric1Num', "98%"), label: t('metric1Label', "SATISFACCIÓN"), sub: t('metric1Sub', "Clientes que repiten su visita cada mes") },
+    { number: t('metric2Num', "15+"), label: t('metric2Label', "TERAPEUTAS"), sub: t('metric2Sub', "Especialistas certificadas en salud & belleza") },
+    { number: t('metric3Num', "6,000+"), label: t('metric3Label', "SESIONES"), sub: t('metric3Sub', "Experiencias de bienestar completadas") },
+    { number: t('metric4Num', "5 DÍAS"), label: t('metric4Label', "MIÉ - DOM"), sub: t('metric4Sub', "Horarios extendidos de 10am a 7pm") }
   ];
 
   return (

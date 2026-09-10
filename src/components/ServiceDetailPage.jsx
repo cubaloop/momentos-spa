@@ -6,8 +6,9 @@ import {
 import { allServices } from '../data/servicesData';
 import { useLanguage } from '../context/LanguageContext';
 
-export default function ServiceDetailPage({ service, onBack, onOpenBooking, onSelectOtherService }) {
-  const { t } = useLanguage();
+export default function ServiceDetailPage({ service: rawService, onBack, onOpenBooking, onSelectOtherService }) {
+  const { t, getLocalizedService, localizedServices } = useLanguage();
+  const service = getLocalizedService(rawService);
   const [activePhoto, setActivePhoto] = useState(service?.image || './assets/servicios_spa.jpg');
   const [copied, setCopied] = useState(false);
 
@@ -21,19 +22,19 @@ export default function ServiceDetailPage({ service, onBack, onOpenBooking, onSe
   if (!service) {
     return (
       <div className="max-w-4xl mx-auto py-20 px-4 text-center">
-        <h2 className="text-2xl font-serif-title font-bold text-mahogany-950 mb-4">Servicio no encontrado</h2>
+        <h2 className="text-2xl font-serif-title font-bold text-mahogany-950 mb-4">{t('serviceNotFound', 'Servicio no encontrado')}</h2>
         <button 
           onClick={onBack}
           className="inline-flex items-center gap-2 px-6 py-3 bg-mahogany-950 text-white rounded-full font-semibold"
         >
           <ArrowLeft className="w-4 h-4" />
-          Volver a todos los servicios
+          {t('backToCatalog', 'Volver al catálogo')}
         </button>
       </div>
     );
   }
 
-  const relatedServices = allServices
+  const relatedServices = (localizedServices && localizedServices.length > 0 ? localizedServices : allServices)
     .filter(s => s.id !== service.id && (s.categoryId === service.categoryId || s.subcategoryId === service.subcategoryId))
     .slice(0, 3);
 
@@ -272,7 +273,7 @@ export default function ServiceDetailPage({ service, onBack, onOpenBooking, onSe
                 <div className="mt-4 p-4 rounded-2xl bg-cream-50 border border-mahogany-900/15 flex items-start gap-3 text-xs text-stone-700">
                   <Info className="w-4 h-4 text-mahogany-800 shrink-0 mt-0.5" />
                   <div>
-                    <span className="font-bold text-mahogany-950">Consejo del Terapeuta: </span>
+                    <span className="font-bold text-mahogany-950">{t('therapistTip', 'Consejo del Terapeuta')}: </span>
                     <span>{service.recommendations}</span>
                   </div>
                 </div>
@@ -323,7 +324,7 @@ export default function ServiceDetailPage({ service, onBack, onOpenBooking, onSe
             {service.includes && service.includes.length > 0 && (
               <div className="bg-mahogany-950 text-white rounded-3xl p-6 sm:p-8 space-y-3 shadow-xl">
                 <div className="text-gold uppercase tracking-widest text-[11px] font-bold">Servicio Integral Premium</div>
-                <h3 className="text-lg sm:text-xl font-serif-title font-bold">¿Qué incluye tu reserva?</h3>
+                <h3 className="text-lg sm:text-xl font-serif-title font-bold">{t('includesTitle', 'Qué Incluye Tu Reserva')}</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-2">
                   {service.includes.map((inc, idx) => (
                     <div key={idx} className="flex items-center gap-2 text-xs text-cream-200">

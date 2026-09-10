@@ -17,7 +17,8 @@ export default function Navbar({
 }) {
   const { user, logout, isAdmin } = useAuth();
   const { isOpen, statusText, detailText, havanaTimeString } = useCubaStatus();
-  const { t } = useLanguage();
+  const { t, localizedCategories } = useLanguage();
+  const cats = localizedCategories && localizedCategories.length > 0 ? localizedCategories : categoriesData;
   const [megaMenuOpen, setMegaMenuOpen] = useState(false);
   const [activeCategoryIndex, setActiveCategoryIndex] = useState(0);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -40,7 +41,7 @@ export default function Navbar({
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  const activeCategory = categoriesData[activeCategoryIndex] || categoriesData[0];
+  const activeCategory = cats[activeCategoryIndex] || cats[0];
 
   const handleServiceClick = (srv) => {
     setMegaMenuOpen(false);
@@ -116,7 +117,7 @@ export default function Navbar({
                       <div className="px-2 py-1 text-[11px] font-bold uppercase tracking-wider text-stone-400">
                         {t('categoriesLabel', 'Categorías')}
                       </div>
-                      {categoriesData.map((cat, idx) => (
+                      {cats.map((cat, idx) => (
                         <button
                           key={cat.id}
                           onClick={() => setActiveCategoryIndex(idx)}
@@ -392,7 +393,7 @@ export default function Navbar({
 
           {/* Accordion Categories */}
           <div className="space-y-2">
-            {categoriesData.map((cat) => {
+            {cats.map((cat) => {
               const isCatExpanded = mobileExpandedCat === cat.id;
 
               return (

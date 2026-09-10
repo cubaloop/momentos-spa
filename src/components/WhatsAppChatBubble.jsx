@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { MessageCircle, X, Send, Sparkles } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function WhatsAppChatBubble() {
+  const { t } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
   const [customMsg, setCustomMsg] = useState('');
 
@@ -31,7 +33,7 @@ export default function WhatsAppChatBubble() {
               <div>
                 <h4 className="font-bold text-sm">Momentos Spa Habana</h4>
                 <p className="text-[11px] text-gold flex items-center gap-1">
-                  <span>En línea</span> • <span>Respuesta rápida</span>
+                  <span>{t('bubbleOnline', 'En línea')}</span> • <span>{t('bubbleQuickResponse', 'Respuesta rápida')}</span>
                 </p>
               </div>
             </div>
@@ -46,71 +48,66 @@ export default function WhatsAppChatBubble() {
           {/* Body */}
           <div className="p-4 bg-cream-50 space-y-3 text-xs">
             <div className="bg-white p-3 rounded-2xl rounded-tl-sm border border-stone-200/80 text-stone-700 shadow-sm leading-relaxed">
-              ¡Hola! ✨ Bienvenido/a a <strong>Momentos Spa</strong> en Miramar. ¿En qué podemos consentirte hoy?
+              {t('bubbleGreeting', '¡Hola! ✨ Bienvenido/a a Momentos Spa en Miramar. ¿En qué podemos consentirte hoy?')}
             </div>
 
             <div className="space-y-1.5 pt-1">
-              <div className="text-[10px] uppercase font-bold text-stone-400 px-1">Opciones rápidas</div>
+              <div className="text-[10px] uppercase font-bold text-stone-400 px-1">
+                {t('bubbleQuickOptions', 'Opciones rápidas')}
+              </div>
               <button
                 onClick={() => handleSend("Hola, deseo consultar disponibilidad para reservar hoy o esta semana.")}
                 className="w-full text-left p-2 rounded-xl bg-white hover:bg-cream-100 border border-stone-200 text-stone-700 text-xs font-medium transition-colors"
               >
-                📅 Consultar disponibilidad de citas
+                {t('bubbleOption1', '📅 Consultar disponibilidad de citas')}
               </button>
               <button
-                onClick={() => handleSend("Hola, me gustaría información detallada sobre el Japanese Head Spa.")}
+                onClick={() => handleSend("Hola, quisiera información sobre los rituales y paquetes para parejas.")}
                 className="w-full text-left p-2 rounded-xl bg-white hover:bg-cream-100 border border-stone-200 text-stone-700 text-xs font-medium transition-colors"
               >
-                💆 Info del Japanese Head Spa
+                {t('bubbleOption2', '💆‍♂️ Preguntar por paquetes para parejas')}
               </button>
               <button
-                onClick={() => handleSend("Hola, deseo información sobre paquetes de spa para parejas.")}
+                onClick={() => handleSend("Hola, me gustaría saber más sobre el Japanese Head Spa y sus tarifas.")}
                 className="w-full text-left p-2 rounded-xl bg-white hover:bg-cream-100 border border-stone-200 text-stone-700 text-xs font-medium transition-colors"
               >
-                ❤️ Ritual en Pareja Deluxe
+                {t('bubbleOption3', '✨ Información de Japanese Head Spa')}
               </button>
             </div>
 
-            {/* Custom Input */}
-            <form 
-              onSubmit={(e) => {
-                e.preventDefault();
-                handleSend();
-              }}
-              className="pt-2 flex items-center gap-2"
-            >
+            {/* Input Row */}
+            <div className="pt-2 flex items-center gap-2">
               <input
                 type="text"
                 value={customMsg}
                 onChange={(e) => setCustomMsg(e.target.value)}
-                placeholder="Escribe tu mensaje..."
-                className="flex-1 px-3 py-2 text-xs rounded-xl border border-stone-300 focus:outline-none focus:border-mahogany-900 bg-white"
+                onKeyDown={(e) => { if (e.key === 'Enter') handleSend(); }}
+                placeholder={t('bubblePlaceholder', 'Escribe tu consulta aquí...')}
+                className="flex-1 bg-white border border-stone-300 rounded-full px-3 py-2 text-xs focus:outline-none focus:border-mahogany-900"
               />
               <button
-                type="submit"
-                className="p-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white shadow-md transition-colors"
+                onClick={() => handleSend()}
+                className="p-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-full transition-colors shrink-0 shadow-md"
               >
-                <Send className="w-4 h-4" />
+                <Send className="w-3.5 h-3.5" />
               </button>
-            </form>
+            </div>
           </div>
 
-          <div className="bg-cream-100 px-4 py-2 border-t border-stone-200/60 text-center text-[10px] text-stone-500">
-            Conexión directa con +53 59710688
-          </div>
         </div>
       )}
 
-      {/* Trigger Button */}
+      {/* Floating Action Trigger Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        title="Chatear por WhatsApp con Momentos Spa"
-        className="flex items-center gap-2 bg-[#25D366] hover:bg-[#20ba59] text-white p-3.5 sm:px-5 sm:py-3.5 rounded-full shadow-2xl hover:scale-105 transition-all duration-200 group"
+        title={t('bubbleTooltip', 'Chatea con nosotros (+53 59710688)')}
+        className="w-14 h-14 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white flex items-center justify-center shadow-[0_8px_30px_rgba(37,211,102,0.45)] hover:scale-110 transition-all duration-300 relative group"
       >
-        <MessageCircle className="w-6 h-6 fill-white" />
-        <span className="font-bold text-xs sm:text-sm hidden sm:inline">
-          {isOpen ? 'Cerrar Chat' : 'Chatear por WhatsApp'}
+        <span className="absolute -top-1 -right-1 flex h-4 w-4">
+          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+          <span className="relative inline-flex rounded-full h-4 w-4 bg-emerald-400 border-2 border-white"></span>
         </span>
+        {isOpen ? <X className="w-7 h-7" /> : <MessageCircle className="w-7 h-7 fill-white" />}
       </button>
 
     </div>

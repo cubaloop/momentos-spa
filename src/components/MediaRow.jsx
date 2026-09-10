@@ -1,6 +1,8 @@
 import React from 'react';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function MediaRow() {
+  const { t } = useLanguage();
   const mentions = [
     { label: "Miramar Luxury Guide", icon: "💎" },
     { label: "Habana Bienestar & Salud", icon: "🌿" },
@@ -13,7 +15,7 @@ export default function MediaRow() {
     <div className="border-y border-stone-200/70 bg-cream-50/70 py-6 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="text-center text-[11px] uppercase tracking-[0.25em] font-bold text-stone-400 mb-4">
-          Reconocido por clientes de todo el mundo en La Habana
+          {t('mediaRecognition', 'Reconocido por clientes de todo el mundo en La Habana')}
         </div>
         <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-12 md:gap-16 opacity-75">
           {mentions.map((item, idx) => (

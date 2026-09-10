@@ -4,10 +4,11 @@ import { Calendar, Clock, Sparkles, Eye, ChevronRight } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 export default function ServicesCatalog({ onOpenBooking, onNavigateToService }) {
-  const { t } = useLanguage();
-  const [selectedCatId, setSelectedCatId] = useState(categoriesData[0].id);
+  const { t, localizedCategories } = useLanguage();
+  const cats = localizedCategories && localizedCategories.length > 0 ? localizedCategories : categoriesData;
+  const [selectedCatId, setSelectedCatId] = useState(cats[0].id);
 
-  const currentCat = categoriesData.find(c => c.id === selectedCatId) || categoriesData[0];
+  const currentCat = cats.find(c => c.id === selectedCatId) || cats[0];
 
   return (
     <section id="servicios" className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
@@ -27,7 +28,7 @@ export default function ServicesCatalog({ onOpenBooking, onNavigateToService }) 
 
       {/* Category Tabs */}
       <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-10">
-        {categoriesData.map((cat) => (
+        {cats.map((cat) => (
           <button
             key={cat.id}
             onClick={() => setSelectedCatId(cat.id)}
