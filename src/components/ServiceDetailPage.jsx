@@ -4,8 +4,10 @@ import {
   ShieldCheck, Heart, Share2, Phone, MapPin, ChevronRight, Info, Award
 } from 'lucide-react';
 import { allServices } from '../data/servicesData';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function ServiceDetailPage({ service, onBack, onOpenBooking, onSelectOtherService }) {
+  const { t } = useLanguage();
   const [activePhoto, setActivePhoto] = useState(service?.image || './assets/servicios_spa.jpg');
   const [copied, setCopied] = useState(false);
 
@@ -71,7 +73,7 @@ export default function ServiceDetailPage({ service, onBack, onOpenBooking, onSe
               className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-cream-100 hover:bg-mahogany-950 hover:text-white transition-all font-bold text-xs text-mahogany-950 border border-stone-200 shrink-0 shadow-sm"
             >
               <ArrowLeft className="w-3.5 h-3.5" />
-              <span>Volver</span>
+              <span>{t('backToCatalog', 'Volver')}</span>
             </button>
             
             <div className="hidden sm:flex items-center gap-1.5 text-stone-400 truncate">
@@ -99,7 +101,7 @@ export default function ServiceDetailPage({ service, onBack, onOpenBooking, onSe
               className="px-4 py-2 bg-mahogany-950 hover:bg-mahogany-900 text-white text-xs font-bold rounded-full shadow-md hover:shadow-lg transition-all flex items-center gap-1.5"
             >
               <Calendar className="w-3.5 h-3.5 text-gold" />
-              <span>Agendar Cita</span>
+              <span>{t('bookInCalendar', 'Agendar Cita')}</span>
             </button>
           </div>
 
@@ -244,7 +246,7 @@ export default function ServiceDetailPage({ service, onBack, onOpenBooking, onSe
                   className="w-full sm:w-auto px-6 py-2.5 bg-emerald-700 hover:bg-emerald-800 text-white rounded-full font-semibold text-xs shadow-md transition-all flex items-center justify-center gap-2"
                 >
                   <Phone className="w-3.5 h-3.5" />
-                  <span>Reservar por WhatsApp</span>
+                  <span>{t('reserveByWhatsApp', 'Reservar por WhatsApp')}</span>
                 </a>
               </div>
             </div>
@@ -282,7 +284,7 @@ export default function ServiceDetailPage({ service, onBack, onOpenBooking, onSe
               <div className="bg-white rounded-3xl p-6 sm:p-8 border border-stone-200 space-y-4 shadow-sm">
                 <h3 className="text-lg sm:text-xl font-serif-title font-bold text-mahogany-950 flex items-center gap-2">
                   <CheckCircle2 className="w-5 h-5 text-emerald-600" />
-                  <span>Beneficios Comprobados</span>
+                  <span>{t('provenBenefitsTitle', 'Beneficios Comprobados')}</span>
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {service.benefits.map((benefit, idx) => (
@@ -299,7 +301,7 @@ export default function ServiceDetailPage({ service, onBack, onOpenBooking, onSe
             {service.steps && service.steps.length > 0 && (
               <div className="bg-white rounded-3xl p-6 sm:p-8 border border-stone-200 space-y-4 shadow-sm">
                 <h3 className="text-lg sm:text-xl font-serif-title font-bold text-mahogany-950">
-                  El Paso a Paso de tu Experiencia
+                  {t('stepByStepTitle', 'El Paso a Paso de tu Experiencia')}
                 </h3>
                 <div className="space-y-3">
                   {service.steps.map((st, idx) => (
@@ -344,7 +346,7 @@ export default function ServiceDetailPage({ service, onBack, onOpenBooking, onSe
           <div className="flex items-center justify-between mb-6">
             <div>
               <span className="text-xs font-bold uppercase tracking-wider text-mahogany-800">Continuar Explorando</span>
-              <h3 className="text-2xl font-serif-title font-bold text-mahogany-950">Otros Rituales Recomendados</h3>
+              <h3 className="text-2xl font-serif-title font-bold text-mahogany-950">{t('alsoRecommended', 'Otros Rituales Recomendados')}</h3>
             </div>
             <button
               onClick={onBack}

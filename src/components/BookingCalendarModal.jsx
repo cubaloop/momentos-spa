@@ -2,9 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { X, Calendar as CalendarIcon, Clock, User, Phone, Mail, CheckCircle2, ChevronLeft, ChevronRight, MessageSquare, AlertCircle } from 'lucide-react';
 import { allServices, categoriesData } from '../data/servicesData';
 import { useAuth } from '../context/AuthContext';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function BookingCalendarModal({ isOpen, onClose, preselectedService, initialCategoryId, onOpenAuth }) {
   const { user } = useAuth();
+  const { t } = useLanguage();
 
   const [step, setStep] = useState(1);
   const [selectedService, setSelectedService] = useState(null);
@@ -151,7 +153,7 @@ export default function BookingCalendarModal({ isOpen, onClose, preselectedServi
               Sistema Oficial de Citas
             </span>
             <h3 className="font-serif-title text-xl sm:text-2xl font-bold">
-              Reservar tu Experiencia
+              {t('modalBookingTitle', 'Reservar tu Experiencia')}
             </h3>
           </div>
           <button
@@ -530,7 +532,7 @@ export default function BookingCalendarModal({ isOpen, onClose, preselectedServi
                 className="bg-[#25D366] hover:bg-[#20ba59] text-white text-xs sm:text-sm font-bold px-8 py-3.5 rounded-full shadow-lg flex items-center gap-2 transition-all hover:scale-105"
               >
                 <MessageSquare className="w-4 h-4 fill-white" />
-                <span>{isSubmitting ? 'Procesando...' : 'Confirmar y Enviar a WhatsApp'}</span>
+                <span>{isSubmitting ? 'Procesando...' : t('confirmBookingWhatsApp', 'Confirmar y Enviar a WhatsApp')}</span>
               </button>
             )}
           </div>

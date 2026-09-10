@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { categoriesData } from '../data/servicesData';
 import { Calendar, Clock, Sparkles, Eye, ChevronRight } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function ServicesCatalog({ onOpenBooking, onNavigateToService }) {
+  const { t } = useLanguage();
   const [selectedCatId, setSelectedCatId] = useState(categoriesData[0].id);
 
   const currentCat = categoriesData.find(c => c.id === selectedCatId) || categoriesData[0];
@@ -13,13 +15,13 @@ export default function ServicesCatalog({ onOpenBooking, onNavigateToService }) 
       {/* Condensed Header */}
       <div className="text-center max-w-2xl mx-auto mb-10 space-y-2">
         <span className="text-xs font-bold uppercase tracking-[0.2em] text-mahogany-700">
-          Catálogo Completo
+          {t('catalogTag', 'Catálogo Completo')}
         </span>
         <h2 className="font-serif-title text-3xl sm:text-4xl font-bold text-mahogany-950">
-          Tratamientos & Tarifas
+          {t('catalogTitle', 'Tratamientos & Tarifas')}
         </h2>
         <p className="text-stone-600 text-xs sm:text-sm">
-          Haz clic en cualquier servicio para abrir su <strong>página propia</strong> con fotos reales y explicación detallada.
+          {t('catalogSubtitle', 'Haz clic en cualquier servicio para abrir su página propia con fotos reales y explicación detallada.')}
         </p>
       </div>
 
@@ -73,7 +75,7 @@ export default function ServicesCatalog({ onOpenBooking, onNavigateToService }) 
                         <div className="absolute inset-0 bg-black/25 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                           <span className="bg-mahogany-950/90 text-white text-[11px] font-bold px-3 py-1.5 rounded-full shadow-lg flex items-center gap-1.5">
                             <Eye className="w-3.5 h-3.5 text-gold" />
-                            <span>Ver página del servicio</span>
+                            <span>{t('viewServiceDetails', 'Ver página del servicio')}</span>
                           </span>
                         </div>
                       </div>
@@ -92,7 +94,7 @@ export default function ServicesCatalog({ onOpenBooking, onNavigateToService }) 
                     <h4 
                       onClick={() => onNavigateToService && onNavigateToService(srv)}
                       className="font-serif-title text-base sm:text-lg font-bold text-stone-900 group-hover:text-mahogany-900 transition-colors mb-1.5 cursor-pointer line-clamp-1"
-                      title="Ver detalles de este servicio"
+                      title={`Ver detalles de ${srv.name}`}
                     >
                       {srv.name}
                     </h4>
@@ -105,7 +107,7 @@ export default function ServicesCatalog({ onOpenBooking, onNavigateToService }) 
                       onClick={() => onNavigateToService && onNavigateToService(srv)}
                       className="text-xs font-bold text-mahogany-900 hover:text-mahogany-700 flex items-center gap-1 mb-4 transition-colors"
                     >
-                      <span>Ver explicación & fotos reales</span>
+                      <span>{t('viewFullExplanation', 'Ver explicación & fotos reales')}</span>
                       <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                     </button>
                   </div>
@@ -119,7 +121,7 @@ export default function ServicesCatalog({ onOpenBooking, onNavigateToService }) 
                       className="flex items-center gap-1.5 bg-cream-200 hover:bg-mahogany-950 text-mahogany-900 hover:text-white text-xs font-bold px-4 py-2 rounded-full transition-all shadow-sm hover:scale-105"
                     >
                       <Calendar className="w-3.5 h-3.5" />
-                      <span>Reservar</span>
+                      <span>{t('bookShort', 'Reservar')}</span>
                     </button>
                   </div>
 

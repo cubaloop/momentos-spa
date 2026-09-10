@@ -1,7 +1,10 @@
 import React from 'react';
 import { Calendar, Star, CheckCircle2, ArrowRight, MapPin, Sparkles } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function HeroSection({ onOpenBooking }) {
+  const { t } = useLanguage();
+
   return (
     <section className="relative w-full px-4 sm:px-6 lg:px-8 pt-4 pb-12">
       
@@ -27,19 +30,20 @@ export default function HeroSection({ onOpenBooking }) {
             {/* Kicker Tag */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-gold text-xs sm:text-sm font-semibold tracking-wide">
               <Sparkles className="w-3.5 h-3.5 text-gold animate-spin" />
-              <span>SANTUARIO EN MIRAMAR, LA HABANA</span>
+              <span>{t('heroBadge', 'SANTUARIO EN MIRAMAR, LA HABANA')}</span>
               <span className="text-white/40">•</span>
               <span className="text-cream-200 font-normal">Calle 44 #111</span>
             </div>
 
             {/* Headline - Condensed & Punchy */}
             <h1 className="font-serif-title text-3xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.1] tracking-tight drop-shadow-md">
-              El arte de renovar tu energía y serenidad.
+              {t('heroTitle1', 'El Arte del Bienestar &')} <br className="hidden sm:inline" />
+              <span className="text-gold italic font-normal">{t('heroTitle2', 'Relajación Absoluta')}</span>
             </h1>
 
             {/* Condensed Subtitle */}
             <p className="text-cream-200 text-sm sm:text-base lg:text-lg font-normal leading-relaxed max-w-xl drop-shadow">
-              Masajes de autor, circuito termal y el exclusivo <span className="text-gold font-semibold">Japanese Head Spa</span> en cabinas privadas de alta gama.
+              {t('heroSubtitle', 'Sumérgete en un oasis sensorial privado en el corazón de Miramar. Masajes terapéuticos, circuito termal, Japanese Head Spa y rituales holísticos diseñados para renovar tu cuerpo y espíritu.')}
             </p>
 
             {/* CTAs */}
@@ -49,7 +53,7 @@ export default function HeroSection({ onOpenBooking }) {
                 className="flex items-center gap-2.5 bg-gold hover:bg-gold-light text-mahogany-950 font-bold text-sm sm:text-base px-8 py-3.5 sm:py-4 rounded-full shadow-2xl shadow-gold/30 hover:scale-105 transition-all duration-200"
               >
                 <Calendar className="w-4 h-4 text-mahogany-950" />
-                <span>Reservar Cita Online</span>
+                <span>{t('heroCtaBook', 'Reservar Cita Online')}</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
 
@@ -57,7 +61,7 @@ export default function HeroSection({ onOpenBooking }) {
                 href="#servicios"
                 className="px-6 py-3.5 sm:py-4 rounded-full bg-white/15 hover:bg-white/25 backdrop-blur-md text-white border border-white/30 text-xs sm:text-sm font-semibold transition-all hover:scale-105"
               >
-                Ver Tratamientos
+                {t('heroCtaExplore', 'Explorar Rituales')}
               </a>
             </div>
 

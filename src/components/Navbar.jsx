@@ -3,6 +3,8 @@ import { ChevronDown, Calendar, User, ShieldCheck, Menu, X, ArrowRight, Sparkles
 import { categoriesData } from '../data/servicesData';
 import { useAuth } from '../context/AuthContext';
 import { useCubaStatus } from '../utils/cubaTime';
+import { useLanguage } from '../context/LanguageContext';
+import LanguageSelector from './LanguageSelector';
 
 export default function Navbar({ 
   onOpenBooking, 
@@ -15,6 +17,7 @@ export default function Navbar({
 }) {
   const { user, logout, isAdmin } = useAuth();
   const { isOpen, statusText, detailText, havanaTimeString } = useCubaStatus();
+  const { t } = useLanguage();
   const [megaMenuOpen, setMegaMenuOpen] = useState(false);
   const [activeCategoryIndex, setActiveCategoryIndex] = useState(0);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -96,7 +99,7 @@ export default function Navbar({
                 onMouseEnter={() => setMegaMenuOpen(true)}
                 className="flex items-center gap-1.5 text-stone-800 hover:text-mahogany-900 font-semibold text-sm py-2 transition-colors"
               >
-                <span>Servicios & Rituales</span>
+                <span>{t('navServices', 'Servicios & Rituales')}</span>
                 <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${megaMenuOpen ? 'rotate-180 text-mahogany-800' : 'text-stone-400'}`} />
               </button>
 
@@ -111,7 +114,7 @@ export default function Navbar({
                     {/* Categories Column (Left) */}
                     <div className="col-span-4 border-r border-stone-100 pr-4 space-y-2">
                       <div className="px-2 py-1 text-[11px] font-bold uppercase tracking-wider text-stone-400">
-                        Categorías
+                        {t('categoriesLabel', 'Categorías')}
                       </div>
                       {categoriesData.map((cat, idx) => (
                         <button
@@ -135,7 +138,7 @@ export default function Navbar({
                       ))}
 
                       <div className="p-3 bg-cream-100 rounded-2xl border border-stone-200 text-xs text-stone-600 mt-3">
-                        <span className="font-bold text-mahogany-950 block mb-0.5">Atención en Miramar</span>
+                        <span className="font-bold text-mahogany-950 block mb-0.5">{t('attentionMiramar', 'Atención en Miramar')}</span>
                         Cabinas privadas climatizadas de miércoles a domingo.
                       </div>
                     </div>
@@ -154,7 +157,7 @@ export default function Navbar({
                           }}
                           className="text-xs text-mahogany-800 font-bold hover:underline flex items-center gap-1"
                         >
-                          <span>Calendario completo</span>
+                          <span>{t('fullCalendar', 'Calendario completo')}</span>
                           <ArrowRight className="w-3.5 h-3.5" />
                         </button>
                       </div>
@@ -252,6 +255,8 @@ export default function Navbar({
 
           {/* Right Action Items */}
           <div className="hidden sm:flex items-center gap-3">
+            {/* Language Selector Dropdown */}
+            <LanguageSelector />
             
             {/* Admin Dashboard */}
             <button
@@ -281,7 +286,7 @@ export default function Navbar({
                   className="flex items-center gap-1.5 px-3.5 py-2 rounded-full text-stone-700 hover:text-mahogany-950 hover:bg-cream-200 transition-all text-xs font-bold"
                 >
                   <User className="w-4 h-4 text-stone-500" />
-                  <span>Ingresar</span>
+                  <span>{t('navLogin', 'Ingresar')}</span>
                 </button>
               )}
 
@@ -300,7 +305,7 @@ export default function Navbar({
                     className="w-full text-left px-4 py-2 text-xs font-medium text-stone-700 hover:bg-cream-100 flex items-center gap-2"
                   >
                     <ShieldCheck className="w-3.5 h-3.5 text-mahogany-800" />
-                    <span>Panel Administrador</span>
+                    <span>{t('navAdmin', 'Panel Administrador')}</span>
                   </button>
                   <button
                     onClick={() => {
@@ -321,7 +326,7 @@ export default function Navbar({
               className="flex items-center gap-2 bg-mahogany-950 hover:bg-mahogany-900 text-white font-bold text-xs sm:text-sm px-6 py-3 rounded-full shadow-xl shadow-mahogany-950/20 hover:scale-105 transition-all"
             >
               <Calendar className="w-4 h-4 text-gold" />
-              <span>Reservar Cita</span>
+              <span>{t('navBookBtn', 'Reservar Cita')}</span>
             </button>
 
           </div>
@@ -358,6 +363,9 @@ export default function Navbar({
               Cerrar
             </button>
           </div>
+
+          {/* Collapsible Language Selector */}
+          <LanguageSelector isMobile={true} onCloseMobile={() => setMobileMenuOpen(false)} />
 
           {/* Real-time Cuba Open/Closed Status Card in Mobile Menu */}
           <div className={`p-3 rounded-2xl border flex items-center justify-between text-xs ${
@@ -453,9 +461,9 @@ export default function Navbar({
 
           {/* Quick Links */}
           <div className="border-t border-stone-200 pt-3 space-y-2 text-xs font-semibold text-stone-700">
-            <a href="#experiencias" onClick={() => setMobileMenuOpen(false)} className="block py-1">Experiencias</a>
-            <a href="#beneficios" onClick={() => setMobileMenuOpen(false)} className="block py-1">Beneficios</a>
-            <a href="#testimonios" onClick={() => setMobileMenuOpen(false)} className="block py-1">Opiniones</a>
+            <a href="#experiencias" onClick={() => setMobileMenuOpen(false)} className="block py-1">{t('navExperiences', 'Experiencias')}</a>
+            <a href="#beneficios" onClick={() => setMobileMenuOpen(false)} className="block py-1">{t('navBenefits', 'Beneficios')}</a>
+            <a href="#testimonios" onClick={() => setMobileMenuOpen(false)} className="block py-1">{t('navReviews', 'Opiniones')}</a>
             <a href="#ubicacion" onClick={() => setMobileMenuOpen(false)} className="block py-1">Ubicación en Google Maps</a>
           </div>
 
