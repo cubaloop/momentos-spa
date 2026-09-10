@@ -72,7 +72,7 @@ export default function Navbar({
             className="flex items-center gap-3 group text-left"
           >
             <img 
-              src="/assets/logo_dark.png" 
+              src="./assets/logo_dark.png" 
               alt="Momentos Spa Logo" 
               className="w-12 h-12 rounded-full shadow-md border border-mahogany-900/20 group-hover:scale-105 transition-transform" 
             />

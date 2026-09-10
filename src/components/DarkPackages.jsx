@@ -11,7 +11,7 @@ export default function DarkPackages({ onOpenBooking, onNavigateToService }) {
       subtitle: "Microcascada tibia y masaje craneal shiatsu",
       price: 65,
       duration: "75 min",
-      image: "/assets/head_spa.jpg",
+      image: "./assets/head_spa.jpg",
       popular: true,
       features: [
         "Ducha circular de cascada tibia Halo",
@@ -27,7 +27,7 @@ export default function DarkPackages({ onOpenBooking, onNavigateToService }) {
       subtitle: "Cabina suite privada para dos con brindis",
       price: 80,
       duration: "90 min",
-      image: "/assets/masaje_pareja.jpg",
+      image: "./assets/masaje_pareja.jpg",
       popular: true,
       features: [
         "Masaje relajante sincronizado para 2",
@@ -43,7 +43,7 @@ export default function DarkPackages({ onOpenBooking, onNavigateToService }) {
       subtitle: "Jacuzzi con sales y piedras volcánicas",
       price: 85,
       duration: "110 min",
-      image: "/assets/circuito_termal.jpg",
+      image: "./assets/circuito_termal.jpg",
       popular: false,
       features: [
         "Sauna seco terapéutico de cedro",

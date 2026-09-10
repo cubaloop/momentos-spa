@@ -11,7 +11,7 @@ export default function Footer({ onOpenBooking, onOpenAdmin }) {
           {/* Column 1: Brand Info */}
           <div className="lg:col-span-4 space-y-4">
             <div className="flex items-center gap-3">
-              <img src="/assets/logo_white.png" alt="Momentos Spa" className="w-14 h-14 object-contain" />
+              <img src="./assets/logo_white.png" alt="Momentos Spa" className="w-14 h-14 object-contain" />
               <div>
                 <span className="font-serif-title text-2xl font-bold text-white block leading-none">
                   Momentos <span className="text-gold italic font-normal">Spa</span>

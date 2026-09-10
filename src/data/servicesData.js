@@ -18,7 +18,7 @@ export const categoriesData = [
             "duration": "60 min",
             "price": 35,
             "badge": "Esencial",
-            "image": "/assets/masaje_relax.jpg",
+            "image": "./assets/masaje_relax.jpg",
             "popular": true,
             "longDescription": [
               "El objetivo primordial de nuestro Masaje Relajante con Aromaterapia es desencadenar la secreción natural de endorfinas y serotonina, comúnmente conocidas como las hormonas del bienestar y la felicidad. Mediante maniobras rítmicas, suaves y continuas, se liberan las tensiones acumuladas en la musculatura superficial y el tejido miofascial, mejorando la circulación periférica y disminuyendo radicalmente los niveles de estrés y ansiedad.",
@@ -53,9 +53,9 @@ export const categoriesData = [
               }
             ],
             "gallery": [
-              "/assets/masaje_relax.jpg",
-              "/assets/servicios_spa.jpg",
-              "/assets/dsc_6328.jpg"
+              "./assets/masaje_relax.jpg",
+              "./assets/servicios_spa.jpg",
+              "./assets/dsc_6328.jpg"
             ],
             "includes": [
               "Cabina privada climatizada",
@@ -73,7 +73,7 @@ export const categoriesData = [
             "duration": "60 min",
             "price": 40,
             "badge": "Alivio Rápido",
-            "image": "/assets/masaje_m01.jpg",
+            "image": "./assets/masaje_m01.jpg",
             "popular": true,
             "longDescription": [
               "El Masaje Descontracturante es una técnica de terapia manual avanzada que consiste en emplear maniobras profundas e intensas dirigidas específicamente a las zonas de dolor focalizado. Su objetivo es disolver las contracturas musculares crónicas, desactivar puntos gatillo y restablecer la movilidad y elasticidad de las fibras musculares.",
@@ -108,9 +108,9 @@ export const categoriesData = [
               }
             ],
             "gallery": [
-              "/assets/masaje_m01.jpg",
-              "/assets/servicios_spa.jpg",
-              "/assets/masaje_m02.jpg"
+              "./assets/masaje_m01.jpg",
+              "./assets/servicios_spa.jpg",
+              "./assets/masaje_m02.jpg"
             ],
             "includes": [
               "Cabina privada climatizada",
@@ -128,7 +128,7 @@ export const categoriesData = [
             "duration": "75 min",
             "price": 45,
             "badge": "Intensivo",
-            "image": "/assets/masaje_m02.jpg",
+            "image": "./assets/masaje_m02.jpg",
             "longDescription": [
               "El Masaje de Tejido Profundo (Deep Tissue) es una terapia neuromuscular de alta intensidad diseñada para penetrar en las capas más profundas de los músculos y el tejido conectivo fascial. Es la elección preferida por atletas, personas activas o quienes padecen dolores crónicos derivados de sobrecargas continuadas.",
               "A través de trazos lentos y presiones concentradas con nudillos, antebrazos y codos, se deshacen las adherencias fibrosas que limitan la circulación sanguínea y provocan inflamación dolorosa. Notarás una descompresión total en todo el aparato locomotor."
@@ -162,9 +162,9 @@ export const categoriesData = [
               }
             ],
             "gallery": [
-              "/assets/masaje_m02.jpg",
-              "/assets/masaje_m01.jpg",
-              "/assets/dsc_6328.jpg"
+              "./assets/masaje_m02.jpg",
+              "./assets/masaje_m01.jpg",
+              "./assets/dsc_6328.jpg"
             ],
             "includes": [
               "Cabina privada",
@@ -182,7 +182,7 @@ export const categoriesData = [
             "duration": "75 min",
             "price": 50,
             "badge": "Exclusivo",
-            "image": "/assets/servicios_spa.jpg",
+            "image": "./assets/servicios_spa.jpg",
             "popular": true,
             "longDescription": [
               "Una milenaria terapia geotermal que combina el masaje terapéutico manual con el poder calorífico de las piedras volcánicas de basalto pulidas a mano. Las piedras se calientan cuidadosamente en un baño térmico y se colocan estratégicamente sobre los centros energéticos (chakras) a lo largo de la columna vertebral y extremidades.",
@@ -217,9 +217,9 @@ export const categoriesData = [
               }
             ],
             "gallery": [
-              "/assets/servicios_spa.jpg",
-              "/assets/masaje_relax.jpg",
-              "/assets/dsc_6328.jpg"
+              "./assets/servicios_spa.jpg",
+              "./assets/masaje_relax.jpg",
+              "./assets/dsc_6328.jpg"
             ],
             "includes": [
               "Piedras volcánicas de basalto natural",
@@ -237,7 +237,7 @@ export const categoriesData = [
             "duration": "60 min",
             "price": 70,
             "badge": "Experiencia VIP",
-            "image": "/assets/masaje_m4.jpg",
+            "image": "./assets/masaje_m4.jpg",
             "longDescription": [
               "El Masaje a Cuatro Manos es la máxima expresión del lujo y la coordinación terapéutica. Dos masajistas profesionales expertas trabajan de manera simultánea en una coreografía perfectamente sincronizada sobre tu cuerpo, siguiendo ritmos idénticos y presiones armonizadas.",
               "Al recibir estímulos táctiles dobles simultáneamente en diferentes zonas del cuerpo, el cerebro no puede controlar ni anticipar los movimientos, lo que obliga a la mente a abandonar todo control y entrar en un estado de meditación y trance relajante imposible de alcanzar con un masaje convencional."
@@ -271,9 +271,9 @@ export const categoriesData = [
               }
             ],
             "gallery": [
-              "/assets/masaje_m4.jpg",
-              "/assets/masaje_relax.jpg",
-              "/assets/dsc_6328.jpg"
+              "./assets/masaje_m4.jpg",
+              "./assets/masaje_relax.jpg",
+              "./assets/dsc_6328.jpg"
             ],
             "includes": [
               "Dos terapeutas especializadas",
@@ -291,7 +291,7 @@ export const categoriesData = [
             "duration": "60 min",
             "price": 40,
             "badge": "Detox",
-            "image": "/assets/masaje_m5.jpg",
+            "image": "./assets/masaje_m5.jpg",
             "longDescription": [
               "El Drenaje Linfático Manual (método Vodder) es una modalidad de masaje terapéutico que se caracteriza por maniobras extremadamente suaves, precisas, rítmicas e indoloras. Su propósito es estimular y activar el flujo de los vasos linfáticos, facilitando la evacuación del líquido intersticial y las moléculas de desecho.",
               "Es el tratamiento de referencia médica y estética para combatir la retención de líquidos, piernas pesadas, edemas, celulitis edematosa y como coadyuvante esencial en procesos postoperatorios."
@@ -325,9 +325,9 @@ export const categoriesData = [
               }
             ],
             "gallery": [
-              "/assets/masaje_m5.jpg",
-              "/assets/masaje_relax.jpg",
-              "/assets/servicios_spa.jpg"
+              "./assets/masaje_m5.jpg",
+              "./assets/masaje_relax.jpg",
+              "./assets/servicios_spa.jpg"
             ],
             "includes": [
               "Cabina climatizada",
@@ -352,7 +352,7 @@ export const categoriesData = [
             "duration": "90 min",
             "price": 45,
             "badge": "Purificante",
-            "image": "/assets/pareja_sauna.jpg",
+            "image": "./assets/pareja_sauna.jpg",
             "popular": true,
             "longDescription": [
               "El Circuito Termal de Momentos Spa es un recorrido hidroterápico privado que combina las bondades milenarias del calor seco de la sauna finlandesa, el baño de vapor humidificado y la inmersión efervescente en nuestro jacuzzi de hidromasaje a temperatura regulada.",
@@ -387,9 +387,9 @@ export const categoriesData = [
               }
             ],
             "gallery": [
-              "/assets/pareja_sauna.jpg",
-              "/assets/pareja_jacuzzi.jpg",
-              "/assets/circuito_termal.jpg"
+              "./assets/pareja_sauna.jpg",
+              "./assets/pareja_jacuzzi.jpg",
+              "./assets/circuito_termal.jpg"
             ],
             "includes": [
               "Uso privado de sauna y jacuzzi",
@@ -407,7 +407,7 @@ export const categoriesData = [
             "duration": "45 min",
             "price": 30,
             "badge": "Relax",
-            "image": "/assets/pareja_jacuzzi.jpg",
+            "image": "./assets/pareja_jacuzzi.jpg",
             "longDescription": [
               "Sumérgete en una experiencia de deleite puro con nuestro baño de hidromasaje en jacuzzi privado, enriquecido con sales minerales marinas del Caribe, oligoelementos naturales y esencias aromáticas florales de azahar y jazmín.",
               "Los múltiples jets de agua a presión y microburbujas realizan un masaje integral constante sobre piernas, glúteos y espalda, aliviando la fatiga de las articulaciones mientras el aroma envolvente sosiega la mente. Todo acompañado de una copa de vino frío de cortesía."
@@ -441,9 +441,9 @@ export const categoriesData = [
               }
             ],
             "gallery": [
-              "/assets/pareja_jacuzzi.jpg",
-              "/assets/pareja_sauna.jpg",
-              "/assets/snack_bandeja.jpg"
+              "./assets/pareja_jacuzzi.jpg",
+              "./assets/pareja_sauna.jpg",
+              "./assets/snack_bandeja.jpg"
             ],
             "includes": [
               "Jacuzzi privado para 1 o 2 personas",
@@ -468,7 +468,7 @@ export const categoriesData = [
             "duration": "100 min",
             "price": 110,
             "badge": "Más Solicitado",
-            "image": "/assets/masaje_pareja.jpg",
+            "image": "./assets/masaje_pareja.jpg",
             "popular": true,
             "longDescription": [
               "El Ritual Momentos en Pareja Deluxe es nuestra experiencia insignia diseñada para compartir momentos de complicidad, romance y sosiego. Ambos compartirán la misma cabina doble VIP ambientada con velas aromáticas, pétalos de rosa y música suave.",
@@ -503,9 +503,9 @@ export const categoriesData = [
               }
             ],
             "gallery": [
-              "/assets/masaje_pareja.jpg",
-              "/assets/pareja_sauna.jpg",
-              "/assets/dsc_6328.jpg"
+              "./assets/masaje_pareja.jpg",
+              "./assets/pareja_sauna.jpg",
+              "./assets/dsc_6328.jpg"
             ],
             "includes": [
               "Cabina Doble VIP ambientada",
@@ -523,7 +523,7 @@ export const categoriesData = [
             "duration": "120 min",
             "price": 140,
             "badge": "Premium",
-            "image": "/assets/dsc_6328.jpg",
+            "image": "./assets/dsc_6328.jpg",
             "longDescription": [
               "Nuestra Escapada Romántica & Spa es el paquete integral más solicitado por parejas que buscan un día completo de desconexión y celebración en Miramar. Incluye circuito termal privado con sauna y jacuzzi de hidromasaje, exfoliación corporal suave con sales aromáticas y un masaje relajante de cuerpo entero en cabina VIP.",
               "La sesión culmina con una botella de vino espumoso y bandeja de bocaditos en nuestro salón de descanso privado, creando un recuerdo imborrable de serenidad y amor."
@@ -557,9 +557,9 @@ export const categoriesData = [
               }
             ],
             "gallery": [
-              "/assets/dsc_6328.jpg",
-              "/assets/masaje_pareja.jpg",
-              "/assets/snack_bandeja.jpg"
+              "./assets/dsc_6328.jpg",
+              "./assets/masaje_pareja.jpg",
+              "./assets/snack_bandeja.jpg"
             ],
             "includes": [
               "Sauna privada y Jacuzzi",
@@ -593,7 +593,7 @@ export const categoriesData = [
             "duration": "60 min",
             "price": 50,
             "badge": "Novedad",
-            "image": "/assets/head_spa.jpg",
+            "image": "./assets/head_spa.jpg",
             "popular": true,
             "longDescription": [
               "Inspirado en los prestigiosos salones de bienestar de Tokio, el Japanese Head Spa es un ritual holístico enfocado en la salud capilar y la relajación mental profunda. Mediante una cascada de agua tibia continua en aro dorado (halo fountain), se estimula la microcirculación del cuero cabelludo y se disuelve la tensión nerviosa acumulada en la cabeza y cuello.",
@@ -628,9 +628,9 @@ export const categoriesData = [
               }
             ],
             "gallery": [
-              "/assets/head_spa.jpg",
-              "/assets/salon_belleza.jpg",
-              "/assets/dsc_6328.jpg"
+              "./assets/head_spa.jpg",
+              "./assets/salon_belleza.jpg",
+              "./assets/dsc_6328.jpg"
             ],
             "includes": [
               "Mobiliario ergonómico Head Spa",
@@ -648,7 +648,7 @@ export const categoriesData = [
             "duration": "80 min",
             "price": 65,
             "badge": "Firma Momentos Spa",
-            "image": "/assets/head_spa.jpg",
+            "image": "./assets/head_spa.jpg",
             "popular": true,
             "longDescription": [
               "Nuestra versión Premium del Japanese Head Spa eleva la experiencia tradicional al combinar el circuito de hidroterapia capilar con una limpieza facial express purificante y masaje relajante de cuello, hombros y escote.",
@@ -683,9 +683,9 @@ export const categoriesData = [
               }
             ],
             "gallery": [
-              "/assets/head_spa.jpg",
-              "/assets/facial_original.jpg",
-              "/assets/ojos_orig.jpg"
+              "./assets/head_spa.jpg",
+              "./assets/facial_original.jpg",
+              "./assets/ojos_orig.jpg"
             ],
             "includes": [
               "Circuito completo Head Spa",
@@ -719,7 +719,7 @@ export const categoriesData = [
             "duration": "75 min",
             "price": 45,
             "badge": "Recomendado",
-            "image": "/assets/facial_original.jpg",
+            "image": "./assets/facial_original.jpg",
             "popular": true,
             "longDescription": [
               "La limpieza facial profunda es un procedimiento esencial de mantenimiento y salud dérmica que elimina todas las impurezas acumuladas en los poros provocadas por la polución ambiental, la transpiración y el maquillaje. Estas impurezas son el origen directo de comedones, pérdida de brillo y envejecimiento prematuro.",
@@ -754,9 +754,9 @@ export const categoriesData = [
               }
             ],
             "gallery": [
-              "/assets/facial_original.jpg",
-              "/assets/ojos_orig.jpg",
-              "/assets/dsc_6328.jpg"
+              "./assets/facial_original.jpg",
+              "./assets/ojos_orig.jpg",
+              "./assets/dsc_6328.jpg"
             ],
             "includes": [
               "Diagnóstico dérmico personalizado",
@@ -774,7 +774,7 @@ export const categoriesData = [
             "duration": "60 min",
             "price": 55,
             "badge": "Efecto Glow",
-            "image": "/assets/ojos_orig.jpg",
+            "image": "./assets/ojos_orig.jpg",
             "longDescription": [
               "Un tratamiento rejuvenecedor de alto impacto formulado para restaurar la densidad, elasticidad y firmeza de las pieles maduras o fatigadas. A través de la infusión de ácido hialurónico de bajo y alto peso molecular, se rellenan las microarrugas y líneas de expresión desde las capas subepidérmicas.",
               "Se complementa con un masaje remodelador Kobido (lifting facial japonés tradicional) que tonifica los músculos faciales caídos, eleva los pómulos y redefine el óvalo facial de forma completamente natural y no invasiva."
@@ -808,9 +808,9 @@ export const categoriesData = [
               }
             ],
             "gallery": [
-              "/assets/ojos_orig.jpg",
-              "/assets/facial_original.jpg",
-              "/assets/salon_belleza.jpg"
+              "./assets/ojos_orig.jpg",
+              "./assets/facial_original.jpg",
+              "./assets/salon_belleza.jpg"
             ],
             "includes": [
               "Ácido hialurónico concentrado",
@@ -828,7 +828,7 @@ export const categoriesData = [
             "duration": "30 min",
             "price": 20,
             "badge": "Suavidad Total",
-            "image": "/assets/facial_original.jpg",
+            "image": "./assets/facial_original.jpg",
             "longDescription": [
               "El área de los labios y su contorno es una de las más sensibles a la deshidratación, el sol y las agresiones climáticas. Nuestro Tratamiento Spa Labial Regenerador devuelve la suavidad aterciopelada y el volumen juvenil a los labios agrietados o con falta de hidratación.",
               "Consta de una exfoliación con microcristales de azúcar moreno y miel pura, micropunción suave de ácido hialurónico y bálsamo nutritivo con manteca de karité sellado con parches de hidrogel y fototerapia LED."
@@ -862,9 +862,9 @@ export const categoriesData = [
               }
             ],
             "gallery": [
-              "/assets/facial_original.jpg",
-              "/assets/ojos_orig.jpg",
-              "/assets/dsc_6328.jpg"
+              "./assets/facial_original.jpg",
+              "./assets/ojos_orig.jpg",
+              "./assets/dsc_6328.jpg"
             ],
             "includes": [
               "Exfoliante artesanal de miel",
@@ -888,7 +888,7 @@ export const categoriesData = [
             "duration": "75 min",
             "price": 55,
             "badge": "Delicia Sensorial",
-            "image": "/assets/maderoterapia.jpg",
+            "image": "./assets/maderoterapia.jpg",
             "popular": true,
             "longDescription": [
               "La Chocolaterapia es una experiencia multisensorial sublime que une las propiedades antioxidantes del cacao puro con el deleite aromático más placentero. El cacao es rico en polifenoles, magnesio y teobromina, elementos capaces de combatir los radicales libres causantes del envejecimiento y de inducir una profunda sensación de confort emocional.",
@@ -923,9 +923,9 @@ export const categoriesData = [
               }
             ],
             "gallery": [
-              "/assets/maderoterapia.jpg",
-              "/assets/masaje_m7.jpg",
-              "/assets/snack_bandeja.jpg"
+              "./assets/maderoterapia.jpg",
+              "./assets/masaje_m7.jpg",
+              "./assets/snack_bandeja.jpg"
             ],
             "includes": [
               "Cacao puro cosmético de alta pureza",
@@ -943,7 +943,7 @@ export const categoriesData = [
             "duration": "70 min",
             "price": 50,
             "badge": "Remineralizante",
-            "image": "/assets/masaje_m7.jpg",
+            "image": "./assets/masaje_m7.jpg",
             "longDescription": [
               "Un tratamiento milenario que aprovecha la riqueza en azufre, magnesio, calcio y oligoelementos de los fangos marinos termales. La fangoterapia desintoxica profundamente los tejidos cutáneos gracias a su capacidad de absorción osmótica de impurezas y líquidos retenidos.",
               "Al secarse suavemente sobre el cuerpo bajo calor controlado, el barro mineral estimula la circulación periférica, descongestiona los ganglios y produce un notable efecto tonificante y antiinflamatorio en articulaciones y masa muscular."
@@ -977,9 +977,9 @@ export const categoriesData = [
               }
             ],
             "gallery": [
-              "/assets/masaje_m7.jpg",
-              "/assets/maderoterapia.jpg",
-              "/assets/servicios_spa.jpg"
+              "./assets/masaje_m7.jpg",
+              "./assets/maderoterapia.jpg",
+              "./assets/servicios_spa.jpg"
             ],
             "includes": [
               "Lodos marinos ricos en oligoelementos",
@@ -997,7 +997,7 @@ export const categoriesData = [
             "duration": "45 min",
             "price": 35,
             "badge": "Piel Nueva",
-            "image": "/assets/snack_bandeja.jpg",
+            "image": "./assets/snack_bandeja.jpg",
             "longDescription": [
               "Elimina de forma eficaz y placentera la capa de células muertas y queratina engrosada que apaga la vitalidad de la epidermis. Formulada con cristales finos de sal marina caribeña combinados con aceites vegetales nutritivos y aceites esenciales de pomelo, naranja dulce y limón.",
               "La fricción controlada renueva instantáneamente la superficie cutánea, desobstruye los folículos pilosos y estimula la regeneración de nuevas células, logrando una piel increíblemente suave, satinada, tersa y lista para absorber cualquier tratamiento hidratante posterior."
@@ -1031,9 +1031,9 @@ export const categoriesData = [
               }
             ],
             "gallery": [
-              "/assets/snack_bandeja.jpg",
-              "/assets/servicios_spa.jpg",
-              "/assets/maderoterapia.jpg"
+              "./assets/snack_bandeja.jpg",
+              "./assets/servicios_spa.jpg",
+              "./assets/maderoterapia.jpg"
             ],
             "includes": [
               "Sales marinas micronizadas",
@@ -1067,7 +1067,7 @@ export const categoriesData = [
             "duration": "75 min",
             "price": 30,
             "badge": "Alta Precisión",
-            "image": "/assets/manicura_orig.jpg",
+            "image": "./assets/manicura_orig.jpg",
             "popular": true,
             "longDescription": [
               "La Manicura Rusa (o manicura combinada con torno de precisión) es la técnica más avanzada y perfeccionista del cuidado de uñas a nivel mundial. A través de diferentes fresas diamantadas de micraje micrométrico, se retira de forma minuciosa y segura toda la cutícula y piel muerta alrededor del lecho ungueal sin cortar ni agredir la piel viva.",
@@ -1102,9 +1102,9 @@ export const categoriesData = [
               }
             ],
             "gallery": [
-              "/assets/manicura_orig.jpg",
-              "/assets/pedicura_orig.jpg",
-              "/assets/salon_belleza.jpg"
+              "./assets/manicura_orig.jpg",
+              "./assets/pedicura_orig.jpg",
+              "./assets/salon_belleza.jpg"
             ],
             "includes": [
               "Fresas esterilizadas en autoclave",
@@ -1122,7 +1122,7 @@ export const categoriesData = [
             "duration": "60 min",
             "price": 35,
             "badge": "Máximo Confort",
-            "image": "/assets/pedicura_orig.jpg",
+            "image": "./assets/pedicura_orig.jpg",
             "popular": true,
             "longDescription": [
               "Nuestros pies soportan el peso de todo el día y merecen un cuidado terapéutico profundo y reparador. La Pedicura Spa Completa va mucho más allá de un simple arreglo estético: es un ritual hidroterápico desinfectante, exfoliante y nutritivo.",
@@ -1157,9 +1157,9 @@ export const categoriesData = [
               }
             ],
             "gallery": [
-              "/assets/pedicura_orig.jpg",
-              "/assets/pedicura2_orig.jpg",
-              "/assets/manicura_orig.jpg"
+              "./assets/pedicura_orig.jpg",
+              "./assets/pedicura2_orig.jpg",
+              "./assets/manicura_orig.jpg"
             ],
             "includes": [
               "Sillón ergonómico de pedicura",
@@ -1177,7 +1177,7 @@ export const categoriesData = [
             "duration": "90 min",
             "price": 45,
             "badge": "Durabilidad",
-            "image": "/assets/pedicura2_orig.jpg",
+            "image": "./assets/pedicura2_orig.jpg",
             "longDescription": [
               "Para quienes desean longitud, resistencia inquebrantable y formas esculturales personalizadas, nuestro servicio de esculpido en acrílico o poligel con moldes profesionales es la solución idónea. Realizamos estructuras anatómicas balanceadas que no dañan tu uña natural y garantizan una adherencia perfecta sin desprendimientos.",
               "Disponemos de una amplia gama de tonos nude, baby boomer, francesas perfectas y decoraciones en nail art contemporáneo ejecutadas por artistas manicuristas de amplia trayectoria."
@@ -1211,9 +1211,9 @@ export const categoriesData = [
               }
             ],
             "gallery": [
-              "/assets/pedicura2_orig.jpg",
-              "/assets/manicura_orig.jpg",
-              "/assets/salon_belleza.jpg"
+              "./assets/pedicura2_orig.jpg",
+              "./assets/manicura_orig.jpg",
+              "./assets/salon_belleza.jpg"
             ],
             "includes": [
               "Polímeros y monómeros de primera línea",
@@ -1238,7 +1238,7 @@ export const categoriesData = [
             "duration": "60 min",
             "price": 35,
             "badge": "Efecto Rímel",
-            "image": "/assets/pestanas_orig.jpg",
+            "image": "./assets/pestanas_orig.jpg",
             "popular": true,
             "longDescription": [
               "El Lifting de Pestañas es el tratamiento estético por excelencia para quienes desean una mirada despierta, intensa y atractiva sin necesidad de recurrir a extensiones artificiales ni al rizador mecánico diario.",
@@ -1273,9 +1273,9 @@ export const categoriesData = [
               }
             ],
             "gallery": [
-              "/assets/pestanas_orig.jpg",
-              "/assets/ojos_orig.jpg",
-              "/assets/pestanas.jpg"
+              "./assets/pestanas_orig.jpg",
+              "./assets/ojos_orig.jpg",
+              "./assets/pestanas.jpg"
             ],
             "includes": [
               "Moldes de silicona hipoalergénicos",
@@ -1293,7 +1293,7 @@ export const categoriesData = [
             "duration": "90 min",
             "price": 50,
             "badge": "Mirada Impacto",
-            "image": "/assets/ojos_orig.jpg",
+            "image": "./assets/ojos_orig.jpg",
             "longDescription": [
               "Consigue la mirada seductora y glamorosa de tus sueños con nuestras extensiones de pestañas pelo a pelo. Cada extensión de fibra sintética ultraligera de seda o visón faux se adhiere de forma individual a una de tus pestañas naturales con adhesivo de grado médico certificado.",
               "Diseñamos el mapa de tu mirada a medida (efecto natural, efecto ojo de gato, muñeca o ardilla), adaptando longitudes, grosores y curvaturas para realzar la forma de tus ojos sin apelmazar ni perjudicar el crecimiento de tus pestañas originales."
@@ -1327,9 +1327,9 @@ export const categoriesData = [
               }
             ],
             "gallery": [
-              "/assets/ojos_orig.jpg",
-              "/assets/pestanas_orig.jpg",
-              "/assets/pestanas.jpg"
+              "./assets/ojos_orig.jpg",
+              "./assets/pestanas_orig.jpg",
+              "./assets/pestanas.jpg"
             ],
             "includes": [
               "Extensiones de seda premium",
@@ -1347,7 +1347,7 @@ export const categoriesData = [
             "duration": "50 min",
             "price": 30,
             "badge": "Definición",
-            "image": "/assets/pestanas.jpg",
+            "image": "./assets/pestanas.jpg",
             "longDescription": [
               "El Laminado de Cejas (o brow lift) es la técnica vanguardista que transforma cejas rebeldes, finas, rizadas o con calvas en cejas peinadas, simétricas, densas y con volumen orgánico envidiable.",
               "Mediante una fórmula reestructurante suave, se ablanda la cutícula del vello para fijarlo en la dirección deseada (hacia arriba y peinadas), rellenando huecos vacíos. Culminamos con depilación de diseño personalizado y un sombreado delicado con henna vegetal que deja un sombreado perfecto durante semanas."
@@ -1381,9 +1381,9 @@ export const categoriesData = [
               }
             ],
             "gallery": [
-              "/assets/pestanas.jpg",
-              "/assets/pestanas_orig.jpg",
-              "/assets/ojos_orig.jpg"
+              "./assets/pestanas.jpg",
+              "./assets/pestanas_orig.jpg",
+              "./assets/ojos_orig.jpg"
             ],
             "includes": [
               "Estudio de visagismo facial",
@@ -1408,7 +1408,7 @@ export const categoriesData = [
             "duration": "90 min",
             "price": 55,
             "badge": "Brillo Espejo",
-            "image": "/assets/salon_belleza.jpg",
+            "image": "./assets/salon_belleza.jpg",
             "popular": true,
             "longDescription": [
               "El Botox Capilar es un tratamiento intensivo de bio-reparación termoactiva diseñado para cabellos castigados por tintes, decoloraciones, planchas o el clima tropical de La Habana. No contiene toxina botulínica: se llama así por su impresionante efecto de relleno y rejuvenecimiento sobre la hebra capilar.",
@@ -1443,9 +1443,9 @@ export const categoriesData = [
               }
             ],
             "gallery": [
-              "/assets/salon_belleza.jpg",
-              "/assets/peluqueria_orig.jpg",
-              "/assets/head_spa.jpg"
+              "./assets/salon_belleza.jpg",
+              "./assets/peluqueria_orig.jpg",
+              "./assets/head_spa.jpg"
             ],
             "includes": [
               "Diagnóstico capilar personalizado",
@@ -1463,7 +1463,7 @@ export const categoriesData = [
             "duration": "60 min",
             "price": 30,
             "badge": "Look Fresco",
-            "image": "/assets/peluqueria_orig.jpg",
+            "image": "./assets/peluqueria_orig.jpg",
             "longDescription": [
               "Un cambio de look o mantenimiento perfecto a manos de nuestros estilistas profesionales. Comienza con una asesoría de visagismo personalizada según la forma de tu rostro, textura de tu cabello y estilo de vida.",
               "Continuamos en la zona de lavado con un masaje capilar relajante con champú nutritivo de salón, corte de precisión y secado profesional (brushing) con cepillo térmico que aporta volumen, pulido y movimiento sin maltratar tu pelo."
@@ -1497,9 +1497,9 @@ export const categoriesData = [
               }
             ],
             "gallery": [
-              "/assets/peluqueria_orig.jpg",
-              "/assets/salon_belleza.jpg",
-              "/assets/head_spa.jpg"
+              "./assets/peluqueria_orig.jpg",
+              "./assets/salon_belleza.jpg",
+              "./assets/head_spa.jpg"
             ],
             "includes": [
               "Lavado relajante con champú de salón",
@@ -1517,7 +1517,7 @@ export const categoriesData = [
             "duration": "40 min",
             "price": 25,
             "badge": "Piel Suave",
-            "image": "/assets/depilacion_orig.jpg",
+            "image": "./assets/depilacion_orig.jpg",
             "longDescription": [
               "Disfruta de una piel suave y libre de vello con nuestro servicio de depilación profesional con cera tibia suave de miel y resinas naturales hipoalergénicas. Apta incluso para pieles delicadas, nuestra cera se funde a una temperatura agradable que abre el poro sin provocar quemaduras ni rojeces prolongadas.",
               "Nuestras esteticistas emplean técnicas rápidas y precisas que reducen al mínimo la molestia, garantizando una extracción limpia de raíz que debilita el crecimiento futuro del vello y mantiene tu piel tersa y sedosa durante semanas."
@@ -1551,9 +1551,9 @@ export const categoriesData = [
               }
             ],
             "gallery": [
-              "/assets/depilacion_orig.jpg",
-              "/assets/servicios_spa.jpg",
-              "/assets/dsc_6328.jpg"
+              "./assets/depilacion_orig.jpg",
+              "./assets/servicios_spa.jpg",
+              "./assets/dsc_6328.jpg"
             ],
             "includes": [
               "Cera natural hipoalergénica de resina y miel",

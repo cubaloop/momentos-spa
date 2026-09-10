@@ -65,7 +65,7 @@ export default function BenefitsRejuvenation({ onOpenBooking }) {
           <div className="lg:col-span-5">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-cream-200">
               <img 
-                src="/assets/servicios_spa.jpg" 
+                src="./assets/servicios_spa.jpg" 
                 alt="Tratamiento con piedras volcánicas calientes en Momentos Spa" 
                 className="w-full h-[480px] object-cover hover:scale-105 transition-transform duration-700" 
               />

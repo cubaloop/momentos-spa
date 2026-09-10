@@ -10,7 +10,7 @@ export default function HeroSection({ onOpenBooking }) {
         
         {/* Panoramic Background Photo */}
         <img 
-          src="/assets/masaje_pareja.jpg" 
+          src="./assets/masaje_pareja.jpg" 
           alt="Momentos Spa Miramar" 
           className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-1000"
         />

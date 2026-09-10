@@ -23,7 +23,7 @@ export default function AdminDashboardModal({ isOpen, onClose }) {
     price: 35,
     description: '',
     badge: 'Popular',
-    image: '/assets/servicios_spa.jpg'
+    image: './assets/servicios_spa.jpg'
   });
 
   const fetchData = async () => {
@@ -118,31 +118,31 @@ export default function AdminDashboardModal({ isOpen, onClose }) {
   const [uploadingImage, setUploadingImage] = useState(false);
 
   const availableSpaPhotos = [
-    { label: 'Masaje Relajante Aromático', url: '/assets/masaje_relax.jpg' },
-    { label: 'Masaje Descontracturante M01', url: '/assets/masaje_m01.jpg' },
-    { label: 'Masaje Tejido Profundo M02', url: '/assets/masaje_m02.jpg' },
-    { label: 'Masaje a Cuatro Manos M4', url: '/assets/masaje_m4.jpg' },
-    { label: 'Drenaje Linfático M5', url: '/assets/masaje_m5.jpg' },
-    { label: 'Fangoterapia Marina M7', url: '/assets/masaje_m7.jpg' },
-    { label: 'Piedras Volcánicas Calientes', url: '/assets/servicios_spa.jpg' },
-    { label: 'Sauna Pareja', url: '/assets/pareja_sauna.jpg' },
-    { label: 'Jacuzzi Pareja con Hidromasaje', url: '/assets/pareja_jacuzzi.jpg' },
-    { label: 'Masaje Pareja Romántico', url: '/assets/masaje_pareja.jpg' },
-    { label: 'Escapada Romántica & Spa (DSLR)', url: '/assets/dsc_6328.jpg' },
-    { label: 'Japanese Head Spa Cascada', url: '/assets/head_spa.jpg' },
-    { label: 'Circuito Termal Completo', url: '/assets/circuito_termal.jpg' },
-    { label: 'Limpieza Facial Profunda', url: '/assets/facial_original.jpg' },
-    { label: 'Facial Antiedad & Ojos', url: '/assets/ojos_orig.jpg' },
-    { label: 'Chocolaterapia & Maderoterapia', url: '/assets/maderoterapia.jpg' },
-    { label: 'Bandeja de Bienvenida & Aperitivos', url: '/assets/snack_bandeja.jpg' },
-    { label: 'Manicura Rusa', url: '/assets/manicura_orig.jpg' },
-    { label: 'Pedicura Spa Completa', url: '/assets/pedicura_orig.jpg' },
-    { label: 'Esculpido de Uñas en Acrílico', url: '/assets/pedicura2_orig.jpg' },
-    { label: 'Lifting de Pestañas', url: '/assets/pestanas_orig.jpg' },
-    { label: 'Diseño de Cejas & Henna', url: '/assets/pestanas.jpg' },
-    { label: 'Salón & Botox Capilar', url: '/assets/salon_belleza.jpg' },
-    { label: 'Peluquería, Corte & Brushing', url: '/assets/peluqueria_orig.jpg' },
-    { label: 'Depilación Profesional con Cera', url: '/assets/depilacion_orig.jpg' }
+    { label: 'Masaje Relajante Aromático', url: './assets/masaje_relax.jpg' },
+    { label: 'Masaje Descontracturante M01', url: './assets/masaje_m01.jpg' },
+    { label: 'Masaje Tejido Profundo M02', url: './assets/masaje_m02.jpg' },
+    { label: 'Masaje a Cuatro Manos M4', url: './assets/masaje_m4.jpg' },
+    { label: 'Drenaje Linfático M5', url: './assets/masaje_m5.jpg' },
+    { label: 'Fangoterapia Marina M7', url: './assets/masaje_m7.jpg' },
+    { label: 'Piedras Volcánicas Calientes', url: './assets/servicios_spa.jpg' },
+    { label: 'Sauna Pareja', url: './assets/pareja_sauna.jpg' },
+    { label: 'Jacuzzi Pareja con Hidromasaje', url: './assets/pareja_jacuzzi.jpg' },
+    { label: 'Masaje Pareja Romántico', url: './assets/masaje_pareja.jpg' },
+    { label: 'Escapada Romántica & Spa (DSLR)', url: './assets/dsc_6328.jpg' },
+    { label: 'Japanese Head Spa Cascada', url: './assets/head_spa.jpg' },
+    { label: 'Circuito Termal Completo', url: './assets/circuito_termal.jpg' },
+    { label: 'Limpieza Facial Profunda', url: './assets/facial_original.jpg' },
+    { label: 'Facial Antiedad & Ojos', url: './assets/ojos_orig.jpg' },
+    { label: 'Chocolaterapia & Maderoterapia', url: './assets/maderoterapia.jpg' },
+    { label: 'Bandeja de Bienvenida & Aperitivos', url: './assets/snack_bandeja.jpg' },
+    { label: 'Manicura Rusa', url: './assets/manicura_orig.jpg' },
+    { label: 'Pedicura Spa Completa', url: './assets/pedicura_orig.jpg' },
+    { label: 'Esculpido de Uñas en Acrílico', url: './assets/pedicura2_orig.jpg' },
+    { label: 'Lifting de Pestañas', url: './assets/pestanas_orig.jpg' },
+    { label: 'Diseño de Cejas & Henna', url: './assets/pestanas.jpg' },
+    { label: 'Salón & Botox Capilar', url: './assets/salon_belleza.jpg' },
+    { label: 'Peluquería, Corte & Brushing', url: './assets/peluqueria_orig.jpg' },
+    { label: 'Depilación Profesional con Cera', url: './assets/depilacion_orig.jpg' }
   ];
 
   // Upload handler from device
@@ -210,7 +210,7 @@ export default function AdminDashboardModal({ isOpen, onClose }) {
       const updatedGallery = (prev.gallery || []).filter(u => u !== urlToRemove);
       let updatedMain = prev.image;
       if (updatedMain === urlToRemove) {
-        updatedMain = updatedGallery.length > 0 ? updatedGallery[0] : '/assets/servicios_spa.jpg';
+        updatedMain = updatedGallery.length > 0 ? updatedGallery[0] : './assets/servicios_spa.jpg';
       }
       return {
         ...prev,
@@ -233,8 +233,8 @@ export default function AdminDashboardModal({ isOpen, onClose }) {
       price: 40,
       description: '',
       badge: 'Nuevo',
-      image: '/assets/servicios_spa.jpg',
-      gallery: ['/assets/servicios_spa.jpg']
+      image: './assets/servicios_spa.jpg',
+      gallery: ['./assets/servicios_spa.jpg']
     });
     setServiceModalOpen(true);
   };
@@ -251,8 +251,8 @@ export default function AdminDashboardModal({ isOpen, onClose }) {
       price: srv.price || 0,
       description: srv.description || '',
       badge: srv.badge || 'Popular',
-      image: srv.image || '/assets/servicios_spa.jpg',
-      gallery: srv.gallery && srv.gallery.length > 0 ? [...srv.gallery] : [srv.image || '/assets/servicios_spa.jpg']
+      image: srv.image || './assets/servicios_spa.jpg',
+      gallery: srv.gallery && srv.gallery.length > 0 ? [...srv.gallery] : [srv.image || './assets/servicios_spa.jpg']
     });
     setServiceModalOpen(true);
   };

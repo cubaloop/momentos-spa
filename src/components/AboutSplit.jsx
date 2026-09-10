@@ -14,7 +14,7 @@ export default function AboutSplit({ onOpenBooking }) {
           {/* Background image with dark overlay */}
           <div className="absolute inset-0 z-0">
             <img 
-              src="/assets/snack_bandeja.jpg" 
+              src="./assets/snack_bandeja.jpg" 
               alt="Ambiente y Detalles de Momentos Spa" 
               className="w-full h-full object-cover opacity-35 group-hover:scale-105 transition-transform duration-700" 
             />
@@ -75,7 +75,7 @@ export default function AboutSplit({ onOpenBooking }) {
           <div className="pt-8 border-t border-stone-300/60 mt-6 flex items-center justify-between">
             <div className="flex items-center gap-3">
               <img 
-                src="/assets/logo_dark.png" 
+                src="./assets/logo_dark.png" 
                 alt="Directora de Momentos Spa" 
                 className="w-12 h-12 rounded-full border-2 border-mahogany-800/30" 
               />

@@ -6,7 +6,7 @@ import {
 import { allServices } from '../data/servicesData';
 
 export default function ServiceDetailPage({ service, onBack, onOpenBooking, onSelectOtherService }) {
-  const [activePhoto, setActivePhoto] = useState(service?.image || '/assets/servicios_spa.jpg');
+  const [activePhoto, setActivePhoto] = useState(service?.image || './assets/servicios_spa.jpg');
   const [copied, setCopied] = useState(false);
 
   useEffect(() => {
@@ -37,7 +37,7 @@ export default function ServiceDetailPage({ service, onBack, onOpenBooking, onSe
 
   const galleryPhotos = service.gallery && service.gallery.length > 0 
     ? service.gallery 
-    : [service.image, '/assets/servicios_spa.jpg', '/assets/dsc_6328.jpg'].filter(Boolean);
+    : [service.image, './assets/servicios_spa.jpg', './assets/dsc_6328.jpg'].filter(Boolean);
 
   const handleShare = () => {
     if (navigator.share) {
