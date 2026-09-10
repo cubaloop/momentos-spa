@@ -14,6 +14,7 @@ import TestimonialsSection from './components/TestimonialsSection';
 import FaqSection from './components/FaqSection';
 import GoogleMapsSection from './components/GoogleMapsSection';
 import WhatsAppChatBubble from './components/WhatsAppChatBubble';
+import PreFooterStatusStrip from './components/PreFooterStatusStrip';
 import Footer from './components/Footer';
 import BookingCalendarModal from './components/BookingCalendarModal';
 import AuthModal from './components/AuthModal';
@@ -116,7 +117,10 @@ export default function App() {
           />
         ) : (
           <>
-            <HeroSection onOpenBooking={() => handleOpenBooking()} />
+            <HeroSection 
+              onOpenBooking={() => handleOpenBooking()} 
+              onOpenAuth={handleOpenAuth}
+            />
             <MediaRow />
             <AboutSplit onOpenBooking={() => handleOpenBooking()} />
             <MetricsBanner />
@@ -140,6 +144,9 @@ export default function App() {
 
       {/* Floating WhatsApp Bubble to +53 59710688 */}
       <WhatsAppChatBubble />
+
+      {/* Pre-Footer Status & Schedule Banner */}
+      <PreFooterStatusStrip />
 
       {/* Luxury Mega Footer */}
       <Footer 

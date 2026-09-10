@@ -28,6 +28,12 @@ export const translations = {
     menuAndServices: "Menú & Servicios",
     
     // Hero
+        welcomeHeroTitle: "Bienvenido a Momentos",
+    welcomeHeroSubtitle: "Descubre y reserva tratamientos de spa y rituales de bienestar sin esfuerzo en Momentos, tu santuario exclusivo en Miramar, La Habana.",
+    welcomeHeroStartBtn: "Comenzar Experiencia",
+    welcomeHeroLoginPrompt: "¿Ya eres cliente?",
+    welcomeHeroLoginBtn: "Iniciar Sesión",
+    welcomeHeroExplore: "Explorar Servicios",
     heroBadge: "SANTUARIO EN MIRAMAR, LA HABANA",
     heroTitle1: "El Arte del Bienestar &",
     heroTitle2: "Relajación Absoluta",
@@ -292,6 +298,12 @@ export const translations = {
     menuAndServices: "Menu & Services",
     
     // Hero
+        welcomeHeroTitle: "Welcome To Momentos",
+    welcomeHeroSubtitle: "Discover and book spa treatments and wellness rituals effortlessly with Momentos, your exclusive sanctuary in Miramar, Havana.",
+    welcomeHeroStartBtn: "Let's get started",
+    welcomeHeroLoginPrompt: "Already have an account?",
+    welcomeHeroLoginBtn: "Login Now",
+    welcomeHeroExplore: "Explore Services",
     heroBadge: "SANCTUARY IN MIRAMAR, HAVANA",
     heroTitle1: "The Art of Wellness &",
     heroTitle2: "Absolute Relaxation",
@@ -556,6 +568,12 @@ export const translations = {
     menuAndServices: "Menu & Servizi",
     
     // Hero
+        welcomeHeroTitle: "Benvenuti a Momentos",
+    welcomeHeroSubtitle: "Scopri e prenota trattamenti spa e rituali di benessere senza sforzo con Momentos, il tuo santuario esclusivo a Miramar, L'Avana.",
+    welcomeHeroStartBtn: "Iniziamo ora",
+    welcomeHeroLoginPrompt: "Hai già un account?",
+    welcomeHeroLoginBtn: "Accedi ora",
+    welcomeHeroExplore: "Esplora Servizi",
     heroBadge: "SANTUARIO A MIRAMAR, L'AVANA",
     heroTitle1: "L'Arte del Benessere &",
     heroTitle2: "Rilassamento Assoluto",
@@ -820,6 +838,12 @@ export const translations = {
     menuAndServices: "Menu & Soins",
     
     // Hero
+        welcomeHeroTitle: "Bienvenue chez Momentos",
+    welcomeHeroSubtitle: "Découvrez et réservez des soins de spa et des rituels de bien-être sans effort avec Momentos, votre sanctuaire exclusif à Miramar, La Havane.",
+    welcomeHeroStartBtn: "Commençons",
+    welcomeHeroLoginPrompt: "Vous avez déjà un compte ?",
+    welcomeHeroLoginBtn: "Connexion",
+    welcomeHeroExplore: "Explorer les soins",
     heroBadge: "SANCTUAIRE À MIRAMAR, LA HAVANE",
     heroTitle1: "L'Art du Bien-être &",
     heroTitle2: "Relaxation Absolue",
@@ -1084,6 +1108,12 @@ export const translations = {
     menuAndServices: "Меню и Услуги",
     
     // Hero
+        welcomeHeroTitle: "Добро пожаловать в Momentos",
+    welcomeHeroSubtitle: "Откройте для себя и бронируйте спа-процедуры и велнес-ритуалы без усилий в Momentos, вашем эксклюзивном святилище в Мирамаре, Гавана.",
+    welcomeHeroStartBtn: "Начать знакомство",
+    welcomeHeroLoginPrompt: "Уже есть аккаунт?",
+    welcomeHeroLoginBtn: "Войти сейчас",
+    welcomeHeroExplore: "Смотреть услуги",
     heroBadge: "СПА В МИРАМАРЕ, ГАВАНА",
     heroTitle1: "Искусство Здоровья &",
     heroTitle2: "Абсолютная Релаксация",
@@ -1348,6 +1378,12 @@ export const translations = {
     menuAndServices: "Menü & Behandlungen",
     
     // Hero
+        welcomeHeroTitle: "Willkommen bei Momentos",
+    welcomeHeroSubtitle: "Entdecken und buchen Sie Spa-Behandlungen und Wellness-Rituale mühelos bei Momentos, Ihrem exklusiven Refugium in Miramar, Havanna.",
+    welcomeHeroStartBtn: "Jetzt starten",
+    welcomeHeroLoginPrompt: "Haben Sie bereits ein Konto?",
+    welcomeHeroLoginBtn: "Jetzt anmelden",
+    welcomeHeroExplore: "Leistungen erkunden",
     heroBadge: "SANCTUARY IN MIRAMAR, HAVANNA",
     heroTitle1: "Die Kunst des Wohlbefindens &",
     heroTitle2: "Absolute Entspannung",
