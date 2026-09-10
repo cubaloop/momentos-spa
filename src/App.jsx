@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import AnnouncementBar from './components/AnnouncementBar';
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
 import MediaRow from './components/MediaRow';
@@ -14,7 +13,6 @@ import TestimonialsSection from './components/TestimonialsSection';
 import FaqSection from './components/FaqSection';
 import GoogleMapsSection from './components/GoogleMapsSection';
 import WhatsAppChatBubble from './components/WhatsAppChatBubble';
-import PreFooterStatusStrip from './components/PreFooterStatusStrip';
 import Footer from './components/Footer';
 import BookingCalendarModal from './components/BookingCalendarModal';
 import AuthModal from './components/AuthModal';
@@ -92,9 +90,6 @@ export default function App() {
   return (
     <div className="min-h-screen flex flex-col bg-cream-100 text-stone-900 antialiased selection:bg-mahogany-950 selection:text-white">
       
-      {/* Top Announcement Strip */}
-      <AnnouncementBar onOpenBooking={() => handleOpenBooking()} />
-
       {/* Sticky Glass Navbar with MegaMenu */}
       <Navbar 
         onOpenBooking={handleOpenBooking}
@@ -117,10 +112,7 @@ export default function App() {
           />
         ) : (
           <>
-            <HeroSection 
-              onOpenBooking={() => handleOpenBooking()} 
-              onOpenAuth={handleOpenAuth}
-            />
+            <HeroSection onOpenBooking={() => handleOpenBooking()} />
             <MediaRow />
             <AboutSplit onOpenBooking={() => handleOpenBooking()} />
             <MetricsBanner />
@@ -145,10 +137,7 @@ export default function App() {
       {/* Floating WhatsApp Bubble to +53 59710688 */}
       <WhatsAppChatBubble />
 
-      {/* Pre-Footer Status & Schedule Banner */}
-      <PreFooterStatusStrip />
-
-      {/* Luxury Mega Footer */}
+      {/* Luxury Mega Footer with Integrated Sanctuary Status Bar */}
       <Footer 
         onOpenBooking={() => handleOpenBooking()}
         onOpenAdmin={() => setAdminModalOpen(true)}
