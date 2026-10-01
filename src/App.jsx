@@ -18,6 +18,8 @@ import BookingCalendarModal from './components/BookingCalendarModal';
 import AuthModal from './components/AuthModal';
 import AdminDashboardModal from './components/AdminDashboardModal';
 import ServiceDetailPage from './components/ServiceDetailPage';
+import SobreNosotros from './components/SobreNosotros';
+import Blog from './components/Blog';
 import { getServiceById } from './data/servicesData';
 
 export default function App() {
@@ -27,17 +29,33 @@ export default function App() {
   const [adminModalOpen, setAdminModalOpen] = useState(false);
   const [preselectedService, setPreselectedService] = useState(null);
   const [initialCategoryId, setInitialCategoryId] = useState(null);
+  
+  // Current view state: 'home' | 'service' | 'sobre-nosotros' | 'blog'
+  const [currentView, setCurrentView] = useState('home');
   const [selectedServiceForPage, setSelectedServiceForPage] = useState(null);
 
-  // Hash-based routing for individual service pages
+  // Hash-based routing
   useEffect(() => {
     const handleHashRouting = () => {
       const hash = window.location.hash;
+      if (hash === '#sobre-nosotros') {
+        setCurrentView('sobre-nosotros');
+        setSelectedServiceForPage(null);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        return;
+      }
+      if (hash.startsWith('#blog')) {
+        setCurrentView('blog');
+        setSelectedServiceForPage(null);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        return;
+      }
       if (hash.startsWith('#servicio/')) {
         const id = hash.replace('#servicio/', '');
         const found = getServiceById(id);
         if (found) {
           setSelectedServiceForPage(found);
+          setCurrentView('service');
           window.scrollTo({ top: 0, behavior: 'smooth' });
           return;
         }
@@ -46,13 +64,15 @@ export default function App() {
         const found = getServiceById(id);
         if (found) {
           setSelectedServiceForPage(found);
+          setCurrentView('service');
           window.scrollTo({ top: 0, behavior: 'smooth' });
           return;
         }
       }
-      if (!hash || hash === '#' || hash.startsWith('#experiencias') || hash.startsWith('#beneficios') || hash.startsWith('#testimonios') || hash.startsWith('#ubicacion') || hash.startsWith('#servicios')) {
-        setSelectedServiceForPage(null);
-      }
+
+      // Default back to home
+      setCurrentView('home');
+      setSelectedServiceForPage(null);
     };
 
     handleHashRouting();
@@ -76,37 +96,63 @@ export default function App() {
     const found = typeof service === 'string' ? getServiceById(service) : service;
     if (found) {
       setSelectedServiceForPage(found);
+      setCurrentView('service');
       window.location.hash = `#servicio/${found.id}`;
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
 
-  const handleBackToCatalog = () => {
-    setSelectedServiceForPage(null);
-    window.location.hash = '';
+  const handleNavigateToPage = (page) => {
+    if (page === 'sobre-nosotros') {
+      window.location.hash = 'sobre-nosotros';
+      setCurrentView('sobre-nosotros');
+    } else if (page === 'blog') {
+      window.location.hash = 'blog';
+      setCurrentView('blog');
+    } else {
+      window.location.hash = '';
+      setCurrentView('home');
+      setSelectedServiceForPage(null);
+    }
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleBackToHome = () => {
+    handleNavigateToPage('home');
   };
 
   return (
     <div className="min-h-screen flex flex-col bg-cream-100 text-stone-900 antialiased selection:bg-mahogany-950 selection:text-white">
       
-      {/* Sticky Glass Navbar with MegaMenu */}
+      {/* Sticky Glass Navbar */}
       <Navbar 
         onOpenBooking={handleOpenBooking}
         onOpenAuth={handleOpenAuth}
         onOpenAdmin={() => setAdminModalOpen(true)}
         onSelectService={(srv) => setPreselectedService(srv)}
         onNavigateToService={handleNavigateToService}
-        onBackHome={handleBackToCatalog}
-        isViewingService={!!selectedServiceForPage}
+        onNavigateToPage={handleNavigateToPage}
+        onBackHome={handleBackToHome}
+        currentView={currentView}
+        isViewingService={currentView === 'service'}
       />
 
-      {/* Main Content Sections: Switches between Dedicated Service Page and Full Landing Page */}
+      {/* Main Content Router */}
       <main className="flex-1">
-        {selectedServiceForPage ? (
+        {currentView === 'sobre-nosotros' ? (
+          <SobreNosotros 
+            onBack={handleBackToHome}
+            onOpenBooking={handleOpenBooking}
+          />
+        ) : currentView === 'blog' ? (
+          <Blog 
+            onBack={handleBackToHome}
+            onOpenBooking={handleOpenBooking}
+          />
+        ) : currentView === 'service' && selectedServiceForPage ? (
           <ServiceDetailPage
             service={selectedServiceForPage}
-            onBack={handleBackToCatalog}
+            onBack={handleBackToHome}
             onOpenBooking={handleOpenBooking}
             onSelectOtherService={handleNavigateToService}
           />
@@ -114,7 +160,7 @@ export default function App() {
           <>
             <HeroSection onOpenBooking={() => handleOpenBooking()} />
             <MediaRow />
-            <AboutSplit onOpenBooking={() => handleOpenBooking()} />
+            <AboutSplit onOpenBooking={() => handleOpenBooking()} onNavigateToPage={handleNavigateToPage} />
             <MetricsBanner />
             <DarkPackages 
               onOpenBooking={handleOpenBooking}
@@ -137,10 +183,11 @@ export default function App() {
       {/* Floating WhatsApp Bubble to +53 59710688 */}
       <WhatsAppChatBubble />
 
-      {/* Luxury Mega Footer with Integrated Sanctuary Status Bar */}
+      {/* Luxury Mega Footer */}
       <Footer 
         onOpenBooking={() => handleOpenBooking()}
         onOpenAdmin={() => setAdminModalOpen(true)}
+        onNavigateToPage={handleNavigateToPage}
       />
 
       {/* Interactive Modals */}

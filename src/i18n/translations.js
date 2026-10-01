@@ -10,7 +10,7 @@ export const translations = {
     cubaTime: "Hora Cuba",
     
     // Navbar
-    navServices: "Servicios & Rituales",
+    navServices: "Servicios del Spa",
     navExperiences: "Experiencias",
     navBenefits: "Beneficios",
     navReviews: "Opiniones",
@@ -53,7 +53,7 @@ export const translations = {
     aboutTag: "Conoce Nuestro Universo",
     aboutTitle: "¿Qué es Momentos Spa?",
     aboutDesc: "Un refugio privado en Miramar creado para quienes comprenden que el descanso no es un lujo, sino una necesidad vital de renovación.",
-    aboutExploreBtn: "Explorar Rituales",
+    aboutExploreBtn: "Explorar Servicios",
     exclusiveLocation: "Ubicación Exclusiva",
     aboutQuote: "\"Cuidar de tu salud y serenidad debe ser tan constante como tu respiración. Por eso en Momentos Spa cada detalle, desde el aroma al entrar hasta la temperatura de las toallas, está pensado en ti.\"",
     aboutBullet1: "Cabinas 100% privadas y climatizadas",
@@ -76,10 +76,10 @@ export const translations = {
 
     // Packages
     packagesBadge: "⭐ EXPERIENCIAS EXCLUSIVAS",
-    packagesTitle: "Nuestros Rituales Signature Más Solicitados",
+    packagesTitle: "Nuestros Paquetes Signature Más Solicitados",
     packagesSubtitle: "Selección de tratamientos holísticos diseñados para brindar la máxima desconexión y revitalización sensorial.",
     packagesViewDetail: "Ver detalle completo",
-    packagesBookNow: "Reservar este Ritual",
+    packagesBookNow: "Reservar este Paquete",
     packagesIncludesTag: "Incluye sesión completa, aromaterapia y copa de degustación.",
 
     // Catalog
@@ -185,7 +185,7 @@ export const translations = {
     mapsDirections: "A sólo 2 cuadras de 3ra Avenida y a pocos minutos de los principales hoteles de Miramar.",
 
     // Footer
-    footerSlogan: "Santuario de salud, relajación y estética en Miramar, La Habana. Tratamientos holísticos en cabinas privadas climatizadas.",
+    footerSlogan: "Santuario de salud, relajación y estética en Miramar, La Habana. Siempre pensando en ti.",
     footerLinksTitle: "Navegación",
     footerContactTitle: "Contacto & Reservas",
     footerHoursTitle: "Días de Atención",
@@ -208,10 +208,10 @@ export const translations = {
     backToCatalog: "Volver al catálogo",
     reserveByWhatsApp: "Reservar por WhatsApp (+53 59710688)",
     bookInCalendar: "Agendar Cita en Calendario",
-    stepByStepTitle: "El Ritual Paso a Paso",
+    stepByStepTitle: "El Servicio Paso a Paso",
     provenBenefitsTitle: "Beneficios Comprobados",
     includesTitle: "Qué Incluye Tu Reserva",
-    alsoRecommended: "Otros Rituales Recomendados",
+    alsoRecommended: "Otros Servicios Recomendados",
     privateHeatedCabin: "Cabina privada climatizada y toallas precalentadas",
     aromatherapyWelcome: "Aromaterapia botánica y degustación de vino o té",
     privateParking: "Parqueo privado gratuito y atención personalizada",
@@ -219,12 +219,12 @@ export const translations = {
 
     // Booking Modal
     modalBookingTitle: "Reservar Cita en Momentos Spa",
-    modalBookingSubtitle: "Selecciona el ritual, horario y déjanos tus datos. Tu cita se confirmará instantáneamente vía WhatsApp.",
+    modalBookingSubtitle: "Selecciona el servicio, horario y déjanos tus datos. Tu cita se confirmará instantáneamente vía WhatsApp.",
     step1Title: "1. Tratamiento",
     step2Title: "2. Fecha & Hora",
     step3Title: "3. Usuario",
     step4Title: "4. Confirmación",
-    selectServiceLabel: "1. Selecciona el Ritual o Servicio",
+    selectServiceLabel: "1. Selecciona el Servicio",
     selectDateLabel: "2. Selecciona el Día (Miércoles a Domingo)",
     selectTimeLabel: "3. Horario Disponible",
     contactDataLabel: "4. Datos del Cliente",

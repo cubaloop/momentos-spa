@@ -1,10 +1,11 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { ChevronDown, Calendar, User, ShieldCheck, Menu, X, ArrowRight, Sparkles, ChevronRight, Clock } from 'lucide-react';
+import { 
+  ChevronDown, Calendar, Phone, Menu, X, Clock, MapPin, 
+  Sparkles, CheckCircle2, ChevronRight, User, LogOut, ShieldCheck 
+} from 'lucide-react';
 import { categoriesData } from '../data/servicesData';
 import { useAuth } from '../context/AuthContext';
 import { useCubaStatus } from '../utils/cubaTime';
-import { useLanguage } from '../context/LanguageContext';
-import LanguageSelector from './LanguageSelector';
 
 export default function Navbar({ 
   onOpenBooking, 
@@ -12,45 +13,40 @@ export default function Navbar({
   onOpenAdmin, 
   onSelectService, 
   onNavigateToService,
+  onNavigateToPage,
   onBackHome,
-  isViewingService
+  currentView = 'home',
+  isViewingService = false
 }) {
-  const { user, logout, isAdmin } = useAuth();
-  const { isOpen, statusText, detailText, havanaTimeString } = useCubaStatus();
-  const { t, localizedCategories } = useLanguage();
-  const cats = localizedCategories && localizedCategories.length > 0 ? localizedCategories : categoriesData;
   const [megaMenuOpen, setMegaMenuOpen] = useState(false);
-  const [activeCategoryIndex, setActiveCategoryIndex] = useState(0);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeCategoryIndex, setActiveCategoryIndex] = useState(0);
   const [mobileExpandedCat, setMobileExpandedCat] = useState(null);
   const [mobileExpandedSub, setMobileExpandedSub] = useState(null);
-  const [userDropdownOpen, setUserDropdownOpen] = useState(false);
+  
   const megaMenuRef = useRef(null);
-  const userDropdownRef = useRef(null);
+  const { user, logout } = useAuth();
+  const { isOpen, statusText, detailText, havanaTimeString } = useCubaStatus();
 
+  // Close desktop mega menu on outside click
   useEffect(() => {
-    function handleClickOutside(e) {
-      if (megaMenuRef.current && !megaMenuRef.current.contains(e.target)) {
+    function handleClickOutside(event) {
+      if (megaMenuRef.current && !megaMenuRef.current.contains(event.target)) {
         setMegaMenuOpen(false);
       }
-      if (userDropdownRef.current && !userDropdownRef.current.contains(e.target)) {
-        setUserDropdownOpen(false);
-      }
     }
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  const activeCategory = cats[activeCategoryIndex] || cats[0];
+  const cats = categoriesData || [];
+  const currentCat = cats[activeCategoryIndex] || cats[0];
 
   const handleServiceClick = (srv) => {
     setMegaMenuOpen(false);
     setMobileMenuOpen(false);
     if (onNavigateToService) {
       onNavigateToService(srv);
-    } else if (onSelectService) {
-      onSelectService(srv);
-      onOpenBooking(srv);
     }
   };
 
@@ -62,8 +58,49 @@ export default function Navbar({
     onOpenBooking(srv);
   };
 
+  const handleNavClick = (page) => {
+    setMegaMenuOpen(false);
+    setMobileMenuOpen(false);
+    if (onNavigateToPage) {
+      onNavigateToPage(page);
+    }
+  };
+
   return (
-    <nav className="sticky top-0 z-40 glass-nav border-b border-stone-200/70 transition-all duration-300">
+    <nav className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-stone-200/90 shadow-sm transition-all duration-300">
+      
+      {/* Upper Status Line - Havana Cuba Time */}
+      <div className="hidden md:flex items-center justify-between px-6 py-1.5 bg-[#200b0f] text-[#e8ded5] text-xs border-b border-[#3d161e]">
+        <div className="flex items-center gap-2">
+          <span className="relative flex h-2 w-2">
+            {isOpen && <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>}
+            <span className={`relative inline-flex rounded-full h-2 w-2 ${isOpen ? 'bg-emerald-500' : 'bg-rose-500'}`}></span>
+          </span>
+          <span className="font-semibold">{statusText}</span>
+          <span className="text-white/40">•</span>
+          <span className="text-cream-200/70">{detailText}</span>
+          {havanaTimeString && (
+            <span className="text-[10px] font-mono text-emerald-300 ml-1">
+              ({havanaTimeString} La Habana)
+            </span>
+          )}
+        </div>
+
+        <div className="flex items-center gap-4 text-[11px] text-cream-200/80">
+          <span className="text-gold font-serif-title italic">“Siempre pensando en ti”</span>
+          <span>•</span>
+          <a 
+            href="https://wa.me/5359710688" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="flex items-center gap-1 text-gold hover:text-white transition-colors"
+          >
+            <Phone className="w-3 h-3 text-gold" />
+            <span>+53 59710688</span>
+          </a>
+        </div>
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           
@@ -71,7 +108,7 @@ export default function Navbar({
           <button 
             onClick={() => {
               if (onBackHome) onBackHome();
-              else window.location.hash = '';
+              else handleNavClick('home');
             }} 
             className="flex items-center gap-3 group text-left"
           >
@@ -91,16 +128,16 @@ export default function Navbar({
           </button>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-7">
             
-            {/* Mega Menu Trigger */}
+            {/* Mega Menu Trigger: "Servicios" */}
             <div className="relative" ref={megaMenuRef}>
               <button
                 onClick={() => setMegaMenuOpen(!megaMenuOpen)}
                 onMouseEnter={() => setMegaMenuOpen(true)}
                 className="flex items-center gap-1.5 text-stone-800 hover:text-mahogany-900 font-semibold text-sm py-2 transition-colors"
               >
-                <span>{t('navServices', 'Servicios & Rituales')}</span>
+                <span>Servicios del Spa</span>
                 <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${megaMenuOpen ? 'rotate-180 text-mahogany-800' : 'text-stone-400'}`} />
               </button>
 
@@ -115,7 +152,7 @@ export default function Navbar({
                     {/* Categories Column (Left) */}
                     <div className="col-span-4 border-r border-stone-100 pr-4 space-y-2">
                       <div className="px-2 py-1 text-[11px] font-bold uppercase tracking-wider text-stone-400">
-                        {t('categoriesLabel', 'Categorías')}
+                        Categorías del Catálogo
                       </div>
                       {cats.map((cat, idx) => (
                         <button
@@ -138,58 +175,44 @@ export default function Navbar({
                         </button>
                       ))}
 
-                      <div className="p-3 bg-cream-100 rounded-2xl border border-stone-200 text-xs text-stone-600 mt-3">
-                        <span className="font-bold text-mahogany-950 block mb-0.5">{t('attentionMiramar', 'Atención en Miramar')}</span>
-                        Cabinas privadas climatizadas de miércoles a domingo.
+                      {/* View All button */}
+                      <div className="pt-2">
+                        <a
+                          href="#servicios"
+                          onClick={() => { setMegaMenuOpen(false); handleNavClick('home'); }}
+                          className="w-full block text-center py-2.5 rounded-xl border border-dashed border-stone-300 hover:border-mahogany-900 text-xs font-bold text-mahogany-950 hover:bg-cream-100 transition-all"
+                        >
+                          Ver Catálogo Completo
+                        </a>
                       </div>
                     </div>
 
-                    {/* Subcategories & Services Grid (Center & Right) - CLEAN DELIMITED BUTTONS */}
-                    <div className="col-span-8 pl-2">
-                      <div className="flex items-center justify-between pb-3 mb-3 border-b border-stone-100">
-                        <div>
-                          <h4 className="font-serif-title text-base font-bold text-mahogany-950">{activeCategory.title}</h4>
-                          <p className="text-xs text-stone-400 mt-0.5">{activeCategory.subtitle}</p>
-                        </div>
-                        <button
-                          onClick={() => {
-                            setMegaMenuOpen(false);
-                            onOpenBooking(null, activeCategory.id);
-                          }}
-                          className="text-xs text-mahogany-800 font-bold hover:underline flex items-center gap-1"
-                        >
-                          <span>{t('fullCalendar', 'Calendario completo')}</span>
-                          <ArrowRight className="w-3.5 h-3.5" />
-                        </button>
+                    {/* Subcategories & Services (Right 8 columns) */}
+                    <div className="col-span-8 pl-2 space-y-4 max-h-[460px] overflow-y-auto pr-1">
+                      <div>
+                        <h4 className="text-base font-serif-title font-bold text-mahogany-950">{currentCat?.title}</h4>
+                        <p className="text-xs text-stone-500 leading-relaxed">{currentCat?.subtitle}</p>
                       </div>
 
-                      {/* Delimited Service Buttons Grid */}
-                      <div className="space-y-4 max-h-[390px] overflow-y-auto pr-2">
-                        {activeCategory.subcategories.map((sub) => (
+                      <div className="space-y-4">
+                        {currentCat?.subcategories?.map((sub) => (
                           <div key={sub.id} className="space-y-2">
-                            <div className="text-[11px] font-bold text-stone-500 uppercase tracking-wider flex items-center gap-1.5">
-                              <span className="w-1.5 h-1.5 rounded-full bg-gold" />
-                              <span>{sub.name}</span>
+                            <div className="flex items-center gap-2 border-b border-stone-100 pb-1">
+                              <span className="w-1.5 h-1.5 rounded-full bg-gold"></span>
+                              <span className="text-xs font-bold uppercase tracking-wider text-mahogany-900">
+                                {sub.name}
+                              </span>
                             </div>
 
-                            <div className="grid grid-cols-2 gap-2.5">
+                            <div className="grid grid-cols-2 gap-2">
                               {sub.services.map((srv) => (
                                 <div
                                   key={srv.id}
-                                  onClick={() => {
-                                    setMegaMenuOpen(false);
-                                    if (onNavigateToService) onNavigateToService(srv);
-                                  }}
-                                  className="w-full text-left p-3 rounded-2xl border border-stone-200 bg-white hover:border-mahogany-900 hover:shadow-md transition-all group flex items-center justify-between gap-2.5 cursor-pointer"
-                                  title={`Ver página completa de ${srv.name}`}
+                                  onClick={() => handleServiceClick(srv)}
+                                  className="group cursor-pointer p-2.5 rounded-xl border border-stone-100 hover:border-stone-300 hover:bg-cream-50/80 transition-all flex items-center justify-between gap-2"
                                 >
-                                  {srv.image && (
-                                    <div className="w-11 h-11 rounded-xl overflow-hidden shrink-0 border border-stone-100">
-                                      <img src={srv.image} alt={srv.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
-                                    </div>
-                                  )}
-                                  <div className="flex-1 min-w-0">
-                                    <div className="text-xs font-bold text-stone-900 group-hover:text-mahogany-900 line-clamp-1">
+                                  <div className="truncate">
+                                    <div className="text-xs font-bold text-stone-800 group-hover:text-mahogany-900 truncate">
                                       {srv.name}
                                     </div>
                                     <div className="text-[11px] text-stone-400 mt-0.5 flex items-center gap-1.5">
@@ -199,12 +222,7 @@ export default function Navbar({
                                     </div>
                                   </div>
                                   <button
-                                    onClick={(e) => {
-                                      e.stopPropagation();
-                                      setMegaMenuOpen(false);
-                                      if (onSelectService) onSelectService(srv);
-                                      onOpenBooking(srv);
-                                    }}
+                                    onClick={(e) => handleDirectReserve(e, srv)}
                                     className="text-[10px] font-bold px-2.5 py-1 rounded-lg bg-cream-100 text-stone-700 hover:bg-mahogany-950 hover:text-white transition-colors shrink-0"
                                     title="Agendar Cita en Calendario"
                                   >
@@ -224,30 +242,42 @@ export default function Navbar({
               )}
             </div>
 
+            {/* Link to Paquetes */}
             <a 
               href="#experiencias" 
-              onClick={() => { if (isViewingService && onBackHome) onBackHome(); }}
+              onClick={() => handleNavClick('home')}
               className="text-stone-800 hover:text-mahogany-900 font-semibold text-sm transition-colors"
             >
-              Experiencias
+              Paquetes
             </a>
-            <a 
-              href="#beneficios" 
-              onClick={() => { if (isViewingService && onBackHome) onBackHome(); }}
-              className="text-stone-800 hover:text-mahogany-900 font-semibold text-sm transition-colors"
+
+            {/* New Page: Sobre Nosotros */}
+            <button 
+              onClick={() => handleNavClick('sobre-nosotros')}
+              className={`font-semibold text-sm transition-colors ${
+                currentView === 'sobre-nosotros'
+                  ? 'text-mahogany-950 font-bold border-b-2 border-gold pb-0.5'
+                  : 'text-stone-800 hover:text-mahogany-900'
+              }`}
             >
-              Beneficios
-            </a>
-            <a 
-              href="#testimonios" 
-              onClick={() => { if (isViewingService && onBackHome) onBackHome(); }}
-              className="text-stone-800 hover:text-mahogany-900 font-semibold text-sm transition-colors"
+              Sobre Nosotros
+            </button>
+
+            {/* New Page: Blog */}
+            <button 
+              onClick={() => handleNavClick('blog')}
+              className={`font-semibold text-sm transition-colors ${
+                currentView === 'blog'
+                  ? 'text-mahogany-950 font-bold border-b-2 border-gold pb-0.5'
+                  : 'text-stone-800 hover:text-mahogany-900'
+              }`}
             >
-              Opiniones
-            </a>
+              Blog
+            </button>
+
             <a 
               href="#ubicacion" 
-              onClick={() => { if (isViewingService && onBackHome) onBackHome(); }}
+              onClick={() => handleNavClick('home')}
               className="text-stone-800 hover:text-mahogany-900 font-semibold text-sm transition-colors"
             >
               Ubicación
@@ -256,9 +286,6 @@ export default function Navbar({
 
           {/* Right Action Items */}
           <div className="hidden sm:flex items-center gap-3">
-            {/* Language Selector Dropdown */}
-            <LanguageSelector />
-            
             {/* Admin Dashboard */}
             <button
               onClick={onOpenAdmin}
@@ -268,66 +295,13 @@ export default function Navbar({
               <ShieldCheck className="w-5 h-5" />
             </button>
 
-            {/* User Account */}
-            <div className="relative" ref={userDropdownRef}>
-              {user ? (
-                <button
-                  onClick={() => setUserDropdownOpen(!userDropdownOpen)}
-                  className="flex items-center gap-2 px-3 py-2 rounded-full bg-cream-200 text-mahogany-950 hover:bg-cream-300 transition-all border border-stone-200 text-xs font-semibold"
-                >
-                  <div className="w-6 h-6 rounded-full bg-mahogany-900 text-white flex items-center justify-center text-xs font-bold">
-                    {user.name.charAt(0).toUpperCase()}
-                  </div>
-                  <span className="max-w-[100px] truncate">{user.name.split(' ')[0]}</span>
-                  <ChevronDown className="w-3.5 h-3.5 text-stone-500" />
-                </button>
-              ) : (
-                <button
-                  onClick={() => onOpenAuth('login')}
-                  className="flex items-center gap-1.5 px-3.5 py-2 rounded-full text-stone-700 hover:text-mahogany-950 hover:bg-cream-200 transition-all text-xs font-bold"
-                >
-                  <User className="w-4 h-4 text-stone-500" />
-                  <span>{t('navLogin', 'Ingresar')}</span>
-                </button>
-              )}
-
-              {/* User Dropdown */}
-              {userDropdownOpen && user && (
-                <div className="absolute right-0 mt-2 w-56 bg-white rounded-2xl shadow-xl border border-stone-200 py-2 z-50 animate-fade-in">
-                  <div className="px-4 py-2 border-b border-stone-100">
-                    <div className="text-xs font-bold text-stone-800">{user.name}</div>
-                    <div className="text-[11px] text-stone-400 truncate">{user.email}</div>
-                  </div>
-                  <button
-                    onClick={() => {
-                      setUserDropdownOpen(false);
-                      onOpenAdmin();
-                    }}
-                    className="w-full text-left px-4 py-2 text-xs font-medium text-stone-700 hover:bg-cream-100 flex items-center gap-2"
-                  >
-                    <ShieldCheck className="w-3.5 h-3.5 text-mahogany-800" />
-                    <span>{t('navAdmin', 'Panel Administrador')}</span>
-                  </button>
-                  <button
-                    onClick={() => {
-                      logout();
-                      setUserDropdownOpen(false);
-                    }}
-                    className="w-full text-left px-4 py-2 text-xs text-red-600 hover:bg-red-50 transition-colors"
-                  >
-                    Cerrar Sesión
-                  </button>
-                </div>
-              )}
-            </div>
-
             {/* Primary CTA */}
             <button
               onClick={() => onOpenBooking()}
               className="flex items-center gap-2 bg-mahogany-950 hover:bg-mahogany-900 text-white font-bold text-xs sm:text-sm px-6 py-3 rounded-full shadow-xl shadow-mahogany-950/20 hover:scale-105 transition-all"
             >
               <Calendar className="w-4 h-4 text-gold" />
-              <span>{t('navBookBtn', 'Reservar Cita')}</span>
+              <span>Reservar Cita</span>
             </button>
 
           </div>
@@ -351,7 +325,7 @@ export default function Navbar({
         </div>
       </div>
 
-      {/* MOBILE-OPTIMIZED DRAWER WITH NESTED EXPANDABLE CATEGORIES & SUBCATEGORIES */}
+      {/* MOBILE-OPTIMIZED DRAWER */}
       {mobileMenuOpen && (
         <div className="lg:hidden bg-white border-b border-stone-200 max-h-[85vh] overflow-y-auto p-5 space-y-4 shadow-2xl animate-fade-in">
           
@@ -359,16 +333,13 @@ export default function Navbar({
             <span className="text-xs font-bold uppercase tracking-wider text-stone-400">Menú & Servicios</span>
             <button
               onClick={() => setMobileMenuOpen(false)}
-              className="text-xs text-stone-500"
+              className="text-xs text-stone-500 font-bold"
             >
-              Cerrar
+              Cerrar ✕
             </button>
           </div>
 
-          {/* Collapsible Language Selector */}
-          <LanguageSelector isMobile={true} onCloseMobile={() => setMobileMenuOpen(false)} />
-
-          {/* Real-time Cuba Open/Closed Status Card in Mobile Menu */}
+          {/* Real-time Cuba Open/Closed Status Card */}
           <div className={`p-3 rounded-2xl border flex items-center justify-between text-xs ${
             isOpen 
               ? 'bg-emerald-50 border-emerald-200 text-emerald-950' 
@@ -391,8 +362,27 @@ export default function Navbar({
             )}
           </div>
 
+          {/* Quick Navigation Links in Mobile */}
+          <div className="grid grid-cols-2 gap-2 pt-1 pb-2 border-b border-stone-200">
+            <button
+              onClick={() => handleNavClick('sobre-nosotros')}
+              className="p-2.5 rounded-xl bg-cream-100 text-mahogany-950 text-xs font-bold text-center hover:bg-cream-200 transition-colors"
+            >
+              Sobre Nosotros
+            </button>
+            <button
+              onClick={() => handleNavClick('blog')}
+              className="p-2.5 rounded-xl bg-cream-100 text-mahogany-950 text-xs font-bold text-center hover:bg-cream-200 transition-colors"
+            >
+              Blog de Bienestar
+            </button>
+          </div>
+
           {/* Accordion Categories */}
           <div className="space-y-2">
+            <div className="text-[11px] font-bold uppercase tracking-wider text-stone-400 px-1">
+              Catálogo de Servicios
+            </div>
             {cats.map((cat) => {
               const isCatExpanded = mobileExpandedCat === cat.id;
 
@@ -462,39 +452,26 @@ export default function Navbar({
 
           {/* Quick Links */}
           <div className="border-t border-stone-200 pt-3 space-y-2 text-xs font-semibold text-stone-700">
-            <a href="#experiencias" onClick={() => setMobileMenuOpen(false)} className="block py-1">{t('navExperiences', 'Experiencias')}</a>
-            <a href="#beneficios" onClick={() => setMobileMenuOpen(false)} className="block py-1">{t('navBenefits', 'Beneficios')}</a>
-            <a href="#testimonios" onClick={() => setMobileMenuOpen(false)} className="block py-1">{t('navReviews', 'Opiniones')}</a>
-            <a href="#ubicacion" onClick={() => setMobileMenuOpen(false)} className="block py-1">Ubicación en Google Maps</a>
+            <a href="#experiencias" onClick={() => { setMobileMenuOpen(false); handleNavClick('home'); }} className="block py-1">Paquetes</a>
+            <a href="#beneficios" onClick={() => { setMobileMenuOpen(false); handleNavClick('home'); }} className="block py-1">Beneficios</a>
+            <a href="#testimonios" onClick={() => { setMobileMenuOpen(false); handleNavClick('home'); }} className="block py-1">Opiniones</a>
+            <a href="#ubicacion" onClick={() => { setMobileMenuOpen(false); handleNavClick('home'); }} className="block py-1">Ubicación en Google Maps</a>
           </div>
 
-          {/* Mobile User Actions */}
-          <div className="border-t border-stone-200 pt-3 space-y-2">
-            {user ? (
-              <div className="flex items-center justify-between p-2.5 bg-cream-100 rounded-xl text-xs">
-                <span className="font-bold text-stone-900">{user.name}</span>
-                <button onClick={logout} className="text-red-600 font-bold">Salir</button>
-              </div>
-            ) : (
-              <button
-                onClick={() => { setMobileMenuOpen(false); onOpenAuth('login'); }}
-                className="w-full py-2.5 text-xs font-bold text-mahogany-950 border border-mahogany-950 rounded-full"
-              >
-                Ingresar / Crear Cuenta
-              </button>
-            )}
-
+          {/* Mobile Admin Link */}
+          <div className="border-t border-stone-200 pt-3">
             <button
               onClick={() => { setMobileMenuOpen(false); onOpenAdmin(); }}
-              className="w-full py-2.5 text-xs font-bold text-stone-700 bg-stone-100 rounded-xl flex items-center justify-center gap-1.5"
+              className="w-full py-2.5 rounded-xl border border-stone-200 text-xs font-bold text-stone-700 hover:bg-cream-100 flex items-center justify-center gap-2"
             >
-              <ShieldCheck className="w-4 h-4 text-mahogany-800" />
-              <span>Panel Administrador</span>
+              <ShieldCheck className="w-4 h-4 text-mahogany-950" />
+              <span>Panel de Administración</span>
             </button>
           </div>
 
         </div>
       )}
+
     </nav>
   );
 }

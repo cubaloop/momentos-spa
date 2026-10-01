@@ -1,76 +1,84 @@
 import React from 'react';
-import { Calendar, Check, ArrowRight, Eye } from 'lucide-react';
-import { useLanguage } from '../context/LanguageContext';
+import { Calendar, Check, ArrowRight, Eye, Sparkles } from 'lucide-react';
+import { allServices } from '../data/servicesData';
 
 export default function DarkPackages({ onOpenBooking, onNavigateToService }) {
-  const { t, getLocalizedServiceById } = useLanguage();
-
   const packages = [
     {
-      id: "srv_headspa",
-      badge: t('badgeHeadSpa', "⭐ TENDENCIA"),
-      title: getLocalizedServiceById("srv_headspa")?.name || "Japanese Head Spa Premium",
-      subtitle: getLocalizedServiceById("srv_headspa")?.description || "Microcascada tibia y masaje craneal shiatsu",
-      price: 65,
-      duration: "75 min",
-      image: "./assets/head_spa.jpg",
+      id: "srv_ritual_amor_pareja",
+      badge: "❤️ MÁS POPULAR",
+      title: "Ritual de Amor & Relax en Pareja",
+      subtitle: "3 horas aprox. con piedras volcánicas, facial hidratante y jacuzzi privado",
+      price: 130,
+      duration: "3h aprox.",
+      image: "./assets/catalog/masaje-en-pareja-2-horas.webp",
       popular: true,
       features: [
-        t('feat1_1', "Ducha circular de cascada tibia Halo"),
-        t('feat1_2', "Masaje shiatsu craneal y cervical"),
-        t('feat1_3', "Vapor ozono purificante capilar"),
-        t('feat1_4', "Hidratación facial express incluida")
+        "Ambiente romántico con velas y duchas dobles",
+        "Exfoliante corporal + Masaje piedras volcánicas 30 min",
+        "Facial hidratante revitalizante 60 min",
+        "Bañera hidromasaje privada 45 min con vino y aperitivo"
       ]
     },
     {
-      id: "srv_masaje_pareja",
-      badge: t('badgeCouples', "❤️ PAREJAS"),
-      title: getLocalizedServiceById("srv_masaje_pareja")?.name || "Ritual Momentos en Pareja Deluxe",
-      subtitle: getLocalizedServiceById("srv_masaje_pareja")?.description || "Cabina suite privada para dos con brindis",
-      price: 80,
-      duration: "90 min",
-      image: "./assets/masaje_pareja.jpg",
+      id: "srv_refugio_zen",
+      badge: "⭐ MÁXIMA INMERSIÓN",
+      title: "Refugio Zen",
+      subtitle: "4 horas y 20 min aprox. de retiro integral y cuidado holístico",
+      price: 160,
+      duration: "4h 20 min",
+      image: "./assets/catalog/masaje-relajante-en-pareja-60min.webp",
       popular: true,
       features: [
-        t('feat2_1', "Masaje relajante sincronizado para 2"),
-        t('feat2_2', "Copas de bienvenida y bombones"),
-        t('feat2_3', "Acceso privado a jacuzzi y sauna"),
-        t('feat2_4', "Batas de felpa y pantuflas de cortesía")
+        "Masaje descontracturante y piedras calientes 2 horas",
+        "Limpieza facial 60 min + Exfoliante corporal 20 min",
+        "Duchas climatizadas 15 min + Bañera hidromasaje 45 min",
+        "Copa de vino al gusto y aperitivo para acompañar"
       ]
     },
     {
-      id: "srv_circuito_completo",
-      badge: t('badgeThermal', "🌿 TERMOTERAPIA"),
-      title: getLocalizedServiceById("srv_circuito_completo")?.name || "Circuito Termal & Piedras",
-      subtitle: getLocalizedServiceById("srv_circuito_completo")?.description || "Jacuzzi con sales y piedras volcánicas",
-      price: 85,
-      duration: "110 min",
-      image: "./assets/circuito_termal.jpg",
+      id: "srv_plan_romantico",
+      badge: "🍾 BOTELLA DE VINO",
+      title: "Plan Romántico",
+      subtitle: "2 horas aprox. con masaje de velas, facial y botella de vino",
+      price: 95,
+      duration: "2h aprox.",
+      image: "./assets/catalog/ritual-eternal-velvet-3-horas.webp",
       popular: false,
       features: [
-        t('feat3_1', "Sauna seco terapéutico de cedro"),
-        t('feat3_2', "Jacuzzi privado con sales minerales"),
-        t('feat3_3', "Masaje completo de piedras calientes"),
-        t('feat3_4', "Infusión botánica revitalizante")
+        "Masaje con velas aromáticas tibias 30 min",
+        "Facial iluminador para dos 30 min",
+        "Bañera de hidromasaje privada 45 min",
+        "Botella de vino a elección y aperitivo"
       ]
     }
   ];
 
+  const handlePackageClick = (pkg) => {
+    const matchedService = allServices.find(s => s.id === pkg.id);
+    if (onNavigateToService && matchedService) {
+      onNavigateToService(matchedService);
+    } else if (onNavigateToService) {
+      onNavigateToService({ id: pkg.id, name: pkg.title });
+    }
+  };
+
   return (
-    <section className="py-20 bg-mahogany-950 text-white relative overflow-hidden">
+    <section className="py-20 bg-mahogany-950 text-white relative overflow-hidden" id="experiencias">
       <div className="absolute top-0 right-0 w-96 h-96 bg-gold/5 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-mahogany-700/20 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
-          <span className="text-xs font-bold uppercase tracking-[0.25em] text-gold">
-            {t('packagesBadge', '⭐ EXPERIENCIAS EXCLUSIVAS')}
+          <span className="text-xs font-bold uppercase tracking-[0.25em] text-gold flex items-center justify-center gap-1.5">
+            <Sparkles className="w-3.5 h-3.5" />
+            EXPERIENCIAS EXCLUSIVAS
           </span>
           <h2 className="font-serif-title text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
-            {t('packagesTitle', 'Nuestros Rituales Signature Más Solicitados')}
+            Nuestros Paquetes Signature Más Solicitados
           </h2>
           <p className="text-cream-200/80 text-sm sm:text-base">
-            {t('packagesSubtitle', 'Selección de tratamientos holísticos diseñados para brindar la máxima desconexión y revitalización sensorial.')}
+            Selección de experiencias sensoriales y combinadas diseñadas para brindar la máxima desconexión, privacidad y bienestar.
           </p>
         </div>
 
@@ -86,14 +94,20 @@ export default function DarkPackages({ onOpenBooking, onNavigateToService }) {
             >
               {pkg.image && (
                 <div 
-                  onClick={() => onNavigateToService && onNavigateToService({ id: pkg.id, name: pkg.title })}
-                  className="relative h-52 overflow-hidden cursor-pointer"
-                  title="Ver página de este ritual"
+                  onClick={() => handlePackageClick(pkg)}
+                  className="relative h-56 overflow-hidden cursor-pointer"
+                  title="Ver detalles de este paquete"
                 >
                   <img
                     src={pkg.image}
                     alt={pkg.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    onError={(e) => {
+                      if (!e.currentTarget.dataset.handled) {
+                        e.currentTarget.dataset.handled = 'true';
+                        e.currentTarget.src = './assets/masaje_pareja.jpg';
+                      }
+                    }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-mahogany-950 via-transparent to-transparent opacity-80" />
                   <div className="absolute top-4 left-4">
@@ -101,65 +115,76 @@ export default function DarkPackages({ onOpenBooking, onNavigateToService }) {
                       {pkg.badge}
                     </span>
                   </div>
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/40">
-                    <span className="bg-white/90 text-mahogany-950 text-xs font-bold px-4 py-2 rounded-full flex items-center gap-1.5 shadow-lg">
-                      <Eye className="w-3.5 h-3.5" />
-                      <span>{t('packagesViewDetail', 'Ver detalle completo')}</span>
+                  <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span className="p-2 rounded-full bg-mahogany-950/80 text-white backdrop-blur-sm text-xs flex items-center gap-1">
+                      <Eye className="w-3.5 h-3.5 text-gold" />
+                      <span>Ver</span>
                     </span>
                   </div>
                 </div>
               )}
 
-              <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between">
+              <div className="p-8 flex-1 flex flex-col justify-between">
                 <div>
-                  <div className="flex items-baseline justify-between mb-2">
-                    <h3 
-                      onClick={() => onNavigateToService && onNavigateToService({ id: pkg.id, name: pkg.title })}
-                      className="font-serif-title text-xl sm:text-2xl font-bold cursor-pointer hover:text-gold transition-colors"
-                    >
-                      {pkg.title}
-                    </h3>
-                  </div>
-                  <p className="text-xs text-cream-200/70 mb-4 line-clamp-2">
+                  <h3 
+                    onClick={() => handlePackageClick(pkg)}
+                    className="font-serif-title text-2xl font-bold text-white mb-2 cursor-pointer hover:text-gold transition-colors"
+                  >
+                    {pkg.title}
+                  </h3>
+                  <p className="text-xs text-cream-200/70 mb-6 leading-relaxed">
                     {pkg.subtitle}
                   </p>
 
-                  <div className="flex items-center gap-3 mb-6 pb-6 border-b border-white/10 text-xs text-cream-200/90">
-                    <span className="font-serif-title text-3xl font-extrabold text-gold">${pkg.price} USD</span>
-                    <span>•</span>
-                    <span>{pkg.duration}</span>
+                  <div className="flex items-baseline gap-2 mb-6 pb-6 border-b border-white/10">
+                    <span className="text-4xl font-serif-title font-bold text-gold">
+                      ${pkg.price}
+                    </span>
+                    <span className="text-xs text-cream-200/60 uppercase">USD / {pkg.duration}</span>
                   </div>
 
-                  <div className="space-y-3 mb-8">
+                  <ul className="space-y-3 mb-8">
                     {pkg.features.map((feat, idx) => (
-                      <div key={idx} className="flex items-start gap-2.5 text-xs text-cream-100">
+                      <li key={idx} className="flex items-start gap-3 text-xs text-cream-100/90 leading-relaxed">
                         <Check className="w-4 h-4 text-gold shrink-0 mt-0.5" />
                         <span>{feat}</span>
-                      </div>
+                      </li>
                     ))}
-                  </div>
+                  </ul>
                 </div>
 
-                <div className="space-y-2 pt-2">
+                <div className="space-y-2 pt-4">
                   <button
-                    onClick={() => onOpenBooking({ id: pkg.id, name: pkg.title, price: pkg.price, duration: pkg.duration })}
-                    className="w-full py-3.5 px-6 rounded-full bg-gold hover:bg-gold-light text-mahogany-950 font-bold text-xs sm:text-sm transition-all flex items-center justify-center gap-2 shadow-lg hover:scale-105"
+                    onClick={() => {
+                      const matched = allServices.find(s => s.id === pkg.id);
+                      onOpenBooking(matched || { name: pkg.title, duration: pkg.duration, price: pkg.price });
+                    }}
+                    className={`w-full py-3.5 rounded-full font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 shadow-lg ${
+                      pkg.popular
+                        ? 'bg-gold hover:bg-gold-light text-mahogany-950 hover:shadow-gold/20'
+                        : 'bg-white/10 hover:bg-white/20 text-white border border-white/20'
+                    }`}
                   >
-                    <Calendar className="w-4 h-4" />
-                    <span>{t('packagesBookNow', 'Reservar este Ritual')}</span>
+                    <Calendar className="w-3.5 h-3.5" />
+                    <span>Reservar este Paquete</span>
                   </button>
+
                   <button
-                    onClick={() => onNavigateToService && onNavigateToService({ id: pkg.id, name: pkg.title })}
+                    onClick={() => handlePackageClick(pkg)}
                     className="w-full py-2 text-center text-xs text-cream-200/60 hover:text-gold transition-colors flex items-center justify-center gap-1"
                   >
-                    <span>{t('packagesViewDetail', 'Ver detalle completo')}</span>
+                    <span>Ver ficha técnica y fotos</span>
                     <ArrowRight className="w-3 h-3" />
                   </button>
                 </div>
-              </div>
 
+              </div>
             </div>
           ))}
+        </div>
+
+        <div className="mt-12 text-center text-xs text-cream-200/60 italic">
+          ☕ Todos nuestros paquetes incluyen bebida de cortesía (té, agua, café expreso, jugo o refresco frío).
         </div>
       </div>
     </section>

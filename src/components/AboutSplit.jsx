@@ -1,10 +1,7 @@
 import React from 'react';
-import { Sparkles, Quote, CheckCircle2 } from 'lucide-react';
-import { useLanguage } from '../context/LanguageContext';
+import { Sparkles, Quote, CheckCircle2, ArrowRight } from 'lucide-react';
 
-export default function AboutSplit({ onOpenBooking }) {
-  const { t } = useLanguage();
-
+export default function AboutSplit({ onOpenBooking, onNavigateToPage }) {
   return (
     <section id="experiencias" className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
@@ -23,25 +20,29 @@ export default function AboutSplit({ onOpenBooking }) {
           <div className="relative z-10">
             <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-gold mb-3">
               <Sparkles className="w-3.5 h-3.5" />
-              <span>{t('aboutTag', 'Conoce Nuestro Universo')}</span>
+              <span>Conoce Nuestro Universo</span>
             </span>
             <h2 className="font-serif-title text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight">
-              {t('aboutTitle', '¿Qué es Momentos Spa?')}
+              ¿Qué es Momentos Spa?
             </h2>
             <p className="text-cream-200 text-sm sm:text-base mt-2 max-w-md font-normal leading-relaxed">
-              {t('aboutDesc', 'Un refugio privado en Miramar creado para quienes comprenden que el descanso no es un lujo, sino una necesidad vital de renovación.')}
+              Un refugio privado en Miramar creado para quienes comprenden que el descanso no es un lujo, sino una necesidad vital de renovación.
             </p>
           </div>
 
-          <div className="relative z-10 pt-8 flex items-center justify-between">
+          <div className="relative z-10 pt-8 flex flex-wrap items-center justify-between gap-4">
             <button
-              onClick={() => onOpenBooking()}
-              className="flex items-center gap-3 bg-white hover:bg-cream-100 text-mahogany-950 text-xs sm:text-sm font-bold px-6 py-3 rounded-full shadow-lg transition-transform hover:scale-105"
+              onClick={() => {
+                if (onNavigateToPage) onNavigateToPage('sobre-nosotros');
+                else window.location.hash = 'sobre-nosotros';
+              }}
+              className="flex items-center gap-2 bg-white hover:bg-cream-100 text-mahogany-950 text-xs sm:text-sm font-bold px-6 py-3 rounded-full shadow-lg transition-transform hover:scale-105"
             >
-              <span>{t('aboutExploreBtn', 'Explorar Rituales')}</span>
+              <span>Conocer Sobre Nosotros</span>
+              <ArrowRight className="w-3.5 h-3.5 text-gold-dark" />
             </button>
             <div className="text-right">
-              <div className="text-xs text-gold font-semibold uppercase tracking-wider">{t('exclusiveLocation', 'Ubicación Exclusiva')}</div>
+              <div className="text-xs text-gold font-semibold uppercase tracking-wider">Ubicación Exclusiva</div>
               <div className="text-xs text-white/80">Calle 44 #111, Miramar</div>
             </div>
           </div>
@@ -52,34 +53,47 @@ export default function AboutSplit({ onOpenBooking }) {
           <div>
             <Quote className="w-10 h-10 text-mahogany-800/20 mb-4" />
             <p className="font-serif-title text-xl sm:text-2xl text-stone-900 italic leading-snug">
-              {t('aboutQuote', '"Cuidar de tu salud y serenidad debe ser tan constante como tu respiración. Por eso en Momentos Spa cada detalle está pensado en ti."')}
+              “Cuidar de tu salud y serenidad debe ser tan constante como tu respiración. Por eso en Momentos Spa nuestro lema es <strong>Siempre pensando en ti</strong>.”
             </p>
             <div className="mt-6 space-y-2.5 text-stone-700 text-xs sm:text-sm">
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-mahogany-800 shrink-0" />
-                <span>{t('aboutBullet1', 'Cabinas 100% privadas y climatizadas')}</span>
+                <span>Cabinas 100% privadas y climatizadas en Miramar</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-mahogany-800 shrink-0" />
-                <span>{t('aboutBullet2', 'Aceites botánicos esenciales de grado terapéutico')}</span>
+                <span>Aceites botánicos esenciales de grado terapéutico</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-mahogany-800 shrink-0" />
-                <span>{t('aboutBullet3', 'Atención personalizada con reserva previa')}</span>
+                <span>Bebida no alcohólica de cortesía en cada sesión (té, café, agua, jugo o refresco)</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-mahogany-800 shrink-0" />
+                <span>Atención personalizada con reserva previa vía WhatsApp</span>
               </div>
             </div>
           </div>
 
-          <div className="pt-8 border-t border-stone-300/60 flex items-center gap-4">
-            <img 
-              src="./assets/logo_dark.png" 
-              alt="Momentos Spa" 
-              className="w-12 h-12 rounded-full border border-stone-300 object-contain p-0.5 bg-white shadow-sm" 
-            />
-            <div>
-              <div className="font-serif-title font-bold text-stone-900 text-base">Momentos Spa Habana</div>
-              <div className="text-xs text-stone-500">Calle 44 #111 e/ 3ra y 1ra A, Miramar</div>
+          <div className="pt-8 border-t border-stone-300/60 flex items-center justify-between">
+            <div className="flex items-center gap-4">
+              <img 
+                src="./assets/logo_dark.png" 
+                alt="Momentos Spa" 
+                className="w-12 h-12 rounded-full border border-stone-300 object-contain p-0.5 bg-white shadow-sm" 
+              />
+              <div>
+                <div className="font-serif-title font-bold text-stone-900 text-base">Momentos Spa Habana</div>
+                <div className="text-xs text-stone-500">Calle 44 #111 e/ 3ra y 1ra A, Miramar</div>
+              </div>
             </div>
+
+            <button
+              onClick={() => onOpenBooking()}
+              className="text-xs font-bold text-mahogany-950 hover:text-gold-dark underline"
+            >
+              Agendar Cita
+            </button>
           </div>
         </div>
 

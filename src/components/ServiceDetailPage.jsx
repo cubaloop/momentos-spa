@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { 
   ArrowLeft, Calendar, Clock, DollarSign, Sparkles, CheckCircle2, 
-  ShieldCheck, Heart, Share2, Phone, MapPin, ChevronRight, Info, Award
+  ShieldCheck, Heart, Share2, Phone, MapPin, ChevronRight, ChevronLeft, Info
 } from 'lucide-react';
 import { allServices } from '../data/servicesData';
 import { useLanguage } from '../context/LanguageContext';
@@ -9,26 +9,63 @@ import { useLanguage } from '../context/LanguageContext';
 export default function ServiceDetailPage({ service: rawService, onBack, onOpenBooking, onSelectOtherService }) {
   const { t, getLocalizedService, localizedServices } = useLanguage();
   const service = getLocalizedService(rawService);
-  const [activePhoto, setActivePhoto] = useState(service?.image || './assets/servicios_spa.jpg');
+  
+  const galleryPhotos = service?.gallery && service.gallery.length > 0 
+    ? service.gallery 
+    : [service?.image, './assets/servicios_spa.jpg', './assets/dsc_6328.jpg'].filter(Boolean);
+
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
   const [copied, setCopied] = useState(false);
+  const touchStartX = useRef(null);
 
   useEffect(() => {
-    if (service?.image) {
-      setActivePhoto(service.image);
-    }
+    setCurrentSlide(0);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [service]);
+
+  // Autoplay carousel: rota automáticamente cada 3.5 segundos salvo si el usuario pasa el mouse
+  useEffect(() => {
+    if (!galleryPhotos || galleryPhotos.length <= 1 || isHovered) return;
+    const interval = setInterval(() => {
+      setCurrentSlide(prev => (prev + 1) % galleryPhotos.length);
+    }, 3500);
+    return () => clearInterval(interval);
+  }, [galleryPhotos, isHovered]);
+
+  const nextSlide = () => {
+    setCurrentSlide(prev => (prev + 1) % galleryPhotos.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide(prev => (prev - 1 + galleryPhotos.length) % galleryPhotos.length);
+  };
+
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e) => {
+    if (touchStartX.current === null) return;
+    const diff = touchStartX.current - e.changedTouches[0].clientX;
+    if (diff > 50) {
+      nextSlide();
+    } else if (diff < -50) {
+      prevSlide();
+    }
+    touchStartX.current = null;
+  };
 
   if (!service) {
     return (
       <div className="max-w-4xl mx-auto py-20 px-4 text-center">
-        <h2 className="text-2xl font-serif-title font-bold text-mahogany-950 mb-4">{t('serviceNotFound', 'Servicio no encontrado')}</h2>
+        <h2 className="text-2xl font-serif-title font-bold text-mahogany-950 mb-4">Servicio no encontrado</h2>
         <button 
           onClick={onBack}
           className="inline-flex items-center gap-2 px-6 py-3 bg-mahogany-950 text-white rounded-full font-semibold"
         >
           <ArrowLeft className="w-4 h-4" />
-          {t('backToCatalog', 'Volver al catálogo')}
+          Volver al catálogo
         </button>
       </div>
     );
@@ -37,10 +74,6 @@ export default function ServiceDetailPage({ service: rawService, onBack, onOpenB
   const relatedServices = (localizedServices && localizedServices.length > 0 ? localizedServices : allServices)
     .filter(s => s.id !== service.id && (s.categoryId === service.categoryId || s.subcategoryId === service.subcategoryId))
     .slice(0, 3);
-
-  const galleryPhotos = service.gallery && service.gallery.length > 0 
-    ? service.gallery 
-    : [service.image, './assets/servicios_spa.jpg', './assets/dsc_6328.jpg'].filter(Boolean);
 
   const handleShare = () => {
     if (navigator.share) {
@@ -74,7 +107,7 @@ export default function ServiceDetailPage({ service: rawService, onBack, onOpenB
               className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-cream-100 hover:bg-mahogany-950 hover:text-white transition-all font-bold text-xs text-mahogany-950 border border-stone-200 shrink-0 shadow-sm"
             >
               <ArrowLeft className="w-3.5 h-3.5" />
-              <span>{t('backToCatalog', 'Volver')}</span>
+              <span>Volver</span>
             </button>
             
             <div className="hidden sm:flex items-center gap-1.5 text-stone-400 truncate">
@@ -102,7 +135,7 @@ export default function ServiceDetailPage({ service: rawService, onBack, onOpenB
               className="px-4 py-2 bg-mahogany-950 hover:bg-mahogany-900 text-white text-xs font-bold rounded-full shadow-md hover:shadow-lg transition-all flex items-center gap-1.5"
             >
               <Calendar className="w-3.5 h-3.5 text-gold" />
-              <span>{t('bookInCalendar', 'Agendar Cita')}</span>
+              <span>Agendar Cita</span>
             </button>
           </div>
 
@@ -113,206 +146,245 @@ export default function ServiceDetailPage({ service: rawService, onBack, onOpenB
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
           
-          {/* Left Column: Authentic Photography Showcase */}
+          {/* Left Column: Authentic Photography Showcase Carousel */}
           <div className="lg:col-span-6 space-y-4">
             
-            {/* Main Featured Photo Frame */}
-            <div className="relative rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(60,19,24,0.16)] border border-stone-200/90 aspect-[4/3] bg-stone-900 group">
-              <img 
-                src={activePhoto} 
-                alt={service.name}
-                className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/10 pointer-events-none" />
+            {/* CAROUSEL CONTAINER (Rotación automática garantizada) */}
+            <div 
+              className="relative rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(60,19,24,0.16)] border border-stone-200/90 aspect-[4/3] bg-stone-900 group select-none"
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
+              onTouchStart={handleTouchStart}
+              onTouchEnd={handleTouchEnd}
+            >
+              {/* Slides */}
+              {galleryPhotos.map((photo, idx) => (
+                <div
+                  key={idx}
+                  className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
+                    idx === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
+                  }`}
+                >
+                  <img 
+                    src={photo} 
+                    alt={`${service.name} foto ${idx + 1}`}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    onError={(e) => {
+                      if (!e.currentTarget.dataset.handled) {
+                        e.currentTarget.dataset.handled = 'true';
+                        e.currentTarget.src = './assets/servicios_spa.jpg';
+                      }
+                    }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/20 pointer-events-none" />
+                </div>
+              ))}
+
+              {/* Navigation Arrows */}
+              {galleryPhotos.length > 1 && (
+                <>
+                  <button
+                    onClick={prevSlide}
+                    aria-label="Foto anterior"
+                    className="absolute left-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-black/40 hover:bg-black/70 text-white backdrop-blur-md flex items-center justify-center transition-all opacity-80 hover:opacity-100 hover:scale-110 shadow-lg"
+                  >
+                    <ChevronLeft className="w-5 h-5" />
+                  </button>
+                  <button
+                    onClick={nextSlide}
+                    aria-label="Foto siguiente"
+                    className="absolute right-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-black/40 hover:bg-black/70 text-white backdrop-blur-md flex items-center justify-center transition-all opacity-80 hover:opacity-100 hover:scale-110 shadow-lg"
+                  >
+                    <ChevronRight className="w-5 h-5" />
+                  </button>
+                </>
+              )}
               
               {/* Badges on Image */}
-              <div className="absolute top-4 left-4 flex flex-wrap gap-2">
+              <div className="absolute top-4 left-4 z-20 flex flex-wrap gap-2 pointer-events-none">
                 <span className="px-3 py-1 bg-mahogany-950/90 backdrop-blur-md text-gold border border-gold/30 text-[11px] font-bold uppercase tracking-wider rounded-full shadow-lg flex items-center gap-1">
                   <Sparkles className="w-3 h-3" />
                   {service.badge || 'Tratamiento Exclusivo'}
                 </span>
                 <span className="px-3 py-1 bg-white/90 backdrop-blur text-stone-800 text-[11px] font-bold rounded-full shadow-md flex items-center gap-1">
                   <ShieldCheck className="w-3 h-3 text-emerald-600" />
-                  Foto Real en Cabina
+                  Foto Original
                 </span>
               </div>
 
-              <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-white text-xs">
-                <span className="bg-black/50 backdrop-blur-md px-3 py-1 rounded-full text-white/90">
-                  Momentos Spa • Miramar, La Habana
+              {/* Bottom Image Info Strip */}
+              <div className="absolute bottom-4 left-4 right-4 z-20 flex items-center justify-between text-white text-xs pointer-events-none">
+                <span className="bg-black/60 backdrop-blur-md px-3 py-1 rounded-full text-white/90 font-medium">
+                  Momentos Spa • Miramar
                 </span>
-                <span className="font-semibold text-gold bg-mahogany-950/80 px-2.5 py-1 rounded-full">
+                <span className="font-semibold text-gold bg-mahogany-950/90 border border-gold/30 px-2.5 py-1 rounded-full">
                   {service.duration}
                 </span>
               </div>
+
+              {/* Dot Indicators */}
+              {galleryPhotos.length > 1 && (
+                <div className="absolute bottom-12 left-0 right-0 z-20 flex justify-center items-center gap-2 pointer-events-auto">
+                  {galleryPhotos.map((_, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => setCurrentSlide(idx)}
+                      aria-label={`Ir a foto ${idx + 1}`}
+                      className={`h-2 rounded-full transition-all duration-300 ${
+                        currentSlide === idx 
+                          ? 'w-7 bg-gold shadow-md' 
+                          : 'w-2 bg-white/60 hover:bg-white'
+                      }`}
+                    />
+                  ))}
+                </div>
+              )}
             </div>
 
-            {/* Thumbnail Gallery */}
+            {/* Thumbnail Strip for Direct Selection */}
             {galleryPhotos.length > 1 && (
-              <div className="flex items-center gap-3 overflow-x-auto pb-2">
+              <div className="flex items-center gap-3 overflow-x-auto pb-2 pt-1">
                 {galleryPhotos.map((photo, idx) => (
                   <button
                     key={idx}
-                    onClick={() => setActivePhoto(photo)}
-                    className={`relative rounded-2xl overflow-hidden border-2 transition-all shrink-0 w-24 h-18 aspect-[4/3] shadow-sm ${
-                      activePhoto === photo 
+                    onClick={() => setCurrentSlide(idx)}
+                    className={`relative rounded-2xl overflow-hidden border-2 transition-all shrink-0 w-20 sm:w-24 aspect-[4/3] shadow-sm ${
+                      currentSlide === idx 
                         ? 'border-mahogany-950 ring-2 ring-gold scale-105 shadow-md' 
-                        : 'border-transparent opacity-70 hover:opacity-100'
+                        : 'border-transparent opacity-60 hover:opacity-100'
                     }`}
                   >
-                    <img src={photo} alt={`${service.name} vista ${idx + 1}`} className="w-full h-full object-cover" />
+                    <img 
+                      src={photo} 
+                      alt={`${service.name} miniatura ${idx + 1}`} 
+                      className="w-full h-full object-cover" 
+                      onError={(e) => {
+                        if (!e.currentTarget.dataset.handled) {
+                          e.currentTarget.dataset.handled = 'true';
+                          e.currentTarget.src = './assets/servicios_spa.jpg';
+                        }
+                      }}
+                    />
                   </button>
                 ))}
               </div>
             )}
 
-            {/* Included Guarantee Card */}
-            <div className="bg-white rounded-2xl p-5 border border-stone-200/80 shadow-sm space-y-3">
-              <div className="flex items-center gap-2 text-mahogany-950 font-bold text-sm">
-                <Award className="w-4 h-4 text-gold" />
-                <span>Compromiso de Calidad Momentos Spa</span>
-              </div>
-              <p className="text-xs text-stone-600 leading-relaxed">
-                Todas nuestras sesiones se realizan en cabinas privadas climatizadas, con toallas higienizadas, aceites botánicos de máxima pureza y terapeutas tituladas con amplia trayectoria en bienestar holístico.
-              </p>
-              <div className="grid grid-cols-2 gap-2 text-[11px] text-stone-700 font-medium pt-1">
-                <div className="flex items-center gap-1.5">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                  <span>Ambiente Privado & Zen</span>
-                </div>
-                <div className="flex items-center gap-1.5">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                  <span>Degustación de Vino o Té</span>
-                </div>
-                <div className="flex items-center gap-1.5">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                  <span>Toallas Precalentadas</span>
-                </div>
-                <div className="flex items-center gap-1.5">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                  <span>Parqueo Privado Gratis</span>
-                </div>
+            {/* Bebida de cortesía destacada (del catálogo original) */}
+            <div className="bg-amber-50/80 rounded-2xl p-4 border border-amber-200/80 shadow-sm flex items-start gap-3">
+              <span className="text-xl">☕</span>
+              <div className="text-xs text-stone-700 leading-relaxed">
+                <span className="font-bold text-mahogany-950 block mb-0.5">Bebida de cortesía incluida:</span>
+                Todos nuestros servicios incluyen una bebida no alcohólica a su elección: Té, agua purificada, Café expreso, jugo natural o refresco frío.
               </div>
             </div>
 
           </div>
 
-          {/* Right Column: Service Details & Action Box */}
+          {/* Right Column: Service Information & Actions */}
           <div className="lg:col-span-6 space-y-6">
             
+            {/* Header info */}
             <div>
-              <div className="inline-block px-3 py-1 bg-mahogany-100 text-mahogany-950 font-bold text-xs rounded-full uppercase tracking-wider mb-3">
-                {service.categoryTitle || 'Spa & Bienestar'}
+              <div className="flex items-center gap-2 mb-2">
+                <span className="text-xs font-bold uppercase tracking-wider text-gold-dark bg-gold/10 px-3 py-1 rounded-full border border-gold/20">
+                  {service.subcategoryName || service.categoryTitle || 'Spa'}
+                </span>
+                <span className="text-xs text-stone-500 flex items-center gap-1">
+                  <Clock className="w-3.5 h-3.5 text-stone-400" />
+                  {service.duration}
+                </span>
               </div>
-              <h1 className="text-3xl sm:text-4xl font-serif-title font-bold text-mahogany-950 leading-tight">
+
+              <h1 className="text-3xl sm:text-4xl font-serif-title font-bold text-mahogany-950 tracking-tight leading-tight">
                 {service.name}
               </h1>
-              <p className="text-sm sm:text-base text-stone-600 mt-2 font-normal leading-relaxed">
-                {service.description}
-              </p>
-            </div>
 
-            {/* Price & Duration Feature Box */}
-            <div className="bg-white rounded-3xl p-6 border border-stone-200/90 shadow-[0_10px_35px_rgba(60,19,24,0.08)] flex flex-col sm:flex-row items-center justify-between gap-4">
-              <div>
-                <div className="text-xs text-stone-400 uppercase tracking-wider font-semibold">Inversión en Bienestar</div>
-                <div className="flex items-baseline gap-2 mt-1">
-                  <span className="text-4xl font-serif-title font-bold text-mahogany-950">${service.price}</span>
-                  <span className="text-sm font-semibold text-stone-500">USD</span>
-                </div>
-                <div className="flex items-center gap-2 mt-2 text-xs text-stone-600 font-medium">
-                  <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-cream-100 border border-stone-200">
-                    <Clock className="w-3.5 h-3.5 text-mahogany-800" />
-                    {service.duration} de sesión
-                  </span>
-                  <span className="text-stone-400">•</span>
-                  <span>Mié a Dom: 10am - 7pm</span>
-                </div>
-              </div>
-
-              {/* Action Buttons */}
-              <div className="w-full sm:w-auto flex flex-col gap-2 shrink-0">
-                <button
-                  onClick={() => onOpenBooking(service)}
-                  className="w-full sm:w-auto px-7 py-3.5 bg-mahogany-950 hover:bg-mahogany-900 text-white rounded-full font-bold text-sm shadow-xl hover:shadow-2xl transition-all flex items-center justify-center gap-2 group"
-                >
-                  <Calendar className="w-4 h-4 text-gold group-hover:scale-110 transition-transform" />
-                  <span>Agendar en Calendario</span>
-                </button>
-
-                <a
-                  href={whatsappUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full sm:w-auto px-6 py-2.5 bg-emerald-700 hover:bg-emerald-800 text-white rounded-full font-semibold text-xs shadow-md transition-all flex items-center justify-center gap-2"
-                >
-                  <Phone className="w-3.5 h-3.5" />
-                  <span>{t('reserveByWhatsApp', 'Reservar por WhatsApp')}</span>
-                </a>
-              </div>
-            </div>
-
-            {/* Extended Explanation */}
-            <div className="bg-white/90 rounded-3xl p-6 sm:p-8 border border-stone-200 space-y-4 shadow-sm">
-              <div className="flex items-center gap-2 text-mahogany-950 font-serif-title font-bold text-xl">
-                <Sparkles className="w-5 h-5 text-gold" />
-                <h2>Filosofía & Fundamento del Tratamiento</h2>
-              </div>
-              
-              <div className="space-y-3.5 text-stone-700 text-sm sm:text-base leading-relaxed">
-                {service.longDescription && Array.isArray(service.longDescription) ? (
-                  service.longDescription.map((p, idx) => (
-                    <p key={idx} className="text-justify">{p}</p>
-                  ))
-                ) : (
-                  <p>{service.description}</p>
-                )}
-              </div>
-
-              {service.recommendations && (
-                <div className="mt-4 p-4 rounded-2xl bg-cream-50 border border-mahogany-900/15 flex items-start gap-3 text-xs text-stone-700">
-                  <Info className="w-4 h-4 text-mahogany-800 shrink-0 mt-0.5" />
-                  <div>
-                    <span className="font-bold text-mahogany-950">{t('therapistTip', 'Consejo del Terapeuta')}: </span>
-                    <span>{service.recommendations}</span>
+              {/* Price & Duration banner */}
+              <div className="mt-4 p-4 rounded-2xl bg-white border border-stone-200/90 shadow-sm flex items-center justify-between">
+                <div>
+                  <span className="text-xs text-stone-500 uppercase tracking-wider block">Inversión</span>
+                  <div className="flex items-baseline gap-1">
+                    <span className="text-3xl font-bold text-mahogany-950 font-serif-title">
+                      ${service.price}
+                    </span>
+                    <span className="text-xs text-stone-500 font-medium">USD</span>
                   </div>
                 </div>
+                <div className="text-right border-l border-stone-200 pl-6">
+                  <span className="text-xs text-stone-500 uppercase tracking-wider block">Duración</span>
+                  <span className="text-lg font-bold text-stone-800">{service.duration}</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Description */}
+            <div className="space-y-3 text-stone-700 leading-relaxed text-sm sm:text-base">
+              {Array.isArray(service.longDescription) && service.longDescription.length > 0 ? (
+                service.longDescription.map((p, idx) => (
+                  <p key={idx} className="text-stone-700 leading-relaxed">
+                    {p}
+                  </p>
+                ))
+              ) : (
+                <p className="text-stone-700 leading-relaxed">{service.description}</p>
               )}
             </div>
 
-            {/* Proven Benefits Grid */}
+            {/* Action Buttons */}
+            <div className="pt-2 flex flex-col sm:flex-row gap-3">
+              <button
+                onClick={() => onOpenBooking(service)}
+                className="flex-1 py-3.5 px-6 rounded-full bg-mahogany-950 hover:bg-mahogany-900 text-white font-bold text-sm shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 group"
+              >
+                <Calendar className="w-4 h-4 text-gold group-hover:scale-110 transition-transform" />
+                <span>Reservar este Servicio</span>
+              </button>
+
+              <a
+                href={whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="py-3.5 px-5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 shrink-0"
+              >
+                <Phone className="w-4 h-4" />
+                <span>Consultar por WhatsApp</span>
+              </a>
+            </div>
+
+            {/* Benefits list */}
             {service.benefits && service.benefits.length > 0 && (
-              <div className="bg-white rounded-3xl p-6 sm:p-8 border border-stone-200 space-y-4 shadow-sm">
-                <h3 className="text-lg sm:text-xl font-serif-title font-bold text-mahogany-950 flex items-center gap-2">
-                  <CheckCircle2 className="w-5 h-5 text-emerald-600" />
-                  <span>{t('provenBenefitsTitle', 'Beneficios Comprobados')}</span>
-                </h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {service.benefits.map((benefit, idx) => (
-                    <div key={idx} className="flex items-start gap-2.5 p-3 rounded-xl bg-cream-50/70 border border-stone-200/70 text-xs sm:text-sm text-stone-800 font-medium">
-                      <span className="w-5 h-5 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 text-xs font-bold mt-0.5">✓</span>
-                      <span>{benefit}</span>
-                    </div>
+              <div className="bg-white rounded-2xl p-5 border border-stone-200/90 shadow-sm space-y-3">
+                <h2 className="font-serif-title font-bold text-stone-900 text-base flex items-center gap-2">
+                  <Sparkles className="w-4 h-4 text-gold" />
+                  Beneficios del Tratamiento
+                </h2>
+                <ul className="space-y-2 text-sm text-stone-600">
+                  {service.benefits.map((b, idx) => (
+                    <li key={idx} className="flex items-start gap-2.5">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                      <span>{b}</span>
+                    </li>
                   ))}
-                </div>
+                </ul>
               </div>
             )}
 
-            {/* Step-by-Step Experience Breakdown */}
+            {/* Steps / Protocol */}
             {service.steps && service.steps.length > 0 && (
-              <div className="bg-white rounded-3xl p-6 sm:p-8 border border-stone-200 space-y-4 shadow-sm">
-                <h3 className="text-lg sm:text-xl font-serif-title font-bold text-mahogany-950">
-                  {t('stepByStepTitle', 'El Paso a Paso de tu Experiencia')}
-                </h3>
+              <div className="bg-white rounded-2xl p-5 border border-stone-200/90 shadow-sm space-y-4">
+                <h2 className="font-serif-title font-bold text-stone-900 text-base">
+                  Protocolo y Desarrollo de la Sesión
+                </h2>
                 <div className="space-y-3">
                   {service.steps.map((st, idx) => (
-                    <div key={idx} className="flex items-start gap-4 p-3.5 rounded-2xl bg-cream-50/60 border border-stone-100 hover:border-mahogany-900/30 transition-all">
-                      <div className="w-10 h-10 rounded-2xl bg-mahogany-950 text-gold flex items-center justify-center font-serif-title font-bold text-sm shrink-0 shadow-sm">
+                    <div key={idx} className="flex items-start gap-3">
+                      <span className="w-7 h-7 rounded-full bg-cream-100 text-mahogany-950 font-bold text-xs flex items-center justify-center shrink-0 border border-stone-200">
                         {st.step}
-                      </div>
+                      </span>
                       <div>
-                        <div className="font-bold text-xs sm:text-sm text-mahogany-950">{st.title}</div>
-                        <div className="text-xs text-stone-600 mt-0.5 leading-relaxed">{st.desc}</div>
+                        <h4 className="text-xs font-bold text-stone-900">{st.title}</h4>
+                        <p className="text-xs text-stone-600 leading-relaxed">{st.desc}</p>
                       </div>
                     </div>
                   ))}
@@ -320,18 +392,28 @@ export default function ServiceDetailPage({ service: rawService, onBack, onOpenB
               </div>
             )}
 
-            {/* What's Included */}
+            {/* Included in session */}
             {service.includes && service.includes.length > 0 && (
-              <div className="bg-mahogany-950 text-white rounded-3xl p-6 sm:p-8 space-y-3 shadow-xl">
-                <div className="text-gold uppercase tracking-widest text-[11px] font-bold">Servicio Integral Premium</div>
-                <h3 className="text-lg sm:text-xl font-serif-title font-bold">{t('includesTitle', 'Qué Incluye Tu Reserva')}</h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-2">
-                  {service.includes.map((inc, idx) => (
-                    <div key={idx} className="flex items-center gap-2 text-xs text-cream-200">
-                      <span className="w-1.5 h-1.5 rounded-full bg-gold shrink-0" />
-                      <span>{inc}</span>
+              <div className="bg-stone-50 rounded-2xl p-5 border border-stone-200/80 space-y-2">
+                <h3 className="text-xs font-bold uppercase tracking-wider text-stone-500">¿Qué incluye la sesión?</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-stone-700">
+                  {service.includes.map((item, idx) => (
+                    <div key={idx} className="flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-gold" />
+                      <span>{item}</span>
                     </div>
                   ))}
+                </div>
+              </div>
+            )}
+
+            {/* Recommendations */}
+            {service.recommendations && (
+              <div className="p-4 rounded-xl bg-amber-50/70 border border-amber-200/70 text-xs text-amber-900 flex items-start gap-2.5">
+                <Info className="w-4 h-4 text-amber-700 shrink-0 mt-0.5" />
+                <div>
+                  <span className="font-bold">Recomendación: </span>
+                  {service.recommendations}
                 </div>
               </div>
             )}
@@ -341,57 +423,62 @@ export default function ServiceDetailPage({ service: rawService, onBack, onOpenB
         </div>
       </section>
 
-      {/* Related Services Recommendation Row */}
+      {/* Related Services Section */}
       {relatedServices.length > 0 && (
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 border-t border-stone-200/80">
           <div className="flex items-center justify-between mb-6">
             <div>
-              <span className="text-xs font-bold uppercase tracking-wider text-mahogany-800">Continuar Explorando</span>
-              <h3 className="text-2xl font-serif-title font-bold text-mahogany-950">{t('alsoRecommended', 'Otros Rituales Recomendados')}</h3>
+              <span className="text-xs text-gold-dark font-bold uppercase tracking-wider">Explorar más</span>
+              <h2 className="text-2xl font-serif-title font-bold text-mahogany-950">Otros tratamientos que te pueden interesar</h2>
             </div>
-            <button
+            <button 
               onClick={onBack}
-              className="text-xs font-bold text-mahogany-900 hover:underline flex items-center gap-1"
+              className="text-xs font-bold text-mahogany-950 hover:underline flex items-center gap-1"
             >
-              <span>Ver catálogo completo</span>
-              <ChevronRight className="w-4 h-4" />
+              Ver todos los servicios
+              <ChevronRight className="w-3.5 h-3.5" />
             </button>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {relatedServices.map((rel) => (
-              <div 
+              <div
                 key={rel.id}
-                onClick={() => {
-                  if (onSelectOtherService) onSelectOtherService(rel);
-                }}
-                className="bg-white rounded-3xl overflow-hidden border border-stone-200 shadow-md hover:shadow-2xl hover:-translate-y-1 transition-all cursor-pointer group flex flex-col"
+                onClick={() => onSelectOtherService ? onSelectOtherService(rel) : null}
+                className="group cursor-pointer rounded-2xl bg-white border border-stone-200/80 overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col"
               >
-                <div className="aspect-[16/10] overflow-hidden relative">
-                  <img 
-                    src={rel.image} 
-                    alt={rel.name} 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                <div className="relative aspect-[16/10] overflow-hidden bg-stone-900">
+                  <img
+                    src={rel.image}
+                    alt={rel.name}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    onError={(e) => {
+                      if (!e.currentTarget.dataset.handled) {
+                        e.currentTarget.dataset.handled = 'true';
+                        e.currentTarget.src = './assets/servicios_spa.jpg';
+                      }
+                    }}
                   />
-                  <span className="absolute top-3 left-3 px-2.5 py-1 bg-mahogany-950/90 text-gold text-[10px] font-bold uppercase tracking-wider rounded-full shadow">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                  <span className="absolute bottom-2.5 left-3 text-[11px] font-bold text-white bg-black/50 backdrop-blur px-2.5 py-0.5 rounded-full">
                     {rel.duration}
                   </span>
-                  <span className="absolute bottom-3 right-3 px-3 py-1 bg-white/95 text-mahogany-950 font-serif-title font-bold text-sm rounded-full shadow">
+                  <span className="absolute bottom-2.5 right-3 text-xs font-bold text-gold bg-mahogany-950/90 px-2.5 py-0.5 rounded-full border border-gold/30">
                     ${rel.price} USD
                   </span>
                 </div>
-                <div className="p-5 flex-1 flex flex-col justify-between">
+                <div className="p-4 flex-1 flex flex-col justify-between">
                   <div>
-                    <h4 className="font-bold text-stone-900 text-sm group-hover:text-mahogany-900 transition-colors line-clamp-1">
+                    <h3 className="font-serif-title font-bold text-stone-900 group-hover:text-mahogany-950 transition-colors line-clamp-1">
                       {rel.name}
-                    </h4>
-                    <p className="text-xs text-stone-500 mt-1 line-clamp-2">
+                    </h3>
+                    <p className="text-xs text-stone-500 line-clamp-2 mt-1 leading-relaxed">
                       {rel.description}
                     </p>
                   </div>
-                  <div className="mt-4 pt-3 border-t border-stone-100 flex items-center justify-between text-xs font-bold text-mahogany-950">
-                    <span>Ver página del servicio</span>
-                    <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <div className="mt-3 pt-3 border-t border-stone-100 flex items-center justify-between text-xs text-mahogany-950 font-bold">
+                    <span>Ver detalles</span>
+                    <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                   </div>
                 </div>
               </div>
@@ -399,31 +486,6 @@ export default function ServiceDetailPage({ service: rawService, onBack, onOpenB
           </div>
         </section>
       )}
-
-      {/* Sticky Bottom Bar on Mobile */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-stone-200 p-3.5 z-40 flex items-center justify-between shadow-2xl">
-        <div>
-          <div className="text-xs text-stone-500 font-medium">{service.duration}</div>
-          <div className="text-lg font-serif-title font-bold text-mahogany-950">${service.price} USD</div>
-        </div>
-        <div className="flex items-center gap-2">
-          <a
-            href={whatsappUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-2.5 bg-emerald-700 text-white rounded-full shadow"
-          >
-            <Phone className="w-4 h-4" />
-          </a>
-          <button
-            onClick={() => onOpenBooking(service)}
-            className="px-5 py-2.5 bg-mahogany-950 text-white rounded-full font-bold text-xs shadow-lg flex items-center gap-1.5"
-          >
-            <Calendar className="w-3.5 h-3.5 text-gold" />
-            <span>Agendar Cita</span>
-          </button>
-        </div>
-      </div>
 
     </div>
   );
