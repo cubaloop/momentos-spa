@@ -203,6 +203,7 @@ export default function App() {
         isOpen={authModalOpen}
         onClose={() => setAuthModalOpen(false)}
         initialMode={authInitialMode}
+        onOpenAdmin={() => setAdminModalOpen(true)}
       />
 
       <AdminDashboardModal

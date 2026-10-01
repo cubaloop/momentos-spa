@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { X, Users, Calendar, Search, Download, ExternalLink, ShieldCheck, RefreshCw, MessageSquare, Check, Clock, Plus, Edit2, Trash2, Tag, DollarSign, Layers, Upload, Image as ImageIcon, Star, Eye, ImagePlus, AlertCircle } from 'lucide-react';
-import { categoriesData } from '../data/servicesData';
+import { categoriesData, allServices } from '../data/servicesData';
 
 export default function AdminDashboardModal({ isOpen, onClose }) {
   const [activeTab, setActiveTab] = useState('clients'); // 'clients', 'bookings', 'services'
@@ -34,15 +34,26 @@ export default function AdminDashboardModal({ isOpen, onClose }) {
         fetch('/api/bookings'),
         fetch('/api/services')
       ]);
-      const [uData, bData, sData] = await Promise.all([uRes.json(), bRes.json(), sRes.json()]);
-      setUsers(uData);
-      setBookings(bData);
-      setServices(sData);
+      if (uRes.ok && bRes.ok && sRes.ok) {
+        const [uData, bData, sData] = await Promise.all([uRes.json(), bRes.json(), sRes.json()]);
+        setUsers(uData);
+        setBookings(bData);
+        setServices(sData);
+        setLoading(false);
+        return;
+      }
     } catch (e) {
-      console.error("Error fetching dashboard data:", e);
-    } finally {
-      setLoading(false);
+      console.warn("API offline, falling back to local storage:", e.message);
     }
+    
+    // Fallback: LocalStorage / default catalog services
+    const savedCustomServices = JSON.parse(localStorage.getItem('momentos_custom_services') || 'null');
+    setServices(savedCustomServices || allServices);
+    const savedUsers = JSON.parse(localStorage.getItem('momentos_registered_users') || '[]');
+    setUsers(savedUsers);
+    const savedBookings = JSON.parse(localStorage.getItem('momentos_bookings') || '[]');
+    setBookings(savedBookings);
+    setLoading(false);
   };
 
   useEffect(() => {
@@ -158,42 +169,37 @@ export default function AdminDashboardModal({ isOpen, onClose }) {
     setUploadingImage(true);
     const reader = new FileReader();
     reader.onload = async () => {
+      let finalUrl = reader.result;
       try {
-        const base64 = reader.result;
         const res = await fetch('/api/upload', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            image: base64,
-            filename: file.name
-          })
+          body: JSON.stringify({ image: reader.result, filename: file.name })
         });
-        const data = await res.json();
-        if (data.success && data.url) {
-          if (target === 'main') {
-            const currentGal = serviceForm.gallery && Array.isArray(serviceForm.gallery) ? [...serviceForm.gallery] : [];
-            if (!currentGal.includes(data.url)) currentGal.unshift(data.url);
-            setServiceForm(prev => ({
-              ...prev,
-              image: data.url,
-              gallery: currentGal
-            }));
-          } else if (target === 'gallery') {
-            const currentGal = serviceForm.gallery && Array.isArray(serviceForm.gallery) ? [...serviceForm.gallery] : [];
-            setServiceForm(prev => ({
-              ...prev,
-              gallery: [...currentGal, data.url]
-            }));
+        if (res.ok) {
+          const data = await res.json();
+          if (data.success && data.url) {
+            finalUrl = data.url;
           }
-        } else {
-          alert('Error al subir la imagen: ' + (data.error || 'Desconocido'));
         }
-      } catch (err) {
-        console.error(err);
-        alert('Error al conectar con el servidor de subida de imágenes');
-      } finally {
-        setUploadingImage(false);
+      } catch (err) {}
+
+      if (target === 'main') {
+        const currentGal = serviceForm.gallery && Array.isArray(serviceForm.gallery) ? [...serviceForm.gallery] : [];
+        if (!currentGal.includes(finalUrl)) currentGal.unshift(finalUrl);
+        setServiceForm(prev => ({
+          ...prev,
+          image: finalUrl,
+          gallery: currentGal
+        }));
+      } else if (target === 'gallery') {
+        const currentGal = serviceForm.gallery && Array.isArray(serviceForm.gallery) ? [...serviceForm.gallery] : [];
+        setServiceForm(prev => ({
+          ...prev,
+          gallery: [...currentGal, finalUrl]
+        }));
       }
+      setUploadingImage(false);
     };
     reader.readAsDataURL(file);
   };
@@ -259,36 +265,37 @@ export default function AdminDashboardModal({ isOpen, onClose }) {
 
   const handleSaveService = async (e) => {
     e.preventDefault();
+    const updatedSrv = editingService 
+      ? { ...editingService, ...serviceForm }
+      : { id: 'srv_' + Date.now(), ...serviceForm, slug: serviceForm.name.toLowerCase().replace(/\s+/g, '-') };
+
     try {
       if (editingService) {
-        // Update
-        const res = await fetch(`/api/services/${editingService.id}`, {
+        await fetch(`/api/services/${editingService.id}`, {
           method: 'PUT',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(serviceForm)
         });
-        if (res.ok) {
-          const updated = await res.json();
-          setServices(prev => prev.map(s => s.id === updated.id ? updated : s));
-          setServiceModalOpen(false);
-        }
       } else {
-        // Create
-        const res = await fetch('/api/services', {
+        await fetch('/api/services', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(serviceForm)
         });
-        if (res.ok) {
-          const created = await res.json();
-          setServices(prev => [created, ...prev]);
-          setServiceModalOpen(false);
-        }
       }
-    } catch (err) {
-      console.error(err);
-      alert("Error al guardar el servicio");
-    }
+    } catch (err) {}
+
+    setServices(prev => {
+      const next = editingService 
+        ? prev.map(s => s.id === updatedSrv.id ? updatedSrv : s)
+        : [updatedSrv, ...prev];
+      try {
+        localStorage.setItem('momentos_custom_services', JSON.stringify(next));
+      } catch (e) {}
+      return next;
+    });
+
+    setServiceModalOpen(false);
   };
 
   const handleDeleteService = async (srvId) => {

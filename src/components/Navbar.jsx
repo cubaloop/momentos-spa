@@ -23,6 +23,8 @@ export default function Navbar({
   const [activeCategoryIndex, setActiveCategoryIndex] = useState(0);
   const [mobileExpandedCat, setMobileExpandedCat] = useState(null);
   const [mobileExpandedSub, setMobileExpandedSub] = useState(null);
+  const [userMenuOpen, setUserMenuOpen] = useState(false);
+  const userMenuRef = useRef(null);
   
   const megaMenuRef = useRef(null);
   const { user, logout } = useAuth();
@@ -36,7 +38,13 @@ export default function Navbar({
       }
     }
     document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
+    function handleClickOutsideUserMenu(event) {
+      if (userMenuRef.current && !userMenuRef.current.contains(event.target)) {
+        setUserMenuOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutsideUserMenu);
+    return () => { document.removeEventListener("mousedown", handleClickOutside); document.removeEventListener("mousedown", handleClickOutsideUserMenu); };
   }, []);
 
   const cats = categoriesData || [];
@@ -56,6 +64,14 @@ export default function Navbar({
     setMobileMenuOpen(false);
     if (onSelectService) onSelectService(srv);
     onOpenBooking(srv);
+  };
+
+    const handleUserButtonClick = () => {
+    if (!user) {
+      if (onOpenAuth) onOpenAuth('login');
+    } else {
+      setUserMenuOpen(!userMenuOpen);
+    }
   };
 
   const handleNavClick = (page) => {
@@ -286,14 +302,52 @@ export default function Navbar({
 
           {/* Right Action Items */}
           <div className="hidden sm:flex items-center gap-3">
-            {/* Admin Dashboard */}
-            <button
-              onClick={onOpenAdmin}
-              title="Panel de Administración (Gestión de Clientes, Citas y Precios)"
-              className="p-2.5 rounded-full text-stone-600 hover:text-mahogany-950 hover:bg-cream-200 transition-all border border-stone-200"
-            >
-              <ShieldCheck className="w-5 h-5" />
-            </button>
+            
+            {/* Standard User Icon Button */}
+            <div className="relative" ref={userMenuRef}>
+              <button
+                onClick={handleUserButtonClick}
+                title={user ? (user.role === 'admin' ? 'Administrador: ' + user.name : 'Cliente: ' + user.name) : "Acceso de Usuario / Admin"}
+                className="p-2.5 rounded-full text-stone-700 hover:text-mahogany-950 hover:bg-cream-200 transition-all border border-stone-200 shadow-sm flex items-center justify-center relative"
+                aria-label="Perfil de Usuario"
+              >
+                <User className="w-5 h-5" />
+                {user && (
+                  <span className={`absolute top-1 right-1 w-2.5 h-2.5 rounded-full ring-2 ring-white ${user.role === 'admin' ? 'bg-gold' : 'bg-emerald-500'}`} />
+                )}
+              </button>
+
+              {/* User Dropdown Menu */}
+              {userMenuOpen && user && (
+                <div className="absolute right-0 mt-2 w-64 bg-white rounded-2xl shadow-2xl border border-stone-200 p-3 z-50 animate-fade-in text-xs space-y-2">
+                  <div className="p-2.5 bg-cream-50 rounded-xl border border-stone-100">
+                    <div className="font-bold text-stone-900 truncate">{user.name}</div>
+                    <div className="text-[11px] text-stone-500 truncate">{user.email}</div>
+                    <span className={`inline-block mt-1 px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider ${user.role === 'admin' ? 'bg-gold/20 text-gold-dark border border-gold/30' : 'bg-emerald-100 text-emerald-800'}`}>
+                      {user.role === 'admin' ? 'Administrador' : 'Cliente Registrado'}
+                    </span>
+                  </div>
+
+                  {user.role === 'admin' && (
+                    <button
+                      onClick={() => { setUserMenuOpen(false); if (onOpenAdmin) onOpenAdmin(); }}
+                      className="w-full text-left p-2.5 rounded-xl bg-mahogany-950 hover:bg-mahogany-900 text-white font-bold flex items-center gap-2 transition-colors shadow-sm"
+                    >
+                      <ShieldCheck className="w-4 h-4 text-gold" />
+                      <span>Panel de Administración</span>
+                    </button>
+                  )}
+
+                  <button
+                    onClick={() => { setUserMenuOpen(false); logout(); }}
+                    className="w-full text-left p-2.5 rounded-xl hover:bg-rose-50 text-rose-700 font-semibold flex items-center gap-2 transition-colors"
+                  >
+                    <LogOut className="w-4 h-4" />
+                    <span>Cerrar Sesión</span>
+                  </button>
+                </div>
+              )}
+            </div>
 
             {/* Primary CTA */}
             <button
@@ -458,15 +512,44 @@ export default function Navbar({
             <a href="#ubicacion" onClick={() => { setMobileMenuOpen(false); handleNavClick('home'); }} className="block py-1">Ubicación en Google Maps</a>
           </div>
 
-          {/* Mobile Admin Link */}
+          {/* Mobile User Account & Admin Panel */}
           <div className="border-t border-stone-200 pt-3">
-            <button
-              onClick={() => { setMobileMenuOpen(false); onOpenAdmin(); }}
-              className="w-full py-2.5 rounded-xl border border-stone-200 text-xs font-bold text-stone-700 hover:bg-cream-100 flex items-center justify-center gap-2"
-            >
-              <ShieldCheck className="w-4 h-4 text-mahogany-950" />
-              <span>Panel de Administración</span>
-            </button>
+            {user ? (
+              <div className="p-3 bg-cream-50 rounded-2xl border border-stone-200 space-y-2 text-xs">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <div className="font-bold text-stone-900">{user.name}</div>
+                    <div className="text-[11px] text-stone-500">{user.email}</div>
+                  </div>
+                  <span className={`px-2 py-0.5 rounded text-[10px] font-bold uppercase ${user.role === 'admin' ? 'bg-gold/20 text-gold-dark border border-gold/30' : 'bg-emerald-100 text-emerald-800'}`}>
+                    {user.role === 'admin' ? 'Admin' : 'Cliente'}
+                  </span>
+                </div>
+                {user.role === 'admin' && (
+                  <button
+                    onClick={() => { setMobileMenuOpen(false); if (onOpenAdmin) onOpenAdmin(); }}
+                    className="w-full py-2 bg-mahogany-950 text-white font-bold rounded-xl flex items-center justify-center gap-2 shadow-sm"
+                  >
+                    <ShieldCheck className="w-4 h-4 text-gold" />
+                    <span>Abrir Panel de Administración</span>
+                  </button>
+                )}
+                <button
+                  onClick={() => { setMobileMenuOpen(false); logout(); }}
+                  className="w-full py-1.5 text-center text-rose-700 font-bold hover:underline"
+                >
+                  Cerrar Sesión
+                </button>
+              </div>
+            ) : (
+              <button
+                onClick={() => { setMobileMenuOpen(false); if (onOpenAuth) onOpenAuth('login'); }}
+                className="w-full py-2.5 rounded-xl bg-mahogany-950 text-white text-xs font-bold flex items-center justify-center gap-2 shadow-sm"
+              >
+                <User className="w-4 h-4 text-gold" />
+                <span>Acceso de Usuario / Admin</span>
+              </button>
+            )}
           </div>
 
         </div>
