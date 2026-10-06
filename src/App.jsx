@@ -21,8 +21,10 @@ import ServiceDetailPage from './components/ServiceDetailPage';
 import SobreNosotros from './components/SobreNosotros';
 import Blog from './components/Blog';
 import { getServiceById } from './data/servicesData';
+import { useAuth } from './context/AuthContext';
 
 export default function App() {
+  const { user } = useAuth();
   const [bookingModalOpen, setBookingModalOpen] = useState(false);
   const [authModalOpen, setAuthModalOpen] = useState(false);
   const [authInitialMode, setAuthInitialMode] = useState('login');
@@ -91,6 +93,14 @@ export default function App() {
     setAuthModalOpen(true);
   };
 
+  const handleOpenAdmin = () => {
+    if (user && user.role === 'admin') {
+      setAdminModalOpen(true);
+    } else {
+      handleOpenAuth('login');
+    }
+  };
+
   const handleNavigateToService = (service) => {
     if (!service) return;
     const found = typeof service === 'string' ? getServiceById(service) : service;
@@ -128,7 +138,7 @@ export default function App() {
       <Navbar 
         onOpenBooking={handleOpenBooking}
         onOpenAuth={handleOpenAuth}
-        onOpenAdmin={() => setAdminModalOpen(true)}
+        onOpenAdmin={handleOpenAdmin}
         onSelectService={(srv) => setPreselectedService(srv)}
         onNavigateToService={handleNavigateToService}
         onNavigateToPage={handleNavigateToPage}
@@ -186,7 +196,7 @@ export default function App() {
       {/* Luxury Mega Footer */}
       <Footer 
         onOpenBooking={() => handleOpenBooking()}
-        onOpenAdmin={() => setAdminModalOpen(true)}
+        onOpenAdmin={handleOpenAdmin}
         onNavigateToPage={handleNavigateToPage}
       />
 
@@ -203,7 +213,7 @@ export default function App() {
         isOpen={authModalOpen}
         onClose={() => setAuthModalOpen(false)}
         initialMode={authInitialMode}
-        onOpenAdmin={() => setAdminModalOpen(true)}
+        onOpenAdmin={handleOpenAdmin}
       />
 
       <AdminDashboardModal

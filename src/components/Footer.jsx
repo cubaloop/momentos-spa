@@ -1,9 +1,11 @@
 import React from 'react';
 import { Sparkles, MapPin, Phone, Clock, ShieldCheck } from 'lucide-react';
 import { useCubaStatus } from '../utils/cubaTime';
+import { useAuth } from '../context/AuthContext';
 
 export default function Footer({ onOpenAdmin, onNavigateToPage }) {
   const { isOpen, havanaTimeString } = useCubaStatus();
+  const { user } = useAuth();
 
   return (
     <footer className="bg-mahogany-950 text-white border-t border-mahogany-900/60">
@@ -199,15 +201,17 @@ export default function Footer({ onOpenAdmin, onNavigateToPage }) {
               </a>
             </div>
 
-            <div className="pt-1">
-              <button
-                onClick={onOpenAdmin}
-                className="inline-flex items-center gap-1.5 text-[11px] text-cream-200/50 hover:text-gold transition-colors"
-              >
-                <ShieldCheck className="w-3.5 h-3.5" />
-                <span>Panel Administrativo</span>
-              </button>
-            </div>
+            {user && user.role === 'admin' && (
+              <div className="pt-1">
+                <button
+                  onClick={onOpenAdmin}
+                  className="inline-flex items-center gap-1.5 text-[11px] text-gold hover:text-white transition-colors bg-gold/10 px-2.5 py-1 rounded-lg border border-gold/30"
+                >
+                  <ShieldCheck className="w-3.5 h-3.5 text-gold" />
+                  <span>Panel Administrativo</span>
+                </button>
+              </div>
+            )}
           </div>
 
         </div>

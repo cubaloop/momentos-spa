@@ -6,8 +6,10 @@ import {
   Megaphone, BellRing, Save, FileText
 } from 'lucide-react';
 import { categoriesData, allServices } from '../data/servicesData';
+import { useAuth } from '../context/AuthContext';
 
 export default function AdminDashboardModal({ isOpen, onClose }) {
+  const { user } = useAuth();
   // Tab states: 'services' | 'announcements' | 'clients' | 'bookings'
   const [activeTab, setActiveTab] = useState('services');
   
@@ -152,12 +154,12 @@ export default function AdminDashboardModal({ isOpen, onClose }) {
   };
 
   useEffect(() => {
-    if (isOpen) {
+    if (isOpen && user && user.role === 'admin') {
       fetchData();
     }
-  }, [isOpen]);
+  }, [isOpen, user]);
 
-  if (!isOpen) return null;
+  if (!isOpen || !user || user.role !== 'admin') return null;
 
   // Safe search filters
   const cleanSearch = (searchTerm || '').toLowerCase().trim();
