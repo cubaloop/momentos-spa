@@ -59,18 +59,28 @@ export default function App() {
         const id = hash.replace('#servicio/', '');
         const found = getServiceById(id);
         if (found) {
-          setSelectedServiceForPage(found);
+          setSelectedServiceForPage(prev => {
+            if (prev?.id === found.id) {
+              return prev; // No change, do not trigger scroll
+            }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            return found;
+          });
           setCurrentView('service');
-          window.scrollTo({ top: 0, behavior: 'smooth' });
           return;
         }
       } else if (hash.startsWith('#servicio=')) {
         const id = hash.replace('#servicio=', '');
         const found = getServiceById(id);
         if (found) {
-          setSelectedServiceForPage(found);
+          setSelectedServiceForPage(prev => {
+            if (prev?.id === found.id) {
+              return prev; // No change, do not trigger scroll
+            }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            return found;
+          });
           setCurrentView('service');
-          window.scrollTo({ top: 0, behavior: 'smooth' });
           return;
         }
       }

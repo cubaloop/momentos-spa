@@ -10,50 +10,81 @@ export default function ServiceDetailPage({ service: rawService, onBack, onOpenB
   const { t, getLocalizedService, localizedServices } = useLanguage();
   const service = getLocalizedService(rawService);
   
-  const galleryPhotos = service?.gallery && service.gallery.length > 0 
-    ? service.gallery 
-    : [service?.image, './assets/servicios_spa.jpg', './assets/dsc_6328.jpg'].filter(Boolean);
+  // Lista robusta de fotos de la galería (sin duplicados consecutivos y con fallbacks elegantes)
+  const galleryPhotos = React.useMemo(() => {
+    let list = [];
+    if (service?.gallery && Array.isArray(service.gallery) && service.gallery.length > 0) {
+      list = [...service.gallery];
+    } else if (service?.image) {
+      list = [service.image];
+    }
+    // Asegurar al menos 3 imágenes atractivas si la lista es corta
+    const fallbacks = ['./assets/servicios_spa.jpg', './assets/masaje_relax.jpg', './assets/dsc_6328.jpg', './assets/dsc_6325.jpg'];
+    for (const fb of fallbacks) {
+      if (list.length >= 3) break;
+      if (!list.includes(fb)) {
+        list.push(fb);
+      }
+    }
+    // Filtrar falsy y duplicados
+    return Array.from(new Set(list.filter(Boolean)));
+  }, [service?.id, service?.gallery, service?.image]);
 
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
   const [copied, setCopied] = useState(false);
-  const touchStartX = useRef(null);
+  const touchStartPos = useRef({ x: 0, y: 0 });
 
+  // Solo scrollear arriba cuando realmente cambia el ID del servicio (evita rebote al interactuar o scrollear)
+  const serviceId = service?.id;
   useEffect(() => {
     setCurrentSlide(0);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, [service]);
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }, [serviceId]);
 
-  // Autoplay carousel: rota automáticamente cada 3.5 segundos salvo si el usuario pasa el mouse
+  // Autoplay carousel: rota automáticamente cada 4 segundos salvo si el usuario pasa el mouse
   useEffect(() => {
     if (!galleryPhotos || galleryPhotos.length <= 1 || isHovered) return;
     const interval = setInterval(() => {
       setCurrentSlide(prev => (prev + 1) % galleryPhotos.length);
-    }, 3500);
+    }, 4000);
     return () => clearInterval(interval);
-  }, [galleryPhotos, isHovered]);
+  }, [galleryPhotos.length, isHovered]);
 
-  const nextSlide = () => {
+  const nextSlide = (e) => {
+    if (e && e.stopPropagation) e.stopPropagation();
     setCurrentSlide(prev => (prev + 1) % galleryPhotos.length);
   };
 
-  const prevSlide = () => {
+  const prevSlide = (e) => {
+    if (e && e.stopPropagation) e.stopPropagation();
     setCurrentSlide(prev => (prev - 1 + galleryPhotos.length) % galleryPhotos.length);
   };
 
   const handleTouchStart = (e) => {
-    touchStartX.current = e.touches[0].clientX;
+    if (!e.touches || e.touches.length === 0) return;
+    touchStartPos.current = {
+      x: e.touches[0].clientX,
+      y: e.touches[0].clientY
+    };
   };
 
   const handleTouchEnd = (e) => {
-    if (touchStartX.current === null) return;
-    const diff = touchStartX.current - e.changedTouches[0].clientX;
-    if (diff > 50) {
-      nextSlide();
-    } else if (diff < -50) {
-      prevSlide();
+    if (!e.changedTouches || e.changedTouches.length === 0) return;
+    const endX = e.changedTouches[0].clientX;
+    const endY = e.changedTouches[0].clientY;
+    const diffX = touchStartPos.current.x - endX;
+    const diffY = touchStartPos.current.y - endY;
+
+    // Solo cambiar de diapositiva si el movimiento es predominantemente horizontal (> 40px y más del doble que vertical)
+    // Esto previene que el scroll vertical de la página dispare cambio de fotos o trabe el scroll del usuario
+    if (Math.abs(diffX) > 40 && Math.abs(diffX) > Math.abs(diffY) * 1.4) {
+      if (diffX > 0) {
+        nextSlide();
+      } else {
+        prevSlide();
+      }
     }
-    touchStartX.current = null;
   };
 
   if (!service) {
@@ -155,7 +186,7 @@ export default function ServiceDetailPage({ service: rawService, onBack, onOpenB
             
             {/* CAROUSEL CONTAINER (Rotación automática garantizada) */}
             <div 
-              className="relative rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(60,19,24,0.16)] border border-stone-200/90 aspect-[4/3] bg-stone-900 group select-none"
+              className="relative rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(60,19,24,0.16)] border border-stone-200/90 aspect-[4/3] bg-stone-900 group select-none touch-pan-y"
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
               onTouchStart={handleTouchStart}
@@ -172,7 +203,7 @@ export default function ServiceDetailPage({ service: rawService, onBack, onOpenB
                   <img 
                     src={photo} 
                     alt={`${service.name} foto ${idx + 1}`}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 pointer-events-none"
                     onError={(e) => {
                       if (!e.currentTarget.dataset.handled) {
                         e.currentTarget.dataset.handled = 'true';
@@ -188,16 +219,18 @@ export default function ServiceDetailPage({ service: rawService, onBack, onOpenB
               {galleryPhotos.length > 1 && (
                 <>
                   <button
+                    type="button"
                     onClick={prevSlide}
                     aria-label="Foto anterior"
-                    className="absolute left-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-black/40 hover:bg-black/70 text-white backdrop-blur-md flex items-center justify-center transition-all opacity-80 hover:opacity-100 hover:scale-110 shadow-lg"
+                    className="absolute left-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-black/40 hover:bg-black/70 text-white backdrop-blur-md flex items-center justify-center transition-all opacity-80 hover:opacity-100 hover:scale-110 shadow-lg cursor-pointer"
                   >
                     <ChevronLeft className="w-5 h-5" />
                   </button>
                   <button
+                    type="button"
                     onClick={nextSlide}
                     aria-label="Foto siguiente"
-                    className="absolute right-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-black/40 hover:bg-black/70 text-white backdrop-blur-md flex items-center justify-center transition-all opacity-80 hover:opacity-100 hover:scale-110 shadow-lg"
+                    className="absolute right-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-black/40 hover:bg-black/70 text-white backdrop-blur-md flex items-center justify-center transition-all opacity-80 hover:opacity-100 hover:scale-110 shadow-lg cursor-pointer"
                   >
                     <ChevronRight className="w-5 h-5" />
                   </button>
@@ -232,9 +265,10 @@ export default function ServiceDetailPage({ service: rawService, onBack, onOpenB
                   {galleryPhotos.map((_, idx) => (
                     <button
                       key={idx}
-                      onClick={() => setCurrentSlide(idx)}
+                      type="button"
+                      onClick={(e) => { e.stopPropagation(); setCurrentSlide(idx); }}
                       aria-label={`Ir a foto ${idx + 1}`}
-                      className={`h-2 rounded-full transition-all duration-300 ${
+                      className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
                         currentSlide === idx 
                           ? 'w-7 bg-gold shadow-md' 
                           : 'w-2 bg-white/60 hover:bg-white'
@@ -251,8 +285,9 @@ export default function ServiceDetailPage({ service: rawService, onBack, onOpenB
                 {galleryPhotos.map((photo, idx) => (
                   <button
                     key={idx}
-                    onClick={() => setCurrentSlide(idx)}
-                    className={`relative rounded-2xl overflow-hidden border-2 transition-all shrink-0 w-20 sm:w-24 aspect-[4/3] shadow-sm ${
+                    type="button"
+                    onClick={(e) => { e.stopPropagation(); setCurrentSlide(idx); }}
+                    className={`relative rounded-2xl overflow-hidden border-2 transition-all shrink-0 w-20 sm:w-24 aspect-[4/3] shadow-sm cursor-pointer ${
                       currentSlide === idx 
                         ? 'border-mahogany-950 ring-2 ring-gold scale-105 shadow-md' 
                         : 'border-transparent opacity-60 hover:opacity-100'
