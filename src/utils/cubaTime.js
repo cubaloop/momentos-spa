@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 /**
  * Calculates current business open/closed status based on Cuba Local Time (America/Havana)
- * Schedule: Miércoles a Domingo, 10:00 AM - 7:00 PM
+ * Schedule: Miércoles a Domingo, 10:00 AM - 6:00 PM
  * Closed: Lunes y Martes
  */
 export function getCubaSpaStatus() {
@@ -18,11 +18,22 @@ export function getCubaSpaStatus() {
     const minute = havanaDate.getMinutes();
     const timeInMinutes = hour * 60 + minute;
     
-    // 10:00 AM = 600 min, 7:00 PM (19:00) = 1140 min
-    const OPEN_MIN = 10 * 60;
-    const CLOSE_MIN = 19 * 60;
+    // 10:00 AM = 600 min, 6:00 PM (18:00) = 1080 min
+    let OPEN_MIN = 10 * 60;
+    let CLOSE_MIN = 18 * 60;
+    let closedDays = [1, 2]; // 1 = Monday, 2 = Tuesday
+
+    try {
+      const savedSchedule = localStorage.getItem('momentos_schedule');
+      if (savedSchedule) {
+        const parsed = JSON.parse(savedSchedule);
+        if (parsed.openMin) OPEN_MIN = parsed.openMin;
+        if (parsed.closeMin) CLOSE_MIN = parsed.closeMin;
+        if (Array.isArray(parsed.closedDays)) closedDays = parsed.closedDays;
+      }
+    } catch (e) {}
     
-    const isWorkingDay = day !== 1 && day !== 2; // Not Monday, not Tuesday
+    const isWorkingDay = !closedDays.includes(day);
     const isOpenHours = timeInMinutes >= OPEN_MIN && timeInMinutes < CLOSE_MIN;
     const isOpen = isWorkingDay && isOpenHours;
     
@@ -43,7 +54,7 @@ export function getCubaSpaStatus() {
 
     if (isOpen) {
       statusText = 'Abierto ahora';
-      detailText = 'Cierra a las 7:00 PM';
+      detailText = 'Cierra a las 6:00 PM';
     } else {
       statusText = 'Cerrado ahora';
       if (day === 1) {
@@ -56,7 +67,7 @@ export function getCubaSpaStatus() {
         // Before 10 AM on a working day
         detailText = 'Abre Hoy a las 10:00 AM';
       } else {
-        // After 7 PM
+        // After 6 PM
         if (day === 0) {
           // Sunday night -> Next opening Wednesday
           detailText = 'Abre el Miércoles a las 10:00 AM';
@@ -79,7 +90,7 @@ export function getCubaSpaStatus() {
     return {
       isOpen: true,
       statusText: 'Abierto',
-      detailText: '10:00 AM - 7:00 PM',
+      detailText: '10:00 AM - 6:00 PM',
       havanaTimeString: '',
       currentDayName: ''
     };

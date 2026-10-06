@@ -21,9 +21,11 @@ export default function Footer({ onOpenAdmin, onNavigateToPage }) {
           </div>
 
           {/* Line 2: Schedule */}
-          <div className="flex items-center justify-center gap-2 text-sm sm:text-base text-cream-100/90 tracking-wide font-normal">
+          <div className="flex flex-wrap items-center justify-center gap-2 text-sm sm:text-base text-cream-100/90 tracking-wide font-normal">
             <Clock className="w-4 h-4 text-[#c2a280] shrink-0" />
-            <span>Todos los días: 9:00 AM – 7:00 PM</span>
+            <span>Miércoles a Domingo: 10:00 AM – 6:00 PM</span>
+            <span className="text-white/40">•</span>
+            <span className="text-amber-200/90 text-xs sm:text-sm font-medium">Lunes y Martes: Cerrado</span>
           </div>
 
           {/* Line 3: Live Cuba Status Pill + Phone */}
@@ -170,13 +172,31 @@ export default function Footer({ onOpenAdmin, onNavigateToPage }) {
 
           <div className="space-y-3 text-xs">
             <h4 className="font-serif-title font-bold text-sm text-gold tracking-wide uppercase">
-              Horario de Atención
+              Horario Oficial
             </h4>
-            <div className="space-y-1.5 text-cream-200/80">
-              <p className="font-medium text-white">Lunes a Domingo: 9:00 AM – 7:00 PM</p>
-              <p className="text-[11px] text-cream-200/60">Citas previa reservación por WhatsApp o calendario web.</p>
+            <div className="space-y-1 text-cream-200/80">
+              <p className="font-medium text-white">Miércoles a Domingo: 10:00 AM – 6:00 PM</p>
+              <p className="text-amber-200/90 font-medium text-[11px]">Lunes y Martes: Cerrado</p>
+              <p className="text-[11px] text-cream-200/60 pt-0.5">Citas previa reservación por WhatsApp o calendario web.</p>
             </div>
-            <div className="pt-3">
+            
+            {/* TripAdvisor Link Button */}
+            <div className="pt-2">
+              <a
+                href="https://www.tripadvisor.es/Attraction_Review-g147271-d26792951-Reviews-Momentos_Spa-Havana_Ciudad_de_la_Habana_Province_Cuba.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#00aa6c]/15 hover:bg-[#00aa6c]/25 text-[#00af87] hover:text-white border border-[#00aa6c]/30 transition-all font-semibold text-[11px] group shadow-sm"
+                title="Ver reseñas de clientes en TripAdvisor"
+              >
+                <svg className="w-4 h-4 shrink-0 fill-current text-[#00af87] group-hover:scale-110 transition-transform" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 4c-5.5 0-10 3.6-10 8 0 2.2 1.1 4.2 3 5.7-.3 1-.9 2.3-1.8 3.1 1.6 0 3.3-.6 4.4-1.6 1.4.5 2.9.8 4.4.8s3-.3 4.4-.8c1.1 1 2.8 1.6 4.4 1.6-.9-.8-1.5-2.1-1.8-3.1 1.9-1.5 3-3.5 3-5.7 0-4.4-4.5-8-10-8zm-4.5 10.5c-1.4 0-2.5-1.1-2.5-2.5s1.1-2.5 2.5-2.5 2.5 1.1 2.5 2.5-1.1 2.5-2.5 2.5zm9 0c-1.4 0-2.5-1.1-2.5-2.5s1.1-2.5 2.5-2.5 2.5 1.1 2.5 2.5-1.1 2.5-2.5 2.5zm-4.5-1.2l-1.5-2.3h3l-1.5 2.3z"/>
+                </svg>
+                <span>Opiniones en TripAdvisor</span>
+              </a>
+            </div>
+
+            <div className="pt-1">
               <button
                 onClick={onOpenAdmin}
                 className="inline-flex items-center gap-1.5 text-[11px] text-cream-200/50 hover:text-gold transition-colors"
@@ -190,10 +210,14 @@ export default function Footer({ onOpenAdmin, onNavigateToPage }) {
         </div>
 
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-cream-200/60 text-center sm:text-left">
-          <p>© {new Date().getFullYear()} Momentos Spa Habana. Todos los derechos reservados. • <span className="text-gold italic">“Siempre pensando en ti”</span></p>
-          <div className="flex items-center gap-2 text-gold text-[11px]">
-            <Sparkles className="w-3 h-3" />
-            <span>Santuario de Bienestar en Miramar, La Habana</span>
+          <p>© {new Date().getFullYear()} Momentos Spa Habana. Todos los derechos reservados. • <span className="text-gold italic">“Pensando en ti”</span></p>
+          <div className="flex flex-wrap items-center justify-center sm:justify-end gap-3 text-[11px]">
+            <div className="flex items-center gap-1.5 text-gold">
+              <Sparkles className="w-3 h-3" />
+              <span>Santuario de Bienestar en Miramar, La Habana</span>
+            </div>
+            <span className="text-white/20 hidden sm:inline">•</span>
+            <span className="text-cream-200/50">Developed by <strong className="text-cream-100 font-semibold">Tecnoemprende</strong></span>
           </div>
         </div>
 

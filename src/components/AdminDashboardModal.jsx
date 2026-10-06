@@ -56,6 +56,28 @@ export default function AdminDashboardModal({ isOpen, onClose }) {
   });
   const [announcementSaved, setAnnouncementSaved] = useState(false);
 
+  // Official Spa Schedule State
+  const defaultSchedule = {
+    openDays: 'Miércoles a Domingo',
+    closedDays: 'Lunes y Martes',
+    openTime: '10:00 AM',
+    closeTime: '06:00 PM',
+    openMin: 600,
+    closeMin: 1080,
+    blockMonTue: true,
+    notes: 'Lunes y martes cerrado por mantenimiento e higienización.'
+  };
+
+  const [schedule, setSchedule] = useState(() => {
+    try {
+      const saved = localStorage.getItem('momentos_schedule');
+      return saved ? JSON.parse(saved) : defaultSchedule;
+    } catch (e) {
+      return defaultSchedule;
+    }
+  });
+  const [scheduleSaved, setScheduleSaved] = useState(false);
+
   const [searchTerm, setSearchTerm] = useState('');
   const [loading, setLoading] = useState(false);
 
@@ -289,6 +311,16 @@ export default function AdminDashboardModal({ isOpen, onClose }) {
     } catch (e) {}
   };
 
+  const handleSaveSchedule = (e) => {
+    e.preventDefault();
+    try {
+      localStorage.setItem('momentos_schedule', JSON.stringify(schedule));
+      setScheduleSaved(true);
+      setTimeout(() => setScheduleSaved(false), 3000);
+      window.dispatchEvent(new Event('momentos_schedule_updated'));
+    } catch (e) {}
+  };
+
   const handleExportCSV = () => {
     let csvContent = "data:text/csv;charset=utf-8,";
     if (activeTab === 'services') {
@@ -383,7 +415,19 @@ export default function AdminDashboardModal({ isOpen, onClose }) {
             }`}
           >
             <Megaphone className="w-4 h-4 text-amber-600" />
-            <span>Anuncios & Promociones</span>
+            <span>Anuncios</span>
+          </button>
+
+          <button
+            onClick={() => setActiveTab('schedule')}
+            className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition-all whitespace-nowrap ${
+              activeTab === 'schedule'
+                ? 'bg-mahogany-950 text-white shadow'
+                : 'bg-stone-50 text-stone-700 hover:bg-stone-100 border border-stone-200'
+            }`}
+          >
+            <Clock className="w-4 h-4 text-emerald-600" />
+            <span>Horarios del Spa</span>
           </button>
 
           <button
@@ -632,6 +676,149 @@ export default function AdminDashboardModal({ isOpen, onClose }) {
                 </div>
               </form>
             </div>
+          </div>
+        )}
+
+                {/* TAB HORARIOS DE ATENCIÓN */}
+        {activeTab === 'schedule' && (
+          <div className="bg-white rounded-2xl border border-stone-200 p-6 sm:p-8 shadow-sm space-y-6">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-4 border-b border-stone-200">
+              <div>
+                <h3 className="font-serif-title text-xl font-bold text-stone-900 flex items-center gap-2">
+                  <Clock className="w-5 h-5 text-emerald-600" />
+                  <span>Configuración del Horario Oficial de Momentos Spa</span>
+                </h3>
+                <p className="text-xs text-stone-500 mt-1">
+                  Administra los días de apertura, horas oficiales y bloqueo de días no laborables para el calendario de reservas y toda la página web.
+                </p>
+              </div>
+
+              <div className="p-3 bg-emerald-50 rounded-2xl border border-emerald-200 text-xs text-emerald-900 flex items-center gap-2">
+                <Check className="w-4 h-4 text-emerald-600 shrink-0" />
+                <span>Horario Oficial Activo: <strong>Miércoles a Domingo (10:00 AM – 6:00 PM)</strong></span>
+              </div>
+            </div>
+
+            <form onSubmit={handleSaveSchedule} className="space-y-6">
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                
+                {/* Días Abiertos */}
+                <div className="space-y-1.5">
+                  <label className="text-xs font-bold text-stone-700 block">
+                    Días Laborables Oficiales:
+                  </label>
+                  <input
+                    type="text"
+                    value={schedule.openDays}
+                    onChange={(e) => setSchedule({ ...schedule, openDays: e.target.value })}
+                    className="w-full text-xs p-3 rounded-xl border border-stone-300 focus:ring-2 focus:ring-gold outline-none"
+                    placeholder="Miércoles a Domingo"
+                  />
+                  <span className="text-[11px] text-stone-400">Días que el spa recibe clientes en cabinas.</span>
+                </div>
+
+                {/* Días Cerrados */}
+                <div className="space-y-1.5">
+                  <label className="text-xs font-bold text-stone-700 block">
+                    Días Cerrados por Mantenimiento:
+                  </label>
+                  <input
+                    type="text"
+                    value={schedule.closedDays}
+                    onChange={(e) => setSchedule({ ...schedule, closedDays: e.target.value })}
+                    className="w-full text-xs p-3 rounded-xl border border-stone-300 focus:ring-2 focus:ring-gold outline-none"
+                    placeholder="Lunes y Martes"
+                  />
+                  <span className="text-[11px] text-stone-400">Días bloqueados automáticamente en el calendario web.</span>
+                </div>
+
+                {/* Hora de Apertura */}
+                <div className="space-y-1.5">
+                  <label className="text-xs font-bold text-stone-700 block">
+                    Hora Oficial de Apertura:
+                  </label>
+                  <select
+                    value={schedule.openTime}
+                    onChange={(e) => setSchedule({ ...schedule, openTime: e.target.value })}
+                    className="w-full text-xs p-3 rounded-xl border border-stone-300 focus:ring-2 focus:ring-gold outline-none bg-white"
+                  >
+                    <option value="09:00 AM">09:00 AM</option>
+                    <option value="10:00 AM">10:00 AM (Oficial)</option>
+                    <option value="11:00 AM">11:00 AM</option>
+                  </select>
+                </div>
+
+                {/* Hora de Cierre */}
+                <div className="space-y-1.5">
+                  <label className="text-xs font-bold text-stone-700 block">
+                    Hora Oficial de Cierre:
+                  </label>
+                  <select
+                    value={schedule.closeTime}
+                    onChange={(e) => setSchedule({ ...schedule, closeTime: e.target.value })}
+                    className="w-full text-xs p-3 rounded-xl border border-stone-300 focus:ring-2 focus:ring-gold outline-none bg-white"
+                  >
+                    <option value="05:00 PM">05:00 PM</option>
+                    <option value="06:00 PM">06:00 PM (Oficial)</option>
+                    <option value="07:00 PM">07:00 PM</option>
+                    <option value="08:00 PM">08:00 PM</option>
+                  </select>
+                </div>
+
+              </div>
+
+              {/* Bloqueo automático Lunes y Martes */}
+              <div className="p-4 bg-stone-50 rounded-2xl border border-stone-200 flex items-center justify-between">
+                <div>
+                  <span className="font-bold text-xs text-stone-900 block">
+                    Bloqueo Estricto de Lunes y Martes en el Sistema de Citas
+                  </span>
+                  <span className="text-[11px] text-stone-500">
+                    Evita que los clientes seleccionen citas en lunes o martes en el calendario interactivo.
+                  </span>
+                </div>
+                <input
+                  type="checkbox"
+                  checked={schedule.blockMonTue}
+                  onChange={(e) => setSchedule({ ...schedule, blockMonTue: e.target.checked })}
+                  className="w-5 h-5 rounded text-mahogany-900 focus:ring-gold cursor-pointer"
+                />
+              </div>
+
+              {/* Notas de Atención */}
+              <div className="space-y-1.5">
+                <label className="text-xs font-bold text-stone-700 block">
+                  Nota o Política de Horarios para Clientes:
+                </label>
+                <textarea
+                  rows={2}
+                  value={schedule.notes}
+                  onChange={(e) => setSchedule({ ...schedule, notes: e.target.value })}
+                  className="w-full text-xs p-3 rounded-xl border border-stone-300 focus:ring-2 focus:ring-gold outline-none"
+                  placeholder="Lunes y martes cerrado por mantenimiento e higienización."
+                />
+              </div>
+
+              {/* Botón Guardar */}
+              <div className="pt-2 flex items-center gap-4">
+                <button
+                  type="submit"
+                  className="px-6 py-3 bg-mahogany-950 hover:bg-mahogany-900 text-white font-bold text-xs rounded-xl shadow flex items-center gap-2 transition-all hover:scale-105"
+                >
+                  <Save className="w-4 h-4 text-gold" />
+                  <span>Guardar Horario Oficial</span>
+                </button>
+
+                {scheduleSaved && (
+                  <span className="text-xs text-emerald-600 font-bold flex items-center gap-1 animate-fade-in">
+                    <Check className="w-4 h-4" />
+                    ¡Horario oficial actualizado en todo el sitio web!
+                  </span>
+                )}
+              </div>
+
+            </form>
           </div>
         )}
 

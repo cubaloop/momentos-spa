@@ -89,9 +89,13 @@ export default function ServiceDetailPage({ service: rawService, onBack, onOpenB
     }
   };
 
-  const whatsappUrl = `https://wa.me/5359710688?text=${encodeURIComponent(
-    `Hola Momentos Spa, deseo consultar y reservar el servicio: "${service.name}" (${service.duration} - $${service.price} USD). ¿Tienen disponibilidad próxima?`
-  )}`;
+  const whatsappUrl = service.isTaxi
+    ? `https://wa.me/5359710688?text=${encodeURIComponent(
+        `Hola Momentos Spa, deseo solicitar el Servicio de taxi 🚕 para mi cita.`
+      )}`
+    : `https://wa.me/5359710688?text=${encodeURIComponent(
+        `Hola Momentos Spa, deseo consultar y reservar el servicio: "${service.name}"${service.duration ? ` (${service.duration})` : ''}${typeof service.price === 'number' ? ` - $${service.price} USD` : ''}. ¿Tienen disponibilidad próxima?`
+      )}`;
 
   return (
     <div className="min-h-screen bg-cream-50/70 text-stone-900 pb-24 animate-fade-in">
@@ -290,10 +294,12 @@ export default function ServiceDetailPage({ service: rawService, onBack, onOpenB
                 <span className="text-xs font-bold uppercase tracking-wider text-gold-dark bg-gold/10 px-3 py-1 rounded-full border border-gold/20">
                   {service.subcategoryName || service.categoryTitle || 'Spa'}
                 </span>
-                <span className="text-xs text-stone-500 flex items-center gap-1">
-                  <Clock className="w-3.5 h-3.5 text-stone-400" />
-                  {service.duration}
-                </span>
+                {service.duration && (
+                  <span className="text-xs text-stone-500 flex items-center gap-1">
+                    <Clock className="w-3.5 h-3.5 text-stone-400" />
+                    {service.duration}
+                  </span>
+                )}
               </div>
 
               <h1 className="text-3xl sm:text-4xl font-serif-title font-bold text-mahogany-950 tracking-tight leading-tight">
@@ -305,16 +311,26 @@ export default function ServiceDetailPage({ service: rawService, onBack, onOpenB
                 <div>
                   <span className="text-xs text-stone-500 uppercase tracking-wider block">Inversión</span>
                   <div className="flex items-baseline gap-1">
-                    <span className="text-3xl font-bold text-mahogany-950 font-serif-title">
-                      ${service.price}
-                    </span>
-                    <span className="text-xs text-stone-500 font-medium">USD</span>
+                    {typeof service.price === 'number' ? (
+                      <>
+                        <span className="text-3xl font-bold text-mahogany-950 font-serif-title">
+                          ${service.price}
+                        </span>
+                        <span className="text-xs text-stone-500 font-medium">USD</span>
+                      </>
+                    ) : (
+                      <span className="text-2xl font-bold text-stone-800 font-serif-title">
+                        {service.price}
+                      </span>
+                    )}
                   </div>
                 </div>
-                <div className="text-right border-l border-stone-200 pl-6">
-                  <span className="text-xs text-stone-500 uppercase tracking-wider block">Duración</span>
-                  <span className="text-lg font-bold text-stone-800">{service.duration}</span>
-                </div>
+                {service.duration && (
+                  <div className="text-right border-l border-stone-200 pl-6">
+                    <span className="text-xs text-stone-500 uppercase tracking-wider block">Duración</span>
+                    <span className="text-lg font-bold text-stone-800">{service.duration}</span>
+                  </div>
+                )}
               </div>
             </div>
 
@@ -333,23 +349,37 @@ export default function ServiceDetailPage({ service: rawService, onBack, onOpenB
 
             {/* Action Buttons */}
             <div className="pt-2 flex flex-col sm:flex-row gap-3">
-              <button
-                onClick={() => onOpenBooking(service)}
-                className="flex-1 py-3.5 px-6 rounded-full bg-mahogany-950 hover:bg-mahogany-900 text-white font-bold text-sm shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 group"
-              >
-                <Calendar className="w-4 h-4 text-gold group-hover:scale-110 transition-transform" />
-                <span>Reservar este Servicio</span>
-              </button>
+              {service.isTaxi ? (
+                <a
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 py-3.5 px-6 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 group"
+                >
+                  <Phone className="w-4 h-4" />
+                  <span>Solicitar Taxi por WhatsApp</span>
+                </a>
+              ) : (
+                <>
+                  <button
+                    onClick={() => onOpenBooking(service)}
+                    className="flex-1 py-3.5 px-6 rounded-full bg-mahogany-950 hover:bg-mahogany-900 text-white font-bold text-sm shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 group"
+                  >
+                    <Calendar className="w-4 h-4 text-gold group-hover:scale-110 transition-transform" />
+                    <span>Reservar este Servicio</span>
+                  </button>
 
-              <a
-                href={whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="py-3.5 px-5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 shrink-0"
-              >
-                <Phone className="w-4 h-4" />
-                <span>Consultar por WhatsApp</span>
-              </a>
+                  <a
+                    href={whatsappUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="py-3.5 px-5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 shrink-0"
+                  >
+                    <Phone className="w-4 h-4" />
+                    <span>Consultar por WhatsApp</span>
+                  </a>
+                </>
+              )}
             </div>
 
             {/* Benefits list */}

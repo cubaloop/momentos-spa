@@ -25,7 +25,7 @@ export default function AnnouncementBar({ onOpenBooking }) {
           {/* Base Schedule */}
           <div className="flex items-center gap-1.5 text-white/80">
             <Clock className="w-3.5 h-3.5 text-gold" />
-            <span className="font-normal">{t('schedule', 'Mié - Dom: 10:00 AM - 7:00 PM')}</span>
+            <span className="font-normal">{t('schedule', 'Mié - Dom: 10:00 AM - 6:00 PM')}</span>
           </div>
 
           {/* Dynamic Open / Closed Status Badge according to Cuba Time */}

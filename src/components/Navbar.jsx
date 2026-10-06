@@ -128,17 +128,19 @@ export default function Navbar({
             }} 
             className="flex items-center gap-3 group text-left"
           >
-            <img 
-              src="./assets/logo_dark.png" 
-              alt="Momentos Spa Logo" 
-              className="w-12 h-12 rounded-full shadow-md border border-mahogany-900/20 group-hover:scale-105 transition-transform" 
-            />
+            <div className="w-12 h-12 rounded-full overflow-hidden bg-cream-50/80 border border-mahogany-900/15 shadow-sm flex items-center justify-center p-1.5 group-hover:scale-105 transition-transform shrink-0">
+              <img 
+                src="./assets/logo_emblem_gold.png" 
+                alt="Momentos Spa Logo" 
+                className="w-full h-full object-contain" 
+              />
+            </div>
             <div className="flex flex-col">
               <span className="font-serif-title text-xl sm:text-2xl font-bold tracking-tight text-mahogany-950 leading-none">
                 Momentos <span className="text-mahogany-700 italic font-normal">Spa</span>
               </span>
-              <span className="text-[10px] tracking-[0.2em] uppercase font-semibold text-mahogany-600/90 mt-1">
-                Miramar • La Habana
+              <span className="text-[10px] tracking-[0.22em] uppercase font-semibold text-mahogany-700/90 mt-1">
+                Pensando en ti
               </span>
             </div>
           </button>

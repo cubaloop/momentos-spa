@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { categoriesData } from '../data/servicesData';
-import { Calendar, Clock, Sparkles, Eye, ChevronRight } from 'lucide-react';
+import { Calendar, Clock, Sparkles, Eye, ChevronRight, MessageSquare } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 export default function ServicesCatalog({ onOpenBooking, onNavigateToService }) {
@@ -86,15 +86,19 @@ export default function ServicesCatalog({ onOpenBooking, onNavigateToService }) 
                       <span className="text-[10px] font-bold uppercase tracking-wider text-mahogany-800 bg-mahogany-50 px-2 py-0.5 rounded-full border border-mahogany-200">
                         {srv.badge}
                       </span>
-                      <span className="text-xs font-semibold text-stone-500 flex items-center gap-1">
-                        <Clock className="w-3.5 h-3.5 text-stone-400" />
-                        {srv.duration}
-                      </span>
+                      {srv.duration ? (
+                        <span className="text-xs font-semibold text-stone-500 flex items-center gap-1">
+                          <Clock className="w-3.5 h-3.5 text-stone-400" />
+                          {srv.duration}
+                        </span>
+                      ) : (
+                        <span />
+                      )}
                     </div>
 
                     <h4 
                       onClick={() => onNavigateToService && onNavigateToService(srv)}
-                      className="font-serif-title text-base sm:text-lg font-bold text-stone-900 group-hover:text-mahogany-900 transition-colors mb-1.5 cursor-pointer line-clamp-1"
+                      className="font-serif-title text-base sm:text-lg font-bold text-stone-900 group-hover:text-mahogany-900 transition-colors mb-1.5 cursor-pointer line-clamp-2 min-h-[3rem]"
                       title={`Ver detalles de ${srv.name}`}
                     >
                       {srv.name}
@@ -114,16 +118,39 @@ export default function ServicesCatalog({ onOpenBooking, onNavigateToService }) 
                   </div>
 
                   <div className="pt-3 border-t border-stone-100 flex items-center justify-between">
-                    <span className="font-serif-title text-2xl font-bold text-mahogany-950">
-                      ${srv.price} <span className="text-xs font-sans font-normal text-stone-500">USD</span>
-                    </span>
-                    <button
-                      onClick={() => onOpenBooking(srv)}
-                      className="flex items-center gap-1.5 bg-cream-200 hover:bg-mahogany-950 text-mahogany-900 hover:text-white text-xs font-bold px-4 py-2 rounded-full transition-all shadow-sm hover:scale-105"
-                    >
-                      <Calendar className="w-3.5 h-3.5" />
-                      <span>{t('bookShort', 'Reservar')}</span>
-                    </button>
+                    <div className="flex items-baseline gap-1">
+                      {typeof srv.price === 'number' ? (
+                        <>
+                          <span className="font-serif-title text-2xl font-bold text-mahogany-950">
+                            ${srv.price}
+                          </span>
+                          <span className="text-xs font-sans font-normal text-stone-500">USD</span>
+                        </>
+                      ) : (
+                        <span className="font-serif-title text-xl font-bold text-stone-800">
+                          {srv.price}
+                        </span>
+                      )}
+                    </div>
+                    {srv.isTaxi ? (
+                      <a
+                        href="https://wa.me/5359710688?text=Hola%20Momentos%20Spa%2C%20deseo%20solicitar%20el%20Servicio%20de%20taxi%20%F0%9F%9A%95%20para%20mi%20cita."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-1.5 bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-bold px-4 py-2 rounded-full transition-all shadow-sm hover:scale-105"
+                      >
+                        <MessageSquare className="w-3.5 h-3.5" />
+                        <span>Pedir Taxi</span>
+                      </a>
+                    ) : (
+                      <button
+                        onClick={() => onOpenBooking(srv)}
+                        className="flex items-center gap-1.5 bg-cream-200 hover:bg-mahogany-950 text-mahogany-900 hover:text-white text-xs font-bold px-4 py-2 rounded-full transition-all shadow-sm hover:scale-105"
+                      >
+                        <Calendar className="w-3.5 h-3.5" />
+                        <span>{t('bookShort', 'Reservar')}</span>
+                      </button>
+                    )}
                   </div>
 
                 </div>

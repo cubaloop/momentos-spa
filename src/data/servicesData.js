@@ -1,1930 +1,1767 @@
-// Catálogo oficial de Momentos Spa sincronizado fielmente con elyerromenu.com/b/catalogo-momentos-spa
-// Lema: "Siempre pensando en ti"
+// Catálogo oficial maestro de Momentos Spa sincronizado con los 50 servicios oficiales
+// Lema: "Pensando en ti"
 // Todos los servicios incluyen bebida no alcohólica de cortesía (té, agua, café, jugo y refresco)
 
 export const categoriesData = [
   {
-    id: "spa-masajes",
-    title: "Servicios de Spa y Masajes",
-    subtitle: "Técnicas terapéuticas y relajantes diseñadas para reequilibrar tu cuerpo y mente",
-    icon: "Sparkles",
-    badge: "Más Popular",
-    subcategories: [
+    "id": "spa-masajes",
+    "title": "Masajes",
+    "subtitle": "Técnicas manuales y terapias para liberar tensión y restaurar el equilibrio",
+    "icon": "Sparkles",
+    "badge": "Más Popular",
+    "subcategories": [
       {
-        id: "masajes",
-        name: "Masajes Terapéuticos y Relajantes",
-        description: "Alivio de tensiones, relajación profunda y estimulación de la circulación",
-        services: [
+        "id": "masajes",
+        "name": "Masajes Terapéuticos y Relajantes",
+        "description": "Alivio de tensiones, relajación profunda y estimulación de la circulación",
+        "services": [
           {
-            id: "srv_masaje_relajante_30",
-            name: "Masaje relajante de 30 min",
-            duration: "30 min",
-            price: 25,
-            badge: "Express",
-            image: "./assets/catalog/masaje-relajante-de-30-min.webp",
-            gallery: [
+            "id": "srv_masaje_relajante_30",
+            "name": "Masaje relajante – 30 min",
+            "categoryTitle": "Masajes",
+            "categoryId": "spa-masajes",
+            "subcategoryName": "Masajes Terapéuticos y Relajantes",
+            "price": 12,
+            "duration": "30 min",
+            "badge": "Express",
+            "image": "./assets/catalog/masaje-relajante-de-30-min.webp",
+            "gallery": [
               "./assets/catalog/masaje-relajante-de-30-min.webp",
               "./assets/masaje_relax.jpg",
               "./assets/dsc_6325.jpg"
             ],
-            description: "Masaje relajante en cervicales, espalda y piernas. Ideal para personas que acumulan mucho estrés y disponen de poco tiempo.",
-            longDescription: [
+            "description": "Masaje relajante en cervicales, espalda y piernas. Ideal para personas que acumulan mucho estrés y disponen de poco tiempo.",
+            "longDescription": [
               "Masaje relajante focalizado en cervicales, espalda y piernas. Es el tratamiento ideal para personas que acumulan tensión por la rutina diaria o disponen de poco tiempo para una pausa revitalizante.",
               "Mediante pases rítmicos y suaves, ayuda a descomprimir la musculatura dorsal y favorece la circulación en piernas cansadas."
             ],
-            benefits: [
+            "benefits": [
               "Alivio focalizado en cuello, hombros y lumbares",
               "Descanso muscular rápido y efectivo",
               "Disminución del estrés en poco tiempo",
-              "Activación de la circulación en piernas"
+              "Activación de la circulación en extremidades"
             ],
-            steps: [
-              { step: "01", title: "Acomodación", desc: "Preparación en cabina privada climatizada con aceites cálidos." },
-              { step: "02", title: "Masaje Cervical y Espalda", desc: "Maniobras suaves y de amasamiento para soltar tensión acumulada." },
-              { step: "03", title: "Pases en Piernas", desc: "Relajación muscular ascendente en extremidades inferiores." },
-              { step: "04", title: "Bebida de Cortesía", desc: "Té, café, jugo o infusión al finalizar la sesión." }
-            ],
-            includes: [
+            "includes": [
               "Cabina privada climatizada",
               "Aceites esenciales naturales",
               "Bebida no alcohólica de cortesía (té, café, agua, jugo o refresco)"
             ],
-            recommendations: "Recomendado como descanso reparador a mitad del día o al salir del trabajo.",
-            slug: "masaje-relajante-de-30-min"
+            "recommendations": "Recomendado como descanso reparador a mitad del día o al salir del trabajo.",
+            "slug": "masaje-relajante-30-min"
           },
           {
-            id: "srv_masaje_relajante_60",
-            name: "Masaje relajante (60 min)",
-            duration: "60 min",
-            price: 35,
-            badge: "Esencial",
-            popular: true,
-            image: "./assets/catalog/masaje-relajante-u.webp",
-            gallery: [
+            "id": "srv_masaje_relajante_60",
+            "name": "Masaje relajante – 60 min",
+            "categoryTitle": "Masajes",
+            "categoryId": "spa-masajes",
+            "subcategoryName": "Masajes Terapéuticos y Relajantes",
+            "price": 20,
+            "duration": "60 min",
+            "badge": "Esencial",
+            "image": "./assets/catalog/masaje-relajante-u.webp",
+            "gallery": [
               "./assets/catalog/masaje-relajante-u.webp",
-              "./assets/masaje_relax.jpg",
-              "./assets/servicios_spa.jpg"
-            ],
-            description: "Técnica terapéutica centrada en aliviar la tensión muscular y promover un estado de calma y bienestar. Reduce el estrés, mejora la circulación sanguínea y fomenta la relajación profunda mediante movimientos suaves y rítmicos.",
-            longDescription: [
-              "El masaje relajante es una técnica terapéutica que se centra en aliviar la tensión muscular y promover un estado de calma y bienestar. Se utiliza para reducir el estrés, mejorar la circulación sanguínea y fomentar la relajación profunda.",
-              "Durante una sesión de masaje relajante, el terapeuta aplica movimientos suaves y rítmicos, utilizando técnicas como el amasado, la fricción y el estiramiento. Los beneficios incluyen disminución de la ansiedad, mejora del sueño y alivio general en un ambiente tranquilo y acogedor."
-            ],
-            benefits: [
-              "Disminución notable de la ansiedad y el estrés mental",
-              "Mejora de la calidad del sueño y descanso nocturno",
-              "Alivio de la tensión muscular acumulada",
-              "Sensación integral de paz y ligereza"
-            ],
-            steps: [
-              { step: "01", title: "Recepción & Aromaterapia", desc: "Ambientación sensorial con aromas botánicos suaves." },
-              { step: "02", title: "Masaje Dorsal Completo", desc: "Fricciones fluidas y amasado rítmico en espalda y cuello." },
-              { step: "03", title: "Extremidades y Cuello", desc: "Estiramientos suaves y descompresión en brazos y piernas." },
-              { step: "04", title: "Momento de Reposo", desc: "Tiempo de reposo con bebida no alcohólica de cortesía." }
-            ],
-            includes: [
-              "Cabina climatizada con luz tenue y música relajante",
-              "Aceites corporales hidratantes",
-              "Bebida no alcohólica de cortesía: Té, agua, Café, jugo y refresco"
-            ],
-            recommendations: "Ideal para desconectar de la rutina y recuperar la vitalidad física y mental.",
-            slug: "masaje-relajante-60-min"
-          },
-          {
-            id: "srv_masaje_relajante_90",
-            name: "Masaje relajante de 90 min",
-            duration: "90 min",
-            price: 50,
-            badge: "Completo",
-            image: "./assets/catalog/masaje-relajante-de-90-min.webp",
-            gallery: [
-              "./assets/catalog/masaje-relajante-de-90-min.webp",
-              "./assets/masaje_relax.jpg",
+              "./assets/servicios_spa.jpg",
               "./assets/dsc_6328.jpg"
             ],
-            description: "Sesión extendida de masaje relajante de cuerpo entero, diseñada para quienes buscan desconexión prolongada y máxima relajación muscular.",
-            longDescription: [
-              "Una experiencia extendida de hora y media donde cada grupo muscular recibe la atención y el tiempo necesarios para soltarse por completo.",
-              "Perfecto para combatir el agotamiento físico severo, el insomnio recurrente y las tensiones profundas generalizadas."
+            "description": "Técnica terapéutica que se centra en aliviar la tensión muscular y promover un estado de calma y bienestar. Movimientos suaves y rítmicos de amasamiento, fricción y estiramiento.",
+            "longDescription": [
+              "El masaje relajante es una técnica terapéutica que se centra en aliviar la tensión muscular y promover un estado de calma y bienestar general.",
+              "Durante una sesión de 60 minutos completos, el terapeuta aplica movimientos suaves y rítmicos, utilizando técnicas precisas de amasado, fricción y estiramientos suaves con aceites aromáticos."
             ],
-            benefits: [
-              "Relajación neuromuscular profunda sin prisas",
-              "Eliminación prolongada del estrés somático",
-              "Reactivación de la circulación periférica",
-              "Paz mental y descanso duradero"
+            "benefits": [
+              "Relajación muscular integral cuerpo completo",
+              "Reducción profunda de niveles de cortisol y estrés",
+              "Optimización de la circulación periférica",
+              "Sensación duradera de serenidad mental y física"
             ],
-            steps: [
-              { step: "01", title: "Bienvenida", desc: "Acomodación en cabina privada." },
-              { step: "02", title: "Masaje Integral Profundo", desc: "Maniobras rítmicas pausadas en todo el cuerpo." },
-              { step: "03", title: "Cierre Craneal y Facial", desc: "Pases suaves en sienes y cuello." },
-              { step: "04", title: "Bebida de Cortesía", desc: "Degustación de bebida fría o caliente." }
+            "includes": [
+              "Sesión completa de 60 minutos",
+              "Cabina privada climatizada con aromaterapia",
+              "Bebida no alcohólica de cortesía a elección"
             ],
-            includes: [
-              "Cabina privada climatizada",
-              "Aceites aromáticos",
-              "Bebida no alcohólica de cortesía (té, café, agua, jugo o refresco)"
-            ],
-            recommendations: "Se aconseja acudir sin compromisos posteriores para prolongar el estado de calma.",
-            slug: "masaje-relajante-de-90-min"
+            "recommendations": "Ideal para disfrutar semanal o quincenalmente para mantener el equilibrio corporal.",
+            "slug": "masaje-relajante-60-min"
           },
           {
-            id: "srv_masaje_descontracturante_60",
-            name: "Masaje descontracturante (60 min)",
-            duration: "60 min",
-            price: 40,
-            badge: "Alivio Fuerte",
-            popular: true,
-            image: "./assets/catalog/masaje-descontracturante-h.webp",
-            gallery: [
-              "./assets/catalog/masaje-descontracturante-h.webp",
-              "./assets/masaje_m01.jpg",
-              "./assets/masaje_m02.jpg"
+            "id": "srv_masaje_relajante_90",
+            "name": "Masaje relajante – 90 min",
+            "categoryTitle": "Masajes",
+            "categoryId": "spa-masajes",
+            "subcategoryName": "Masajes Terapéuticos y Relajantes",
+            "price": 30,
+            "duration": "90 min",
+            "badge": "Inmersión Total",
+            "image": "./assets/catalog/masaje-relajante-de-90-min.webp",
+            "gallery": [
+              "./assets/catalog/masaje-relajante-de-90-min.webp",
+              "./assets/masaje_relax.jpg",
+              "./assets/dsc_6325.jpg"
             ],
-            description: "Técnica terapéutica utilizada para aliviar la tensión muscular y reducir el dolor asociado a contracturas. Se enfoca en espalda, cuello y hombros mediante movimientos profundos, firmes, amasamientos y presiones específicas.",
-            longDescription: [
-              "El masaje descontracturante es una técnica terapéutica utilizada para aliviar la tensión muscular y reducir el dolor asociado a contracturas.",
-              "Se enfoca en las áreas del cuerpo donde se acumula mayor tensión, como la espalda, el cuello y los hombros. Este tipo de masaje implica movimientos profundos y firmes, que pueden incluir amasamientos, fricciones y presiones específicas sobre los músculos y tejidos conectivos."
+            "description": "Experiencia prolongada de relajación profunda cuerpo completo. Tiempo extendido para trabajar con calma cada grupo muscular y lograr desconexión total.",
+            "longDescription": [
+              "Una hora y media de inmersión total diseñada para personas que buscan una desconexión absoluta del mundo exterior.",
+              "Permite al terapeuta profundizar en cada segmento muscular, desde los pies hasta el cuello y cuero cabelludo, asegurando un alivio sin prisas."
             ],
-            benefits: [
-              "Alivio directo de contracturas y nudos musculares",
-              "Recuperación de la movilidad articular y cervical",
-              "Disminución del dolor provocado por malas posturas",
-              "Oxigenación muscular mediante hiperemia controlada"
+            "benefits": [
+              "Desconexión sensorial y mental absoluta",
+              "Tratamiento minucioso de cada grupo muscular",
+              "Inducción a un estado de relajación restaurador",
+              "Alivio duradero de tensiones acumuladas"
             ],
-            steps: [
-              { step: "01", title: "Evaluación Muscular", desc: "Identificación de los puntos de dolor y sobrecarga." },
-              { step: "02", title: "Fricción de Calentamiento", desc: "Preparación del tejido conectivo con bálsamos térmicos." },
-              { step: "03", title: "Presión Descontracturante", desc: "Maniobras firmes y amasamientos dirigidos a disolver nudos." },
-              { step: "04", title: "Descanso y Bebida", desc: "Bebida refrescante o infusión caliente incluida." }
-            ],
-            includes: [
-              "Cabina privada climatizada",
-              "Bálsamos y aceites descontracturantes",
-              "Bebida no alcohólica de cortesía: Té, agua, Café, jugo y refresco"
-            ],
-            recommendations: "Sensación de bienestar progresivo; se aconseja tomar abundante agua tras la sesión.",
-            slug: "masaje-descontracturante-60-min"
-          },
-          {
-            id: "srv_masaje_descontracturante_90",
-            name: "Masaje descontracturante (90 min)",
-            duration: "90 min",
-            price: 55,
-            badge: "Intensivo",
-            image: "./assets/catalog/masaje-descontracturante.webp",
-            gallery: [
-              "./assets/catalog/masaje-descontracturante.webp",
-              "./assets/masaje_m01.jpg",
-              "./assets/masaje_m02.jpg"
-            ],
-            description: "Sesión intensiva y extendida de descompresión muscular. Dedica 90 minutos para disolver contracturas crónicas en espalda completa, cuello, hombros y extremidades.",
-            longDescription: [
-              "Sesión de alta eficacia recomendada para personas con contracturas severas, deportistas o quienes sufren dolor postural crónico.",
-              "El tiempo extra de 90 minutos permite trabajar cada grupo muscular a fondo, combinando presiones profundas, pases miofasciales y estiramientos pasivos."
-            ],
-            benefits: [
-              "Disolución de adherencias y contracturas severas",
-              "Mayor rango de movimiento y alivio duradero",
-              "Descompresión de toda la columna vertebral",
-              "Recuperación muscular integral"
-            ],
-            steps: [
-              { step: "01", title: "Palpación", desc: "Detección de puntos gatillo en espalda y extremidades." },
-              { step: "02", title: "Descompresión Dorsal", desc: "Trabajo profundo en zona escapular y lumbar." },
-              { step: "03", title: "Extremidades y Cuello", desc: "Maniobras firmes en hombros, brazos y piernas." },
-              { step: "04", title: "Cierre Revitalizante", desc: "Bebida de cortesía al concluir." }
-            ],
-            includes: [
-              "Cabina privada climatizada",
-              "Aceites analgésicos naturales",
+            "includes": [
+              "90 minutos de terapia manual continua",
+              "Aceites botánicos de alta gama y aromaterapia",
               "Bebida no alcohólica de cortesía"
             ],
-            recommendations: "Evitar ejercicios de alta exigencia física inmediatamente después.",
-            slug: "masaje-descontracturante-90-min"
+            "recommendations": "Perfecto para fines de semana o momentos de alta sobrecarga emocional y física.",
+            "slug": "masaje-relajante-90-min"
           },
           {
-            id: "srv_masaje_combinado_90",
-            name: "Masaje combinado (90 min)",
-            duration: "90 min",
-            price: 50,
-            badge: "A tu Medida",
-            image: "./assets/catalog/masaje-deportivo.webp",
-            gallery: [
+            "id": "srv_masaje_descontracturante_60",
+            "name": "Masaje descontracturante – 60 min",
+            "categoryTitle": "Masajes",
+            "categoryId": "spa-masajes",
+            "subcategoryName": "Masajes Terapéuticos y Relajantes",
+            "price": 25,
+            "duration": "60 min",
+            "badge": "Alivio Fuerte",
+            "image": "./assets/catalog/masaje-descontracturante-h.webp",
+            "gallery": [
+              "./assets/catalog/masaje-descontracturante-h.webp",
+              "./assets/masaje_m01.jpg",
+              "./assets/dsc_6328.jpg"
+            ],
+            "description": "Técnica terapéutica utilizada para aliviar la tensión muscular y reducir contracturas. Movimientos profundos y firmes en espalda, cuello y hombros.",
+            "longDescription": [
+              "Técnica terapéutica vigorosa y focalizada en deshacer nudos musculares y contracturas crónicas causadas por posturas inadecuadas o sobrecargas.",
+              "El terapeuta aplica presiones progresivas, fricciones transversas y amasamientos intensos para liberar las fibras miofasciales."
+            ],
+            "benefits": [
+              "Disolución de nudos musculares y contracturas",
+              "Alivio significativo del dolor cervical y lumbar",
+              "Recuperación del rango de movimiento articular",
+              "Mejora inmediata de la flexibilidad postural"
+            ],
+            "includes": [
+              "60 minutos de terapia descontracturante",
+              "Aplicación de bálsamos térmicos desinflamatorios",
+              "Bebida no alcohólica de cortesía"
+            ],
+            "recommendations": "Recomendado para deportistas o personas con dolores crónicos de espalda.",
+            "slug": "masaje-descontracturante-60-min"
+          },
+          {
+            "id": "srv_masaje_descontracturante_90",
+            "name": "Masaje descontracturante – 90 min",
+            "categoryTitle": "Masajes",
+            "categoryId": "spa-masajes",
+            "subcategoryName": "Masajes Terapéuticos y Relajantes",
+            "price": 35,
+            "duration": "90 min",
+            "badge": "Terapéutico Plus",
+            "image": "./assets/catalog/masaje-descontracturante.webp",
+            "gallery": [
+              "./assets/catalog/masaje-descontracturante.webp",
+              "./assets/masaje_m02.jpg",
+              "./assets/dsc_6328.jpg"
+            ],
+            "description": "Sesión intensiva de 90 minutos para contracturas crónicas severas. Permite trabajar espalda, tren inferior y zonas articulares comprometidas.",
+            "longDescription": [
+              "Sesión extendida para tratar contracturas severas o múltiples focos de tensión en todo el cuerpo con la calma necesaria para no generar sobrestimulación.",
+              "Combina pases profundos con estiramientos asistidos y puntos de presión neuromuscular."
+            ],
+            "benefits": [
+              "Tratamiento exhaustivo de múltiples contracturas",
+              "Mayor efectividad en tensiones arraigadas por meses",
+              "Integración de estiramientos pasivos",
+              "Sensación de ligereza y liberación corporal total"
+            ],
+            "includes": [
+              "90 minutos de maniobras terapéuticas profundas",
+              "Aceites con extractos botánicos desfatigantes",
+              "Bebida de cortesía"
+            ],
+            "recommendations": "Excelente para personas tras viajes largos, jornadas de alta tensión o entrenamientos intensos.",
+            "slug": "masaje-descontracturante-90-min"
+          },
+          {
+            "id": "srv_masaje_combinado_90",
+            "name": "Masaje combinado",
+            "categoryTitle": "Masajes",
+            "categoryId": "spa-masajes",
+            "subcategoryName": "Masajes Terapéuticos y Relajantes",
+            "price": 35,
+            "duration": "90 min",
+            "badge": "A tu Medida",
+            "image": "./assets/catalog/masaje-deportivo.webp",
+            "gallery": [
               "./assets/catalog/masaje-deportivo.webp",
-              "./assets/masaje_relax.jpg",
+              "./assets/masaje_m02.jpg",
               "./assets/servicios_spa.jpg"
             ],
-            description: "Permite elegir y combinar diferentes técnicas de masaje en una sola sesión de 90 minutos, como por ejemplo masaje relajante combinado con reflexología podal.",
-            longDescription: [
-              "El masaje combinado le da la posibilidad de elegir diferentes técnicas de masaje en una sola sesión. Como por ejemplo el masaje relajante combinado con reflexología podal.",
-              "Es la opción más versátil y personalizada de Momentos Spa, adaptándose con precisión a lo que tu cuerpo necesita en el momento de la cita."
+            "description": "Posibilidad de elegir diferentes técnicas de masaje en una sola sesión. Como por ejemplo masaje relajante combinado con reflexología podal.",
+            "longDescription": [
+              "El masaje combinado brinda la máxima versatilidad: puedes solicitar combinar masaje relajante sueco con reflexología podal, o descontracturante con drenaje linfático.",
+              "Diseñado a medida según las prioridades que converses directamente con tu terapeuta al ingresar a cabina."
             ],
-            benefits: [
-              "Combinación personalizada de técnicas terapéuticas",
-              "Tratamiento adaptado a tus zonas de mayor molestia",
-              "Integración de relajación corporal y reflexología podal",
-              "Sesión completa y reparadora de 90 minutos"
+            "benefits": [
+              "Personalización 100% adaptada a tus dolencias del día",
+              "Sinergia de múltiples técnicas en una sola visita",
+              "Equilibrio entre relajación suave y descarga muscular",
+              "Atención preferencial a zonas prioritarias"
             ],
-            steps: [
-              { step: "01", title: "Consulta Previa", desc: "Selección de las dos técnicas que prefieres combinar." },
-              { step: "02", title: "Primera Fase Corporal", desc: "Aplicación de la técnica principal (relajante o descontracturante)." },
-              { step: "03", title: "Segunda Fase Específica", desc: "Reflexología podal o terapia puntual según lo elegido." },
-              { step: "04", title: "Bebida Incluida", desc: "Degustación de bebida de cortesía." }
+            "includes": [
+              "90 minutos personalizados con tu terapeuta",
+              "Elección de técnicas manuales",
+              "Bebida de cortesía"
             ],
-            includes: [
-              "Cabina climatizada",
-              "Personalización completa de la sesión",
-              "Bebida no alcohólica de cortesía: Té, agua, Café, jugo y refresco"
-            ],
-            recommendations: "Comunica a tu terapeuta tus zonas de mayor tensión al iniciar.",
-            slug: "masaje-combinado-90"
+            "recommendations": "Indica a tu terapeuta qué zonas prefieres priorizar al inicio de la sesión.",
+            "slug": "masaje-combinado"
           },
           {
-            id: "srv_masaje_holistico_90",
-            name: "Masaje Holístico (90 min)",
-            duration: "90 min",
-            price: 60,
-            badge: "Especialidad",
-            popular: true,
-            image: "./assets/catalog/masaje-holistioco-90-min.webp",
-            gallery: [
+            "id": "srv_masaje_holistico_90",
+            "name": "Masaje Holístico",
+            "categoryTitle": "Masajes",
+            "categoryId": "spa-masajes",
+            "subcategoryName": "Masajes Terapéuticos y Relajantes",
+            "price": 35,
+            "duration": "90 min",
+            "badge": "Especialidad",
+            "image": "./assets/catalog/masaje-holistioco-90-min.webp",
+            "gallery": [
               "./assets/catalog/masaje-holistioco-90-min.webp",
               "./assets/masaje_m7.jpg",
               "./assets/servicios_spa.jpg"
             ],
-            description: "Atiende a cada persona según sus necesidades individuales para restablecer el equilibrio natural. Emplea técnicas de presión y estiramiento del masaje Tailandés, masaje relajante y la digitopresión del Shiatsu en una sola sesión. Especialidad de nuestro centro. Súper recomendado.",
-            longDescription: [
-              "Con el masaje holístico se atiende a cada persona en función de sus necesidades individuales, por lo que el cuerpo puede restablecer así su propio equilibrio natural.",
-              "En el transcurso del masaje holístico se emplean técnicas de presión y estiramiento del masaje Tailandés, masaje relajante y la digitopresión del Shiatsu en una sola sesión. Especialidad insignia de nuestro centro en Miramar. Súper recomendado."
+            "description": "Atiende a cada persona según sus necesidades. Técnicas de presión y estiramiento del masaje Tailandés, masaje relajante y digitopresión shiatsu. Especialidad del centro.",
+            "longDescription": [
+              "Nuestra terapia insignia. El masaje holístico concibe el cuerpo y la mente como una unidad integrada.",
+              "Emplea técnicas de estiramientos rítmicos del masaje Tailandés tradicional, pases fluidos del masaje relajante y digitopresión en meridianos energéticos de la medicina oriental shiatsu."
             ],
-            benefits: [
-              "Fusión única de Masaje Tailandés, Shiatsu y Relajante",
-              "Restablecimiento del equilibrio biomecánico y energético",
-              "Estiramientos pasivos que mejoran la flexibilidad",
-              "Liberación profunda de bloqueos y fatiga acumulada"
+            "benefits": [
+              "Restablecimiento de la armonía energética",
+              "Apertura articular y mayor elongación muscular",
+              "Alivio emocional y disminución de ansiedad",
+              "Estimulación de los canales naturales de autosanación"
             ],
-            steps: [
-              { step: "01", title: "Diagnóstico Energético", desc: "Alineación y toma de contacto en cabina privada." },
-              { step: "02", title: "Digitopresión Shiatsu", desc: "Presiones rítmicas en puntos reflejos clave del cuerpo." },
-              { step: "03", title: "Estiramientos Tailandeses", desc: "Movilizaciones asistidas suaves que desbloquean articulaciones." },
-              { step: "04", title: "Descanso Zen", desc: "Reposo final acompañado de una bebida no alcohólica." }
+            "includes": [
+              "90 minutos de técnica holística integral",
+              "Aromaterapia seleccionada",
+              "Bebida de cortesía"
             ],
-            includes: [
-              "Cabina privada climatizada",
-              "Aceites puros botánicos",
-              "Terapeutas especializadas en técnicas orientales",
-              "Bebida no alcohólica de cortesía: Té, agua, Café, jugo y refresco"
-            ],
-            recommendations: "El tratamiento más completo para renovar cuerpo, energía y mente.",
-            slug: "masaje-holistico-90-min"
+            "recommendations": "Altamente recomendado para quienes buscan una experiencia profunda y transformadora.",
+            "slug": "masaje-holistico"
           },
           {
-            id: "srv_masaje_cuatro_manos_90",
-            name: 'Masaje a 4 Manos" (90 min)',
-            duration: "90 min",
-            price: 75,
-            badge: "Lujo & Sincronía",
-            popular: true,
-            image: "./assets/catalog/exfoliacion-suprema-y-masaje-a-4-manos-90min.webp",
-            gallery: [
+            "id": "srv_masaje_cuatro_manos_90",
+            "name": "Masaje a 4 Manos",
+            "categoryTitle": "Masajes",
+            "categoryId": "spa-masajes",
+            "subcategoryName": "Masajes Terapéuticos y Relajantes",
+            "price": 50,
+            "duration": "90 min",
+            "badge": "Lujo Supremo",
+            "image": "./assets/catalog/exfoliacion-suprema-y-masaje-a-4-manos-90min.webp",
+            "gallery": [
               "./assets/catalog/exfoliacion-suprema-y-masaje-a-4-manos-90min.webp",
               "./assets/masaje_m4.jpg",
               "./assets/dsc_6328.jpg"
             ],
-            description: "¡Transforma tu bienestar! Deja que el estrés se disuelva mientras dos terapeutas trabajan en perfecta armonía y sincronía para brindarte una experiencia sensorial incomparable.",
-            longDescription: [
-              "🌿✨ ¡Transforma tu bienestar con nuestro Masaje a 4 Manos! ✨🌿",
-              "Deja que el estrés se disuelva mientras dos terapeutas trabajan en perfecta armonía para brindarte una experiencia única. Los movimientos simultáneos y coreografiados desconectan el control consciente del cerebro, permitiendo una relajación que ninguna otra terapia puede igualar."
+            "description": "Dos terapeutas trabajando en perfecta sincronía. Mayor cobertura corporal, estimulación simultánea y una inmersión sensorial única que desconecta la mente por completo.",
+            "longDescription": [
+              "El punto cumbre del arte del masaje. Dos terapeutas expertas sincronizan sus movimientos en una coreografía armónica sobre tu cuerpo.",
+              "Al recibir estímulos táctiles simétricos en dos zonas a la vez, el cerebro abandona todo intento de control y entra en un estado hipnótico de relajación absoluta."
             ],
-            benefits: [
-              "Sincronía perfecta de dos terapeutas profesionales",
-              "Desconexión mental inmediata e insuperable",
-              "Sensación de flotación y estimulación doble simultánea",
-              "Experiencia exclusiva de alta gama"
+            "benefits": [
+              "Doble beneficio terapéutico en el mismo tiempo",
+              "Desconexión cerebral profunda e instantánea",
+              "Sensación envolvente única e inolvidable",
+              "Relajación muscular simultánea superior"
             ],
-            steps: [
-              { step: "01", title: "Sincronización Dual", desc: "Presentación de las dos terapeutas y respiración armónica." },
-              { step: "02", title: "Oleaje a Cuatro Manos", desc: "Maniobras simultáneas en espalda, piernas y brazos." },
-              { step: "03", title: "Relajación Completa", desc: "Pases rítmicos en paralelo con aceites templados." },
-              { step: "04", title: "Cierre Sensorial", desc: "Bebida de cortesía al concluir en la cabina suite." }
+            "includes": [
+              "90 minutos con 2 terapeutas en cabina",
+              "Aceites tibios de textura sedosa",
+              "Bebida de cortesía"
             ],
-            includes: [
-              "Dos terapeutas tituladas al unísono",
-              "Cabina suite privada climatizada",
-              "Aceites aromáticos tibios",
-              "Bebida no alcohólica: Té, agua, Café, jugo y refresco"
-            ],
-            recommendations: "Reservar con antelación para coordinar el horario de las dos terapeutas.",
-            slug: "masaje-a-4-manos-90min"
+            "recommendations": "Reservar con antelación para coordinar el horario de las dos terapeutas.",
+            "slug": "masaje-a-4-manos"
           },
           {
-            id: "srv_masaje_linfodrenante_60",
-            name: "Masaje linfodrenante (60 min)",
-            duration: "60 min",
-            price: 40,
-            badge: "Detox",
-            image: "./assets/catalog/masaje-linfodrenante.webp",
-            gallery: [
+            "id": "srv_masaje_linfodrenante_60",
+            "name": "Masaje linfodrenante",
+            "categoryTitle": "Masajes",
+            "categoryId": "spa-masajes",
+            "subcategoryName": "Masajes Terapéuticos y Relajantes",
+            "price": 20,
+            "duration": "60 min",
+            "badge": "Detox & Circulación",
+            "image": "./assets/catalog/masaje-linfodrenante.webp",
+            "gallery": [
               "./assets/catalog/masaje-linfodrenante.webp",
               "./assets/masaje_m5.jpg",
               "./assets/servicios_spa.jpg"
             ],
-            description: "Técnica terapéutica diseñada para estimular el sistema linfático, fundamental para la eliminación de toxinas y el equilibrio de líquidos. Movimientos suaves y rítmicos que ayudan a desinflamar y mejorar la circulación.",
-            longDescription: [
-              "El masaje linfodrenante es una técnica terapéutica diseñada para estimular el sistema linfático, que es fundamental para la eliminación de toxinas y el mantenimiento del equilibrio de líquidos en el cuerpo.",
-              "Este tipo de masaje se caracteriza por movimientos suaves y rítmicos, que ayudan a mejorar la circulación de la linfa, un líquido que transporta células inmunitarias y desechos, dejando una sensación inmediata de alivio y ligereza."
+            "description": "Estimula el sistema linfático para la eliminación de toxinas y equilibrio de líquidos. Movimientos suaves y rítmicos que reducen la hinchazón y retención.",
+            "longDescription": [
+              "Técnica manual suave y superficial que sigue las vías del sistema linfático corporal.",
+              "Facilita el drenaje de líquidos retenidos en tejidos intersticiales, alivia la pesadez en piernas y acelera la eliminación de deshechos metabólicos."
             ],
-            benefits: [
-              "Eliminación natural de toxinas y exceso de líquidos",
-              "Alivio notable de piernas pesadas y edemas",
-              "Estimulación del sistema inmunitario y linfático",
-              "Técnica sumamente suave, indolora y sedante"
+            "benefits": [
+              "Disminución notable de la retención de líquidos",
+              "Alivio de la pesadez en piernas y tobillos",
+              "Estimulación del sistema inmunitario",
+              "Favorece la recuperación postquirúrgica y detox"
             ],
-            steps: [
-              { step: "01", title: "Apertura Ganglionar", desc: "Estimulación manual suave en las estaciones ganglionares." },
-              { step: "02", title: "Maniobras Suaves de Drenaje", desc: "Pases rítmicos muy ligeros que encauzan la linfa." },
-              { step: "03", title: "Drenaje en Extremidades", desc: "Maniobras ascendentes en piernas y brazos." },
-              { step: "04", title: "Rehidratación", desc: "Té o infusión diurética de cortesía." }
+            "includes": [
+              "60 minutos de maniobras de bombeo linfático",
+              "Aceites descongestivos naturales",
+              "Bebida de cortesía purificante (té o agua)"
             ],
-            includes: [
-              "Cabina privada climatizada",
-              "Atención especializada",
-              "Bebida no alcohólica de cortesía: Té, agua, Café, jugo y refresco"
-            ],
-            recommendations: "Ideal tras viajes largos, retención de líquidos o procesos de desintoxicación.",
-            slug: "masaje-linfodrenante"
+            "recommendations": "Beber abundante agua antes y después de la sesión para optimizar la eliminación de toxinas.",
+            "slug": "masaje-linfodrenante"
           },
           {
-            id: "srv_masaje_velas_60",
-            name: "Masaje con velas aromáticas (60 min)",
-            duration: "60 min",
-            price: 45,
-            badge: "Sensorial",
-            popular: true,
-            image: "./assets/catalog/masaje-con-velas-aromaticas.webp",
-            gallery: [
+            "id": "srv_masaje_velas_60",
+            "name": "Masaje con velas aromáticas – 60 min",
+            "categoryTitle": "Masajes",
+            "categoryId": "spa-masajes",
+            "subcategoryName": "Masajes Terapéuticos y Relajantes",
+            "price": 25,
+            "duration": "60 min",
+            "badge": "Calidez Sensorial",
+            "image": "./assets/catalog/masaje-con-velas-aromaticas.webp",
+            "gallery": [
               "./assets/catalog/masaje-con-velas-aromaticas.webp",
               "./assets/masaje_m01.jpg",
               "./assets/dsc_6325.jpg"
             ],
-            description: "Combina los beneficios del masaje tradicional con el uso de velas que, al derretirse, se convierten en un aceite caliente natural de soja o abeja, enriquecido con aceites esenciales nutritivos y fragancias terapéuticas.",
-            longDescription: [
-              "El masaje con velas aromáticas es una técnica de relajación que combina los beneficios del masaje tradicional con el uso de velas que, al derretirse, se convierten en un aceite caliente.",
-              "Estas velas están elaboradas con ingredientes naturales, como cera de soja o cera de abeja, y suelen estar infusionadas con aceites esenciales que proporcionan fragancias agradables y propiedades terapéuticas, dejando la piel sedosa y profundamente nutrida."
+            "description": "Combina masaje relajante con velas de aceites esenciales que al derretirse se convierten en un bálsamo cálido e hidratante sobre la piel.",
+            "longDescription": [
+              "Una experiencia sensorial cálida y envolvente. Se utilizan velas cosméticas elaboradas con ceras de soja pura, manteca de karité y esencias aromáticas.",
+              "Al fundirse a baja temperatura, el aceite tibio se vierte suavemente sobre el cuerpo y se trabaja con maniobras fluidas y reconfortantes."
             ],
-            benefits: [
-              "Calor agradable del aceite tibio de soja natural",
-              "Nutrición e hidratación profunda de la piel",
-              "Aromaterapia envolvente que sosiega el sistema nervioso",
-              "Experiencia sensorial placentera y calmante"
+            "benefits": [
+              "Nutrición profunda e hidratación de la piel con aceites tibios",
+              "Relajación muscular favorecida por el calor agradable",
+              "Efecto aromaterapéutico que calma el sistema nervioso",
+              "Aroma delicado y duradero sobre la dermis"
             ],
-            steps: [
-              { step: "01", title: "Encendido de la Vela", desc: "Aromaterapia ambiental y fundición suave del aceite natural." },
-              { step: "02", title: "Vertido Tibio Controlado", desc: "Aplicación del bálsamo templado directamente sobre la piel." },
-              { step: "03", title: "Masaje Relajante Caliente", desc: "Pases fluidos y envolventes por todo el cuerpo." },
-              { step: "04", title: "Bebida de Cortesía", desc: "Té, café, jugo o refresco al gusto." }
+            "includes": [
+              "60 minutos con vela aromática de masaje",
+              "Bálsamo tibio nutritivo",
+              "Bebida de cortesía"
             ],
-            includes: [
-              "Velas terapéuticas de cera de soja 100% natural",
-              "Cabina climatizada",
-              "Bebida no alcohólica de cortesía: Té, agua, Café, jugo y refresco"
-            ],
-            recommendations: "Excelente para pieles resecas y para quienes buscan un calor acogedor.",
-            slug: "masaje-con-velas-aromaticas"
+            "recommendations": "Ideal para días en los que busques confort térmico y consentirte al máximo.",
+            "slug": "masaje-con-velas-aromaticas-60-min"
           },
           {
-            id: "srv_masaje_velas_90",
-            name: "Masaje con velas aromáticas de 90 min",
-            duration: "90 min",
-            price: 60,
-            badge: "Lujo Cálido",
-            image: "./assets/catalog/masaje-con-velas-aromaticas-de-90-min.webp",
-            gallery: [
+            "id": "srv_masaje_velas_90",
+            "name": "Masaje con velas aromáticas – 90 min",
+            "categoryTitle": "Masajes",
+            "categoryId": "spa-masajes",
+            "subcategoryName": "Masajes Terapéuticos y Relajantes",
+            "price": 35,
+            "duration": "90 min",
+            "badge": "Sensorial Plus",
+            "image": "./assets/catalog/masaje-con-velas-aromaticas-de-90-min.webp",
+            "gallery": [
               "./assets/catalog/masaje-con-velas-aromaticas-de-90-min.webp",
               "./assets/masaje_m01.jpg",
-              "./assets/dsc_6328.jpg"
+              "./assets/dsc_6325.jpg"
             ],
-            description: "Experiencia prolongada de 90 minutos con aceite tibio de velas aromáticas naturales, relajación extendida e hidratación cutánea absoluta.",
-            longDescription: [
-              "Una hora y media de pura calidez y nutrición cutánea. La cera tibia infusionada con esencias florales y botánicas penetra en los tejidos, aliviando las tensiones más persistentes y dejando el cuerpo renovado.",
-              "Perfecto para regalar o para una jornada completa de descanso."
+            "description": "Versión extendida de 90 minutos con velas aromáticas tibias. Cobertura completa y nutrición cutánea con aceites esenciales naturales.",
+            "longDescription": [
+              "La versión extendida de nuestro masaje con velas permite recorrer minuciosamente todo el cuerpo con el aceite fundido a temperatura corporal ideal.",
+              "El calor y los aromas naturales disuelven cualquier vestigio de fatiga física y mental."
             ],
-            benefits: [
-              "90 minutos de aplicación de aceites tibios naturales",
-              "Efecto sedante intenso en musculatura y mente",
-              "Piel suave, tersa y perfumada",
-              "Desconexión total del estrés diario"
+            "benefits": [
+              "Mayor tiempo de absorción de nutrientes botánicos",
+              "Relajación prolongada sin interrupciones",
+              "Piel tersa, elástica y profundamente perfumada",
+              "Efecto ansiolítico natural gracias a los aceites esenciales"
             ],
-            steps: [
-              { step: "01", title: "Ambientación", desc: "Preparación de la vela botánica aromática." },
-              { step: "02", title: "Masaje Corporal Extendido", desc: "Pases lentos y profundos con el bálsamo caliente." },
-              { step: "03", title: "Nutrición Cutánea", desc: "Absorción de los nutrientes y vitaminas de la cera de soja." },
-              { step: "04", title: "Degustación de Bebida", desc: "Bebida de cortesía incluida al finalizar." }
+            "includes": [
+              "90 minutos de masaje con bálsamo de vela caliente",
+              "Cabina climatizada con luz tenue",
+              "Bebida de cortesía"
             ],
-            includes: [
-              "Vela aromática terapéutica",
-              "Cabina privada",
-              "Bebida no alcohólica de cortesía"
-            ],
-            recommendations: "Dejar el aceite en la piel unas horas para aprovechar al máximo sus nutrientes.",
-            slug: "masaje-con-velas-aromaticas-de-90-min"
+            "recommendations": "Permite que los aceites permanezcan sobre la piel unas horas para aprovechar sus propiedades nutritivas.",
+            "slug": "masaje-con-velas-aromaticas-90-min"
           },
           {
-            id: "srv_masaje_piedras_60",
-            name: "Masaje con piedras volcánicas (60 min)",
-            duration: "60 min",
-            price: 45,
-            badge: "Calor Geotermal",
-            popular: true,
-            image: "./assets/catalog/masaje-con-piedras-volcanicas.webp",
-            gallery: [
+            "id": "srv_masaje_piedras_60",
+            "name": "Masaje con piedras volcánicas – 60 min",
+            "categoryTitle": "Masajes",
+            "categoryId": "spa-masajes",
+            "subcategoryName": "Masajes Terapéuticos y Relajantes",
+            "price": 25,
+            "duration": "60 min",
+            "badge": "Termoterapia",
+            "image": "./assets/catalog/masaje-con-piedras-volcanicas.webp",
+            "gallery": [
               "./assets/catalog/masaje-con-piedras-volcanicas.webp",
               "./assets/servicios_spa.jpg",
-              "./assets/masaje_relax.jpg"
+              "./assets/dsc_6328.jpg"
             ],
-            description: "Vive total armonía con nuestro masaje con piedras volcánicas. El calor terapéutico de las piedras de basalto penetra en los músculos, liberando tensiones, mejorando la circulación y proporcionando una profunda relajación física y emocional.",
-            longDescription: [
-              "Vive un momento de total armonía con nuestro masaje con piedras volcánicas.",
-              "El calor terapéutico de las piedras de basalto penetra en los músculos, liberando tensiones, mejorando la circulación y proporcionando una profunda relajación física y emocional. Una terapia diseñada para reconectar cuerpo, mente y espíritu."
+            "description": "El calor terapéutico de las piedras de basalto penetra en los músculos, liberando tensiones, mejorando la circulación y proporcionando una profunda relajación.",
+            "longDescription": [
+              "Terapia geotermal milenaria que utiliza piedras de basalto volcánico pulidas calentadas a temperatura controlada.",
+              "El calor penetrante de las piedras relaja las fibras musculares con mayor rapidez que la presión manual sola, induciendo un sosiego inigualable."
             ],
-            benefits: [
-              "Calor penetrante de piedras de basalto naturales",
-              "Relajación inmediata de fibras musculares profundas",
-              "Activación del flujo sanguíneo y oxigenación",
-              "Reequilibrio y armonía física y emocional"
+            "benefits": [
+              "Penetración térmica que ablanda la rigidez muscular",
+              "Reactiva el flujo circulatorio y linfático",
+              "Alivio notable de dolores reumáticos y articulares",
+              "Sedación natural del sistema nervioso central"
             ],
-            steps: [
-              { step: "01", title: "Calentamiento Térmico", desc: "Atemperado preciso de las piedras volcánicas en baño de agua." },
-              { step: "02", title: "Colocación Estratégica", desc: "Ubicación sobre puntos de tensión en la espalda." },
-              { step: "03", title: "Masaje Deslizante", desc: "Pases suaves y firmes utilizando las piedras como instrumento." },
-              { step: "04", title: "Descanso Armónico", desc: "Cierre con bebida no alcohólica incluida." }
+            "includes": [
+              "60 minutos de masaje con piedras volcánicas calientes",
+              "Puntos de apoyo energético con piedras estáticas",
+              "Bebida de cortesía"
             ],
-            includes: [
-              "Piedras volcánicas de basalto pulidas",
-              "Aceites esenciales hidratantes",
-              "Cabina climatizada",
-              "Bebida no alcohólica de cortesía: Té, agua, Café, jugo y refresco"
-            ],
-            recommendations: "Especialmente indicado para aliviar dolores articulares y fatiga física.",
-            slug: "masaje-con-piedras-volcanicas"
+            "recommendations": "No recomendado en personas con inflamaciones agudas o fiebre.",
+            "slug": "masaje-con-piedras-volcanicas-60-min"
           },
           {
-            id: "srv_masaje_piedras_90",
-            name: "Masaje con piedras volcánicas 90 min",
-            duration: "90 min",
-            price: 60,
-            badge: "Geotermal Plus",
-            image: "./assets/catalog/masaje-con-piedras-volcanicas-90-min.webp",
-            gallery: [
+            "id": "srv_masaje_piedras_90",
+            "name": "Masaje con piedras volcánicas – 90 min",
+            "categoryTitle": "Masajes",
+            "categoryId": "spa-masajes",
+            "subcategoryName": "Masajes Terapéuticos y Relajantes",
+            "price": 35,
+            "duration": "90 min",
+            "badge": "Geotermal Plus",
+            "image": "./assets/catalog/masaje-con-piedras-volcanicas-90-min.webp",
+            "gallery": [
               "./assets/catalog/masaje-con-piedras-volcanicas-90-min.webp",
               "./assets/servicios_spa.jpg",
               "./assets/dsc_6328.jpg"
             ],
-            description: "Sesión completa de 90 minutos de terapia geotermal con piedras de basalto caliente para una descompresión muscular prolongada y completa.",
-            longDescription: [
-              "Una hora y media de terapia geotermal continua. El calor sostenido de las piedras volcánicas permite trabajar en profundidad la espalda, hombros, cuello, piernas y pies.",
-              "Ideal para personas con sobrecargas crónicas o que buscan un descanso físico total."
+            "description": "Sesión completa de 90 minutos con piedras volcánicas. Mayor dedicación a puntos energéticos y combinación con maniobras de masaje manual.",
+            "longDescription": [
+              "Sesión geotermal completa donde se intercalan maniobras de masaje manual profundo con deslizamientos de piedras calientes sobre espalda, extremidades y chakras.",
+              "El calor continuo permite alcanzar capas musculares profundas sin dolor ni molestias."
             ],
-            benefits: [
-              "Efecto térmico prolongado y sedación profunda",
-              "Descompresión de toda la musculatura del cuerpo",
-              "Apertura de la microcirculación tisular",
-              "Paz interior y renovación de energías"
+            "benefits": [
+              "Máximo aprovechamiento de la termoterapia volcánica",
+              "Alivio prolongado de contracturas dorsales y lumbares",
+              "Calma el estrés crónico e insomnio",
+              "Sensación de renovación y ligereza corporal"
             ],
-            steps: [
-              { step: "01", title: "Preparación Geotermal", desc: "Ajuste térmico de las piedras de basalto." },
-              { step: "02", title: "Trabajo Dorsal", desc: "Pases térmicos en espalda y cervicales." },
-              { step: "03", title: "Piernas y Extremidades", desc: "Deslizamiento geotermal en brazos y piernas." },
-              { step: "04", title: "Bebida de Cortesía", desc: "Degustación de bebida al finalizar." }
+            "includes": [
+              "90 minutos de terapia geotermal continua",
+              "Aceites minerales y piedras volcánicas de basalto",
+              "Bebida de cortesía"
             ],
-            includes: [
-              "Piedras de basalto natural",
-              "Cabina privada",
-              "Bebida no alcohólica de cortesía"
-            ],
-            recommendations: "Recomendado para días fríos o tras periodos de intenso esfuerzo laboral.",
-            slug: "masaje-con-piedras-volcanicas-90-min"
+            "recommendations": "Excelente opción durante días lluviosos o cuando sientas fatiga acumulada.",
+            "slug": "masaje-con-piedras-volcanicas-90-min"
           },
           {
-            id: "srv_reflexologia_podal_60",
-            name: "Reflexología podal (60 min)",
-            duration: "60 min",
-            price: 35,
-            badge: "Puntos Reflejos",
-            image: "./assets/catalog/reflexologia-podal.webp",
-            gallery: [
+            "id": "srv_reflexologia_podal_60",
+            "name": "Reflexología podal",
+            "categoryTitle": "Masajes",
+            "categoryId": "spa-masajes",
+            "subcategoryName": "Masajes Terapéuticos y Relajantes",
+            "price": 20,
+            "duration": "60 min",
+            "badge": "Equilibrio Orgánico",
+            "image": "./assets/catalog/reflexologia-podal.webp",
+            "gallery": [
               "./assets/catalog/reflexologia-podal.webp",
               "./assets/masaje_m5.jpg",
               "./assets/servicios_spa.jpg"
             ],
-            description: "Terapia alternativa que se basa en la idea de que ciertas áreas del pie están conectadas a diferentes órganos y sistemas del cuerpo. Al aplicar presión en puntos específicos de los pies, se promueve la salud, se alivia el estrés y se tratan diversas dolencias.",
-            longDescription: [
-              "La reflexología podal es una terapia alternativa que se basa en la idea de que ciertas áreas del pie están conectadas a diferentes órganos y sistemas del cuerpo.",
-              "Según esta práctica, al aplicar presión en puntos específicos de los pies, se puede promover la salud y el bienestar, aliviar el estrés y tratar diversas dolencias. Los principios de la reflexología se fundamentan en la teoría de que los pies son un mapa del cuerpo humano."
+            "description": "Presión en puntos específicos de los pies conectados a órganos y sistemas. Estimula el equilibrio natural, alivia el estrés y revitaliza las piernas.",
+            "longDescription": [
+              "La reflexología podal se fundamenta en los mapas reflejos ubicados en las plantas de los pies, donde convergen terminaciones nerviosas vinculadas a los órganos internos.",
+              "Mediante presiones pulgares precisas y digitopuntura, se estimula la autorregulación orgánica y se alivia la sobrecarga de pies y piernas."
             ],
-            benefits: [
-              "Estimulación refleja de los órganos y sistemas corporales",
-              "Alivio del dolor, pesadez e inflamación en pies y tobillos",
-              "Reducción directa del estrés y la ansiedad",
-              "Equilibrio homeostático y bienestar general"
+            "benefits": [
+              "Alivio inmediato del cansancio y dolor en la planta de los pies",
+              "Estimulación refleja del funcionamiento de órganos internos",
+              "Desbloqueo de tensiones en extremidades inferiores",
+              "Profunda relajación y bienestar integral"
             ],
-            steps: [
-              { step: "01", title: "Lavado e Higiene", desc: "Limpieza y toallas calientes en pies." },
-              { step: "02", title: "Palpación Refleja", desc: "Localización de puntos sensibles y de bloqueo." },
-              { step: "03", title: "Digitopresión Podal", desc: "Maniobras de presión rítmica en la planta, empeine y dedos." },
-              { step: "04", title: "Descanso y Bebida", desc: "Bebida no alcohólica de cortesía." }
+            "includes": [
+              "60 minutos de reflexología podal especializada",
+              "Crema descongestiva con mentol y árnica",
+              "Bebida de cortesía"
             ],
-            includes: [
-              "Cabina confortable climatizada",
-              "Cremas y aceites botánicos para pies",
-              "Bebida no alcohólica de cortesía: Té, agua, Café, jugo y refresco"
-            ],
-            recommendations: "Excelente para personas que pasan muchas horas de pie o caminan frecuentemente.",
-            slug: "reflexologia-podal"
+            "recommendations": "Ideal para personas que pasan muchas horas de pie o caminan con frecuencia.",
+            "slug": "reflexologia-podal"
           },
           {
-            id: "srv_metfit_90",
-            name: "METFIT tejido profundo (90 min)",
-            duration: "90 min",
-            price: 55,
-            badge: "Tejido Profundo",
-            image: "./assets/catalog/metfit.webp",
-            gallery: [
+            "id": "srv_metfit_90",
+            "name": "METFIT tejido profundo",
+            "categoryTitle": "Masajes",
+            "categoryId": "spa-masajes",
+            "subcategoryName": "Masajes Terapéuticos y Relajantes",
+            "price": 35,
+            "duration": "90 min",
+            "badge": "Deportivo & Miofascial",
+            "image": "./assets/catalog/metfit.webp",
+            "gallery": [
               "./assets/catalog/metfit.webp",
               "./assets/masaje_m02.jpg",
               "./assets/dsc_6328.jpg"
             ],
-            description: "Método de tratamiento físico-técnico que engloba una serie de manipulaciones específicas sobre el tejido profundo activando la circulación sanguínea y linfática, reduce los espasmos musculares y ayuda a la prevención de lesiones.",
-            longDescription: [
-              "Método de tratamiento físico-técnico que engloba una serie de manipulaciones específicas sobre el tejido profundo activando la circulación sanguínea y linfática, reduce los espasmos musculares y ayuda a la prevención de lesiones musculares.",
-              "Especialmente concebido para quienes realizan actividad física de alta exigencia, sufren sobrecargas por posturas repetitivas o requieren descompresión de las capas musculares más profundas."
+            "description": "Manipulaciones específicas sobre el tejido profundo activando la circulación sanguínea y linfática. Reduce espasmos y previene lesiones musculares.",
+            "longDescription": [
+              "Método de tratamiento físico-técnico que engloba maniobras vigorosas y estiramientos pasivos sobre las capas miofasciales profundas.",
+              "Especialmente concebido para atletas, deportistas y personas con hábitos de alto rendimiento que requieren una descompresión muscular contundente."
             ],
-            benefits: [
-              "Manipulación técnica avanzada sobre fascia y tejido profundo",
-              "Activación profunda de la circulación sanguínea y linfática",
-              "Reducción eficaz de espasmos y contracturas severas",
-              "Prevención de lesiones musculares y alivio postural"
+            "benefits": [
+              "Prevención y recuperación de sobrecargas deportivas",
+              "Disminución drástica de espasmos musculares y rigidez",
+              "Activación potente del riego sanguíneo y oxigenación",
+              "Aumento de la elasticidad de los tendones y fascias"
             ],
-            steps: [
-              { step: "01", title: "Valoración Físico-Técnica", desc: "Evaluación de grupos musculares sobrecargados." },
-              { step: "02", title: "Calentamiento Miofascial", desc: "Fricción inicial para preparar el tejido profundo." },
-              { step: "03", title: "Manipulaciones METFIT", desc: "Técnicas específicas y firmes de liberación muscular." },
-              { step: "04", title: "Elongación y Cierre", desc: "Estiramiento suave y bebida no alcohólica de cortesía." }
+            "includes": [
+              "90 minutos de técnica especializada de tejido profundo",
+              "Emulsiones deportivas desfatigantes",
+              "Bebida de cortesía"
             ],
-            includes: [
-              "Cabina privada climatizada",
-              "Terapeutas con entrenamiento en técnica METFIT",
-              "Bebida no alcohólica de cortesía: Té, agua, Café, jugo y refresco"
-            ],
-            recommendations: "Mantener una buena hidratación durante las horas posteriores a la sesión.",
-            slug: "metfit"
+            "recommendations": "Puede causar ligera sensibilidad pasajera post-sesión mientras los tejidos se reoxigenan.",
+            "slug": "metfit-tejido-profundo"
           },
           {
-            id: "srv_masaje_craneal_20",
-            name: "Masaje Craneal con alta frecuencia (20 min)",
-            duration: "20 min",
-            price: 25,
-            badge: "Capilar & Craneal",
-            image: "./assets/catalog/masaje-craneal-con-alta-frecuencia.webp",
-            gallery: [
+            "id": "srv_masaje_craneal_20",
+            "name": "Masaje craneal con alta frecuencia",
+            "categoryTitle": "Masajes",
+            "categoryId": "spa-masajes",
+            "subcategoryName": "Masajes Terapéuticos y Relajantes",
+            "price": 5,
+            "duration": "20 min",
+            "badge": "Capilar Express",
+            "image": "./assets/catalog/masaje-craneal-con-alta-frecuencia.webp",
+            "gallery": [
               "./assets/catalog/masaje-craneal-con-alta-frecuencia.webp",
               "./assets/head_spa.jpg",
               "./assets/dsc_6325.jpg"
             ],
-            description: "Mejora el riego sanguíneo al descomprimir los vasos. Reduce los dolores de cabeza, incluyendo migrañas y jaquecas. Ayuda a evitar la somnolencia, acaba con el cansancio, frena la caída del cabello y favorece su crecimiento activo.",
-            longDescription: [
-              "Masaje craneal con alta frecuencia: Mejora el riego sanguíneo al descomprimir los vasos. Se reducen los dolores de cabeza, incluyendo también las migrañas y jaquecas. Ayuda a evitar la somnolencia. Consigue acabar con la sensación de cansancio.",
-              "Además, la corriente de alta frecuencia estimula los folículos capilares, ayudando con la caída del cabello y favoreciendo su crecimiento activo en solo 20 minutos."
+            "description": "Mejora el riego sanguíneo al descomprimir los vasos. Reduce dolores de cabeza y migrañas, evita la somnolencia y estimula el crecimiento activo del cabello.",
+            "longDescription": [
+              "Terapia express que combina maniobras de digitopresión en cráneo, sienes y nuca con la aplicación de electroterapia de alta frecuencia.",
+              "El electrodo de alta frecuencia oxigena los folículos pilosos, estimula el crecimiento capilar y alivia cefaleas tensionales en minutos."
             ],
-            benefits: [
-              "Descompresión de vasos sanguíneos en cuero cabelludo y sienes",
-              "Alivio rápido de cefaleas, migrañas y tensión ocular",
-              "Efecto energizante que disipa el cansancio y la somnolencia",
-              "Estimulación del folículo piloso para frenar la caída del cabello"
+            "benefits": [
+              "Alivio inmediato de jaquecas, migrañas y tensión ocular",
+              "Descompresión de vasos sanguíneos craneales",
+              "Estimulación de los folículos contra la caída del cabello",
+              "Claridad mental y superación del cansancio acumulado"
             ],
-            steps: [
-              { step: "01", title: "Masaje Manual Craneal", desc: "Presiones y círculos en cuero cabelludo, sienes y base del cráneo." },
-              { step: "02", title: "Pase de Alta Frecuencia", desc: "Aplicación del electrodo capilar para oxigenar y activar la microcirculación." },
-              { step: "03", title: "Relajación Cervical", desc: "Descompresión ligera del cuello." },
-              { step: "04", title: "Bebida de Cortesía", desc: "Infusión o refresco al concluir." }
+            "includes": [
+              "20 minutos de masaje craneal + electrodo de alta frecuencia",
+              "Bebida de cortesía"
             ],
-            includes: [
-              "Aparatología de alta frecuencia profesional",
-              "Cabina privada",
-              "Bebida no alcohólica de cortesía"
-            ],
-            recommendations: "Perfecto para combinar con cualquier masaje corporal o facial.",
-            slug: "masaje-craneal-con-alta-frecuencia"
+            "recommendations": "Excelente adición rápida a cualquier otro masaje o tratamiento facial.",
+            "slug": "masaje-craneal-con-alta-frecuencia"
           },
           {
-            id: "srv_spa_labial_15",
-            name: "Spa labial (15 min)",
-            duration: "15 min",
-            price: 15,
-            badge: "Hidratación Labial",
-            image: "./assets/catalog/spa-labial-10-min.webp",
-            gallery: [
+            "id": "srv_spa_labial_15",
+            "name": "Spa labial",
+            "categoryTitle": "Masajes",
+            "categoryId": "spa-masajes",
+            "subcategoryName": "Masajes Terapéuticos y Relajantes",
+            "price": 5,
+            "duration": "15 min",
+            "badge": "Hidratación Express",
+            "image": "./assets/catalog/spa-labial-10-min.webp",
+            "gallery": [
               "./assets/catalog/spa-labial-10-min.webp",
               "./assets/facial_original.jpg",
               "./assets/ojos_orig.jpg"
             ],
-            description: "“No es solo hidratar los labios, es devolverles vida.” Tratamiento de hidratación labial profunda diseñado para labios resecos, opacos o con líneas marcadas. En una sola sesión logramos labios más suaves, nutridos, definidos y rejuvenecidos.",
-            longDescription: [
-              "“No es solo hidratar los labios, es devolverles vida.”",
-              "Nuestro Tratamiento de Hidratación Labial Profunda es una experiencia completa diseñada para labios resecos, opacos o con líneas marcadas. En solo una sesión logramos labios más suaves, nutridos, definidos y visiblemente rejuvenecidos, listos para lucir perfectos incluso sin labial."
+            "description": "\"No es solo hidratar los labios, es devolverles vida.\" Tratamiento de hidratación profunda para labios resecos o con líneas marcadas. Labios suaves y nutridos en una sesión.",
+            "longDescription": [
+              "\"No es solo hidratar los labios, es devolverles vida.\" Nuestro Tratamiento de Hidratación Labial Profunda es una experiencia diseñada para labios resecos, opacos o con líneas marcadas.",
+              "En solo una sesión logramos labios más suaves, nutridos, definidos y visiblemente rejuvenecidos con exfoliación suave y sérum de ácido hialurónico."
             ],
-            benefits: [
-              "Exfoliación suave de células muertas en zona labial",
-              "Nutrición profunda con activos emolientes y vitaminas",
-              "Definición y aspecto juvenil sin resequedad",
-              "Efecto visible inmediato en apenas 15 minutos"
+            "benefits": [
+              "Eliminación de células muertas y pellejitos secos",
+              "Hidratación intensa y nutrición labial con péptidos",
+              "Relleno óptico de líneas de expresión en el contorno",
+              "Apariencia jugosa, sana y juvenil"
             ],
-            steps: [
-              { step: "01", title: "Exfoliación Delicada", desc: "Retiro de pellejitos y células muertas." },
-              { step: "02", title: "Mascarilla Nutritiva", desc: "Aplicación de bálsamo regenerador intensivo." },
-              { step: "03", title: "Sellado Hidratante", desc: "Fórmula protectora de larga duración." },
-              { step: "04", title: "Cortesía", desc: "Bebida de bienvenida o despedida incluida." }
+            "includes": [
+              "Exfoliación labial de azúcar y aceites",
+              "Mascarilla o sérum reparador con ácido hialurónico",
+              "Bebida de cortesía"
             ],
-            includes: [
-              "Productos labiales cosméticos de alta pureza",
-              "Bebida no alcohólica de cortesía"
-            ],
-            recommendations: "Excelente adición rápida a cualquier tratamiento facial.",
-            slug: "spa-labial-10-min"
-          },
-          {
-            id: "srv_tarjeta_regalo",
-            name: "Tarjeta de Regalo",
-            duration: "Personalizado",
-            price: 50,
-            badge: "Regalo Especial",
-            image: "./assets/catalog/tarjeta-de-regalo-q.webp",
-            gallery: [
-              "./assets/catalog/tarjeta-de-regalo-q.webp",
-              "./assets/servicios_spa.jpg",
-              "./assets/snack_bandeja.jpg"
-            ],
-            description: "Tarjeta Regalo sin costo adicional de emisión. Regala libertad para elegir: tu agasajado puede hacer un depósito o seleccionar el servicio de spa de su preferencia.",
-            longDescription: [
-              "Regala una experiencia inolvidable de descanso y bienestar en Momentos Spa Habana.",
-              "Con nuestra Tarjeta Regalo, la persona especial puede seleccionar el masaje, tratamiento facial o paquete de spa que prefiera, coordinando su cita en el momento que más le convenga."
-            ],
-            benefits: [
-              "El regalo perfecto para cumpleaños, aniversarios o agradecimientos",
-              "Validez flexible para coordinar la cita previa",
-              "Personalizable con dedicatoria especial",
-              "Atención VIP garantizada en cabinas de Miramar"
-            ],
-            steps: [
-              { step: "01", title: "Selección del Monto o Servicio", desc: "Elige el servicio o crédito deseado." },
-              { step: "02", title: "Emisión Personalizada", desc: "Envío digital o entrega física de la tarjeta." },
-              { step: "03", title: "Reserva del Homenajeado", desc: "Coordinación fácil vía WhatsApp." },
-              { step: "04", title: "Experiencia Spa", desc: "Disfrute pleno con bebida de cortesía incluida." }
-            ],
-            includes: [
-              "Tarjeta regalo digital o física con presentación de lujo",
-              "Asesoramiento personalizado para el destinatario"
-            ],
-            recommendations: "Contáctanos directamente por WhatsApp para coordinar los datos del beneficiario.",
-            slug: "tarjeta-de-regalo-q"
+            "recommendations": "Perfecto antes de un evento especial o para complementar un facial.",
+            "slug": "spa-labial"
           }
         ]
       }
     ]
   },
   {
-    id: "tratamientos-faciales",
-    title: "Tratamientos Faciales",
-    subtitle: "Todo para el cuidado, renovación e hidratación profunda de tu piel",
-    icon: "Heart",
-    badge: "Piel Radiante",
-    subcategories: [
+    "id": "tratamientos-faciales",
+    "title": "Tratamientos faciales",
+    "subtitle": "Cuidado profesional, renovación celular e hidratación dérmica profunda",
+    "icon": "Sparkles",
+    "badge": "Piel Luminosa",
+    "subcategories": [
       {
-        id: "faciales",
-        name: "Cuidado y Salud Facial",
-        description: "Renovación celular, nutrición y luminosidad para todo tipo de cutis",
-        services: [
+        "id": "faciales",
+        "name": "Faciales y Cosmiatría",
+        "description": "Higiene, nutrición profunda y efecto anti-edad para tu rostro",
+        "services": [
           {
-            id: "srv_masaje_facial_hidratacion_30",
-            name: "Masaje facial de Hidratacion (30 min)",
-            duration: "30 min",
-            price: 25,
-            badge: "Express",
-            image: "./assets/catalog/hidratacion-de-30min.webp",
-            gallery: [
+            "id": "srv_masaje_facial_hidratacion_30",
+            "name": "Masaje facial de Hidratación",
+            "categoryTitle": "Tratamientos faciales",
+            "categoryId": "tratamientos-faciales",
+            "subcategoryName": "Faciales y Cosmiatría",
+            "price": 10,
+            "duration": "30 min",
+            "badge": "Luminosidad Express",
+            "image": "./assets/catalog/hidratacion-de-30min.webp",
+            "gallery": [
               "./assets/catalog/hidratacion-de-30min.webp",
               "./assets/facial_original.jpg",
-              "./assets/ojos_orig.jpg"
+              "./assets/dsc_6325.jpg"
             ],
-            description: "Se aplica exfoliante facial para uniformar la piel, eliminar impurezas y dar más suavidad en la piel del rostro. Con cremas y un suave masaje relajante logramos mayor hidratación, luminosidad, dando un aspecto más joven y fresco.",
-            longDescription: [
-              "Se aplica exfoliante facial para uniformar la piel, eliminar impurezas y dar más suavidad en la piel del rostro.",
-              "Con la aplicación de cremas y un suave masaje relajante logramos mayor hidratación, luminosidad, dando un aspecto más joven y fresco en solo media hora de cuidado experto."
+            "description": "Exfoliante facial para eliminar impurezas y suavizar. Aplicación de cremas y suave masaje relajante para lograr mayor hidratación, luminosidad y aspecto fresco.",
+            "longDescription": [
+              "Tratamiento facial rápido pero altamente revitalizante. Se realiza una exfoliación suave para desprender impurezas y células muertas.",
+              "Posteriormente se aplican activos hidratantes acompañados de un reconfortante masaje facial que drena y estimula la microcirculación cutánea."
             ],
-            benefits: [
-              "Eliminación de impurezas superficiales mediante exfoliación suave",
-              "Hidratación inmediata con cremas regeneradoras",
-              "Luminosidad y lozanía en la piel del rostro",
-              "Relajación de los músculos faciales y expresión serena"
+            "benefits": [
+              "Textura suave y piel visiblemente más lisa al tacto",
+              "Aporte inmediato de luminosidad y frescura",
+              "Relajación de los músculos de expresión facial",
+              "Rápida absorción de principios activos hidratantes"
             ],
-            steps: [
-              { step: "01", title: "Limpieza Previa", desc: "Retiro de polución y preparación cutánea." },
-              { step: "02", title: "Exfoliante Suave", desc: "Unificación de la textura y remoción de células muertas." },
-              { step: "03", title: "Masaje Facial Hidratante", desc: "Maniobras ascendentes con emulsión nutritiva." },
-              { step: "04", title: "Bebida de Cortesía", desc: "Té, agua, café, jugo o refresco incluido." }
+            "includes": [
+              "30 minutos de sesión facial",
+              "Exfoliación suave no abrasiva",
+              "Crema hidratante y masaje facial",
+              "Bebida de cortesía"
             ],
-            includes: [
-              "Cabina climatizada",
-              "Cosméticos hidratantes hipoalergénicos",
-              "Bebida no alcohólica de cortesía: Té, agua, Café, jugo y refresco"
-            ],
-            recommendations: "Recomendado como mantenimiento quincenal para mantener el rostro resplandeciente.",
-            slug: "hidratacion-de-30min"
+            "recommendations": "Ideal para preparar el rostro antes de maquillarse o tras una semana ajetreada.",
+            "slug": "masaje-facial-de-hidratacion"
           },
           {
-            id: "srv_facial_hidratacion_profunda_60",
-            name: "Facial de Hidratación profunda (60 min)",
-            duration: "60 min",
-            price: 40,
-            badge: "Nutrición Intensa",
-            popular: true,
-            image: "./assets/catalog/facial-hidratante.webp",
-            gallery: [
+            "id": "srv_facial_hidratacion_profunda_60",
+            "name": "Facial de Hidratación profunda",
+            "categoryTitle": "Tratamientos faciales",
+            "categoryId": "tratamientos-faciales",
+            "subcategoryName": "Faciales y Cosmiatría",
+            "price": 15,
+            "duration": "60 min",
+            "badge": "Hidratación Completa",
+            "image": "./assets/catalog/facial-hidratante.webp",
+            "gallery": [
               "./assets/catalog/facial-hidratante.webp",
               "./assets/facial_original.jpg",
               "./assets/ojos_orig.jpg"
             ],
-            description: "Consiste en renovar, nutrir e hidratar desde las capas más profundas. Obtenemos un rostro más luminoso y con una textura mucho más suave y tersa. Tener una piel deshidratada trae consigo un aspecto de piel cansada y poco flexible.",
-            longDescription: [
-              "La hidratación facial es un tratamiento que consiste en renovar, nutrir e hidratar desde las capas más profundas.",
-              "Con este tratamiento obtenemos un rostro más luminoso y con una textura mucho más suave y tersa. Tener una piel deshidratada trae consigo un aspecto de piel cansada y poco flexible; este protocolo devuelve el agua y la vitalidad a las células dérmicas."
+            "description": "Renueva, nutre e hidrata desde las capas más profundas. Consigue un rostro luminoso, suave y terso, devolviendo vitalidad a pieles cansadas o deshidratadas.",
+            "longDescription": [
+              "Procedimiento cosmiátrico enfocado en restaurar el manto hidrolipídico y el balance hídrico de la piel.",
+              "La deshidratación causa opacidad y pérdida de elasticidad; este facial infunde ácido hialurónico, sérums nutritivos y mascarillas oclusivas para reponer la turgencia cutánea."
             ],
-            benefits: [
-              "Nutrición e hidratación profunda en capas dérmicas",
-              "Recuperación de la elasticidad, tersura y frescura",
-              "Combate la opacidad y el aspecto de cansancio en la piel",
-              "Textura aterciopelada y brillo natural saludable"
+            "benefits": [
+              "Restauración profunda de la hidratación tisular",
+              "Efecto de relleno natural sobre líneas de sequedad",
+              "Rostro descansado, flexible y radiante",
+              "Fortalecimiento de la barrera cutánea protectora"
             ],
-            steps: [
-              { step: "01", title: "Diagnóstico Cutáneo", desc: "Evaluación del nivel de resequedad y sensibilidad." },
-              { step: "02", title: "Higiene y Exfoliación", desc: "Preparación de los poros para máxima absorción." },
-              { step: "03", title: "Velo Hidratante & Masaje", desc: "Penetración de principios activos y sueros emolientes." },
-              { step: "04", title: "Protección y Cortesía", desc: "Sellado dérmico y bebida no alcohólica de cortesía." }
+            "includes": [
+              "60 minutos de tratamiento facial completo",
+              "Limpieza preparatoria, tónico, sérums y mascarilla hidro-nutritiva",
+              "Bebida de cortesía"
             ],
-            includes: [
-              "Cabina facial privada climatizada",
-              "Ampolletas y mascarillas de hidratación profunda",
-              "Bebida no alcohólica de cortesía: Té, agua, Café, jugo y refresco"
-            ],
-            recommendations: "Ideal antes de eventos especiales o para reparar la piel tras exposición solar.",
-            slug: "facial-hidratante"
+            "recommendations": "Recomendado una vez al mes para preservar la salud y juventud cutánea.",
+            "slug": "facial-de-hidratacion-profunda"
           },
           {
-            id: "srv_facial_antiedad_60",
-            name: "Facial anti - edad (60 min)",
-            duration: "60 min",
-            price: 45,
-            badge: "Rejuvenecedor",
-            popular: true,
-            image: "./assets/catalog/facial-con-ventosas.webp",
-            gallery: [
+            "id": "srv_facial_antiedad_60",
+            "name": "Facial anti-edad",
+            "categoryTitle": "Tratamientos faciales",
+            "categoryId": "tratamientos-faciales",
+            "subcategoryName": "Faciales y Cosmiatría",
+            "price": 20,
+            "duration": "60 min",
+            "badge": "Efecto Lifting & Colágeno",
+            "image": "./assets/catalog/facial-con-ventosas.webp",
+            "gallery": [
               "./assets/catalog/facial-con-ventosas.webp",
               "./assets/facial_original.jpg",
               "./assets/dsc_6328.jpg"
             ],
-            description: "Estimula la circulación sanguínea, favorece la desintoxicación de la piel, reduce la hinchazón, promueve la renovación celular, suaviza las arrugas y líneas finas, alivia la tensión muscular y estimula la producción de colágeno, dejando la piel firme, tonificada y luminosa.",
-            longDescription: [
-              "Duración: 1 hora. Estimula la circulación sanguínea, favorece la desintoxicación de la piel, reduce la hinchazón, promueve la renovación celular, suaviza las arrugas y líneas finas.",
-              "Alivia la tensión de los músculos faciales, estimula la producción natural de colágeno y elastina y deja la piel con un aspecto notablemente más firme, tonificado y luminoso."
+            "description": "Estimula la circulación, favorece la desintoxicación, reduce hinchazón, promueve la renovación celular, suaviza arrugas y estimula colágeno para un aspecto firme y tonificado.",
+            "longDescription": [
+              "Protocolo avanzado antienvejecimiento que trabaja sobre la flacidez, líneas de expresión y falta de tono muscular facial.",
+              "Combina principios activos tensores y antioxidantes con técnicas de masaje reafirmante o ventosas faciales que estimulan la síntesis de colágeno y elastina."
             ],
-            benefits: [
-              "Suaviza líneas de expresión y arrugas de tensión",
-              "Estimula la síntesis de colágeno y la firmeza tisular",
-              "Drenaje facial que disminuye bolsas e hinchazón",
-              "Tono facial más uniforme, despierto y revitalizado"
+            "benefits": [
+              "Atenuación de líneas de expresión y arrugas finas",
+              "Efecto lifting y mayor definición del óvalo facial",
+              "Estimulación endógena de colágeno",
+              "Drenaje de bolsas y reducción de hinchazón periocular"
             ],
-            steps: [
-              { step: "01", title: "Limpieza Antiedad", desc: "Preparación suave de rostro, cuello y escote." },
-              { step: "02", title: "Estimulación Circulatoria", desc: "Masaje reafirmante y técnicas descongestivas." },
-              { step: "03", title: "Mascarilla Tensora Colágeno", desc: "Nutrición con antioxidantes y activos reafirmantes." },
-              { step: "04", title: "Cierre & Bebida", desc: "Crema protectora y bebida no alcohólica de cortesía." }
+            "includes": [
+              "60 minutos de protocolo anti-edad",
+              "Sérums concentrados de péptidos y antioxidantes",
+              "Mascarilla tensora reafirmante",
+              "Bebida de cortesía"
             ],
-            includes: [
-              "Cosmética antiedad con péptidos y colágeno",
-              "Cabina privada",
-              "Bebida no alcohólica: Té, agua, Café, jugo y refresco"
-            ],
-            recommendations: "Apto para todo tipo de piel que busque frenar el envejecimiento prematuro.",
-            slug: "facial-con-ventosas"
+            "recommendations": "Apto para pieles maduras o personas a partir de los 28 años como prevención activa.",
+            "slug": "facial-anti-edad"
           },
           {
-            id: "srv_limpieza_facial_profunda_60",
-            name: "Limpieza facial profunda (60 min)",
-            duration: "60 min",
-            price: 40,
-            badge: "Piel Pura",
-            image: "./assets/catalog/limpieza-profunda-x.webp",
-            gallery: [
+            "id": "srv_limpieza_facial_profunda_60",
+            "name": "Limpieza facial profunda",
+            "categoryTitle": "Tratamientos faciales",
+            "categoryId": "tratamientos-faciales",
+            "subcategoryName": "Faciales y Cosmiatría",
+            "price": 18,
+            "duration": "60 min",
+            "badge": "Purificante & Anti-Impurezas",
+            "image": "./assets/catalog/limpieza-profunda-x.webp",
+            "gallery": [
               "./assets/catalog/limpieza-profunda-x.webp",
               "./assets/facial_original.jpg",
               "./assets/dsc_6325.jpg"
             ],
-            description: "Mejora la salud y la apariencia del cutis. Este tratamiento elimina los puntos negros y las células muertas, con lo que se consigue que la piel respire y absorba mejor los tratamientos cosméticos o de medicina estética.",
-            longDescription: [
-              "Mejorar la salud y la apariencia del cutis. Este tratamiento elimina los puntos negros y las células muertas, con lo que se consigue que la piel respire y absorba mejor los tratamientos cosméticos o de medicina estética.",
-              "Un protocolo higiénico esencial que purifica los poros, equilibra el sebo y devuelve la luminosidad perdida por la polución y el paso de los días."
+            "description": "Elimina puntos negros y células muertas, logrando una piel suave, fresca e hidratada. Desobstruye poros y unifica el cutis.",
+            "longDescription": [
+              "Tratamiento esencial de higiene dérmica. Elimina con precisión comedones, puntos negros, microquistes y tapones sebáceos.",
+              "Prepara la piel mediante vapor o lociones emolientes, extracción higiénica cuidadosa, descongestión con alta frecuencia y mascarilla calmante antiséptica."
             ],
-            benefits: [
-              "Extracción higiénica de comedones y puntos negros",
-              "Oxigenación celular y eliminación de células muertas",
-              "Piel limpia, fresca y libre de impurezas",
-              "Máxima receptividad a cremas y tratamientos posteriores"
+            "benefits": [
+              "Poros limpios y visiblemente afinados",
+              "Eliminación total de impurezas y queratina acumulada",
+              "Regulación del exceso de sebo y prevención de brotes",
+              "Cutis limpio, uniforme y revitalizado"
             ],
-            steps: [
-              { step: "01", title: "Doble Limpieza", desc: "Desmaquillado y purificación superficial." },
-              { step: "02", title: "Apertura de Poros", desc: "Vaporización suave para facilitar la extracción sin lastimar." },
-              { step: "03", title: "Extracción & Alta Frecuencia", desc: "Retiro de impurezas y desinfección bactericida de alta frecuencia." },
-              { step: "04", title: "Mascarilla Calmante & Bebida", desc: "Sellado de poros y bebida no alcohólica incluida." }
+            "includes": [
+              "60 minutos de protocolo de limpieza profunda",
+              "Extracción profesional higiénica",
+              "Alta frecuencia bactericida y mascarilla calmante",
+              "Bebida de cortesía"
             ],
-            includes: [
-              "Aparatología bactericida de alta frecuencia",
-              "Mascarilla descongestiva de arcillas o aloe",
-              "Bebida no alcohólica de cortesía: Té, agua, Café, jugo y refresco"
-            ],
-            recommendations: "Se sugiere realizar cada 30 días para conservar la salud de los poros.",
-            slug: "limpieza-profunda-x"
+            "recommendations": "No exponerse al sol directo las 24 horas posteriores a la sesión.",
+            "slug": "limpieza-facial-profunda"
           }
         ]
       }
     ]
   },
   {
-    id: "tratamientos-corporales",
-    title: "Tratamientos Corporales",
-    subtitle: "Técnicas terapéuticas y estéticas para renovar, tonificar y aliviar tu cuerpo",
-    icon: "Award",
-    badge: "Bienestar Integral",
-    subcategories: [
+    "id": "tratamientos-corporales",
+    "title": "Tratamientos corporales",
+    "subtitle": "Envolturas, termoterapia, maderoterapia y exfoliación corporal",
+    "icon": "Sparkles",
+    "badge": "Bienestar Integral",
+    "subcategories": [
       {
-        id: "corporales",
-        name: "Terapias Corporales",
-        description: "Maderoterapia, termoterapia, envolturas de parafina y terapias ancestrales",
-        services: [
+        "id": "corporales",
+        "name": "Cuidado Corporal y Estética",
+        "description": "Tratamientos termales, modelado y reactivación circulatoria",
+        "services": [
           {
-            id: "srv_parafina_manos_pies_45",
-            name: "Parafina para manos y pies (45 min)",
-            duration: "45 min",
-            price: 25,
-            badge: "Nutrición Extrema",
-            image: "./assets/catalog/parafina-para-manos-y-pies-45-min.webp",
-            gallery: [
+            "id": "srv_parafina_manos_pies_45",
+            "name": "Parafina para manos y pies",
+            "categoryTitle": "Tratamientos corporales",
+            "categoryId": "tratamientos-corporales",
+            "subcategoryName": "Cuidado Corporal y Estética",
+            "price": 10,
+            "duration": "45 min",
+            "badge": "Nutrición Cutánea",
+            "image": "./assets/catalog/parafina-para-manos-y-pies-45-min.webp",
+            "gallery": [
               "./assets/catalog/parafina-para-manos-y-pies-45-min.webp",
-              "./assets/manicura_orig.jpg",
-              "./assets/pedicura_orig.jpg"
+              "./assets/snack_bandeja.jpg"
             ],
-            description: "✨ Manos y pies suaves, hidratados y rejuvenecidos ✨ Disfruta de nuestro tratamiento de parafina terapéutica, ideal para nutrir profundamente la piel, aliviar resequedad y relajar articulaciones.",
-            longDescription: [
-              "✨ Manos y pies suaves, hidratados y rejuvenecidos ✨",
-              "Disfruta de nuestro tratamiento de parafina terapéutica, ideal para nutrir profundamente la piel, aliviar resequedad y relajar articulaciones. El calor de la parafina crea una barrera oclusiva que sella la hidratación y alivia la rigidez en dedos y tobillos."
+            "description": "Baño de parafina tibia que humecta profundamente manos y pies secos o agrietados, alivia dolores articulares y deja la piel aterciopelada.",
+            "longDescription": [
+              "Tratamiento termoterapéutico donde las manos y los pies se sumergen en parafina cosmética tibia enriquecida con esencias emolientes.",
+              "El calor abre los poros y permite la absorción intensiva de aceites, proporcionando alivio en articulaciones rígidas y una tersura extraordinaria en talones y manos."
             ],
-            benefits: [
-              "Hidratación profunda y duradera en manos y pies",
-              "Suaviza la piel y mejora visiblemente su textura",
-              "Ayuda a aliviar dolores articulares y rigidez",
-              "Estimula la circulación y aporta relajación inmediata"
+            "benefits": [
+              "Hidratación intensiva contra resequedad extrema y grietas",
+              "Calma la rigidez en dedos, muñecas y tobillos",
+              "Piel con tacto de seda durante días",
+              "Sensación de descanso absoluto en manos y pies"
             ],
-            steps: [
-              { step: "01", title: "Limpieza y Exfoliación", desc: "Preparación de la piel de manos y pies." },
-              { step: "02", title: "Inmersión en Parafina Tibia", desc: "Baño térmico en parafina cosmética purificada." },
-              { step: "03", title: "Tiempo de Pose Térmica", desc: "Envoltura en guantes y botines térmicos para fijar nutrientes." },
-              { step: "04", title: "Retiro y Masaje", desc: "Retiro suave, masaje hidratante y bebida no alcohólica." }
+            "includes": [
+              "45 minutos de tratamiento de parafina en ambas extremidades",
+              "Envoltura térmica y masaje final hidratante",
+              "Bebida de cortesía"
             ],
-            includes: [
-              "Parafina de alta calidad cosmética",
-              "Botines y manoplas térmicas",
-              "Bebida no alcohólica de cortesía: Té, agua, Café, jugo y refresco"
-            ],
-            recommendations: "Excelente para personas con piel agrietada, artritis o resequedad invernal.",
-            slug: "parafina-para-manos-y-pies-45-min"
+            "recommendations": "Ideal para combinar con pedicura o tras una jornada intensa de trabajo manual.",
+            "slug": "parafina-para-manos-y-pies"
           },
           {
-            id: "srv_maderoterapia_corporal_75",
-            name: "Maderoterapia corporal localizada (75 min)",
-            duration: "75 min",
-            price: 45,
-            badge: "Modelador",
-            popular: true,
-            image: "./assets/catalog/maderoterapia-corporal-localizada-75min.webp",
-            gallery: [
+            "id": "srv_maderoterapia_corporal_75",
+            "name": "Maderoterapia corporal localizada",
+            "categoryTitle": "Tratamientos corporales",
+            "categoryId": "tratamientos-corporales",
+            "subcategoryName": "Cuidado Corporal y Estética",
+            "price": 25,
+            "duration": "75 min",
+            "badge": "Reductor & Reafirmante",
+            "image": "./assets/catalog/maderoterapia-corporal-localizada-75min.webp",
+            "gallery": [
               "./assets/catalog/maderoterapia-corporal-localizada-75min.webp",
-              "./assets/maderoterapia.jpg",
-              "./assets/masaje_m5.jpg"
+              "./assets/maderoterapia.jpg"
             ],
-            description: "Técnica de masaje terapéutico que utiliza diferentes instrumentos de madera natural para moldear el cuerpo, reducir la celulitis, reafirmar la piel y mejorar la circulación sanguínea y linfática.",
-            longDescription: [
-              "La maderoterapia es una técnica de masaje terapéutico, que utiliza diferentes instrumentos de madera natural para moldear el cuerpo, reducir la celulitis, reafirmar la piel y mejorar la circulación sanguínea y linfática.",
-              "Mediante copas suecas, rodillos estriados y tablas modeladoras de madera pulida, se rompen los acúmulos grasos y se estimula la elastina sin dañar los tejidos."
+            "description": "Técnica con instrumentos de madera diseñados para estimular la circulación, reafirmar tejidos, modelar el contorno y reducir celulitis.",
+            "longDescription": [
+              "Técnica holística de modelado corporal mediante instrumentos anatómicos de madera noble (rodillos estriados, copas suecas, tabla moldeadora).",
+              "Reactiva la lipólisis local, moviliza adiposidades rebeldes, favorece la retracción de la piel y tonifica glúteos, abdomen o muslos."
             ],
-            benefits: [
-              "Modelado localizado de abdomen, glúteos, flancos y piernas",
-              "Reducción visible de la celulitis y piel de naranja",
-              "Reafirmación de los tejidos y tonificación cutánea",
-              "Estimulación del drenaje linfático natural"
+            "benefits": [
+              "Atenuación de la apariencia de piel de naranja y celulitis",
+              "Modelado y definición del contorno corporal",
+              "Estimulación linfática y eliminación de líquidos",
+              "Reafirmación del tejido conjuntivo dérmico"
             ],
-            steps: [
-              { step: "01", title: "Diagnóstico Localizado", desc: "Definición de las zonas prioritarias a moldear." },
-              { step: "02", title: "Aceites Reductores", desc: "Aplicación de emulsión natural para facilitar el deslizamiento." },
-              { step: "03", title: "Técnica con Maderas", desc: "Uso combinado de rodillos, copas y tablas moldeadoras." },
-              { step: "04", title: "Drenaje Final & Bebida", desc: "Pases de vaciado linfático y bebida no alcohólica incluida." }
+            "includes": [
+              "75 minutos de maniobras con instrumental de maderoterapia",
+              "Aceites reductores con extractos botánicos",
+              "Bebida de cortesía"
             ],
-            includes: [
-              "Instrumentos de maderoterapia de madera noble",
-              "Aceites tensores reafirmantes",
-              "Bebida no alcohólica de cortesía: Té, agua, Café, jugo y refresco"
-            ],
-            recommendations: "Se sugiere un ciclo de varias sesiones para resultados óptimos y beber mucha agua.",
-            slug: "maderoterapia-corporal-localizada-75min"
+            "recommendations": "Para resultados óptimos de reducción se aconseja una secuencia de varias sesiones.",
+            "slug": "maderoterapia-corporal-localizada"
           },
           {
-            id: "srv_exfoliante_corporal_30",
-            name: "Exfoliante corporal (30 min)",
-            duration: "30 min",
-            price: 30,
-            badge: "Renovación Cutánea",
-            image: "./assets/catalog/exfoliante-corporal-z.webp",
-            gallery: [
+            "id": "srv_exfoliante_corporal_30",
+            "name": "Exfoliante corporal",
+            "categoryTitle": "Tratamientos corporales",
+            "categoryId": "tratamientos-corporales",
+            "subcategoryName": "Cuidado Corporal y Estética",
+            "price": 15,
+            "duration": "30 min",
+            "badge": "Renovación Dermo-Pulido",
+            "image": "./assets/catalog/exfoliante-corporal-z.webp",
+            "gallery": [
               "./assets/catalog/exfoliante-corporal-z.webp",
-              "./assets/masaje_m5.jpg",
-              "./assets/dsc_6325.jpg"
+              "./assets/servicios_spa.jpg"
             ],
-            description: "Producto de cuidado de la piel para eliminar las células muertas, mejorar la circulación y proporcionar una sensación de suavidad. Popular por sus propiedades antioxidantes y antiinflamatorias que ayudan a tonificar la piel.",
-            longDescription: [
-              "El exfoliante corporal es un tratamiento para eliminar las células muertas de la piel, mejorar la circulación y proporcionar una sensación de extrema suavidad.",
-              "Los beneficios incluyen exfoliación efectiva con grano natural, estimulación de la circulación sanguínea, propiedades antioxidantes que protegen del daño ambiental e hidratación con aceites naturales."
+            "description": "Elimina células muertas y asperezas en todo el cuerpo con sales marinas o scrubs botánicos, dejando la piel renovada, luminosa y suave.",
+            "longDescription": [
+              "Pulido dérmico integral mediante exfoliantes granulados naturales a base de sales del mar o azúcares botánicos con aceites esenciales.",
+              "Desobstruye folículos, oxigena la epidermis y prepara la piel para recibir masajes o hidrataciones con máxima absorción."
             ],
-            benefits: [
-              "Exfoliación homogénea y efectiva de células muertas",
-              "Estimulación de la circulación y oxigenación celular",
-              "Aporte de antioxidantes y suavidad sedosa al tacto",
-              "Deja la piel perfectamente preparada para recibir masajes o sol"
+            "benefits": [
+              "Eliminación eficaz de asperezas en codos, rodillas y espalda",
+              "Homogeneidad y suavidad aterciopelada al tacto",
+              "Estimulación de la microcirculación cutánea superficial",
+              "Potencia el efecto de cualquier tratamiento posterior"
             ],
-            steps: [
-              { step: "01", title: "Preparación Cutánea", desc: "Acomodación en cabina y humidificación suave." },
-              { step: "02", title: "Aplicación Exfoliante", desc: "Masaje en círculos con granos naturales de café y aceites." },
-              { step: "03", title: "Retiro en Ducha", desc: "Enjuague templado revitalizante." },
-              { step: "04", title: "Emulsión Final & Bebida", desc: "Loción corporal nutritiva y bebida de cortesía." }
+            "includes": [
+              "30 minutos de exfoliación corporal completa",
+              "Retirada tibia y emulsión hidratante ligera",
+              "Bebida de cortesía"
             ],
-            includes: [
-              "Exfoliante natural con antioxidantes",
-              "Acceso a ducha privada climatizada",
-              "Bebida no alcohólica de cortesía: Té, agua, Café, jugo y refresco"
-            ],
-            recommendations: "Excelente previo a un bronceado parejo o como complemento a un masaje relajante.",
-            slug: "exfoliante-corporal-z"
+            "recommendations": "Excelente antes de tomar el sol o recibir un masaje relajante.",
+            "slug": "exfoliante-corporal"
           },
           {
-            id: "srv_termoterapia_parafina_60",
-            name: "Termoterapia con manta térmica y parafina (1 hora)",
-            duration: "60 min",
-            price: 45,
-            badge: "Detox Térmico",
-            image: "./assets/catalog/envoltura-corporal-con-parafina.webp",
-            gallery: [
+            "id": "srv_termoterapia_parafina_60",
+            "name": "Termoterapia con manta térmica y parafina",
+            "categoryTitle": "Tratamientos corporales",
+            "categoryId": "tratamientos-corporales",
+            "subcategoryName": "Cuidado Corporal y Estética",
+            "price": 10,
+            "duration": "60 min",
+            "badge": "Detox Térmico",
+            "image": "./assets/catalog/envoltura-corporal-con-parafina.webp",
+            "gallery": [
               "./assets/catalog/envoltura-corporal-con-parafina.webp",
-              "./assets/servicios_spa.jpg",
-              "./assets/masaje_relax.jpg"
+              "./assets/circuito_termal.jpg"
             ],
-            description: "Tratamiento estético que utiliza calor controlado con fines terapéuticos y cosméticos. Estimula la circulación, relaja los músculos y favorece la eliminación de toxinas. La parafina corporal sella la humedad y suaviza la piel.",
-            longDescription: [
-              "La termoterapia con mantas térmicas es un tratamiento estético que utiliza calor controlado con fines terapéuticos y cosméticos. Este calor estimula la circulación sanguínea, relaja los músculos y favorece la eliminación de toxinas del cuerpo.",
-              "La parafina corporal sella la humedad en la piel, alivia dolores articulares y aporta una extrema flexibilidad y suavidad a los tejidos corporales."
+            "description": "Aplicación de parafina y calor controlado mediante manta térmica para desintoxicar, relajar la musculatura y favorecer la sudoración depurativa.",
+            "longDescription": [
+              "Tratamiento de calor profundo que eleva la temperatura corporal de manera segura y placentera con manta térmica especializada y activos emolientes de parafina.",
+              "Provoca una sudoración depurativa que elimina toxinas, alivia tensiones musculares generalizadas y promueve el descanso."
             ],
-            benefits: [
-              "Eliminación profunda de toxinas mediante sudoración controlada",
-              "Alivio muscular y articular por calor terapéutico",
-              "Hidratación intensiva y regeneración cutánea con parafina",
-              "Sensación de ligereza corporal y descanso reconfortante"
+            "benefits": [
+              "Eliminación de toxinas por vía sudorípara",
+              "Alivio de dolores musculares y articulares crónicos",
+              "Relajación profunda por efecto vasodilatador",
+              "Piel suave e hidratada por la parafina"
             ],
-            steps: [
-              { step: "01", title: "Aplicación de Parafina", desc: "Extensión del bálsamo templado en las zonas deseadas." },
-              { step: "02", title: "Envoltura en Manta Térmica", desc: "Sesión de calor controlado y relajación profunda." },
-              { step: "03", title: "Retiro y Limpieza", desc: "Retiro de residuos y toallas templadas." },
-              { step: "04", title: "Hidratación & Bebida", desc: "Té o infusión de cortesía al concluir." }
+            "includes": [
+              "60 minutos de protocolo termoterapéutico",
+              "Manta térmica regulable y envoltura corporal",
+              "Bebida de cortesía hidratante"
             ],
-            includes: [
-              "Manta térmica estética con regulación de temperatura",
-              "Parafina corporal purificada",
-              "Bebida no alcohólica de cortesía: Té, agua, Café, jugo y refresco"
-            ],
-            recommendations: "Beber abundantes líquidos antes y después de la sesión.",
-            slug: "envoltura-corporal-con-parafina"
+            "recommendations": "Beber agua fresca al terminar la sesión para rehidratar el organismo.",
+            "slug": "termoterapia-con-manta-termica-y-parafina"
           },
           {
-            id: "srv_terapia_ventosas_75",
-            name: "Terapia con ventosas (75 min)",
-            duration: "75 min",
-            price: 40,
-            badge: "Alivio Ancestral",
-            image: "./assets/catalog/terapia-con-ventosas.webp",
-            gallery: [
+            "id": "srv_terapia_ventosas_75",
+            "name": "Terapia con ventosas",
+            "categoryTitle": "Tratamientos corporales",
+            "categoryId": "tratamientos-corporales",
+            "subcategoryName": "Cuidado Corporal y Estética",
+            "price": 25,
+            "duration": "75 min",
+            "badge": "Cupping Descompresivo",
+            "image": "./assets/catalog/terapia-con-ventosas.webp",
+            "gallery": [
               "./assets/catalog/terapia-con-ventosas.webp",
-              "./assets/masaje_m01.jpg",
-              "./assets/masaje_m02.jpg"
+              "./assets/masaje_m01.jpg"
             ],
-            description: "Método curativo ancestral que alivia el dolor de espalda, cuello y articulaciones. Utiliza la succión para aumentar el flujo sanguíneo, levantar el tejido muscular y reducir la tensión y rigidez muscular crónica.",
-            longDescription: [
-              "La ventosaterapia (cupping) es un método curativo ancestral que puede aliviar el dolor de espalda, cuello, dolores de cabeza y otros problemas. Utiliza la succión para jalar la piel y aumentar el flujo sanguíneo a la zona afectada.",
-              "Hoy en día, los profesionales lo utilizan para aliviar el dolor y las lesiones musculoesqueléticas como torceduras, contracturas severas y sobrecargas de espalda. La succión ayuda a estirar el tejido muscular, reduciendo la rigidez de forma inmediata."
+            "description": "Técnica tradicional de cupping que succiona y descomprime la fascia muscular, incrementando la irrigación sanguínea y aliviando contracturas resistentes.",
+            "longDescription": [
+              "Terapia milenaria de ventosas (cupping) fijas y dinámicas que genera presión negativa sobre el tejido blando.",
+              "A diferencia del masaje por compresión, la ventosa separa las fascias de los músculos, facilitando la oxigenación celular y barriendo el ácido láctico acumulado."
             ],
-            benefits: [
-              "Alivio inmediato de la rigidez muscular profunda",
-              "Aumento sustancial del flujo sanguíneo a zonas afectadas",
-              "Descompresión de adherencias en el tejido conectivo",
-              "Eficaz contra dolores lumbares y cervicales crónicos"
+            "benefits": [
+              "Descompresión fascial profunda en espalda y piernas",
+              "Aumento drástico del flujo sanguíneo local",
+              "Eficaz en contracturas crónicas que no ceden al masaje tradicional",
+              "Acelera la recuperación tras entrenamientos intensos"
             ],
-            steps: [
-              { step: "01", title: "Evaluación Muscular", desc: "Identificación de los puntos de mayor dolor y rigidez." },
-              { step: "02", title: "Colocación de Ventosas", desc: "Succión precisa en zonas anatómicas diana." },
-              { step: "03", title: "Técnica Fija y Móvil", desc: "Deslizamiento y estiramiento miofascial con succión controlada." },
-              { step: "04", title: "Reposo y Bebida", desc: "Infusión o bebida no alcohólica de cortesía." }
+            "includes": [
+              "75 minutos de terapia de ventosas + masaje manual preparatorio",
+              "Aceites terapéuticos botánicos",
+              "Bebida de cortesía"
             ],
-            includes: [
-              "Ventosas terapéuticas profesionales",
-              "Aceites lubricantes calmantes",
-              "Cabina privada",
-              "Bebida no alcohólica de cortesía: Té, agua, Café, jugo y refresco"
-            ],
-            recommendations: "Pueden quedar marcas circulares temporales que desaparecen naturalmente en pocos días.",
-            slug: "terapia-con-ventosas"
+            "recommendations": "Puede dejar marcas circulares rojizas normales que desaparecen naturalmente en pocos días.",
+            "slug": "terapia-con-ventosas"
           },
           {
-            id: "srv_auriculoterapia_20",
-            name: "Auriculoterapia (20 min)",
-            duration: "20 min",
-            price: 20,
-            badge: "Equilibrio",
-            image: "./assets/catalog/auriculoterapia.webp",
-            gallery: [
+            "id": "srv_auriculoterapia_20",
+            "name": "Auriculoterapia",
+            "categoryTitle": "Tratamientos corporales",
+            "categoryId": "tratamientos-corporales",
+            "subcategoryName": "Cuidado Corporal y Estética",
+            "price": 3,
+            "duration": "20 min",
+            "badge": "Reflexología Auricular",
+            "image": "./assets/catalog/auriculoterapia.webp",
+            "gallery": [
               "./assets/catalog/auriculoterapia.webp",
-              "./assets/masaje_relax.jpg",
-              "./assets/dsc_6325.jpg"
+              "./assets/servicios_spa.jpg"
             ],
-            description: "Terapia refleja en el pabellón auricular. Beneficios: control del dolor (cefaleas, migrañas, dolor muscular), apoyo ante estrés y ansiedad, equilibrio digestivo y mejora del bienestar general.",
-            longDescription: [
-              "La auriculoterapia es una técnica de la medicina tradicional que estimula puntos específicos en el pabellón auricular para regular funciones fisiológicas del organismo.",
-              "Beneficios: Control del dolor (cefaleas, migrañas, dolor muscular), problemas emocionales (estrés, ansiedad), trastornos digestivos, respiratorios y metabólicos, y mejora general del bienestar."
+            "description": "Estimulación de puntos reflejos en la oreja mediante microesferas para regular el estrés, ansiedad, apetito y desequilibrios energéticos.",
+            "longDescription": [
+              "Especialidad de la medicina tradicional oriental basada en el microsistema de la oreja, donde se proyectan todos los órganos corporales.",
+              "Se aplican semillas de vaccaria o balines imantados en puntos estratégicos que continúan estimulando el sistema nervioso durante varios días."
             ],
-            benefits: [
-              "Alivio de dolores de cabeza, migrañas y tensión muscular",
-              "Regulación del estrés, nerviosismo y ansiedad",
-              "Apoyo para el control del apetito y descanso nocturno",
-              "Procedimiento no invasivo, seguro y rápido (20 min)"
+            "benefits": [
+              "Control de la ansiedad y el estrés cotidiano",
+              "Apoyo en programas de control de peso y hábitos saludables",
+              "Alivio de dolores de cabeza e insomnio",
+              "Efecto prolongado durante los días siguientes"
             ],
-            steps: [
-              { step: "01", title: "Inspección Auricular", desc: "Localización de los puntos reflejos a tratar." },
-              { step: "02", title: "Desinfección y Estímulo", desc: "Presión y colocación de microesferas adhesivas." },
-              { step: "03", title: "Instrucciones de Autoestímulo", desc: "Pautas sencillas para activar los puntos en casa." },
-              { step: "04", title: "Cortesía", desc: "Bebida no alcohólica incluida al terminar." }
+            "includes": [
+              "20 minutos de diagnóstico y colocación de microesferas auriculares",
+              "Bebida de cortesía"
             ],
-            includes: [
-              "Microesferas y parches auriculares hipoalergénicos",
-              "Bebida no alcohólica de cortesía"
-            ],
-            recommendations: "Los puntos colocados continúan actuando durante los días siguientes.",
-            slug: "auriculoterapia"
+            "recommendations": "Presionar suavemente los balines cuando sientas episodios de ansiedad o estrés.",
+            "slug": "auriculoterapia"
           }
         ]
       }
     ]
   },
   {
-    id: "paquetes-parejas",
-    title: "Paquetes en Parejas",
-    subtitle: "Experiencias sensoriales y románticas privadas para compartir momentos inolvidables",
-    icon: "Heart",
-    badge: "Para Dos",
-    subcategories: [
+    "id": "paquetes-parejas",
+    "title": "Paquetes",
+    "subtitle": "Rituales signature, experiencias románticas en pareja y días de spa",
+    "icon": "Sparkles",
+    "badge": "Signature",
+    "subcategories": [
       {
-        id: "parejas",
-        name: "Experiencias Compartidas",
-        description: "Cabina suite privada para dos con hidromasaje, brindis y atenciones exclusivas",
-        services: [
+        "id": "paquetes",
+        "name": "Paquetes Signature y Rituales",
+        "description": "Combinaciones completas de masajes, faciales y atenciones especiales",
+        "services": [
           {
-            id: "srv_escapada_chicas",
-            name: "Escapada de chicas (2 horas y 20 min aprox.)",
-            duration: "2h 20 min",
-            price: 90,
-            badge: "Amigas & Relax",
-            image: "./assets/catalog/escapada-de-chicas-2-horas-y-20-min.webp",
-            gallery: [
+            "id": "srv_escapada_chicas",
+            "name": "Escapada de chicas",
+            "categoryTitle": "Paquetes",
+            "categoryId": "paquetes-parejas",
+            "subcategoryName": "Paquetes Signature y Rituales",
+            "price": 110,
+            "duration": "2 h 20 min aprox.",
+            "badge": "Grupal & Amigas",
+            "image": "./assets/catalog/escapada-de-chicas-2-horas-y-20-min.webp",
+            "gallery": [
               "./assets/catalog/escapada-de-chicas-2-horas-y-20-min.webp",
-              "./assets/masaje_pareja.jpg",
               "./assets/pareja_jacuzzi.jpg",
               "./assets/snack_bandeja.jpg"
             ],
-            description: "Incluye: Aromaterapia, Masaje combinado a su elección por 90 min, Duchas climatizadas, Bañera de hidromasaje 45 min, Copa de vino y Aperitivo para acompañar.",
-            longDescription: [
-              "La experiencia perfecta para compartir entre amigas o familiares en un entorno de complicidad y desconexión absoluta.",
-              "Incluye: 🪷 Aromaterapia personalizada, 💆🏻‍♀️ Masaje combinado a su elección por 90 min, 🚿 Duchas climatizadas, 🛀🏻 Bañera de hidromasaje 45 min, 🍷 Copa de vino y 🫒 Aperitivo para acompañar."
+            "description": "Paquete completo diseñado para disfrutar entre amigas: masajes relajantes, mascarillas faciales, exfoliación y brindis de bienvenida.",
+            "longDescription": [
+              "El plan perfecto para compartir momentos inolvidables de risas, belleza y relax absoluto entre amigas en nuestras instalaciones privadas.",
+              "Incluye circuito de masajes relajantes, exfoliación corporal renovadora, hidratación facial y atención gourmet personalizada."
             ],
-            benefits: [
-              "Cabina y bañera de hidromasaje privadas para el grupo",
-              "90 minutos de masaje combinado a elección de cada persona",
-              "Aromaterapia ambiental y copas de vino con aperitivo",
-              "Desconexión total y celebración compartida"
+            "benefits": [
+              "Experiencia compartida inolvidable en ambiente exclusivo",
+              "Tratamiento estético y relajante integral simultáneo",
+              "Bebidas y aperitivos de cortesía",
+              "Fotografías y recuerdos memorables"
             ],
-            steps: [
-              { step: "01", title: "Bienvenida & Aromaterapia", desc: "Recepción con aromas seleccionados." },
-              { step: "02", title: "Masaje Combinado de 90 min", desc: "Sesión corporal según preferencia individual." },
-              { step: "03", title: "Hidromasaje en Bañera 45 min", desc: "Tiempo en jacuzzi con microburbujas y duchas." },
-              { step: "04", title: "Brindis con Vino y Aperitivo", desc: "Copa de vino y picadera incluida para acompañar." }
+            "includes": [
+              "2 horas y 20 minutos de experiencia combinada",
+              "Masaje relajante + Tratamiento facial express + Exfoliación",
+              "Bebidas de cortesía y atenciones especiales"
             ],
-            includes: [
-              "Cabina suite privada",
-              "Bañera de hidromasaje por 45 min",
-              "Copa de vino y aperitivo para cada asistente",
-              "Bebida no alcohólica incluida: Té, agua, Café, jugo y refresco"
-            ],
-            recommendations: "Reservar con anticipación para coordinar el horario del grupo.",
-            slug: "escapada-de-chicas-2-horas-y-20-min"
+            "recommendations": "Reservar con anticipación para coordinar el horario del grupo.",
+            "slug": "escapada-de-chicas"
           },
           {
-            id: "srv_ritual_amor_pareja",
-            name: "Ritual de Amor & Relax en Pareja (3 horas aprox.)",
-            duration: "3h aprox.",
-            price: 130,
-            badge: "Experiencia Romántica",
-            popular: true,
-            image: "./assets/catalog/masaje-en-pareja-2-horas.webp",
-            gallery: [
+            "id": "srv_ritual_amor_pareja",
+            "name": "Ritual de Amor & Relax en Pareja",
+            "categoryTitle": "Paquetes",
+            "categoryId": "paquetes-parejas",
+            "subcategoryName": "Paquetes Signature y Rituales",
+            "price": 130,
+            "duration": "3 h aprox.",
+            "badge": "Romance & Parejas",
+            "image": "./assets/catalog/masaje-en-pareja-2-horas.webp",
+            "gallery": [
               "./assets/catalog/masaje-en-pareja-2-horas.webp",
               "./assets/pareja_jacuzzi.jpg",
-              "./assets/pareja_sauna.jpg",
-              "./assets/snack_bandeja.jpg"
+              "./assets/masaje_pareja.jpg"
             ],
-            description: "La experiencia incluye: Ambiente romántico con decoración y velas aromáticas, Duchas dobles privadas, Exfoliante corporal 20 min, Masaje relajante en pareja con piedras volcánicas 30 min, Facial hidratante 60 min, Bañera de hidromasaje privada 45 min, Copa de vino y aperitivo.",
-            longDescription: [
-              "🌹 La experiencia incluye: 🕯️🪷 Ambiente romántico con decoración especial y velas aromáticas que envuelven el espacio; 🚿 Duchas dobles privadas; 🍀 Exfoliante corporal 20 min; 💆‍♂️💆‍♀️ Masaje relajante en pareja con piedras volcánicas por 30 min; ✨ Facial hidratante de 60 min para revitalizar la piel; 🛁 Bañera de hidromasaje privada 45 min; 🍷 Copa de vino y aperitivo para acompañar.",
-              "Ideal para aniversarios, escapadas románticas, fechas especiales o simplemente para regalarse tiempo de calidad juntos. Porque el amor también se cuida… y se celebra."
+            "description": "Experiencia romántica en cabina doble privada. Masaje corporal simultáneo con aromaterapia, tratamiento facial hidratante y brindis con cava o vino espumoso.",
+            "longDescription": [
+              "Diseñado para reconectar, celebrar aniversarios o regalar una velada mágica en pareja.",
+              "En una cabina doble ambientada con velas y música suave, dos terapeutas realizan un masaje completo simultáneo, seguido de hidratación facial y un momento íntimo de brindis."
             ],
-            benefits: [
-              "3 horas completas de spa exclusivo para dos",
-              "Masaje con piedras volcánicas y facial hidratante incluidos",
-              "Bañera de hidromasaje privada con ambientación a la luz de las velas",
-              "Copa de vino y aperitivo de cortesía"
+            "benefits": [
+              "Fortalece la conexión íntima y emocional en pareja",
+              "Cabina doble ambientada con pétalos y luz tenue",
+              "Masaje integral simultáneo a cuatro manos (dos terapeutas)",
+              "Brindis exclusivo y amenidades especiales"
             ],
-            steps: [
-              { step: "01", title: "Bienvenida Romántica", desc: "Ambiente con velas aromáticas y duchas dobles privadas." },
-              { step: "02", title: "Exfoliante Corporal (20 min)", desc: "Renovación cutánea y suavidad para ambos." },
-              { step: "03", title: "Masaje Piedras Volcánicas & Facial", desc: "30 min de piedras volcánicas + 60 min de facial hidratante." },
-              { step: "04", title: "Hidromasaje, Vino y Aperitivo", desc: "45 min en jacuzzi privado con copas de vino." }
+            "includes": [
+              "3 horas aproximadas en suite privada de parejas",
+              "Masaje corporal completo para ambos",
+              "Hidratación facial para los dos",
+              "Brindis con copa de espumoso o vino + bebida de cortesía"
             ],
-            includes: [
-              "Cabina doble privada decorada románticamente",
-              "Duchas dobles y jacuzzi privado 45 min",
-              "Copa de vino y aperitivo para dos",
-              "Bebida no alcohólica de cortesía: Té, agua, Café, jugo y refresco"
-            ],
-            recommendations: "El paquete favorito para sorprender a tu pareja en ocasiones memorables.",
-            slug: "masaje-en-pareja-2-horas"
+            "recommendations": "El paquete favorito para celebrar aniversarios, cumpleaños o pedidas de mano.",
+            "slug": "ritual-de-amor-relax-en-pareja"
           },
           {
-            id: "srv_refugio_zen",
-            name: "Refugio Zen (4 horas y 20 min aprox.)",
-            duration: "4h 20 min",
-            price: 160,
-            badge: "Máxima Inmersión",
-            popular: true,
-            image: "./assets/catalog/masaje-relajante-en-pareja-60min.webp",
-            gallery: [
+            "id": "srv_refugio_zen",
+            "name": "Refugio Zen",
+            "categoryTitle": "Paquetes",
+            "categoryId": "paquetes-parejas",
+            "subcategoryName": "Paquetes Signature y Rituales",
+            "price": 200,
+            "duration": "4 h 20 min aprox.",
+            "badge": "Día de Spa Completo",
+            "image": "./assets/catalog/masaje-relajante-en-pareja-60min.webp",
+            "gallery": [
               "./assets/catalog/masaje-relajante-en-pareja-60min.webp",
-              "./assets/masaje_pareja.jpg",
-              "./assets/pareja_sauna.jpg",
-              "./assets/snack_bandeja.jpg"
+              "./assets/circuito_termal.jpg",
+              "./assets/pareja_sauna.jpg"
             ],
-            description: "Incluye: Aceites esenciales aromáticos a su elección, Masaje descontracturante combinado con piedras calientes 2 horas, Limpieza facial 60 min, Exfoliante corporal 20 min, Duchas climatizadas 15 min, Bañera de hidromasaje 45 min, Copa de vino al gusto y Aperitivo para acompañar.",
-            longDescription: [
-              "Nuestra experiencia de spa más completa y prolongada. Más de 4 horas dedicadas al bienestar holístico integral.",
-              "Incluye: 🪷 Aceites esenciales a su elección; 🙏🏻 Masaje descontracturante combinado con piedras calientes por 2 horas completas; 💆🏻‍♀️ Limpieza facial de 60 min; 🌻 Exfoliante corporal 20 min; 🚿 Duchas climatizadas 15 min; 🛀🏻 Bañera de hidromasaje 45 min; 🍷 Copa de vino al gusto y 🫒 Aperitivo para acompañar."
+            "description": "La experiencia de spa más completa de La Habana: exfoliación, envoltura corporal, masaje a elección, limpieza facial y salón de belleza con merienda gourmet.",
+            "longDescription": [
+              "Más de cuatro horas de entrega absoluta al autocuidado. Tu día de spa definitivo para resetear cuerpo y mente.",
+              "Recorrerás todas las estaciones del santuario: exfoliación profunda, envoltura nutritiva, masaje holístico o de piedras calientes, facial completo y servicios de estilismo capilar o manicura."
             ],
-            benefits: [
-              "4 horas y 20 minutos de retiro y cuidado absoluto",
-              "2 horas completas de masaje descontracturante con piedras calientes",
-              "Limpieza facial profunda y exfoliación corporal",
-              "Bañera de hidromasaje, brindis con vino y picadera de cortesía"
+            "benefits": [
+              "Transformación integral de pies a cabeza",
+              "Máximo nivel de personalización de cada protocolo",
+              "Merienda gourmet saludable y bebidas ilimitadas",
+              "Sensación de renacimiento físico y anímico"
             ],
-            steps: [
-              { step: "01", title: "Apertura & Exfoliación", desc: "Exfoliante corporal 20 min y ducha climatizada." },
-              { step: "02", title: "Masaje Descontracturante y Piedras (2h)", desc: "Dos horas de terapia profunda con calor geotermal." },
-              { step: "03", title: "Limpieza Facial (60 min)", desc: "Tratamiento facial completo higienizante." },
-              { step: "04", title: "Hidromasaje 45 min y Brindis", desc: "Tiempo en jacuzzi con copa de vino y aperitivo." }
+            "includes": [
+              "4 horas y 20 minutos de atenciones continuas",
+              "Exfoliación + Envoltura + Masaje 90 min + Facial completo + Salón",
+              "Merienda gourmet y bebidas de cortesía"
             ],
-            includes: [
-              "Cabina VIP exclusiva por más de 4 horas",
-              "Bañera de hidromasaje y duchas climatizadas",
-              "Copa de vino y aperitivos gourmet",
-              "Bebida no alcohólica de cortesía: Té, agua, Café, jugo y refresco"
-            ],
-            recommendations: "Reservar con anticipación; acudir sin prisas para disfrutar de cada etapa.",
-            slug: "masaje-relajante-en-pareja-60min"
+            "recommendations": "Reserva este día enteramente para ti sin compromisos de agenda posteriores.",
+            "slug": "refugio-zen"
           },
           {
-            id: "srv_plan_romantico",
-            name: "Plan Romántico (2 horas aprox.)",
-            duration: "2h aprox.",
-            price: 95,
-            badge: "Intimidad & Vino",
-            image: "./assets/catalog/ritual-eternal-velvet-3-horas.webp",
-            gallery: [
+            "id": "srv_plan_romantico",
+            "name": "Plan Romántico",
+            "categoryTitle": "Paquetes",
+            "categoryId": "paquetes-parejas",
+            "subcategoryName": "Paquetes Signature y Rituales",
+            "price": 105,
+            "duration": "2 h aprox.",
+            "badge": "Especial Parejas",
+            "image": "./assets/catalog/ritual-eternal-velvet-3-horas.webp",
+            "gallery": [
               "./assets/catalog/ritual-eternal-velvet-3-horas.webp",
               "./assets/masaje_pareja.jpg",
-              "./assets/pareja_jacuzzi.jpg",
               "./assets/snack_bandeja.jpg"
             ],
-            description: "Celebren el amor con una experiencia privada y sensorial para parejas. Incluye: Masaje con velas aromáticas 30 min, Facial iluminador 30 min, Bañera de hidromasaje 45 min, Decoración romántica, Botella de vino a su elección y Aperitivo para acompañar al vino.",
-            longDescription: [
-              "Celebren el amor con una experiencia privada y sensorial para parejas.",
-              "Incluye: 🕯️ Masaje con velas aromáticas 30 min; 💆🏻‍♀️ Facial iluminador 30 min; 🛁 Bañera de hidromasaje 45 min; 🌹 Decoración romántica con pétalos; 🍾 Botella de vino entera a su elección; 🫒 Aperitivo para acompañar al vino. Cupos limitados · Reservación anticipada."
+            "description": "Dos horas de escape en cabina doble para compartir con tu pareja: masaje sincronizado relajante, aromaterapia personalizada y copas de cortesía.",
+            "longDescription": [
+              "Una pausa romántica y acogedora de dos horas completas para parejas que desean desconectar del ajetreo diario.",
+              "Masaje corporal relajante sincronizado, aceites aromáticos afrodisíacos y una atmósfera íntima diseñada con esmero."
             ],
-            benefits: [
-              "Botella completa de vino a elección incluida",
-              "Masaje sensual con velas aromáticas tibias",
-              "Facial iluminador para ambos",
-              "Bañera de hidromasaje privada con ambientación romántica"
+            "benefits": [
+              "Desconexión conjunta en cabina doble",
+              "Alivio de tensiones y renovación del vínculo afectivo",
+              "Música envolvente y aceites aromáticos de rosas y jazmín",
+              "Detalles de cortesía románticos"
             ],
-            steps: [
-              { step: "01", title: "Bienvenida Romántica", desc: "Cabina ambientada con pétalos y velas." },
-              { step: "02", title: "Masaje con Velas (30 min)", desc: "Aceite tibio y aromaterapia envolvente." },
-              { step: "03", title: "Facial Iluminador (30 min)", desc: "Nutrición y frescura para el rostro de ambos." },
-              { step: "04", title: "Jacuzzi 45 min con Botella de Vino", desc: "Inmersión privada brindando con la botella elegida y aperitivo." }
+            "includes": [
+              "2 horas completas en cabina privada de pareja",
+              "Masaje relajante corporal para ambos",
+              "Copas de cortesía"
             ],
-            includes: [
-              "Botella de vino entera a elección",
-              "Decoración romántica con pétalos de rosa",
-              "Bañera de hidromasaje 45 min y aperitivo",
-              "Bebida no alcohólica de cortesía: Té, agua, Café, jugo y refresco"
-            ],
-            recommendations: "Indícanos si celebran aniversario o fecha especial al reservar.",
-            slug: "ritual-eternal-velvet-3-horas"
+            "recommendations": "Excelente detalle sorpresa para una fecha especial.",
+            "slug": "plan-romantico"
           },
           {
-            id: "srv_escape_romantico_spa",
-            name: "Escape Romántico spa (1 hora y 45 min aprox.)",
-            duration: "1h 45 min",
-            price: 80,
-            badge: "Desconexión",
-            image: "./assets/catalog/tarde-de-spa-para-dos-3-horas-y-30-min.webp",
-            gallery: [
+            "id": "srv_escape_romantico_spa",
+            "name": "Escape Romántico Spa",
+            "categoryTitle": "Paquetes",
+            "categoryId": "paquetes-parejas",
+            "subcategoryName": "Paquetes Signature y Rituales",
+            "price": 60,
+            "duration": "1 h 45 min aprox.",
+            "badge": "Pareja Express",
+            "image": "./assets/catalog/tarde-de-spa-para-dos-3-horas-y-30-min.webp",
+            "gallery": [
               "./assets/catalog/tarde-de-spa-para-dos-3-horas-y-30-min.webp",
-              "./assets/pareja_jacuzzi.jpg",
-              "./assets/masaje_pareja.jpg",
-              "./assets/snack_bandeja.jpg"
+              "./assets/pareja_jacuzzi.jpg"
             ],
-            description: "Incluye: Aromaterapia, Duchas climatizadas, Bañera de hidromasaje 45 min, Masaje relajante en cervical, espalda y piernas 30 min, Copa de vino y aperitivo para acompañar.",
-            longDescription: [
-              "Una pausa perfecta para desconectar de la rutina en pareja.",
-              "Incluye: ❤️ Aromaterapia; 🚿 Duchas climatizadas; 🛁 Bañera de hidromasaje 45 min; 💆🏻 Masaje relajante en cervical, espalda y piernas 30 min; 🍷🫒 Copa de vino y aperitivo para acompañar."
+            "description": "Versión condensada para disfrutar en pareja: masaje relajante de 60 minutos en cabina compartida más cóctel sin alcohol o infusión de cortesía.",
+            "longDescription": [
+              "Para parejas con agendas apretadas que no quieren renunciar a regalarse una experiencia de relajación compartida de primer nivel.",
+              "Incluye recepción con bebidas frías o calientes y masaje relajante simultáneo en cabina doble."
             ],
-            benefits: [
-              "Combinación ideal de hidromasaje y masaje relajante",
-              "Duchas climatizadas y aromaterapia envolvente",
-              "Copa de vino y aperitivo incluidos para ambos",
-              "Duración ágil y reconfortante de hora y 45 minutos"
+            "benefits": [
+              "Optimización de tiempo con máxima calidad de spa",
+              "Masaje simultáneo en cabina privada para dos",
+              "Alivio muscular y serenidad compartida",
+              "Tarifa accesible para disfrutar regularmente"
             ],
-            steps: [
-              { step: "01", title: "Aromaterapia & Duchas", desc: "Acomodación y preparación térmica." },
-              { step: "02", title: "Hidromasaje en Bañera 45 min", desc: "Baño en jacuzzi con microburbujas para dos." },
-              { step: "03", title: "Masaje Relajante de 30 min", desc: "Fricciones en espalda, cuello y piernas." },
-              { step: "04", title: "Brindis con Vino y Aperitivo", desc: "Momento íntimo con copas de vino y aperitivos." }
+            "includes": [
+              "1 hora y 45 minutos de experiencia en pareja",
+              "Masaje corporal simultáneo para ambos",
+              "Bebida no alcohólica de cortesía"
             ],
-            includes: [
-              "Bañera de hidromasaje privada 45 min",
-              "Copa de vino y picadera para cada uno",
-              "Bebida no alcohólica de cortesía: Té, agua, Café, jugo y refresco"
-            ],
-            recommendations: "Excelente opción para regalarse un respiro entre semana.",
-            slug: "tarde-de-spa-para-dos-3-horas-y-30-min"
+            "recommendations": "Ideal para coordinar entre semana al terminar la jornada.",
+            "slug": "escape-romantico-spa"
           }
         ]
       }
     ]
   },
   {
-    id: "salon-belleza",
-    title: "Salón de Belleza",
-    subtitle: "Peluquería profesional, tratamientos capilares, pedicura spa y depilación corporal",
-    icon: "Sparkles",
-    badge: "Estilo & Cuidado",
-    subcategories: [
+    "id": "salon-belleza",
+    "title": "Salón de belleza",
+    "subtitle": "Lavados, cortes, tratamientos capilares, color y pedicura spa",
+    "icon": "Sparkles",
+    "badge": "Estilismo",
+    "subcategories": [
       {
-        id: "cabello",
-        name: "Peluquería y Cuidado Capilar",
-        description: "Lavado, peinado, corte, color, mechas y tratamientos especializados para tu cabello",
-        services: [
+        "id": "salon",
+        "name": "Peluquería, Estilismo y Pedicura",
+        "description": "Cuidado capilar profesional y spa para tus pies",
+        "services": [
           {
-            id: "srv_lavar_peinar_corto",
-            name: "Lavar y peinar cabello corto",
-            duration: "45 min",
-            price: 15,
-            badge: "Cabello Corto",
-            image: "./assets/catalog/lavar-y-peinar-1-hora.webp",
-            gallery: [
+            "id": "srv_lavar_peinar_corto",
+            "name": "Lavar y peinar cabello corto",
+            "categoryTitle": "Salón de belleza",
+            "categoryId": "salon-belleza",
+            "subcategoryName": "Peluquería y Estilismo",
+            "price": 5,
+            "duration": null,
+            "badge": "Estilismo",
+            "image": "./assets/catalog/lavar-y-peinar-1-hora.webp",
+            "gallery": [
               "./assets/catalog/lavar-y-peinar-1-hora.webp",
-              "./assets/peluqueria_orig.jpg",
-              "./assets/peluqueria2_orig.jpg"
+              "./assets/peluqueria_orig.jpg"
             ],
-            description: "Incluye: Análisis del cuero cabelludo, shampoo específico, acondicionador, secado de estilo. Todos nuestros servicios incluyen una bebida no alcohólica.",
-            longDescription: [
-              "Servicio profesional para cabello corto que realza la forma y el volumen de tu corte.",
-              "Incluye: Análisis del cuero cabelludo, lavado con shampoo específico a tu necesidad, acondicionador humectante y secado de estilo profesional con cepillado."
+            "description": "Lavado profesional con champú nutritivo, acondicionador desenredante y peinado o brushing para cabello corto.",
+            "longDescription": [
+              "Servicio de peluquería profesional que incluye lavado con productos de salón de alta calidad y peinado con secador y fijadores suaves para melenas cortas."
             ],
-            benefits: [
-              "Evaluación personalizada del estado del cuero cabelludo",
-              "Uso de productos específicos profesionales",
-              "Secado y acabado de estilo definido",
-              "Bebida no alcohólica de cortesía incluida"
+            "benefits": [
+              "Cabello limpio, brillante y libre de residuos",
+              "Peinado duradero con volumen y definición",
+              "Productos profesionales nutritivos"
             ],
-            steps: [
-              { step: "01", title: "Análisis Capilar", desc: "Diagnóstico rápido del estado del cuero cabelludo." },
-              { step: "02", title: "Lavado Profesional", desc: "Shampoo específico y masaje limpiador." },
-              { step: "03", title: "Acondicionado y Enjuague", desc: "Nutrición para desenredo suave." },
-              { step: "04", title: "Secado y Peinado", desc: "Modelado con secador profesional." }
+            "includes": [
+              "Lavado con champú y acondicionador profesional",
+              "Secado y peinado para cabello corto",
+              "Bebida de cortesía"
             ],
-            includes: [
-              "Lavacabezas profesional ergonómico",
-              "Shampoo y acondicionador de línea profesional",
-              "Bebida no alcohólica de cortesía: Té, agua, Café, jugo y refresco"
-            ],
-            recommendations: "Ideal antes de reuniones, salidas o para el cuidado semanal de tu cabello.",
-            slug: "lavar-y-peinar-1-hora"
+            "recommendations": "Perfecto para antes de reuniones de trabajo o salidas sociales.",
+            "slug": "lavar-y-peinar-cabello-corto"
           },
           {
-            id: "srv_lavar_peinar_medio",
-            name: "Lavar y peinar cabello Medio",
-            duration: "50 min",
-            price: 18,
-            badge: "Cabello Medio",
-            image: "./assets/catalog/lavar-y-peinar-cabello-medio.webp",
-            gallery: [
+            "id": "srv_lavar_peinar_medio",
+            "name": "Lavar y peinar cabello medio",
+            "categoryTitle": "Salón de belleza",
+            "categoryId": "salon-belleza",
+            "subcategoryName": "Peluquería y Estilismo",
+            "price": 7,
+            "duration": null,
+            "badge": "Estilismo",
+            "image": "./assets/catalog/lavar-y-peinar-cabello-medio.webp",
+            "gallery": [
               "./assets/catalog/lavar-y-peinar-cabello-medio.webp",
-              "./assets/peluqueria2_orig.jpg",
-              "./assets/peluqueria_orig.jpg"
-            ],
-            description: "Incluye: Análisis del cuero cabelludo, shampoo específico, acondicionador, secado de estilo. Todos nuestros servicios incluyen una bebida no alcohólica.",
-            longDescription: [
-              "Cuidado y peinado para melenas de largo medio. Devolvemos el movimiento, el brillo y la soltura natural a tu cabello.",
-              "Incluye: Diagnóstico capilar, lavado purificante, acondicionamiento y secado con cepillo para un acabado impecable."
-            ],
-            benefits: [
-              "Brillo y control del frizz en melenas medianas",
-              "Movimiento y volumen natural sin apelmazar",
-              "Productos capilares de alta gama",
-              "Bebida no alcohólica de cortesía"
-            ],
-            steps: [
-              { step: "01", title: "Evaluación Capilar", desc: "Selección del shampoo idóneo para tu textura." },
-              { step: "02", title: "Lavado y Acondicionamiento", desc: "Masaje capilar en lavacabezas." },
-              { step: "03", title: "Secado de Estilo", desc: "Cepillado y moldeado profesional." },
-              { step: "04", title: "Cierre y Bebida", desc: "Toque final de brillo y bebida de cortesía." }
-            ],
-            includes: [
-              "Productos profesionales de salón",
-              "Bebida no alcohólica: Té, agua, Café, jugo y refresco"
-            ],
-            recommendations: "Recomendado para mantener las puntas sanas y el peinado perfecto.",
-            slug: "lavar-y-peinar-cabello-medio"
-          },
-          {
-            id: "srv_lavar_peinar_largo",
-            name: "Lavar y peinar largo",
-            duration: "60 min",
-            price: 22,
-            badge: "Cabello Largo",
-            image: "./assets/catalog/lavar-y-peinar.webp",
-            gallery: [
-              "./assets/catalog/lavar-y-peinar.webp",
-              "./assets/peluqueria3_orig.jpg",
-              "./assets/peluqueria_orig.jpg"
-            ],
-            description: "Incluye: Análisis del cuero cabelludo, shampoo específico, acondicionador, secado de estilo. Todos nuestros servicios incluyen una bebida no alcohólica.",
-            longDescription: [
-              "Tratamiento de lavado y peinado para cabellos largos que requieren dedicación y destreza en el cepillado.",
-              "Nutrimos de raíz a puntas para que luzcas una melena radiante, sedosa y protegida del calor del secador."
-            ],
-            benefits: [
-              "Desenredo suave sin quebrar la fibra capilar",
-              "Brillo deslumbrante y sellado de cutículas",
-              "Estilo con movimiento y definición duradera",
-              "Atención personalizada con bebida de cortesía"
-            ],
-            steps: [
-              { step: "01", title: "Diagnóstico Capilar", desc: "Evaluación de puntas y raíces." },
-              { step: "02", title: "Lavado Profundo", desc: "Doble champú y acondicionador rico en nutrientes." },
-              { step: "03", title: "Secado por Secciones", desc: "Brushing profesional con cepillo térmico." },
-              { step: "04", title: "Finalización", desc: "Sérum antifrizz y bebida no alcohólica." }
-            ],
-            includes: [
-              "Gama completa de productos profesionales",
-              "Bebida no alcohólica de cortesía: Té, agua, Café, jugo y refresco"
-            ],
-            recommendations: "Ideal para ocasiones especiales o eventos.",
-            slug: "lavar-y-peinar"
-          },
-          {
-            id: "srv_lavar_peinar_extralargo",
-            name: "Lavar y peinar cabello extra largo",
-            duration: "75 min",
-            price: 28,
-            badge: "Extra Largo",
-            image: "./assets/catalog/lavar-y-peinar-cabello-extra-largo.webp",
-            gallery: [
-              "./assets/catalog/lavar-y-peinar-cabello-extra-largo.webp",
-              "./assets/peluqueria3_orig.jpg",
-              "./assets/salon_belleza.jpg"
-            ],
-            description: "Incluye: Análisis del cuero cabelludo, shampoo específico, acondicionador, secado de estilo. Todos nuestros servicios incluyen una bebida no alcohólica.",
-            longDescription: [
-              "Cuidado experto para melenas extra largas que demandan productos concentrados y tiempo de secado técnico.",
-              "Garantizamos suavidad extrema, desenredo completo y un secado pulido con movimiento fluido."
-            ],
-            benefits: [
-              "Tratamiento meticuloso en toda la extensión del cabello",
-              "Protección térmica de medios a puntas",
-              "Melena ligera, desenredada y brillante",
-              "Bebida no alcohólica de cortesía"
-            ],
-            steps: [
-              { step: "01", title: "Evaluación y Desenredo Previo", desc: "Preparación cuidadosa de la fibra capilar." },
-              { step: "02", title: "Lavado y Acondicionamiento Intenso", desc: "Masaje de cuero cabelludo y nutrición profunda." },
-              { step: "03", title: "Secado Técnico Completo", desc: "Moldeado con secador profesional por particiones." },
-              { step: "04", title: "Cierre & Brillo", desc: "Gotas de brillo y bebida incluida." }
-            ],
-            includes: [
-              "Productos profesionales de alta fijación y brillo",
-              "Bebida no alcohólica de cortesía: Té, agua, Café, jugo y refresco"
-            ],
-            recommendations: "Permite lucir tu melena extra larga con máximo esplendor.",
-            slug: "lavar-y-peinar-cabello-extra-largo"
-          },
-          {
-            id: "srv_corte_cabello",
-            name: "Corte de cabello",
-            duration: "45 min",
-            price: 20,
-            badge: "Renueva tu Estilo",
-            popular: true,
-            image: "./assets/catalog/lavado-corte-y-peinado-de-cabello-para-mujeres.webp",
-            gallery: [
-              "./assets/catalog/lavado-corte-y-peinado-de-cabello-para-mujeres.webp",
-              "./assets/peluqueria2_orig.jpg",
-              "./assets/salon_belleza.jpg"
-            ],
-            description: "✂️ ¡Renueva tu estilo hoy! ¿Lista para un cambio de look que te haga sentir increíble? Ven a Momentos Spa y deja que nuestros expertos transformen tu estilo con cortes modernos, precisos y personalizados.",
-            longDescription: [
-              "✂️ ¡Renueva tu estilo hoy! ✂️✨",
-              "¿Lista para un cambio de look que te haga sentir increíble? Ven a Momentos Spa y deja que nuestros estilistas transformen tu estilo con cortes que favorecen la armonía de tus facciones y respetan la caída natural de tu cabello."
-            ],
-            benefits: [
-              "Asesoría de imagen previa según tus rasgos faciales",
-              "Técnicas de corte precisas y modernas",
-              "Saneamiento de puntas abiertas y volumen equilibrado",
-              "Bebida de cortesía incluida"
-            ],
-            steps: [
-              { step: "01", title: "Asesoría de Estilo", desc: "Definición del largo y forma que deseas." },
-              { step: "02", title: "Lavado Previo", desc: "Higiene y acondicionamiento capilar." },
-              { step: "03", title: "Corte Técnico de Precisión", desc: "Realización del corte con tijeras profesionales." },
-              { step: "04", title: "Secado y Retoque", desc: "Comprobación del acabado en seco y bebida de cortesía." }
-            ],
-            includes: [
-              "Tijeras y herramientas profesionales de precisión",
-              "Lavado previo de cortesía",
-              "Bebida no alcohólica: Té, agua, Café, jugo y refresco"
-            ],
-            recommendations: "Trae fotos de referencia si buscas un cambio de look radical.",
-            slug: "lavado-corte-y-peinado-de-cabello-para-mujeres"
-          },
-          {
-            id: "srv_antifrizz_felps",
-            name: "Tratamiento Anti- Frizz FELPS( 1oz )",
-            duration: "60-90 min",
-            price: 35,
-            badge: "Control Frizz",
-            image: "./assets/catalog/tratamiento-anti-frizz-felps.webp",
-            gallery: [
-              "./assets/catalog/tratamiento-anti-frizz-felps.webp",
-              "./assets/peluqueria3_orig.jpg",
-              "./assets/salon_belleza.jpg"
-            ],
-            description: "Incluye: Aplicación del producto, gorro térmico, lavado y peinado. El tratamiento FELPS profesional controla el frizz, reduce el volumen y alisa el cabello. El precio es por 1 onza.",
-            longDescription: [
-              "El tratamiento FELPS profesional es la solución definitiva para controlar el frizz rebelde, reducir el volumen excesivo y aportar un liso disciplinado con brillo espejo.",
-              "Incluye: Aplicación técnica del producto, tiempo de pose con gorro térmico para fijar los activos, lavado y peinado final de secado. (Precio por 1 onza de producto)."
-            ],
-            benefits: [
-              "Control drástico y duradero del encrespamiento",
-              "Reducción del volumen capilar rebelde",
-              "Cabello suave, disciplinado y fácil de peinar",
-              "Brillo intenso y protección contra la humedad de La Habana"
-            ],
-            steps: [
-              { step: "01", title: "Lavado Purificante", desc: "Apertura de cutículas capilares." },
-              { step: "02", title: "Aplicación FELPS", desc: "Distribución mecha a mecha de la fórmula profesional." },
-              { step: "03", title: "Gorro Térmico", desc: "Activación por calor controlado para penetración de activos." },
-              { step: "04", title: "Lavado, Secado y Peinado", desc: "Sellado del tratamiento y bebida no alcohólica incluida." }
-            ],
-            includes: [
-              "Producto FELPS original profesional (1 oz)",
-              "Uso de gorro térmico profesional",
-              "Lavado y peinado final",
-              "Bebida no alcohólica de cortesía: Té, agua, Café, jugo y refresco"
-            ],
-            recommendations: "La cantidad de onzas requeridas depende del largo y volumen de tu cabello.",
-            slug: "tratamiento-anti-frizz-felps"
-          },
-          {
-            id: "srv_scalp_balance_detox",
-            name: "Experiencia Capilar “Scalp Balance Detox”(60'-90')",
-            duration: "60-90 min",
-            price: 45,
-            badge: "Detox Capilar",
-            popular: true,
-            image: "./assets/catalog/experiencia-capilar-scalp-balance-detox-60-90.webp",
-            gallery: [
-              "./assets/catalog/experiencia-capilar-scalp-balance-detox-60-90.webp",
-              "./assets/head_spa.jpg",
-              "./assets/peluqueria_orig.jpg"
-            ],
-            description: "Ideal para combatir exceso de grasa, descamación y sensibilidad. Incluye: Análisis del cuero cabelludo, exfoliación craneal detox, lavado con shampoo bivalente, ampolletas de tratamiento, masaje craneal terapéutico y alta frecuencia capilar.",
-            longDescription: [
-              "Ideal para combatir exceso de grasa, descamación y sensibilidad mientras se brinda una experiencia relajante y restauradora.",
-              "Incluye: 🔬 Análisis profesional del cuero cabelludo; ✨ Exfoliación craneal detox; 🧴 Lavado con shampoo específico bivalente; 💧 Ampolletas de tratamiento capilar; 💆‍♂️ Masaje craneal terapéutico; ⚡ Alta frecuencia capilar oxigenante.",
-              "Beneficios: Disminuye la caspa y descamación, equilibra grasa y resequedad, purifica y calma, estimula la circulación y aporta una frescura inigualable."
-            ],
-            benefits: [
-              "Diagnóstico y análisis visual del cuero cabelludo",
-              "Exfoliación profunda que remueve impurezas y células muertas",
-              "Tratamiento con ampolletas concentradas y masaje terapéutico",
-              "Alta frecuencia que oxigena y estimula el crecimiento saludable"
-            ],
-            steps: [
-              { step: "01", title: "Análisis con Micro-Cámara", desc: "Evaluación de descamación, sensibilidad y grasa." },
-              { step: "02", title: "Exfoliación Detox Craneal", desc: "Limpieza profunda de folículos y cuero cabelludo." },
-              { step: "03", title: "Lavado Bivalente & Ampolletas", desc: "Equilibrio de raíz y nutrición de puntas secas." },
-              { step: "04", title: "Masaje & Alta Frecuencia", desc: "Estimulación bactericida y bebida de cortesía." }
-            ],
-            includes: [
-              "Aparatología de alta frecuencia capilar",
-              "Ampolletas y exfoliantes específicos detox",
-              "Bebida no alcohólica de cortesía: Té, agua, Café, jugo y refresco"
-            ],
-            recommendations: "Duración estimada de 60 a 90 minutos de puro alivio y oxigenación capilar.",
-            slug: "experiencia-capilar-scalp-balance-detox-60-90"
-          },
-          {
-            id: "srv_color_1oz",
-            name: "Color (1 Oz )",
-            duration: "60-90 min",
-            price: 25,
-            badge: "Coloración",
-            image: "./assets/catalog/balayage-mechas-premium.webp",
-            gallery: [
-              "./assets/catalog/balayage-mechas-premium.webp",
-              "./assets/salon_belleza.jpg",
-              "./assets/peluqueria_orig.jpg"
-            ],
-            description: "Tu cabello merece atención exclusiva y personalizada. Transforma tu look con tonos que reflejen tu estilo y personalidad, con técnicas profesionales y productos de calidad.",
-            longDescription: [
-              "Tu cabello merece atención exclusiva y personalizada. Transforma tu look con tonos que reflejen tu estilo y personalidad, con técnicas profesionales.",
-              "Trabajamos con tintes de alta cobertura de canas y fidelidad de reflejos, protegiendo la fibra capilar durante el proceso químico. (Precio por 1 onza de tinte)."
-            ],
-            benefits: [
-              "Cobertura perfecta de canas y reflejos vibrantes",
-              "Asesoría personalizada en colorimetría",
-              "Fórmulas con acondicionadores protectores",
-              "Bebida no alcohólica de cortesía"
-            ],
-            steps: [
-              { step: "01", title: "Prueba de Color y Asesoría", desc: "Selección del tono adecuado a tu tono de piel." },
-              { step: "02", title: "Aplicación Meticulosa", desc: "Distribución uniforme del color en raíces o medios." },
-              { step: "03", title: "Tiempo de Acción", desc: "Fijación del pigmento bajo control visual." },
-              { step: "04", title: "Lavado Sellador y Peinado", desc: "Emulsión post-color y bebida de cortesía." }
-            ],
-            includes: [
-              "Tinte profesional de salón (1 oz)",
-              "Lavado y acondicionador post-color",
-              "Bebida no alcohólica de cortesía: Té, agua, Café, jugo y refresco"
-            ],
-            recommendations: "El número de onzas dependerá del largo y densidad de tu cabello.",
-            slug: "balayage-mechas-premium"
-          },
-          {
-            id: "srv_decoloracion_1oz",
-            name: "Decoloración ( 1oz )",
-            duration: "60-90 min",
-            price: 30,
-            badge: "Aclarado Técnico",
-            image: "./assets/catalog/decoloracion-o-mechas-30-g.webp",
-            gallery: [
-              "./assets/catalog/decoloracion-o-mechas-30-g.webp",
-              "./assets/salon_belleza.jpg",
               "./assets/peluqueria2_orig.jpg"
             ],
-            description: "Trabajamos con los mejores productos para que tu cabello se mantenga sano y con brillo. Transforma tu look con tonos que reflejen tu estilo.",
-            longDescription: [
-              "Trabajamos con los mejores productos para que tu cabello se mantenga sano y con brillo. Transforma tu look con tonos que reflejen tu estilo.",
-              "Aclaración técnica controlada que respeta los puentes disulfuro del cabello para conseguir fondos de decoloración limpios sin quiebre. (Precio por 1 onza)."
+            "description": "Lavado completo y peinado estructurado para cabello de longitud media (a la altura de los hombros).",
+            "longDescription": [
+              "Lavado con cosmética capilar premium que hidrata y aporta soltura, seguido de peinado profesional con cepillo redondo o plancha según preferencia."
             ],
-            benefits: [
-              "Decolorantes con protectores de fibra capilar",
-              "Aclarado parejo y sin manchas",
-              "Conservación del brillo y elasticidad del cabello",
-              "Bebida de cortesía incluida"
+            "benefits": [
+              "Manejo impecable del frizz y movimiento natural",
+              "Brillo radiante y sellado de cutícula",
+              "Estilo pulido y duradero"
             ],
-            steps: [
-              { step: "01", title: "Diagnóstico de Resistencia", desc: "Comprobación de la fuerza del cabello." },
-              { step: "02", title: "Preparación de la Mezcla", desc: "Fórmula aclarante equilibrada." },
-              { step: "03", title: "Monitoreo Técnico", desc: "Control minuto a minuto del aclarado." },
-              { step: "04", title: "Enjuague Neutralizante", desc: "Lavado acondicionador y bebida incluida." }
+            "includes": [
+              "Lavado capilar con champú y mascarilla",
+              "Brushing o peinado para cabello medio",
+              "Bebida de cortesía"
             ],
-            includes: [
-              "Polvo decolorante profesional premium",
-              "Tratamiento acondicionador",
-              "Bebida no alcohólica de cortesía: Té, agua, Café, jugo y refresco"
-            ],
-            recommendations: "Recomendado para mechas, balayage o fondos de color claros.",
-            slug: "decoloracion-o-mechas-30-g"
+            "recommendations": "Consúltale a tu estilista el estilo de peinado que mejor favorezca tus rasgos.",
+            "slug": "lavar-y-peinar-cabello-medio"
           },
           {
-            id: "srv_tratamientos_capilares",
-            name: "Tratamientos capilares",
-            duration: "45-60 min",
-            price: 25,
-            badge: "Reparación",
-            image: "./assets/catalog/tratamientos-capilares-4t.webp",
-            gallery: [
-              "./assets/catalog/tratamientos-capilares-4t.webp",
-              "./assets/peluqueria3_orig.jpg",
-              "./assets/salon_belleza.jpg"
+            "id": "srv_lavar_peinar_largo",
+            "name": "Lavar y peinar cabello largo",
+            "categoryTitle": "Salón de belleza",
+            "categoryId": "salon-belleza",
+            "subcategoryName": "Peluquería y Estilismo",
+            "price": 9,
+            "duration": null,
+            "badge": "Estilismo",
+            "image": "./assets/catalog/lavar-y-peinar.webp",
+            "gallery": [
+              "./assets/catalog/lavar-y-peinar.webp",
+              "./assets/peluqueria3_orig.jpg"
             ],
-            description: "Un tratamiento capilar ayuda a frenar la caída del cabello, ya que favorece la regeneración capilar. Con él se puede fortalecer, dar más brillo y reparar el daño. (El precio varía según el largo del cabello).",
-            longDescription: [
-              "Un tratamiento capilar ayuda a frenar la caída del cabello, ya que favorece la regeneración capilar.",
-              "Con él se puede fortalecer la cutícula, aportar elasticidad, recuperar el brillo y sellar las puntas dañadas por químicos o calor. El precio varía según el largo y cantidad de producto utilizado."
+            "description": "Lavado hidratante con desenredado minucioso y peinado con secador o plancha para cabello largo.",
+            "longDescription": [
+              "Atención especial para melenas largas: lavado suave, nutrición de medios a puntas con mascarilla selladora y peinado con movimiento, ondas o alisado perfecto."
             ],
-            benefits: [
-              "Fortalecimiento de la fibra capilar debilitada",
-              "Estimulación de la regeneración y control de caída",
-              "Brillo deslumbrante y tacto sedoso inmediato",
-              "Bebida de cortesía incluida"
+            "benefits": [
+              "Desenredado sin tirones ni rotura de fibra",
+              "Puntas selladas y cabello con caída suave",
+              "Aspecto de peluquería impecable"
             ],
-            steps: [
-              { step: "01", title: "Diagnóstico Capilar", desc: "Identificación de resequedad, daño químico o debilidad." },
-              { step: "02", title: "Lavado Preparatorio", desc: "Shampoo que optimiza la penetración de la mascarilla." },
-              { step: "03", title: "Aplicación y Pose Térmica", desc: "Mascarilla reconstructora con calor activo." },
-              { step: "04", title: "Enjuague y Secado", desc: "Sellado de la hebra y bebida de cortesía." }
+            "includes": [
+              "Lavado y acondicionamiento profundo",
+              "Peinado profesional para cabello largo",
+              "Bebida de cortesía"
             ],
-            includes: [
-              "Mascarillas y cócteles capilares reconstructores",
-              "Bebida no alcohólica: Té, agua, Café, jugo y refresco"
-            ],
-            recommendations: "Excelente para cabellos procesados con tintes o decoloraciones.",
-            slug: "tratamientos-capilares-4t"
-          }
-        ]
-      },
-      {
-        id: "manicura-pedicura",
-        name: "Manicura y Pedicura",
-        description: "Cuidado higiénico, estético e hidratación profunda para pies y manos",
-        services: [
+            "recommendations": "Añade un tratamiento de nutrición si tus puntas se sienten secas.",
+            "slug": "lavar-y-peinar-cabello-largo"
+          },
           {
-            id: "srv_pedicura_spa_90",
-            name: "Pedicura spa ( 1 hora y 30 min )",
-            duration: "1h 30 min",
-            price: 25,
-            badge: "Pies Perfectos",
-            popular: true,
-            image: "./assets/catalog/pedicura-spa-1-hora.webp",
-            gallery: [
+            "id": "srv_lavar_peinar_extralargo",
+            "name": "Lavar y peinar cabello extra largo",
+            "categoryTitle": "Salón de belleza",
+            "categoryId": "salon-belleza",
+            "subcategoryName": "Peluquería y Estilismo",
+            "price": 12,
+            "duration": null,
+            "badge": "Estilismo Melena",
+            "image": "./assets/catalog/lavar-y-peinar-cabello-extra-largo.webp",
+            "gallery": [
+              "./assets/catalog/lavar-y-peinar-cabello-extra-largo.webp",
+              "./assets/peluqueria_orig.jpg"
+            ],
+            "description": "Lavado y peinado especializado para melenas abundantes y de longitud extra larga. Tratamiento minucioso de medios y puntas.",
+            "longDescription": [
+              "Cuidado exhaustivo para cabellos por debajo de la cintura o de gran volumen: lavado con productos enriquecidos, secado por secciones y peinado de alta definición."
+            ],
+            "benefits": [
+              "Control del volumen y eliminación del encrespamiento",
+              "Manejo experto de melenas muy largas",
+              "Brillo de raíz a puntas sin sobrecalentar el cabello"
+            ],
+            "includes": [
+              "Lavado integral con mascarilla acondicionadora",
+              "Secado y moldeado de cabello extra largo",
+              "Bebida de cortesía"
+            ],
+            "recommendations": "Disfruta de tu bebida de cortesía mientras nuestras estilistas miman tu cabello.",
+            "slug": "lavar-y-peinar-cabello-extra-largo"
+          },
+          {
+            "id": "srv_corte_cabello",
+            "name": "Corte de cabello",
+            "categoryTitle": "Salón de belleza",
+            "categoryId": "salon-belleza",
+            "subcategoryName": "Peluquería y Estilismo",
+            "price": 5,
+            "duration": null,
+            "badge": "Corte & Estilo",
+            "image": "./assets/catalog/lavado-corte-y-peinado-de-cabello-para-mujeres.webp",
+            "gallery": [
+              "./assets/catalog/lavado-corte-y-peinado-de-cabello-para-mujeres.webp",
+              "./assets/peluqueria_orig.jpg"
+            ],
+            "description": "Asesoría de imagen, saneamiento de puntas o cambio de look radical realizado por nuestras estilistas profesionales.",
+            "longDescription": [
+              "Corte de precisión adaptado a la forma de tu rostro y textura natural de tu cabello. Desde saneamiento de puntas hasta cortes en capas, bobs o estilos vanguardistas."
+            ],
+            "benefits": [
+              "Eliminación de puntas abiertas y orquillas",
+              "Renovación del volumen y caída natural",
+              "Asesoramiento personalizado según tu fisonomía"
+            ],
+            "includes": [
+              "Diagnóstico capilar y corte profesional",
+              "Peinado básico final",
+              "Bebida de cortesía"
+            ],
+            "recommendations": "Puedes traer fotos de referencia del estilo que deseas lograr.",
+            "slug": "corte-de-cabello"
+          },
+          {
+            "id": "srv_antifrizz_felps",
+            "name": "Tratamiento Anti-Frizz FELPS",
+            "categoryTitle": "Salón de belleza",
+            "categoryId": "salon-belleza",
+            "subcategoryName": "Peluquería y Estilismo",
+            "price": 15,
+            "duration": null,
+            "badge": "Botox Capilar & Control",
+            "image": "./assets/catalog/tratamiento-anti-frizz-felps.webp",
+            "gallery": [
+              "./assets/catalog/tratamiento-anti-frizz-felps.webp",
+              "./assets/peluqueria2_orig.jpg"
+            ],
+            "description": "Tratamiento disciplinante con fórmula FELPS que sella la cutícula, reduce el encrespamiento por humedad y aporta brillo espejo.",
+            "longDescription": [
+              "Tratamiento intensivo con la reconocida línea brasileña FELPS. Rellena la fibra capilar con aminoácidos y queratina hidrolizada para controlar el frizz persistente del clima caribeño."
+            ],
+            "benefits": [
+              "Control total del encrespamiento frente a la humedad",
+              "Efecto alisador suave y disciplina de la onda",
+              "Brillo espejo y tacto sedoso inmediato",
+              "Duración prolongada de varias semanas"
+            ],
+            "includes": [
+              "Aplicación de tratamiento FELPS",
+              "Sellado térmico con plancha profesional",
+              "Bebida de cortesía"
+            ],
+            "recommendations": "Evita lavar el cabello las primeras 48 horas tras la aplicación para fijar los activos.",
+            "slug": "tratamiento-anti-frizz-felps"
+          },
+          {
+            "id": "srv_scalp_balance_detox",
+            "name": "Experiencia Capilar “Scalp Balance Detox”",
+            "categoryTitle": "Salón de belleza",
+            "categoryId": "salon-belleza",
+            "subcategoryName": "Peluquería y Estilismo",
+            "price": 35,
+            "duration": "60–90 min",
+            "badge": "Head Spa Signature",
+            "image": "./assets/catalog/experiencia-capilar-scalp-balance-detox-60-90.webp",
+            "gallery": [
+              "./assets/catalog/experiencia-capilar-scalp-balance-detox-60-90.webp",
+              "./assets/head_spa.jpg"
+            ],
+            "description": "Ritual de bienestar inspirado en el Head Spa japonés: exfoliación del cuero cabelludo, masaje craneal con cascada de agua tibia, mascarilla botánica y alta frecuencia.",
+            "longDescription": [
+              "Nuestra joya del salón inspirada en los famosos Head Spas de Japón. Trata la salud del cuero cabelludo como la raíz de un cabello espléndido.",
+              "Comienza con exfoliación purificante, hidroterapia con arco de agua tibia relajante, masaje craneal descontracturante, electroterapia y mascarilla de nutrición profunda."
+            ],
+            "benefits": [
+              "Desintoxicación del cuero cabelludo de excesos sebáceos y caspa",
+              "Estimulación profunda del crecimiento del cabello",
+              "Alivio del estrés mental y dolor de cabeza",
+              "Sensación de frescura y ligereza inigualable"
+            ],
+            "includes": [
+              "Sesión completa de 60 a 90 minutos en camilla con arco de agua",
+              "Masaje craneal, cervical y de hombros",
+              "Productos botánicos purificantes",
+              "Bebida de cortesía"
+            ],
+            "recommendations": "Nuestra experiencia capilar más elogiada en reseñas.",
+            "slug": "experiencia-capilar-scalp-balance-detox"
+          },
+          {
+            "id": "srv_color_1oz",
+            "name": "Color",
+            "categoryTitle": "Salón de belleza",
+            "categoryId": "salon-belleza",
+            "subcategoryName": "Peluquería y Estilismo",
+            "price": 5,
+            "duration": null,
+            "badge": "Coloración",
+            "image": "./assets/catalog/balayage-mechas-premium.webp",
+            "gallery": [
+              "./assets/catalog/balayage-mechas-premium.webp",
+              "./assets/peluqueria3_orig.jpg"
+            ],
+            "description": "Aplicación de tinte profesional, cobertura total de canas o baño de color para reavivar tonos y reflejos.",
+            "longDescription": [
+              "Coloración profesional con tintes que respetan la estructura capilar, garantizando tonos vibrantes, cobertura óptima de canas y brillo duradero."
+            ],
+            "benefits": [
+              "Cobertura perfecta de canas desde la raíz",
+              "Tonos intensos con reflejos luminosos",
+              "Fórmulas con agentes protectores del brillo"
+            ],
+            "includes": [
+              "Aplicación de coloración profesional",
+              "Lavado con champú post-color fijador",
+              "Bebida de cortesía"
+            ],
+            "recommendations": "Consulta con nuestra colorista para elegir el matiz perfecto.",
+            "slug": "color"
+          },
+          {
+            "id": "srv_decoloracion_1oz",
+            "name": "Decoloración",
+            "categoryTitle": "Salón de belleza",
+            "categoryId": "salon-belleza",
+            "subcategoryName": "Peluquería y Estilismo",
+            "price": 7,
+            "duration": null,
+            "badge": "Aclarado Técnico",
+            "image": "./assets/catalog/decoloracion-o-mechas-30-g.webp",
+            "gallery": [
+              "./assets/catalog/decoloracion-o-mechas-30-g.webp",
+              "./assets/peluqueria3_orig.jpg"
+            ],
+            "description": "Técnica de aclarado controlado para mechas, balayage o fondos de decoloración con protectores plex para cuidar la fibra capilar.",
+            "longDescription": [
+              "Proceso técnico de aclarado del cabello mediante decolorantes formulados con aditivos protectores que minimizan la agresión sobre la cutícula."
+            ],
+            "benefits": [
+              "Aclarado parejo y limpio para fondos rubios o fantasía",
+              "Cuidado de la fibra con aditivos protectores",
+              "Técnica personalizada para mechas o balayage"
+            ],
+            "includes": [
+              "Proceso de decoloración técnica",
+              "Lavado neutralizante y tratamiento protector",
+              "Bebida de cortesía"
+            ],
+            "recommendations": "Se sugiere acompañar con un tratamiento reconstructor capilar.",
+            "slug": "decoloracion"
+          },
+          {
+            "id": "srv_tratamientos_capilares",
+            "name": "Tratamientos capilares",
+            "categoryTitle": "Salón de belleza",
+            "categoryId": "salon-belleza",
+            "subcategoryName": "Peluquería y Estilismo",
+            "price": 10,
+            "duration": null,
+            "badge": "Reparación & Brillo",
+            "image": "./assets/catalog/tratamientos-capilares-4t.webp",
+            "gallery": [
+              "./assets/catalog/tratamientos-capilares-4t.webp",
+              "./assets/peluqueria2_orig.jpg"
+            ],
+            "description": "Ampollas nutritivas, cócteles de hidratación profunda y mascarillas de queratina para recuperar cabellos secos o castigados.",
+            "longDescription": [
+              "Protocolo de emergencia capilar para devolverle la vida a cabellos deshidratados, opacos o químicamente tratados con mascarillas y ampollas concentradas."
+            ],
+            "benefits": [
+              "Sellado de puntas abiertas y disminución de quiebre",
+              "Recuperación de la elasticidad y suavidad perdida",
+              "Nutrición profunda de la cutícula"
+            ],
+            "includes": [
+              "Diagnóstico de la hebra capilar",
+              "Aplicación de cóctel de mascarilla y ampolla térmica",
+              "Bebida de cortesía"
+            ],
+            "recommendations": "Excelente adición antes o después de cualquier peinado o corte.",
+            "slug": "tratamientos-capilares"
+          },
+          {
+            "id": "srv_pedicura_spa_90",
+            "name": "Pedicura Spa",
+            "categoryTitle": "Salón de belleza",
+            "categoryId": "salon-belleza",
+            "subcategoryName": "Manicura y Pedicura",
+            "price": 12,
+            "duration": "1 h 30 min",
+            "badge": "Pies Perfectos",
+            "image": "./assets/catalog/pedicura-spa-1-hora.webp",
+            "gallery": [
               "./assets/catalog/pedicura-spa-1-hora.webp",
               "./assets/pedicura_orig.jpg",
               "./assets/pedicura2_orig.jpg"
             ],
-            description: "Incluye: 👣 Pedicura regular, 🌻 Exfoliante para pies, 🕯️ Parafina para una hidratación más profunda. (No incluye esmalte).",
-            longDescription: [
-              "Una experiencia de descanso y embellecimiento total para tus pies.",
-              "Incluye: 👣 Pedicura regular completa con limado y arreglo de cutículas; 🌻 Exfoliante para pies que retira impurezas y asperezas; 🕯️ Parafina térmica para una hidratación mucho más profunda y sedosidad duradera. (No incluye esmalte)."
+            "description": "Cuidado completo para pies: remojo en sales, exfoliación, limado, tratamiento de cutículas, masaje relajante en pies y esmaltado.",
+            "longDescription": [
+              "Una hora y media de descanso para tus pies: baño en tina con sales aromáticas, limado y pulido de uñas, exfoliación con scrub de azúcar, masaje relajante y esmaltado tradicional o pulido natural."
             ],
-            benefits: [
-              "Arreglo higiénico completo de uñas y cutículas",
-              "Exfoliación que remueve asperezas en talones y plantas",
-              "Parafina tibia que nutre intensamente la piel seca",
-              "Descanso y relajación profunda en piernas y pies"
+            "benefits": [
+              "Eliminación de piel seca y callosidades suaves",
+              "Uñas perfectamente delineadas y limpias",
+              "Alivio del dolor y descanso en los pies",
+              "Esmaltado prolijo de larga duración"
             ],
-            steps: [
-              { step: "01", title: "Remojo y Pedicura Regular", desc: "Ablandamiento, corte anatómico y limado de uñas." },
-              { step: "02", title: "Exfoliante para Pies", desc: "Masaje exfoliante que retira células muertas." },
-              { step: "03", title: "Baño de Parafina", desc: "Inmersión en parafina caliente para sellar hidratación." },
-              { step: "04", title: "Retiro y Masaje Final", desc: "Masaje relajante y bebida no alcohólica de cortesía." }
-            ],
-            includes: [
-              "Kit higiénico desinfectado",
-              "Parafina terapéutica",
-              "Bebida no alcohólica de cortesía: Té, agua, Café, jugo y refresco"
-            ],
-            recommendations: "Tus pies quedarán descansados y completamente rejuvenecidos.",
-            slug: "pedicura-spa-1-hora"
-          },
-          {
-            id: "srv_anticallosidad_pies",
-            name: "Tratamiento anti callosidad para los pies",
-            duration: "45 min",
-            price: 20,
-            badge: "Suavidad Podal",
-            image: "./assets/catalog/manicura-spa.webp",
-            gallery: [
-              "./assets/catalog/manicura-spa.webp",
-              "./assets/pedicura2_orig.jpg",
-              "./assets/pedicura_orig.jpg"
-            ],
-            description: "Los callos y callosidades son capas duras y gruesas de piel que aparecen cuando la piel intenta protegerse de la fricción o presión. Este tratamiento especializado ablanda y retira las durezas devolviendo la suavidad a la planta de tus pies.",
-            longDescription: [
-              "Los callos y las callosidades son capas duras y gruesas de piel que aparecen cuando la piel intenta protegerse de la fricción o la presión constante del calzado.",
-              "Este tratamiento podológico cosmético utiliza fórmulas queratolíticas seguras y limado técnico para eliminar durezas sin cortar ni lastimar la piel sana, devolviendo una pisada cómoda y ligera."
-            ],
-            benefits: [
-              "Eliminación segura de callosidades y durezas en talones",
-              "Alivio del dolor y molestias al caminar",
-              "Regeneración de la piel con cremas ricas en urea",
-              "Bebida no alcohólica de cortesía"
-            ],
-            steps: [
-              { step: "01", title: "Reblandecimiento Específico", desc: "Aplicación de compresas con activos queratolíticos." },
-              { step: "02", title: "Retiro Técnico de Callos", desc: "Desbaste suave de las capas engrosadas." },
-              { step: "03", title: "Pulido y Exfoliación", desc: "Suavizado de la superficie podal." },
-              { step: "04", title: "Bálsamo Reparador & Bebida", desc: "Crema ultra hidratante y bebida de cortesía." }
-            ],
-            includes: [
-              "Productos especializados anti-callosidades",
-              "Instrumental esterilizado",
-              "Bebida no alcohólica de cortesía"
-            ],
-            recommendations: "Recomendado tanto para damas como para caballeros.",
-            slug: "manicura-spa"
-          }
-        ]
-      },
-      {
-        id: "depilacion",
-        name: "Servicios de Depilación",
-        description: "Depilación profesional con cera tibia en cabina privada higienizada",
-        services: [
-          {
-            id: "srv_depilacion_axilas",
-            name: "Depilación de axilas",
-            duration: "20 min",
-            price: 10,
-            badge: "Cera Tibia",
-            image: "./assets/catalog/depilacion-de-axilas-5my9n.webp",
-            gallery: [
-              "./assets/catalog/depilacion-de-axilas-5my9n.webp",
-              "./assets/pestanas_orig.jpg",
-              "./assets/ojos_orig.jpg"
-            ],
-            description: "Depilación con cera en axilas. Técnica rápida, higiénica y suave que retira el vello de raíz.",
-            longDescription: [
-              "Depilación con cera en axilas en cabina privada.",
-              "Utilizamos ceras de baja temperatura enriquecidas con agentes calmantes para minimizar el enrojecimiento y dejar la piel suave durante semanas."
-            ],
-            benefits: [
-              "Retiro del vello de raíz para mayor duración",
-              "Piel suave sin cortes de afeitadora",
-              "Debilitamiento progresivo del vello",
-              "Bebida no alcohólica de cortesía"
-            ],
-            steps: [
-              { step: "01", title: "Limpieza Previa", desc: "Desinfección de la zona axilar." },
-              { step: "02", title: "Aplicación de Cera Tibia", desc: "Técnica rápida y precisa." },
-              { step: "03", title: "Gel Post-Depilatorio", desc: "Calmante de aloe vera para evitar rojeces." },
-              { step: "04", title: "Bebida de Cortesía", desc: "Infusión o refresco al terminar." }
-            ],
-            includes: [
-              "Cera desechable de un solo uso",
-              "Gel calmante de aloe vera",
-              "Bebida no alcohólica de cortesía"
-            ],
-            recommendations: "No aplicar desodorante con alcohol inmediatamente después.",
-            slug: "depilacion-de-axilas-5my9n"
-          },
-          {
-            id: "srv_depilacion_piernas",
-            name: "Depilación de piernas",
-            duration: "45 min",
-            price: 20,
-            badge: "Pierna Completa",
-            image: "./assets/catalog/depilacion-de-piernas-geakj.webp",
-            gallery: [
-              "./assets/catalog/depilacion-de-piernas-geakj.webp",
-              "./assets/pestanas_orig.jpg",
-              "./assets/ojos_orig.jpg"
-            ],
-            description: "Depilación con cera de pierna entera. Deja tus piernas impecables, suaves y libres de vello por semanas.",
-            longDescription: [
-              "Depilación con cera de pierna entera en cabina climatizada.",
-              "Elimina el vello desde la raíz en muslos y pantorrillas, asegurando una piel tersa y suave hasta por 4 semanas."
-            ],
-            benefits: [
-              "Pierna entera (muslos, rodillas y pantorrillas)",
-              "Arrastre limpio desde la raíz",
-              "Piel suave y sedosa al tacto",
-              "Bebida no alcohólica de cortesía"
-            ],
-            steps: [
-              { step: "01", title: "Preparación", desc: "Higiene y talco mineral en la piel." },
-              { step: "02", title: "Aplicación por Tramos", desc: "Cera tibia extendida de forma homogénea." },
-              { step: "03", title: "Retirada Rápida", desc: "Tracción firme y limpia sin dañar la piel." },
-              { step: "04", title: "Aceite Calmante & Bebida", desc: "Masaje post-depilatorio y bebida incluida." }
-            ],
-            includes: [
-              "Cera profesional para áreas extensas",
-              "Aceite hidratante post-cera",
-              "Bebida no alcohólica de cortesía"
-            ],
-            recommendations: "Evitar exposición solar intensa las primeras 24 horas.",
-            slug: "depilacion-de-piernas-geakj"
-          },
-          {
-            id: "srv_depilacion_cejas",
-            name: "Depilación Cejas",
-            duration: "20 min",
-            price: 10,
-            badge: "Perfilado",
-            image: "./assets/catalog/cejas-u.webp",
-            gallery: [
-              "./assets/catalog/cejas-u.webp",
-              "./assets/ojos_orig.jpg",
-              "./assets/pestanas_orig.jpg"
-            ],
-            description: "Depilación y diseño de cejas con cera y pinzas para realzar la armonía de tu mirada.",
-            longDescription: [
-              "Depilación y perfilado de cejas profesional.",
-              "Definimos el arco y grosor óptimo para enmarcar tu mirada con naturalidad y limpieza impecable."
-            ],
-            benefits: [
-              "Diseño adaptado a las facciones de tu rostro",
-              "Retiro preciso con cera y pinza",
-              "Mirada limpia, despejada y elegante",
+            "includes": [
+              "90 minutos de pedicura spa completa",
+              "Exfoliación, masaje y esmaltado",
               "Bebida de cortesía"
             ],
-            steps: [
-              { step: "01", title: "Diseño y Marcaje", desc: "Definición del contorno deseado." },
-              { step: "02", title: "Cera Facial", desc: "Retiro del exceso de vello periocular." },
-              { step: "03", title: "Retoque con Pinza", desc: "Precisión pelo a pelo." },
-              { step: "04", title: "Gel Calmante & Bebida", desc: "Toque descongestivo y bebida de cortesía." }
-            ],
-            includes: [
-              "Cera especial para piel sensible facial",
-              "Bebida no alcohólica de cortesía"
-            ],
-            recommendations: "Ideal para mantener la forma cada 2 a 3 semanas.",
-            slug: "cejas-u"
+            "recommendations": "Traer calzado abierto para permitir el secado perfecto del esmalte.",
+            "slug": "pedicura-spa"
           },
           {
-            id: "srv_depilacion_bozo_menton",
-            name: "Depilación de Bozo y mentón",
-            duration: "20 min",
-            price: 10,
-            badge: "Facial Delicado",
-            image: "./assets/catalog/bozo-y-menton.webp",
-            gallery: [
-              "./assets/catalog/bozo-y-menton.webp",
-              "./assets/ojos_orig.jpg",
+            "id": "srv_anticallosidad_pies",
+            "name": "Tratamiento anti-callosidad para los pies",
+            "categoryTitle": "Salón de belleza",
+            "categoryId": "salon-belleza",
+            "subcategoryName": "Manicura y Pedicura",
+            "price": 15,
+            "duration": null,
+            "badge": "Podológico & Suavidad",
+            "image": "./assets/catalog/manicura-spa.webp",
+            "gallery": [
+              "./assets/catalog/manicura-spa.webp",
+              "./assets/pedicura2_orig.jpg"
+            ],
+            "description": "Tratamiento intensivo con lociones queratolíticas para ablandar y eliminar durezas y callosidades rebeldes en talones y plantas de los pies.",
+            "longDescription": [
+              "Protocolo intensivo enfocado en restaurar pies con durezas severas, hiperqueratosis o talones agrietados. Ablanda las capas córneas engrosadas para removerlas sin lastimar la piel sana."
+            ],
+            "benefits": [
+              "Eliminación eficaz de durezas gruesas y asperezas",
+              "Regeneración de talones agrietados",
+              "Sensación inmediata de pies suaves y ligeros"
+            ],
+            "includes": [
+              "Aplicación de loción emoliente queratolítica",
+              "Retirado técnico de callosidades e hidratación intensiva",
+              "Bebida de cortesía"
+            ],
+            "recommendations": "Ideal para pies castigados por el calzado cerrado o caminatas prolongadas.",
+            "slug": "tratamiento-anti-callosidad-para-los-pies"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "depilacion",
+    "title": "Depilación",
+    "subtitle": "Depilación higiénica con cera para axilas, piernas, cejas y bozo",
+    "icon": "Sparkles",
+    "badge": "Piel Suave",
+    "subcategories": [
+      {
+        "id": "depilacion-sub",
+        "name": "Depilación con Cera",
+        "description": "Extracción higiénica con ceras especiales para zonas delicadas",
+        "services": [
+          {
+            "id": "srv_depilacion_axilas",
+            "name": "Depilación de axilas",
+            "categoryTitle": "Depilación",
+            "categoryId": "depilacion",
+            "subcategoryName": "Depilación con Cera",
+            "price": 7,
+            "duration": null,
+            "badge": "Cuidado Piel Suave",
+            "image": "./assets/catalog/depilacion-de-axilas-5my9n.webp",
+            "gallery": [
+              "./assets/catalog/depilacion-de-axilas-5my9n.webp",
+              "./assets/depilacion_orig.jpg"
+            ],
+            "description": "Depilación higiénica con cera tibia especial para zonas sensibles, garantizando una piel limpia, suave y libre de vello por semanas.",
+            "longDescription": [
+              "Depilación rápida y eficaz con ceras de baja temperatura formuladas con activos calmantes para evitar irritaciones en la delicada zona de las axilas."
+            ],
+            "benefits": [
+              "Extracción del vello desde la raíz",
+              "Piel suave sin cortes ni sombras de afeitado",
+              "Efecto duradero de 3 a 4 semanas"
+            ],
+            "includes": [
+              "Depilación con cera higiénica desechable",
+              "Loción calmante con aloe vera post-depilatoria",
+              "Bebida de cortesía"
+            ],
+            "recommendations": "No aplicar desodorantes con alcohol en las primeras 12 horas.",
+            "slug": "depilacion-de-axilas"
+          },
+          {
+            "id": "srv_depilacion_piernas",
+            "name": "Depilación de piernas",
+            "categoryTitle": "Depilación",
+            "categoryId": "depilacion",
+            "subcategoryName": "Depilación con Cera",
+            "price": 20,
+            "duration": null,
+            "badge": "Piernas de Seda",
+            "image": "./assets/catalog/depilacion-de-piernas-geakj.webp",
+            "gallery": [
+              "./assets/catalog/depilacion-de-piernas-geakj.webp",
+              "./assets/depilacion_orig.jpg"
+            ],
+            "description": "Depilación completa de piernas con cera tibia que retira el vello de raíz dejando las piernas suaves y sedosas.",
+            "longDescription": [
+              "Depilación integral de piernas (muslos, rodillas y pantorrillas) con cera de alta elasticidad. Arranca el vello desde el bulbo para debilitarlo progresivamente."
+            ],
+            "benefits": [
+              "Piernas tersas, libres de vello y suaves al tacto",
+              "Debilitamiento paulatino del grosor del vello",
+              "Cuidado de la circulación con ceras tibias"
+            ],
+            "includes": [
+              "Depilación completa de piernas",
+              "Aceite calmante post-depilación y masaje ligero",
+              "Bebida de cortesía"
+            ],
+            "recommendations": "Exfoliar las piernas 48 horas antes para evitar vellos encarnados.",
+            "slug": "depilacion-de-piernas"
+          },
+          {
+            "id": "srv_depilacion_cejas",
+            "name": "Depilación de cejas",
+            "categoryTitle": "Depilación",
+            "categoryId": "depilacion",
+            "subcategoryName": "Depilación con Cera",
+            "price": 2,
+            "duration": null,
+            "badge": "Diseño & Definición",
+            "image": "./assets/catalog/cejas-u.webp",
+            "gallery": [
+              "./assets/catalog/cejas-u.webp",
               "./assets/pestanas_orig.jpg"
             ],
-            description: "Depilación de bozo y mentón con cera suave para piel sensible. Resultados limpios y duraderos.",
-            longDescription: [
-              "Depilación facial localizada de labio superior (bozo) y mentón.",
-              "Elimina la pelusa y vello oscuro de forma delicada, dejando el contorno de la boca limpio y uniforme para el maquillaje."
+            "description": "Diseño y limpieza del arco de las cejas con cera y pinzas para realzar la mirada y armonizar las facciones del rostro.",
+            "longDescription": [
+              "Perfilado de cejas profesional con cera de precisión y pinza para retirar vellos dispersos y resaltar la arquitectura natural de tu mirada."
             ],
-            benefits: [
-              "Eliminación rápida y eficaz del vello facial",
-              "Cera hipoalergénica para no irritar la piel",
-              "Piel suave y uniforme al instante",
-              "Bebida no alcohólica de cortesía"
+            "benefits": [
+              "Arco de cejas limpio, simétrico y definido",
+              "Realce inmediato de la mirada",
+              "Técnica rápida y poco dolorosa"
             ],
-            steps: [
-              { step: "01", title: "Higiene Facial", desc: "Preparación de la piel del labio y mentón." },
-              { step: "02", title: "Cera Facial Suave", desc: "Aplicación y retirada con técnica delicada." },
-              { step: "03", title: "Calmante de Manzanilla", desc: "Descongestión inmediata de la zona." },
-              { step: "04", title: "Bebida de Cortesía", desc: "Té o infusión fría incluida." }
+            "includes": [
+              "Limpieza y diseño de cejas",
+              "Gel descongestivo de manzanilla",
+              "Bebida de cortesía"
             ],
-            includes: [
-              "Cera facial hipoalergénica de baja temperatura",
-              "Bebida no alcohólica de cortesía"
+            "recommendations": "Mantener la forma cada 3 a 4 semanas.",
+            "slug": "depilacion-de-cejas"
+          },
+          {
+            "id": "srv_depilacion_bozo_menton",
+            "name": "Depilación de bozo y mentón",
+            "categoryTitle": "Depilación",
+            "categoryId": "depilacion",
+            "subcategoryName": "Depilación con Cera",
+            "price": 3,
+            "duration": null,
+            "badge": "Rostro Limpio",
+            "image": "./assets/catalog/bozo-y-menton.webp",
+            "gallery": [
+              "./assets/catalog/bozo-y-menton.webp",
+              "./assets/pestanas_orig.jpg"
             ],
-            recommendations: "Aplicar protector solar al salir a la calle.",
-            slug: "bozo-y-menton"
+            "description": "Depilación suave del labio superior y mentón con cera especial para el rostro sensible, dejando la piel limpia y tersa.",
+            "longDescription": [
+              "Remoción del vello facial indeseado en la zona del bozo y mentón con cera hipoalergénica de baja temperatura, evitando irritaciones y vellos enquistados."
+            ],
+            "benefits": [
+              "Rostro completamente limpio y libre de sombras",
+              "Mayor adherencia y acabado uniforme del maquillaje",
+              "Debilitamiento gradual del vello facial"
+            ],
+            "includes": [
+              "Depilación de labio superior y mentón",
+              "Tónico calmante refrescante",
+              "Bebida de cortesía"
+            ],
+            "recommendations": "Evitar el maquillaje directo en la zona las primeras horas.",
+            "slug": "depilacion-de-bozo-y-menton"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "otros",
+    "title": "Otros",
+    "subtitle": "Tarjetas de regalo personalizadas y servicio exclusivo de taxi",
+    "icon": "Sparkles",
+    "badge": "Exclusivo",
+    "subcategories": [
+      {
+        "id": "otros-sub",
+        "name": "Servicios Complementarios",
+        "description": "Obsequios inolvidables y traslado cómodo puerta a puerta",
+        "services": [
+          {
+            "id": "srv_tarjeta_regalo",
+            "name": "Tarjeta de Regalo",
+            "categoryTitle": "Otros",
+            "categoryId": "otros",
+            "subcategoryName": "Servicios Complementarios",
+            "price": "Sin costo",
+            "duration": "Personalizado",
+            "badge": "Obsequio Exclusivo",
+            "image": "./assets/catalog/tarjeta-de-regalo-q.webp",
+            "gallery": [
+              "./assets/catalog/tarjeta-de-regalo-q.webp",
+              "./assets/servicios_spa.jpg"
+            ],
+            "description": "Sorprende a esa persona especial con una experiencia inolvidable de spa. Monto y servicios a tu elección con dedicatoria personalizada.",
+            "longDescription": [
+              "Obsequia momentos de paz, renovación y mimos inolvidables. Nuestras Tarjetas de Regalo se personalizan con el tratamiento, paquete o monto que elijas.",
+              "Se emite en formato digital de lujo o física para entregar en ocasiones especiales: cumpleaños, aniversarios, regalos corporativos o simplemente para consentir."
+            ],
+            "benefits": [
+              "Personalización completa con el servicio o importe deseado",
+              "Dedicatoria especial con el nombre de la persona agasajada",
+              "Vigencia flexible para coordinar la cita con tranquilidad",
+              "El regalo perfecto de bienestar y autocuidado"
+            ],
+            "includes": [
+              "Diseño de tarjeta con dedicatoria personalizada",
+              "Coordinación de cita preferencial para el beneficiario",
+              "Bebida de cortesía y atención VIP en el spa"
+            ],
+            "recommendations": "Contáctanos por WhatsApp para emitir tu tarjeta de regalo personalizada en minutos.",
+            "slug": "tarjeta-de-regalo"
+          },
+          {
+            "id": "srv_taxi",
+            "name": "Servicio de taxi 🚕",
+            "categoryTitle": "Otros",
+            "categoryId": "otros",
+            "subcategoryName": "Servicios Complementarios",
+            "price": "Sin costo",
+            "duration": "Personalizado",
+            "badge": "Transporte Exclusivo",
+            "image": "./assets/servicio_taxi.jpg",
+            "gallery": [
+              "./assets/servicio_taxi.jpg",
+              "./assets/servicios_spa.jpg"
+            ],
+            "description": "\"¿No tienes cómo llegar? Nosotros te recogemos y te llevamos de regreso.\"",
+            "longDescription": [
+              "\"¿No tienes cómo llegar? Nosotros te recogemos y te llevamos de regreso.\"",
+              "Disfruta de la máxima comodidad desde que sales de tu casa o alojamiento. Coordinamos transporte privado climatizado para recogerte puntualmente antes de tu cita en Momentos Spa y llevarte de vuelta al finalizar tu sesión de bienestar."
+            ],
+            "benefits": [
+              "Recogida y regreso directo en tu domicilio, hotel o casa de renta",
+              "Vehículo privado con aire acondicionado y chofer puntual",
+              "Cero preocupaciones por buscar transporte o estacionamiento",
+              "Llegas a tu sesión totalmente relajado y puntual"
+            ],
+            "includes": [
+              "Coordinación personalizada de traslado ida y vuelta",
+              "Vehículo privado climatizado",
+              "Atención directa vía WhatsApp para acordar dirección y hora"
+            ],
+            "recommendations": "Solicita tu servicio de taxi con anticipación al coordinar tu cita por WhatsApp indicando tu dirección.",
+            "slug": "servicio-de-taxi",
+            "isTaxi": true
           }
         ]
       }
@@ -1932,20 +1769,1667 @@ export const categoriesData = [
   }
 ];
 
-// Helper aplanado con todos los servicios
-export const allServices = categoriesData.flatMap(cat => 
-  (cat.subcategories || []).flatMap(sub => 
-    (sub.services || []).map(srv => ({
-      ...srv,
-      categoryId: cat.id,
-      categoryTitle: cat.title,
-      subcategoryId: sub.id,
-      subcategoryName: sub.name
-    }))
-  )
-);
+export const allServices = [
+  {
+    "id": "srv_masaje_relajante_30",
+    "name": "Masaje relajante – 30 min",
+    "categoryTitle": "Masajes",
+    "categoryId": "spa-masajes",
+    "subcategoryName": "Masajes Terapéuticos y Relajantes",
+    "price": 12,
+    "duration": "30 min",
+    "badge": "Express",
+    "image": "./assets/catalog/masaje-relajante-de-30-min.webp",
+    "gallery": [
+      "./assets/catalog/masaje-relajante-de-30-min.webp",
+      "./assets/masaje_relax.jpg",
+      "./assets/dsc_6325.jpg"
+    ],
+    "description": "Masaje relajante en cervicales, espalda y piernas. Ideal para personas que acumulan mucho estrés y disponen de poco tiempo.",
+    "longDescription": [
+      "Masaje relajante focalizado en cervicales, espalda y piernas. Es el tratamiento ideal para personas que acumulan tensión por la rutina diaria o disponen de poco tiempo para una pausa revitalizante.",
+      "Mediante pases rítmicos y suaves, ayuda a descomprimir la musculatura dorsal y favorece la circulación en piernas cansadas."
+    ],
+    "benefits": [
+      "Alivio focalizado en cuello, hombros y lumbares",
+      "Descanso muscular rápido y efectivo",
+      "Disminución del estrés en poco tiempo",
+      "Activación de la circulación en extremidades"
+    ],
+    "includes": [
+      "Cabina privada climatizada",
+      "Aceites esenciales naturales",
+      "Bebida no alcohólica de cortesía (té, café, agua, jugo o refresco)"
+    ],
+    "recommendations": "Recomendado como descanso reparador a mitad del día o al salir del trabajo.",
+    "slug": "masaje-relajante-30-min"
+  },
+  {
+    "id": "srv_masaje_relajante_60",
+    "name": "Masaje relajante – 60 min",
+    "categoryTitle": "Masajes",
+    "categoryId": "spa-masajes",
+    "subcategoryName": "Masajes Terapéuticos y Relajantes",
+    "price": 20,
+    "duration": "60 min",
+    "badge": "Esencial",
+    "image": "./assets/catalog/masaje-relajante-u.webp",
+    "gallery": [
+      "./assets/catalog/masaje-relajante-u.webp",
+      "./assets/servicios_spa.jpg",
+      "./assets/dsc_6328.jpg"
+    ],
+    "description": "Técnica terapéutica que se centra en aliviar la tensión muscular y promover un estado de calma y bienestar. Movimientos suaves y rítmicos de amasamiento, fricción y estiramiento.",
+    "longDescription": [
+      "El masaje relajante es una técnica terapéutica que se centra en aliviar la tensión muscular y promover un estado de calma y bienestar general.",
+      "Durante una sesión de 60 minutos completos, el terapeuta aplica movimientos suaves y rítmicos, utilizando técnicas precisas de amasado, fricción y estiramientos suaves con aceites aromáticos."
+    ],
+    "benefits": [
+      "Relajación muscular integral cuerpo completo",
+      "Reducción profunda de niveles de cortisol y estrés",
+      "Optimización de la circulación periférica",
+      "Sensación duradera de serenidad mental y física"
+    ],
+    "includes": [
+      "Sesión completa de 60 minutos",
+      "Cabina privada climatizada con aromaterapia",
+      "Bebida no alcohólica de cortesía a elección"
+    ],
+    "recommendations": "Ideal para disfrutar semanal o quincenalmente para mantener el equilibrio corporal.",
+    "slug": "masaje-relajante-60-min"
+  },
+  {
+    "id": "srv_masaje_relajante_90",
+    "name": "Masaje relajante – 90 min",
+    "categoryTitle": "Masajes",
+    "categoryId": "spa-masajes",
+    "subcategoryName": "Masajes Terapéuticos y Relajantes",
+    "price": 30,
+    "duration": "90 min",
+    "badge": "Inmersión Total",
+    "image": "./assets/catalog/masaje-relajante-de-90-min.webp",
+    "gallery": [
+      "./assets/catalog/masaje-relajante-de-90-min.webp",
+      "./assets/masaje_relax.jpg",
+      "./assets/dsc_6325.jpg"
+    ],
+    "description": "Experiencia prolongada de relajación profunda cuerpo completo. Tiempo extendido para trabajar con calma cada grupo muscular y lograr desconexión total.",
+    "longDescription": [
+      "Una hora y media de inmersión total diseñada para personas que buscan una desconexión absoluta del mundo exterior.",
+      "Permite al terapeuta profundizar en cada segmento muscular, desde los pies hasta el cuello y cuero cabelludo, asegurando un alivio sin prisas."
+    ],
+    "benefits": [
+      "Desconexión sensorial y mental absoluta",
+      "Tratamiento minucioso de cada grupo muscular",
+      "Inducción a un estado de relajación restaurador",
+      "Alivio duradero de tensiones acumuladas"
+    ],
+    "includes": [
+      "90 minutos de terapia manual continua",
+      "Aceites botánicos de alta gama y aromaterapia",
+      "Bebida no alcohólica de cortesía"
+    ],
+    "recommendations": "Perfecto para fines de semana o momentos de alta sobrecarga emocional y física.",
+    "slug": "masaje-relajante-90-min"
+  },
+  {
+    "id": "srv_masaje_descontracturante_60",
+    "name": "Masaje descontracturante – 60 min",
+    "categoryTitle": "Masajes",
+    "categoryId": "spa-masajes",
+    "subcategoryName": "Masajes Terapéuticos y Relajantes",
+    "price": 25,
+    "duration": "60 min",
+    "badge": "Alivio Fuerte",
+    "image": "./assets/catalog/masaje-descontracturante-h.webp",
+    "gallery": [
+      "./assets/catalog/masaje-descontracturante-h.webp",
+      "./assets/masaje_m01.jpg",
+      "./assets/dsc_6328.jpg"
+    ],
+    "description": "Técnica terapéutica utilizada para aliviar la tensión muscular y reducir contracturas. Movimientos profundos y firmes en espalda, cuello y hombros.",
+    "longDescription": [
+      "Técnica terapéutica vigorosa y focalizada en deshacer nudos musculares y contracturas crónicas causadas por posturas inadecuadas o sobrecargas.",
+      "El terapeuta aplica presiones progresivas, fricciones transversas y amasamientos intensos para liberar las fibras miofasciales."
+    ],
+    "benefits": [
+      "Disolución de nudos musculares y contracturas",
+      "Alivio significativo del dolor cervical y lumbar",
+      "Recuperación del rango de movimiento articular",
+      "Mejora inmediata de la flexibilidad postural"
+    ],
+    "includes": [
+      "60 minutos de terapia descontracturante",
+      "Aplicación de bálsamos térmicos desinflamatorios",
+      "Bebida no alcohólica de cortesía"
+    ],
+    "recommendations": "Recomendado para deportistas o personas con dolores crónicos de espalda.",
+    "slug": "masaje-descontracturante-60-min"
+  },
+  {
+    "id": "srv_masaje_descontracturante_90",
+    "name": "Masaje descontracturante – 90 min",
+    "categoryTitle": "Masajes",
+    "categoryId": "spa-masajes",
+    "subcategoryName": "Masajes Terapéuticos y Relajantes",
+    "price": 35,
+    "duration": "90 min",
+    "badge": "Terapéutico Plus",
+    "image": "./assets/catalog/masaje-descontracturante.webp",
+    "gallery": [
+      "./assets/catalog/masaje-descontracturante.webp",
+      "./assets/masaje_m02.jpg",
+      "./assets/dsc_6328.jpg"
+    ],
+    "description": "Sesión intensiva de 90 minutos para contracturas crónicas severas. Permite trabajar espalda, tren inferior y zonas articulares comprometidas.",
+    "longDescription": [
+      "Sesión extendida para tratar contracturas severas o múltiples focos de tensión en todo el cuerpo con la calma necesaria para no generar sobrestimulación.",
+      "Combina pases profundos con estiramientos asistidos y puntos de presión neuromuscular."
+    ],
+    "benefits": [
+      "Tratamiento exhaustivo de múltiples contracturas",
+      "Mayor efectividad en tensiones arraigadas por meses",
+      "Integración de estiramientos pasivos",
+      "Sensación de ligereza y liberación corporal total"
+    ],
+    "includes": [
+      "90 minutos de maniobras terapéuticas profundas",
+      "Aceites con extractos botánicos desfatigantes",
+      "Bebida de cortesía"
+    ],
+    "recommendations": "Excelente para personas tras viajes largos, jornadas de alta tensión o entrenamientos intensos.",
+    "slug": "masaje-descontracturante-90-min"
+  },
+  {
+    "id": "srv_masaje_combinado_90",
+    "name": "Masaje combinado",
+    "categoryTitle": "Masajes",
+    "categoryId": "spa-masajes",
+    "subcategoryName": "Masajes Terapéuticos y Relajantes",
+    "price": 35,
+    "duration": "90 min",
+    "badge": "A tu Medida",
+    "image": "./assets/catalog/masaje-deportivo.webp",
+    "gallery": [
+      "./assets/catalog/masaje-deportivo.webp",
+      "./assets/masaje_m02.jpg",
+      "./assets/servicios_spa.jpg"
+    ],
+    "description": "Posibilidad de elegir diferentes técnicas de masaje en una sola sesión. Como por ejemplo masaje relajante combinado con reflexología podal.",
+    "longDescription": [
+      "El masaje combinado brinda la máxima versatilidad: puedes solicitar combinar masaje relajante sueco con reflexología podal, o descontracturante con drenaje linfático.",
+      "Diseñado a medida según las prioridades que converses directamente con tu terapeuta al ingresar a cabina."
+    ],
+    "benefits": [
+      "Personalización 100% adaptada a tus dolencias del día",
+      "Sinergia de múltiples técnicas en una sola visita",
+      "Equilibrio entre relajación suave y descarga muscular",
+      "Atención preferencial a zonas prioritarias"
+    ],
+    "includes": [
+      "90 minutos personalizados con tu terapeuta",
+      "Elección de técnicas manuales",
+      "Bebida de cortesía"
+    ],
+    "recommendations": "Indica a tu terapeuta qué zonas prefieres priorizar al inicio de la sesión.",
+    "slug": "masaje-combinado"
+  },
+  {
+    "id": "srv_masaje_holistico_90",
+    "name": "Masaje Holístico",
+    "categoryTitle": "Masajes",
+    "categoryId": "spa-masajes",
+    "subcategoryName": "Masajes Terapéuticos y Relajantes",
+    "price": 35,
+    "duration": "90 min",
+    "badge": "Especialidad",
+    "image": "./assets/catalog/masaje-holistioco-90-min.webp",
+    "gallery": [
+      "./assets/catalog/masaje-holistioco-90-min.webp",
+      "./assets/masaje_m7.jpg",
+      "./assets/servicios_spa.jpg"
+    ],
+    "description": "Atiende a cada persona según sus necesidades. Técnicas de presión y estiramiento del masaje Tailandés, masaje relajante y digitopresión shiatsu. Especialidad del centro.",
+    "longDescription": [
+      "Nuestra terapia insignia. El masaje holístico concibe el cuerpo y la mente como una unidad integrada.",
+      "Emplea técnicas de estiramientos rítmicos del masaje Tailandés tradicional, pases fluidos del masaje relajante y digitopresión en meridianos energéticos de la medicina oriental shiatsu."
+    ],
+    "benefits": [
+      "Restablecimiento de la armonía energética",
+      "Apertura articular y mayor elongación muscular",
+      "Alivio emocional y disminución de ansiedad",
+      "Estimulación de los canales naturales de autosanación"
+    ],
+    "includes": [
+      "90 minutos de técnica holística integral",
+      "Aromaterapia seleccionada",
+      "Bebida de cortesía"
+    ],
+    "recommendations": "Altamente recomendado para quienes buscan una experiencia profunda y transformadora.",
+    "slug": "masaje-holistico"
+  },
+  {
+    "id": "srv_masaje_cuatro_manos_90",
+    "name": "Masaje a 4 Manos",
+    "categoryTitle": "Masajes",
+    "categoryId": "spa-masajes",
+    "subcategoryName": "Masajes Terapéuticos y Relajantes",
+    "price": 50,
+    "duration": "90 min",
+    "badge": "Lujo Supremo",
+    "image": "./assets/catalog/exfoliacion-suprema-y-masaje-a-4-manos-90min.webp",
+    "gallery": [
+      "./assets/catalog/exfoliacion-suprema-y-masaje-a-4-manos-90min.webp",
+      "./assets/masaje_m4.jpg",
+      "./assets/dsc_6328.jpg"
+    ],
+    "description": "Dos terapeutas trabajando en perfecta sincronía. Mayor cobertura corporal, estimulación simultánea y una inmersión sensorial única que desconecta la mente por completo.",
+    "longDescription": [
+      "El punto cumbre del arte del masaje. Dos terapeutas expertas sincronizan sus movimientos en una coreografía armónica sobre tu cuerpo.",
+      "Al recibir estímulos táctiles simétricos en dos zonas a la vez, el cerebro abandona todo intento de control y entra en un estado hipnótico de relajación absoluta."
+    ],
+    "benefits": [
+      "Doble beneficio terapéutico en el mismo tiempo",
+      "Desconexión cerebral profunda e instantánea",
+      "Sensación envolvente única e inolvidable",
+      "Relajación muscular simultánea superior"
+    ],
+    "includes": [
+      "90 minutos con 2 terapeutas en cabina",
+      "Aceites tibios de textura sedosa",
+      "Bebida de cortesía"
+    ],
+    "recommendations": "Reservar con antelación para coordinar el horario de las dos terapeutas.",
+    "slug": "masaje-a-4-manos"
+  },
+  {
+    "id": "srv_masaje_linfodrenante_60",
+    "name": "Masaje linfodrenante",
+    "categoryTitle": "Masajes",
+    "categoryId": "spa-masajes",
+    "subcategoryName": "Masajes Terapéuticos y Relajantes",
+    "price": 20,
+    "duration": "60 min",
+    "badge": "Detox & Circulación",
+    "image": "./assets/catalog/masaje-linfodrenante.webp",
+    "gallery": [
+      "./assets/catalog/masaje-linfodrenante.webp",
+      "./assets/masaje_m5.jpg",
+      "./assets/servicios_spa.jpg"
+    ],
+    "description": "Estimula el sistema linfático para la eliminación de toxinas y equilibrio de líquidos. Movimientos suaves y rítmicos que reducen la hinchazón y retención.",
+    "longDescription": [
+      "Técnica manual suave y superficial que sigue las vías del sistema linfático corporal.",
+      "Facilita el drenaje de líquidos retenidos en tejidos intersticiales, alivia la pesadez en piernas y acelera la eliminación de deshechos metabólicos."
+    ],
+    "benefits": [
+      "Disminución notable de la retención de líquidos",
+      "Alivio de la pesadez en piernas y tobillos",
+      "Estimulación del sistema inmunitario",
+      "Favorece la recuperación postquirúrgica y detox"
+    ],
+    "includes": [
+      "60 minutos de maniobras de bombeo linfático",
+      "Aceites descongestivos naturales",
+      "Bebida de cortesía purificante (té o agua)"
+    ],
+    "recommendations": "Beber abundante agua antes y después de la sesión para optimizar la eliminación de toxinas.",
+    "slug": "masaje-linfodrenante"
+  },
+  {
+    "id": "srv_masaje_velas_60",
+    "name": "Masaje con velas aromáticas – 60 min",
+    "categoryTitle": "Masajes",
+    "categoryId": "spa-masajes",
+    "subcategoryName": "Masajes Terapéuticos y Relajantes",
+    "price": 25,
+    "duration": "60 min",
+    "badge": "Calidez Sensorial",
+    "image": "./assets/catalog/masaje-con-velas-aromaticas.webp",
+    "gallery": [
+      "./assets/catalog/masaje-con-velas-aromaticas.webp",
+      "./assets/masaje_m01.jpg",
+      "./assets/dsc_6325.jpg"
+    ],
+    "description": "Combina masaje relajante con velas de aceites esenciales que al derretirse se convierten en un bálsamo cálido e hidratante sobre la piel.",
+    "longDescription": [
+      "Una experiencia sensorial cálida y envolvente. Se utilizan velas cosméticas elaboradas con ceras de soja pura, manteca de karité y esencias aromáticas.",
+      "Al fundirse a baja temperatura, el aceite tibio se vierte suavemente sobre el cuerpo y se trabaja con maniobras fluidas y reconfortantes."
+    ],
+    "benefits": [
+      "Nutrición profunda e hidratación de la piel con aceites tibios",
+      "Relajación muscular favorecida por el calor agradable",
+      "Efecto aromaterapéutico que calma el sistema nervioso",
+      "Aroma delicado y duradero sobre la dermis"
+    ],
+    "includes": [
+      "60 minutos con vela aromática de masaje",
+      "Bálsamo tibio nutritivo",
+      "Bebida de cortesía"
+    ],
+    "recommendations": "Ideal para días en los que busques confort térmico y consentirte al máximo.",
+    "slug": "masaje-con-velas-aromaticas-60-min"
+  },
+  {
+    "id": "srv_masaje_velas_90",
+    "name": "Masaje con velas aromáticas – 90 min",
+    "categoryTitle": "Masajes",
+    "categoryId": "spa-masajes",
+    "subcategoryName": "Masajes Terapéuticos y Relajantes",
+    "price": 35,
+    "duration": "90 min",
+    "badge": "Sensorial Plus",
+    "image": "./assets/catalog/masaje-con-velas-aromaticas-de-90-min.webp",
+    "gallery": [
+      "./assets/catalog/masaje-con-velas-aromaticas-de-90-min.webp",
+      "./assets/masaje_m01.jpg",
+      "./assets/dsc_6325.jpg"
+    ],
+    "description": "Versión extendida de 90 minutos con velas aromáticas tibias. Cobertura completa y nutrición cutánea con aceites esenciales naturales.",
+    "longDescription": [
+      "La versión extendida de nuestro masaje con velas permite recorrer minuciosamente todo el cuerpo con el aceite fundido a temperatura corporal ideal.",
+      "El calor y los aromas naturales disuelven cualquier vestigio de fatiga física y mental."
+    ],
+    "benefits": [
+      "Mayor tiempo de absorción de nutrientes botánicos",
+      "Relajación prolongada sin interrupciones",
+      "Piel tersa, elástica y profundamente perfumada",
+      "Efecto ansiolítico natural gracias a los aceites esenciales"
+    ],
+    "includes": [
+      "90 minutos de masaje con bálsamo de vela caliente",
+      "Cabina climatizada con luz tenue",
+      "Bebida de cortesía"
+    ],
+    "recommendations": "Permite que los aceites permanezcan sobre la piel unas horas para aprovechar sus propiedades nutritivas.",
+    "slug": "masaje-con-velas-aromaticas-90-min"
+  },
+  {
+    "id": "srv_masaje_piedras_60",
+    "name": "Masaje con piedras volcánicas – 60 min",
+    "categoryTitle": "Masajes",
+    "categoryId": "spa-masajes",
+    "subcategoryName": "Masajes Terapéuticos y Relajantes",
+    "price": 25,
+    "duration": "60 min",
+    "badge": "Termoterapia",
+    "image": "./assets/catalog/masaje-con-piedras-volcanicas.webp",
+    "gallery": [
+      "./assets/catalog/masaje-con-piedras-volcanicas.webp",
+      "./assets/servicios_spa.jpg",
+      "./assets/dsc_6328.jpg"
+    ],
+    "description": "El calor terapéutico de las piedras de basalto penetra en los músculos, liberando tensiones, mejorando la circulación y proporcionando una profunda relajación.",
+    "longDescription": [
+      "Terapia geotermal milenaria que utiliza piedras de basalto volcánico pulidas calentadas a temperatura controlada.",
+      "El calor penetrante de las piedras relaja las fibras musculares con mayor rapidez que la presión manual sola, induciendo un sosiego inigualable."
+    ],
+    "benefits": [
+      "Penetración térmica que ablanda la rigidez muscular",
+      "Reactiva el flujo circulatorio y linfático",
+      "Alivio notable de dolores reumáticos y articulares",
+      "Sedación natural del sistema nervioso central"
+    ],
+    "includes": [
+      "60 minutos de masaje con piedras volcánicas calientes",
+      "Puntos de apoyo energético con piedras estáticas",
+      "Bebida de cortesía"
+    ],
+    "recommendations": "No recomendado en personas con inflamaciones agudas o fiebre.",
+    "slug": "masaje-con-piedras-volcanicas-60-min"
+  },
+  {
+    "id": "srv_masaje_piedras_90",
+    "name": "Masaje con piedras volcánicas – 90 min",
+    "categoryTitle": "Masajes",
+    "categoryId": "spa-masajes",
+    "subcategoryName": "Masajes Terapéuticos y Relajantes",
+    "price": 35,
+    "duration": "90 min",
+    "badge": "Geotermal Plus",
+    "image": "./assets/catalog/masaje-con-piedras-volcanicas-90-min.webp",
+    "gallery": [
+      "./assets/catalog/masaje-con-piedras-volcanicas-90-min.webp",
+      "./assets/servicios_spa.jpg",
+      "./assets/dsc_6328.jpg"
+    ],
+    "description": "Sesión completa de 90 minutos con piedras volcánicas. Mayor dedicación a puntos energéticos y combinación con maniobras de masaje manual.",
+    "longDescription": [
+      "Sesión geotermal completa donde se intercalan maniobras de masaje manual profundo con deslizamientos de piedras calientes sobre espalda, extremidades y chakras.",
+      "El calor continuo permite alcanzar capas musculares profundas sin dolor ni molestias."
+    ],
+    "benefits": [
+      "Máximo aprovechamiento de la termoterapia volcánica",
+      "Alivio prolongado de contracturas dorsales y lumbares",
+      "Calma el estrés crónico e insomnio",
+      "Sensación de renovación y ligereza corporal"
+    ],
+    "includes": [
+      "90 minutos de terapia geotermal continua",
+      "Aceites minerales y piedras volcánicas de basalto",
+      "Bebida de cortesía"
+    ],
+    "recommendations": "Excelente opción durante días lluviosos o cuando sientas fatiga acumulada.",
+    "slug": "masaje-con-piedras-volcanicas-90-min"
+  },
+  {
+    "id": "srv_reflexologia_podal_60",
+    "name": "Reflexología podal",
+    "categoryTitle": "Masajes",
+    "categoryId": "spa-masajes",
+    "subcategoryName": "Masajes Terapéuticos y Relajantes",
+    "price": 20,
+    "duration": "60 min",
+    "badge": "Equilibrio Orgánico",
+    "image": "./assets/catalog/reflexologia-podal.webp",
+    "gallery": [
+      "./assets/catalog/reflexologia-podal.webp",
+      "./assets/masaje_m5.jpg",
+      "./assets/servicios_spa.jpg"
+    ],
+    "description": "Presión en puntos específicos de los pies conectados a órganos y sistemas. Estimula el equilibrio natural, alivia el estrés y revitaliza las piernas.",
+    "longDescription": [
+      "La reflexología podal se fundamenta en los mapas reflejos ubicados en las plantas de los pies, donde convergen terminaciones nerviosas vinculadas a los órganos internos.",
+      "Mediante presiones pulgares precisas y digitopuntura, se estimula la autorregulación orgánica y se alivia la sobrecarga de pies y piernas."
+    ],
+    "benefits": [
+      "Alivio inmediato del cansancio y dolor en la planta de los pies",
+      "Estimulación refleja del funcionamiento de órganos internos",
+      "Desbloqueo de tensiones en extremidades inferiores",
+      "Profunda relajación y bienestar integral"
+    ],
+    "includes": [
+      "60 minutos de reflexología podal especializada",
+      "Crema descongestiva con mentol y árnica",
+      "Bebida de cortesía"
+    ],
+    "recommendations": "Ideal para personas que pasan muchas horas de pie o caminan con frecuencia.",
+    "slug": "reflexologia-podal"
+  },
+  {
+    "id": "srv_metfit_90",
+    "name": "METFIT tejido profundo",
+    "categoryTitle": "Masajes",
+    "categoryId": "spa-masajes",
+    "subcategoryName": "Masajes Terapéuticos y Relajantes",
+    "price": 35,
+    "duration": "90 min",
+    "badge": "Deportivo & Miofascial",
+    "image": "./assets/catalog/metfit.webp",
+    "gallery": [
+      "./assets/catalog/metfit.webp",
+      "./assets/masaje_m02.jpg",
+      "./assets/dsc_6328.jpg"
+    ],
+    "description": "Manipulaciones específicas sobre el tejido profundo activando la circulación sanguínea y linfática. Reduce espasmos y previene lesiones musculares.",
+    "longDescription": [
+      "Método de tratamiento físico-técnico que engloba maniobras vigorosas y estiramientos pasivos sobre las capas miofasciales profundas.",
+      "Especialmente concebido para atletas, deportistas y personas con hábitos de alto rendimiento que requieren una descompresión muscular contundente."
+    ],
+    "benefits": [
+      "Prevención y recuperación de sobrecargas deportivas",
+      "Disminución drástica de espasmos musculares y rigidez",
+      "Activación potente del riego sanguíneo y oxigenación",
+      "Aumento de la elasticidad de los tendones y fascias"
+    ],
+    "includes": [
+      "90 minutos de técnica especializada de tejido profundo",
+      "Emulsiones deportivas desfatigantes",
+      "Bebida de cortesía"
+    ],
+    "recommendations": "Puede causar ligera sensibilidad pasajera post-sesión mientras los tejidos se reoxigenan.",
+    "slug": "metfit-tejido-profundo"
+  },
+  {
+    "id": "srv_masaje_craneal_20",
+    "name": "Masaje craneal con alta frecuencia",
+    "categoryTitle": "Masajes",
+    "categoryId": "spa-masajes",
+    "subcategoryName": "Masajes Terapéuticos y Relajantes",
+    "price": 5,
+    "duration": "20 min",
+    "badge": "Capilar Express",
+    "image": "./assets/catalog/masaje-craneal-con-alta-frecuencia.webp",
+    "gallery": [
+      "./assets/catalog/masaje-craneal-con-alta-frecuencia.webp",
+      "./assets/head_spa.jpg",
+      "./assets/dsc_6325.jpg"
+    ],
+    "description": "Mejora el riego sanguíneo al descomprimir los vasos. Reduce dolores de cabeza y migrañas, evita la somnolencia y estimula el crecimiento activo del cabello.",
+    "longDescription": [
+      "Terapia express que combina maniobras de digitopresión en cráneo, sienes y nuca con la aplicación de electroterapia de alta frecuencia.",
+      "El electrodo de alta frecuencia oxigena los folículos pilosos, estimula el crecimiento capilar y alivia cefaleas tensionales en minutos."
+    ],
+    "benefits": [
+      "Alivio inmediato de jaquecas, migrañas y tensión ocular",
+      "Descompresión de vasos sanguíneos craneales",
+      "Estimulación de los folículos contra la caída del cabello",
+      "Claridad mental y superación del cansancio acumulado"
+    ],
+    "includes": [
+      "20 minutos de masaje craneal + electrodo de alta frecuencia",
+      "Bebida de cortesía"
+    ],
+    "recommendations": "Excelente adición rápida a cualquier otro masaje o tratamiento facial.",
+    "slug": "masaje-craneal-con-alta-frecuencia"
+  },
+  {
+    "id": "srv_spa_labial_15",
+    "name": "Spa labial",
+    "categoryTitle": "Masajes",
+    "categoryId": "spa-masajes",
+    "subcategoryName": "Masajes Terapéuticos y Relajantes",
+    "price": 5,
+    "duration": "15 min",
+    "badge": "Hidratación Express",
+    "image": "./assets/catalog/spa-labial-10-min.webp",
+    "gallery": [
+      "./assets/catalog/spa-labial-10-min.webp",
+      "./assets/facial_original.jpg",
+      "./assets/ojos_orig.jpg"
+    ],
+    "description": "\"No es solo hidratar los labios, es devolverles vida.\" Tratamiento de hidratación profunda para labios resecos o con líneas marcadas. Labios suaves y nutridos en una sesión.",
+    "longDescription": [
+      "\"No es solo hidratar los labios, es devolverles vida.\" Nuestro Tratamiento de Hidratación Labial Profunda es una experiencia diseñada para labios resecos, opacos o con líneas marcadas.",
+      "En solo una sesión logramos labios más suaves, nutridos, definidos y visiblemente rejuvenecidos con exfoliación suave y sérum de ácido hialurónico."
+    ],
+    "benefits": [
+      "Eliminación de células muertas y pellejitos secos",
+      "Hidratación intensa y nutrición labial con péptidos",
+      "Relleno óptico de líneas de expresión en el contorno",
+      "Apariencia jugosa, sana y juvenil"
+    ],
+    "includes": [
+      "Exfoliación labial de azúcar y aceites",
+      "Mascarilla o sérum reparador con ácido hialurónico",
+      "Bebida de cortesía"
+    ],
+    "recommendations": "Perfecto antes de un evento especial o para complementar un facial.",
+    "slug": "spa-labial"
+  },
+  {
+    "id": "srv_tarjeta_regalo",
+    "name": "Tarjeta de Regalo",
+    "categoryTitle": "Otros",
+    "categoryId": "otros",
+    "subcategoryName": "Servicios Complementarios",
+    "price": "Sin costo",
+    "duration": "Personalizado",
+    "badge": "Obsequio Exclusivo",
+    "image": "./assets/catalog/tarjeta-de-regalo-q.webp",
+    "gallery": [
+      "./assets/catalog/tarjeta-de-regalo-q.webp",
+      "./assets/servicios_spa.jpg"
+    ],
+    "description": "Sorprende a esa persona especial con una experiencia inolvidable de spa. Monto y servicios a tu elección con dedicatoria personalizada.",
+    "longDescription": [
+      "Obsequia momentos de paz, renovación y mimos inolvidables. Nuestras Tarjetas de Regalo se personalizan con el tratamiento, paquete o monto que elijas.",
+      "Se emite en formato digital de lujo o física para entregar en ocasiones especiales: cumpleaños, aniversarios, regalos corporativos o simplemente para consentir."
+    ],
+    "benefits": [
+      "Personalización completa con el servicio o importe deseado",
+      "Dedicatoria especial con el nombre de la persona agasajada",
+      "Vigencia flexible para coordinar la cita con tranquilidad",
+      "El regalo perfecto de bienestar y autocuidado"
+    ],
+    "includes": [
+      "Diseño de tarjeta con dedicatoria personalizada",
+      "Coordinación de cita preferencial para el beneficiario",
+      "Bebida de cortesía y atención VIP en el spa"
+    ],
+    "recommendations": "Contáctanos por WhatsApp para emitir tu tarjeta de regalo personalizada en minutos.",
+    "slug": "tarjeta-de-regalo"
+  },
+  {
+    "id": "srv_masaje_facial_hidratacion_30",
+    "name": "Masaje facial de Hidratación",
+    "categoryTitle": "Tratamientos faciales",
+    "categoryId": "tratamientos-faciales",
+    "subcategoryName": "Faciales y Cosmiatría",
+    "price": 10,
+    "duration": "30 min",
+    "badge": "Luminosidad Express",
+    "image": "./assets/catalog/hidratacion-de-30min.webp",
+    "gallery": [
+      "./assets/catalog/hidratacion-de-30min.webp",
+      "./assets/facial_original.jpg",
+      "./assets/dsc_6325.jpg"
+    ],
+    "description": "Exfoliante facial para eliminar impurezas y suavizar. Aplicación de cremas y suave masaje relajante para lograr mayor hidratación, luminosidad y aspecto fresco.",
+    "longDescription": [
+      "Tratamiento facial rápido pero altamente revitalizante. Se realiza una exfoliación suave para desprender impurezas y células muertas.",
+      "Posteriormente se aplican activos hidratantes acompañados de un reconfortante masaje facial que drena y estimula la microcirculación cutánea."
+    ],
+    "benefits": [
+      "Textura suave y piel visiblemente más lisa al tacto",
+      "Aporte inmediato de luminosidad y frescura",
+      "Relajación de los músculos de expresión facial",
+      "Rápida absorción de principios activos hidratantes"
+    ],
+    "includes": [
+      "30 minutos de sesión facial",
+      "Exfoliación suave no abrasiva",
+      "Crema hidratante y masaje facial",
+      "Bebida de cortesía"
+    ],
+    "recommendations": "Ideal para preparar el rostro antes de maquillarse o tras una semana ajetreada.",
+    "slug": "masaje-facial-de-hidratacion"
+  },
+  {
+    "id": "srv_facial_hidratacion_profunda_60",
+    "name": "Facial de Hidratación profunda",
+    "categoryTitle": "Tratamientos faciales",
+    "categoryId": "tratamientos-faciales",
+    "subcategoryName": "Faciales y Cosmiatría",
+    "price": 15,
+    "duration": "60 min",
+    "badge": "Hidratación Completa",
+    "image": "./assets/catalog/facial-hidratante.webp",
+    "gallery": [
+      "./assets/catalog/facial-hidratante.webp",
+      "./assets/facial_original.jpg",
+      "./assets/ojos_orig.jpg"
+    ],
+    "description": "Renueva, nutre e hidrata desde las capas más profundas. Consigue un rostro luminoso, suave y terso, devolviendo vitalidad a pieles cansadas o deshidratadas.",
+    "longDescription": [
+      "Procedimiento cosmiátrico enfocado en restaurar el manto hidrolipídico y el balance hídrico de la piel.",
+      "La deshidratación causa opacidad y pérdida de elasticidad; este facial infunde ácido hialurónico, sérums nutritivos y mascarillas oclusivas para reponer la turgencia cutánea."
+    ],
+    "benefits": [
+      "Restauración profunda de la hidratación tisular",
+      "Efecto de relleno natural sobre líneas de sequedad",
+      "Rostro descansado, flexible y radiante",
+      "Fortalecimiento de la barrera cutánea protectora"
+    ],
+    "includes": [
+      "60 minutos de tratamiento facial completo",
+      "Limpieza preparatoria, tónico, sérums y mascarilla hidro-nutritiva",
+      "Bebida de cortesía"
+    ],
+    "recommendations": "Recomendado una vez al mes para preservar la salud y juventud cutánea.",
+    "slug": "facial-de-hidratacion-profunda"
+  },
+  {
+    "id": "srv_facial_antiedad_60",
+    "name": "Facial anti-edad",
+    "categoryTitle": "Tratamientos faciales",
+    "categoryId": "tratamientos-faciales",
+    "subcategoryName": "Faciales y Cosmiatría",
+    "price": 20,
+    "duration": "60 min",
+    "badge": "Efecto Lifting & Colágeno",
+    "image": "./assets/catalog/facial-con-ventosas.webp",
+    "gallery": [
+      "./assets/catalog/facial-con-ventosas.webp",
+      "./assets/facial_original.jpg",
+      "./assets/dsc_6328.jpg"
+    ],
+    "description": "Estimula la circulación, favorece la desintoxicación, reduce hinchazón, promueve la renovación celular, suaviza arrugas y estimula colágeno para un aspecto firme y tonificado.",
+    "longDescription": [
+      "Protocolo avanzado antienvejecimiento que trabaja sobre la flacidez, líneas de expresión y falta de tono muscular facial.",
+      "Combina principios activos tensores y antioxidantes con técnicas de masaje reafirmante o ventosas faciales que estimulan la síntesis de colágeno y elastina."
+    ],
+    "benefits": [
+      "Atenuación de líneas de expresión y arrugas finas",
+      "Efecto lifting y mayor definición del óvalo facial",
+      "Estimulación endógena de colágeno",
+      "Drenaje de bolsas y reducción de hinchazón periocular"
+    ],
+    "includes": [
+      "60 minutos de protocolo anti-edad",
+      "Sérums concentrados de péptidos y antioxidantes",
+      "Mascarilla tensora reafirmante",
+      "Bebida de cortesía"
+    ],
+    "recommendations": "Apto para pieles maduras o personas a partir de los 28 años como prevención activa.",
+    "slug": "facial-anti-edad"
+  },
+  {
+    "id": "srv_limpieza_facial_profunda_60",
+    "name": "Limpieza facial profunda",
+    "categoryTitle": "Tratamientos faciales",
+    "categoryId": "tratamientos-faciales",
+    "subcategoryName": "Faciales y Cosmiatría",
+    "price": 18,
+    "duration": "60 min",
+    "badge": "Purificante & Anti-Impurezas",
+    "image": "./assets/catalog/limpieza-profunda-x.webp",
+    "gallery": [
+      "./assets/catalog/limpieza-profunda-x.webp",
+      "./assets/facial_original.jpg",
+      "./assets/dsc_6325.jpg"
+    ],
+    "description": "Elimina puntos negros y células muertas, logrando una piel suave, fresca e hidratada. Desobstruye poros y unifica el cutis.",
+    "longDescription": [
+      "Tratamiento esencial de higiene dérmica. Elimina con precisión comedones, puntos negros, microquistes y tapones sebáceos.",
+      "Prepara la piel mediante vapor o lociones emolientes, extracción higiénica cuidadosa, descongestión con alta frecuencia y mascarilla calmante antiséptica."
+    ],
+    "benefits": [
+      "Poros limpios y visiblemente afinados",
+      "Eliminación total de impurezas y queratina acumulada",
+      "Regulación del exceso de sebo y prevención de brotes",
+      "Cutis limpio, uniforme y revitalizado"
+    ],
+    "includes": [
+      "60 minutos de protocolo de limpieza profunda",
+      "Extracción profesional higiénica",
+      "Alta frecuencia bactericida y mascarilla calmante",
+      "Bebida de cortesía"
+    ],
+    "recommendations": "No exponerse al sol directo las 24 horas posteriores a la sesión.",
+    "slug": "limpieza-facial-profunda"
+  },
+  {
+    "id": "srv_parafina_manos_pies_45",
+    "name": "Parafina para manos y pies",
+    "categoryTitle": "Tratamientos corporales",
+    "categoryId": "tratamientos-corporales",
+    "subcategoryName": "Cuidado Corporal y Estética",
+    "price": 10,
+    "duration": "45 min",
+    "badge": "Nutrición Cutánea",
+    "image": "./assets/catalog/parafina-para-manos-y-pies-45-min.webp",
+    "gallery": [
+      "./assets/catalog/parafina-para-manos-y-pies-45-min.webp",
+      "./assets/snack_bandeja.jpg"
+    ],
+    "description": "Baño de parafina tibia que humecta profundamente manos y pies secos o agrietados, alivia dolores articulares y deja la piel aterciopelada.",
+    "longDescription": [
+      "Tratamiento termoterapéutico donde las manos y los pies se sumergen en parafina cosmética tibia enriquecida con esencias emolientes.",
+      "El calor abre los poros y permite la absorción intensiva de aceites, proporcionando alivio en articulaciones rígidas y una tersura extraordinaria en talones y manos."
+    ],
+    "benefits": [
+      "Hidratación intensiva contra resequedad extrema y grietas",
+      "Calma la rigidez en dedos, muñecas y tobillos",
+      "Piel con tacto de seda durante días",
+      "Sensación de descanso absoluto en manos y pies"
+    ],
+    "includes": [
+      "45 minutos de tratamiento de parafina en ambas extremidades",
+      "Envoltura térmica y masaje final hidratante",
+      "Bebida de cortesía"
+    ],
+    "recommendations": "Ideal para combinar con pedicura o tras una jornada intensa de trabajo manual.",
+    "slug": "parafina-para-manos-y-pies"
+  },
+  {
+    "id": "srv_maderoterapia_corporal_75",
+    "name": "Maderoterapia corporal localizada",
+    "categoryTitle": "Tratamientos corporales",
+    "categoryId": "tratamientos-corporales",
+    "subcategoryName": "Cuidado Corporal y Estética",
+    "price": 25,
+    "duration": "75 min",
+    "badge": "Reductor & Reafirmante",
+    "image": "./assets/catalog/maderoterapia-corporal-localizada-75min.webp",
+    "gallery": [
+      "./assets/catalog/maderoterapia-corporal-localizada-75min.webp",
+      "./assets/maderoterapia.jpg"
+    ],
+    "description": "Técnica con instrumentos de madera diseñados para estimular la circulación, reafirmar tejidos, modelar el contorno y reducir celulitis.",
+    "longDescription": [
+      "Técnica holística de modelado corporal mediante instrumentos anatómicos de madera noble (rodillos estriados, copas suecas, tabla moldeadora).",
+      "Reactiva la lipólisis local, moviliza adiposidades rebeldes, favorece la retracción de la piel y tonifica glúteos, abdomen o muslos."
+    ],
+    "benefits": [
+      "Atenuación de la apariencia de piel de naranja y celulitis",
+      "Modelado y definición del contorno corporal",
+      "Estimulación linfática y eliminación de líquidos",
+      "Reafirmación del tejido conjuntivo dérmico"
+    ],
+    "includes": [
+      "75 minutos de maniobras con instrumental de maderoterapia",
+      "Aceites reductores con extractos botánicos",
+      "Bebida de cortesía"
+    ],
+    "recommendations": "Para resultados óptimos de reducción se aconseja una secuencia de varias sesiones.",
+    "slug": "maderoterapia-corporal-localizada"
+  },
+  {
+    "id": "srv_exfoliante_corporal_30",
+    "name": "Exfoliante corporal",
+    "categoryTitle": "Tratamientos corporales",
+    "categoryId": "tratamientos-corporales",
+    "subcategoryName": "Cuidado Corporal y Estética",
+    "price": 15,
+    "duration": "30 min",
+    "badge": "Renovación Dermo-Pulido",
+    "image": "./assets/catalog/exfoliante-corporal-z.webp",
+    "gallery": [
+      "./assets/catalog/exfoliante-corporal-z.webp",
+      "./assets/servicios_spa.jpg"
+    ],
+    "description": "Elimina células muertas y asperezas en todo el cuerpo con sales marinas o scrubs botánicos, dejando la piel renovada, luminosa y suave.",
+    "longDescription": [
+      "Pulido dérmico integral mediante exfoliantes granulados naturales a base de sales del mar o azúcares botánicos con aceites esenciales.",
+      "Desobstruye folículos, oxigena la epidermis y prepara la piel para recibir masajes o hidrataciones con máxima absorción."
+    ],
+    "benefits": [
+      "Eliminación eficaz de asperezas en codos, rodillas y espalda",
+      "Homogeneidad y suavidad aterciopelada al tacto",
+      "Estimulación de la microcirculación cutánea superficial",
+      "Potencia el efecto de cualquier tratamiento posterior"
+    ],
+    "includes": [
+      "30 minutos de exfoliación corporal completa",
+      "Retirada tibia y emulsión hidratante ligera",
+      "Bebida de cortesía"
+    ],
+    "recommendations": "Excelente antes de tomar el sol o recibir un masaje relajante.",
+    "slug": "exfoliante-corporal"
+  },
+  {
+    "id": "srv_termoterapia_parafina_60",
+    "name": "Termoterapia con manta térmica y parafina",
+    "categoryTitle": "Tratamientos corporales",
+    "categoryId": "tratamientos-corporales",
+    "subcategoryName": "Cuidado Corporal y Estética",
+    "price": 10,
+    "duration": "60 min",
+    "badge": "Detox Térmico",
+    "image": "./assets/catalog/envoltura-corporal-con-parafina.webp",
+    "gallery": [
+      "./assets/catalog/envoltura-corporal-con-parafina.webp",
+      "./assets/circuito_termal.jpg"
+    ],
+    "description": "Aplicación de parafina y calor controlado mediante manta térmica para desintoxicar, relajar la musculatura y favorecer la sudoración depurativa.",
+    "longDescription": [
+      "Tratamiento de calor profundo que eleva la temperatura corporal de manera segura y placentera con manta térmica especializada y activos emolientes de parafina.",
+      "Provoca una sudoración depurativa que elimina toxinas, alivia tensiones musculares generalizadas y promueve el descanso."
+    ],
+    "benefits": [
+      "Eliminación de toxinas por vía sudorípara",
+      "Alivio de dolores musculares y articulares crónicos",
+      "Relajación profunda por efecto vasodilatador",
+      "Piel suave e hidratada por la parafina"
+    ],
+    "includes": [
+      "60 minutos de protocolo termoterapéutico",
+      "Manta térmica regulable y envoltura corporal",
+      "Bebida de cortesía hidratante"
+    ],
+    "recommendations": "Beber agua fresca al terminar la sesión para rehidratar el organismo.",
+    "slug": "termoterapia-con-manta-termica-y-parafina"
+  },
+  {
+    "id": "srv_terapia_ventosas_75",
+    "name": "Terapia con ventosas",
+    "categoryTitle": "Tratamientos corporales",
+    "categoryId": "tratamientos-corporales",
+    "subcategoryName": "Cuidado Corporal y Estética",
+    "price": 25,
+    "duration": "75 min",
+    "badge": "Cupping Descompresivo",
+    "image": "./assets/catalog/terapia-con-ventosas.webp",
+    "gallery": [
+      "./assets/catalog/terapia-con-ventosas.webp",
+      "./assets/masaje_m01.jpg"
+    ],
+    "description": "Técnica tradicional de cupping que succiona y descomprime la fascia muscular, incrementando la irrigación sanguínea y aliviando contracturas resistentes.",
+    "longDescription": [
+      "Terapia milenaria de ventosas (cupping) fijas y dinámicas que genera presión negativa sobre el tejido blando.",
+      "A diferencia del masaje por compresión, la ventosa separa las fascias de los músculos, facilitando la oxigenación celular y barriendo el ácido láctico acumulado."
+    ],
+    "benefits": [
+      "Descompresión fascial profunda en espalda y piernas",
+      "Aumento drástico del flujo sanguíneo local",
+      "Eficaz en contracturas crónicas que no ceden al masaje tradicional",
+      "Acelera la recuperación tras entrenamientos intensos"
+    ],
+    "includes": [
+      "75 minutos de terapia de ventosas + masaje manual preparatorio",
+      "Aceites terapéuticos botánicos",
+      "Bebida de cortesía"
+    ],
+    "recommendations": "Puede dejar marcas circulares rojizas normales que desaparecen naturalmente en pocos días.",
+    "slug": "terapia-con-ventosas"
+  },
+  {
+    "id": "srv_auriculoterapia_20",
+    "name": "Auriculoterapia",
+    "categoryTitle": "Tratamientos corporales",
+    "categoryId": "tratamientos-corporales",
+    "subcategoryName": "Cuidado Corporal y Estética",
+    "price": 3,
+    "duration": "20 min",
+    "badge": "Reflexología Auricular",
+    "image": "./assets/catalog/auriculoterapia.webp",
+    "gallery": [
+      "./assets/catalog/auriculoterapia.webp",
+      "./assets/servicios_spa.jpg"
+    ],
+    "description": "Estimulación de puntos reflejos en la oreja mediante microesferas para regular el estrés, ansiedad, apetito y desequilibrios energéticos.",
+    "longDescription": [
+      "Especialidad de la medicina tradicional oriental basada en el microsistema de la oreja, donde se proyectan todos los órganos corporales.",
+      "Se aplican semillas de vaccaria o balines imantados en puntos estratégicos que continúan estimulando el sistema nervioso durante varios días."
+    ],
+    "benefits": [
+      "Control de la ansiedad y el estrés cotidiano",
+      "Apoyo en programas de control de peso y hábitos saludables",
+      "Alivio de dolores de cabeza e insomnio",
+      "Efecto prolongado durante los días siguientes"
+    ],
+    "includes": [
+      "20 minutos de diagnóstico y colocación de microesferas auriculares",
+      "Bebida de cortesía"
+    ],
+    "recommendations": "Presionar suavemente los balines cuando sientas episodios de ansiedad o estrés.",
+    "slug": "auriculoterapia"
+  },
+  {
+    "id": "srv_escapada_chicas",
+    "name": "Escapada de chicas",
+    "categoryTitle": "Paquetes",
+    "categoryId": "paquetes-parejas",
+    "subcategoryName": "Paquetes Signature y Rituales",
+    "price": 110,
+    "duration": "2 h 20 min aprox.",
+    "badge": "Grupal & Amigas",
+    "image": "./assets/catalog/escapada-de-chicas-2-horas-y-20-min.webp",
+    "gallery": [
+      "./assets/catalog/escapada-de-chicas-2-horas-y-20-min.webp",
+      "./assets/pareja_jacuzzi.jpg",
+      "./assets/snack_bandeja.jpg"
+    ],
+    "description": "Paquete completo diseñado para disfrutar entre amigas: masajes relajantes, mascarillas faciales, exfoliación y brindis de bienvenida.",
+    "longDescription": [
+      "El plan perfecto para compartir momentos inolvidables de risas, belleza y relax absoluto entre amigas en nuestras instalaciones privadas.",
+      "Incluye circuito de masajes relajantes, exfoliación corporal renovadora, hidratación facial y atención gourmet personalizada."
+    ],
+    "benefits": [
+      "Experiencia compartida inolvidable en ambiente exclusivo",
+      "Tratamiento estético y relajante integral simultáneo",
+      "Bebidas y aperitivos de cortesía",
+      "Fotografías y recuerdos memorables"
+    ],
+    "includes": [
+      "2 horas y 20 minutos de experiencia combinada",
+      "Masaje relajante + Tratamiento facial express + Exfoliación",
+      "Bebidas de cortesía y atenciones especiales"
+    ],
+    "recommendations": "Reservar con anticipación para coordinar el horario del grupo.",
+    "slug": "escapada-de-chicas"
+  },
+  {
+    "id": "srv_ritual_amor_pareja",
+    "name": "Ritual de Amor & Relax en Pareja",
+    "categoryTitle": "Paquetes",
+    "categoryId": "paquetes-parejas",
+    "subcategoryName": "Paquetes Signature y Rituales",
+    "price": 130,
+    "duration": "3 h aprox.",
+    "badge": "Romance & Parejas",
+    "image": "./assets/catalog/masaje-en-pareja-2-horas.webp",
+    "gallery": [
+      "./assets/catalog/masaje-en-pareja-2-horas.webp",
+      "./assets/pareja_jacuzzi.jpg",
+      "./assets/masaje_pareja.jpg"
+    ],
+    "description": "Experiencia romántica en cabina doble privada. Masaje corporal simultáneo con aromaterapia, tratamiento facial hidratante y brindis con cava o vino espumoso.",
+    "longDescription": [
+      "Diseñado para reconectar, celebrar aniversarios o regalar una velada mágica en pareja.",
+      "En una cabina doble ambientada con velas y música suave, dos terapeutas realizan un masaje completo simultáneo, seguido de hidratación facial y un momento íntimo de brindis."
+    ],
+    "benefits": [
+      "Fortalece la conexión íntima y emocional en pareja",
+      "Cabina doble ambientada con pétalos y luz tenue",
+      "Masaje integral simultáneo a cuatro manos (dos terapeutas)",
+      "Brindis exclusivo y amenidades especiales"
+    ],
+    "includes": [
+      "3 horas aproximadas en suite privada de parejas",
+      "Masaje corporal completo para ambos",
+      "Hidratación facial para los dos",
+      "Brindis con copa de espumoso o vino + bebida de cortesía"
+    ],
+    "recommendations": "El paquete favorito para celebrar aniversarios, cumpleaños o pedidas de mano.",
+    "slug": "ritual-de-amor-relax-en-pareja"
+  },
+  {
+    "id": "srv_refugio_zen",
+    "name": "Refugio Zen",
+    "categoryTitle": "Paquetes",
+    "categoryId": "paquetes-parejas",
+    "subcategoryName": "Paquetes Signature y Rituales",
+    "price": 200,
+    "duration": "4 h 20 min aprox.",
+    "badge": "Día de Spa Completo",
+    "image": "./assets/catalog/masaje-relajante-en-pareja-60min.webp",
+    "gallery": [
+      "./assets/catalog/masaje-relajante-en-pareja-60min.webp",
+      "./assets/circuito_termal.jpg",
+      "./assets/pareja_sauna.jpg"
+    ],
+    "description": "La experiencia de spa más completa de La Habana: exfoliación, envoltura corporal, masaje a elección, limpieza facial y salón de belleza con merienda gourmet.",
+    "longDescription": [
+      "Más de cuatro horas de entrega absoluta al autocuidado. Tu día de spa definitivo para resetear cuerpo y mente.",
+      "Recorrerás todas las estaciones del santuario: exfoliación profunda, envoltura nutritiva, masaje holístico o de piedras calientes, facial completo y servicios de estilismo capilar o manicura."
+    ],
+    "benefits": [
+      "Transformación integral de pies a cabeza",
+      "Máximo nivel de personalización de cada protocolo",
+      "Merienda gourmet saludable y bebidas ilimitadas",
+      "Sensación de renacimiento físico y anímico"
+    ],
+    "includes": [
+      "4 horas y 20 minutos de atenciones continuas",
+      "Exfoliación + Envoltura + Masaje 90 min + Facial completo + Salón",
+      "Merienda gourmet y bebidas de cortesía"
+    ],
+    "recommendations": "Reserva este día enteramente para ti sin compromisos de agenda posteriores.",
+    "slug": "refugio-zen"
+  },
+  {
+    "id": "srv_plan_romantico",
+    "name": "Plan Romántico",
+    "categoryTitle": "Paquetes",
+    "categoryId": "paquetes-parejas",
+    "subcategoryName": "Paquetes Signature y Rituales",
+    "price": 105,
+    "duration": "2 h aprox.",
+    "badge": "Especial Parejas",
+    "image": "./assets/catalog/ritual-eternal-velvet-3-horas.webp",
+    "gallery": [
+      "./assets/catalog/ritual-eternal-velvet-3-horas.webp",
+      "./assets/masaje_pareja.jpg",
+      "./assets/snack_bandeja.jpg"
+    ],
+    "description": "Dos horas de escape en cabina doble para compartir con tu pareja: masaje sincronizado relajante, aromaterapia personalizada y copas de cortesía.",
+    "longDescription": [
+      "Una pausa romántica y acogedora de dos horas completas para parejas que desean desconectar del ajetreo diario.",
+      "Masaje corporal relajante sincronizado, aceites aromáticos afrodisíacos y una atmósfera íntima diseñada con esmero."
+    ],
+    "benefits": [
+      "Desconexión conjunta en cabina doble",
+      "Alivio de tensiones y renovación del vínculo afectivo",
+      "Música envolvente y aceites aromáticos de rosas y jazmín",
+      "Detalles de cortesía románticos"
+    ],
+    "includes": [
+      "2 horas completas en cabina privada de pareja",
+      "Masaje relajante corporal para ambos",
+      "Copas de cortesía"
+    ],
+    "recommendations": "Excelente detalle sorpresa para una fecha especial.",
+    "slug": "plan-romantico"
+  },
+  {
+    "id": "srv_escape_romantico_spa",
+    "name": "Escape Romántico Spa",
+    "categoryTitle": "Paquetes",
+    "categoryId": "paquetes-parejas",
+    "subcategoryName": "Paquetes Signature y Rituales",
+    "price": 60,
+    "duration": "1 h 45 min aprox.",
+    "badge": "Pareja Express",
+    "image": "./assets/catalog/tarde-de-spa-para-dos-3-horas-y-30-min.webp",
+    "gallery": [
+      "./assets/catalog/tarde-de-spa-para-dos-3-horas-y-30-min.webp",
+      "./assets/pareja_jacuzzi.jpg"
+    ],
+    "description": "Versión condensada para disfrutar en pareja: masaje relajante de 60 minutos en cabina compartida más cóctel sin alcohol o infusión de cortesía.",
+    "longDescription": [
+      "Para parejas con agendas apretadas que no quieren renunciar a regalarse una experiencia de relajación compartida de primer nivel.",
+      "Incluye recepción con bebidas frías o calientes y masaje relajante simultáneo en cabina doble."
+    ],
+    "benefits": [
+      "Optimización de tiempo con máxima calidad de spa",
+      "Masaje simultáneo en cabina privada para dos",
+      "Alivio muscular y serenidad compartida",
+      "Tarifa accesible para disfrutar regularmente"
+    ],
+    "includes": [
+      "1 hora y 45 minutos de experiencia en pareja",
+      "Masaje corporal simultáneo para ambos",
+      "Bebida no alcohólica de cortesía"
+    ],
+    "recommendations": "Ideal para coordinar entre semana al terminar la jornada.",
+    "slug": "escape-romantico-spa"
+  },
+  {
+    "id": "srv_lavar_peinar_corto",
+    "name": "Lavar y peinar cabello corto",
+    "categoryTitle": "Salón de belleza",
+    "categoryId": "salon-belleza",
+    "subcategoryName": "Peluquería y Estilismo",
+    "price": 5,
+    "duration": null,
+    "badge": "Estilismo",
+    "image": "./assets/catalog/lavar-y-peinar-1-hora.webp",
+    "gallery": [
+      "./assets/catalog/lavar-y-peinar-1-hora.webp",
+      "./assets/peluqueria_orig.jpg"
+    ],
+    "description": "Lavado profesional con champú nutritivo, acondicionador desenredante y peinado o brushing para cabello corto.",
+    "longDescription": [
+      "Servicio de peluquería profesional que incluye lavado con productos de salón de alta calidad y peinado con secador y fijadores suaves para melenas cortas."
+    ],
+    "benefits": [
+      "Cabello limpio, brillante y libre de residuos",
+      "Peinado duradero con volumen y definición",
+      "Productos profesionales nutritivos"
+    ],
+    "includes": [
+      "Lavado con champú y acondicionador profesional",
+      "Secado y peinado para cabello corto",
+      "Bebida de cortesía"
+    ],
+    "recommendations": "Perfecto para antes de reuniones de trabajo o salidas sociales.",
+    "slug": "lavar-y-peinar-cabello-corto"
+  },
+  {
+    "id": "srv_lavar_peinar_medio",
+    "name": "Lavar y peinar cabello medio",
+    "categoryTitle": "Salón de belleza",
+    "categoryId": "salon-belleza",
+    "subcategoryName": "Peluquería y Estilismo",
+    "price": 7,
+    "duration": null,
+    "badge": "Estilismo",
+    "image": "./assets/catalog/lavar-y-peinar-cabello-medio.webp",
+    "gallery": [
+      "./assets/catalog/lavar-y-peinar-cabello-medio.webp",
+      "./assets/peluqueria2_orig.jpg"
+    ],
+    "description": "Lavado completo y peinado estructurado para cabello de longitud media (a la altura de los hombros).",
+    "longDescription": [
+      "Lavado con cosmética capilar premium que hidrata y aporta soltura, seguido de peinado profesional con cepillo redondo o plancha según preferencia."
+    ],
+    "benefits": [
+      "Manejo impecable del frizz y movimiento natural",
+      "Brillo radiante y sellado de cutícula",
+      "Estilo pulido y duradero"
+    ],
+    "includes": [
+      "Lavado capilar con champú y mascarilla",
+      "Brushing o peinado para cabello medio",
+      "Bebida de cortesía"
+    ],
+    "recommendations": "Consúltale a tu estilista el estilo de peinado que mejor favorezca tus rasgos.",
+    "slug": "lavar-y-peinar-cabello-medio"
+  },
+  {
+    "id": "srv_lavar_peinar_largo",
+    "name": "Lavar y peinar cabello largo",
+    "categoryTitle": "Salón de belleza",
+    "categoryId": "salon-belleza",
+    "subcategoryName": "Peluquería y Estilismo",
+    "price": 9,
+    "duration": null,
+    "badge": "Estilismo",
+    "image": "./assets/catalog/lavar-y-peinar.webp",
+    "gallery": [
+      "./assets/catalog/lavar-y-peinar.webp",
+      "./assets/peluqueria3_orig.jpg"
+    ],
+    "description": "Lavado hidratante con desenredado minucioso y peinado con secador o plancha para cabello largo.",
+    "longDescription": [
+      "Atención especial para melenas largas: lavado suave, nutrición de medios a puntas con mascarilla selladora y peinado con movimiento, ondas o alisado perfecto."
+    ],
+    "benefits": [
+      "Desenredado sin tirones ni rotura de fibra",
+      "Puntas selladas y cabello con caída suave",
+      "Aspecto de peluquería impecable"
+    ],
+    "includes": [
+      "Lavado y acondicionamiento profundo",
+      "Peinado profesional para cabello largo",
+      "Bebida de cortesía"
+    ],
+    "recommendations": "Añade un tratamiento de nutrición si tus puntas se sienten secas.",
+    "slug": "lavar-y-peinar-cabello-largo"
+  },
+  {
+    "id": "srv_lavar_peinar_extralargo",
+    "name": "Lavar y peinar cabello extra largo",
+    "categoryTitle": "Salón de belleza",
+    "categoryId": "salon-belleza",
+    "subcategoryName": "Peluquería y Estilismo",
+    "price": 12,
+    "duration": null,
+    "badge": "Estilismo Melena",
+    "image": "./assets/catalog/lavar-y-peinar-cabello-extra-largo.webp",
+    "gallery": [
+      "./assets/catalog/lavar-y-peinar-cabello-extra-largo.webp",
+      "./assets/peluqueria_orig.jpg"
+    ],
+    "description": "Lavado y peinado especializado para melenas abundantes y de longitud extra larga. Tratamiento minucioso de medios y puntas.",
+    "longDescription": [
+      "Cuidado exhaustivo para cabellos por debajo de la cintura o de gran volumen: lavado con productos enriquecidos, secado por secciones y peinado de alta definición."
+    ],
+    "benefits": [
+      "Control del volumen y eliminación del encrespamiento",
+      "Manejo experto de melenas muy largas",
+      "Brillo de raíz a puntas sin sobrecalentar el cabello"
+    ],
+    "includes": [
+      "Lavado integral con mascarilla acondicionadora",
+      "Secado y moldeado de cabello extra largo",
+      "Bebida de cortesía"
+    ],
+    "recommendations": "Disfruta de tu bebida de cortesía mientras nuestras estilistas miman tu cabello.",
+    "slug": "lavar-y-peinar-cabello-extra-largo"
+  },
+  {
+    "id": "srv_corte_cabello",
+    "name": "Corte de cabello",
+    "categoryTitle": "Salón de belleza",
+    "categoryId": "salon-belleza",
+    "subcategoryName": "Peluquería y Estilismo",
+    "price": 5,
+    "duration": null,
+    "badge": "Corte & Estilo",
+    "image": "./assets/catalog/lavado-corte-y-peinado-de-cabello-para-mujeres.webp",
+    "gallery": [
+      "./assets/catalog/lavado-corte-y-peinado-de-cabello-para-mujeres.webp",
+      "./assets/peluqueria_orig.jpg"
+    ],
+    "description": "Asesoría de imagen, saneamiento de puntas o cambio de look radical realizado por nuestras estilistas profesionales.",
+    "longDescription": [
+      "Corte de precisión adaptado a la forma de tu rostro y textura natural de tu cabello. Desde saneamiento de puntas hasta cortes en capas, bobs o estilos vanguardistas."
+    ],
+    "benefits": [
+      "Eliminación de puntas abiertas y orquillas",
+      "Renovación del volumen y caída natural",
+      "Asesoramiento personalizado según tu fisonomía"
+    ],
+    "includes": [
+      "Diagnóstico capilar y corte profesional",
+      "Peinado básico final",
+      "Bebida de cortesía"
+    ],
+    "recommendations": "Puedes traer fotos de referencia del estilo que deseas lograr.",
+    "slug": "corte-de-cabello"
+  },
+  {
+    "id": "srv_antifrizz_felps",
+    "name": "Tratamiento Anti-Frizz FELPS",
+    "categoryTitle": "Salón de belleza",
+    "categoryId": "salon-belleza",
+    "subcategoryName": "Peluquería y Estilismo",
+    "price": 15,
+    "duration": null,
+    "badge": "Botox Capilar & Control",
+    "image": "./assets/catalog/tratamiento-anti-frizz-felps.webp",
+    "gallery": [
+      "./assets/catalog/tratamiento-anti-frizz-felps.webp",
+      "./assets/peluqueria2_orig.jpg"
+    ],
+    "description": "Tratamiento disciplinante con fórmula FELPS que sella la cutícula, reduce el encrespamiento por humedad y aporta brillo espejo.",
+    "longDescription": [
+      "Tratamiento intensivo con la reconocida línea brasileña FELPS. Rellena la fibra capilar con aminoácidos y queratina hidrolizada para controlar el frizz persistente del clima caribeño."
+    ],
+    "benefits": [
+      "Control total del encrespamiento frente a la humedad",
+      "Efecto alisador suave y disciplina de la onda",
+      "Brillo espejo y tacto sedoso inmediato",
+      "Duración prolongada de varias semanas"
+    ],
+    "includes": [
+      "Aplicación de tratamiento FELPS",
+      "Sellado térmico con plancha profesional",
+      "Bebida de cortesía"
+    ],
+    "recommendations": "Evita lavar el cabello las primeras 48 horas tras la aplicación para fijar los activos.",
+    "slug": "tratamiento-anti-frizz-felps"
+  },
+  {
+    "id": "srv_scalp_balance_detox",
+    "name": "Experiencia Capilar “Scalp Balance Detox”",
+    "categoryTitle": "Salón de belleza",
+    "categoryId": "salon-belleza",
+    "subcategoryName": "Peluquería y Estilismo",
+    "price": 35,
+    "duration": "60–90 min",
+    "badge": "Head Spa Signature",
+    "image": "./assets/catalog/experiencia-capilar-scalp-balance-detox-60-90.webp",
+    "gallery": [
+      "./assets/catalog/experiencia-capilar-scalp-balance-detox-60-90.webp",
+      "./assets/head_spa.jpg"
+    ],
+    "description": "Ritual de bienestar inspirado en el Head Spa japonés: exfoliación del cuero cabelludo, masaje craneal con cascada de agua tibia, mascarilla botánica y alta frecuencia.",
+    "longDescription": [
+      "Nuestra joya del salón inspirada en los famosos Head Spas de Japón. Trata la salud del cuero cabelludo como la raíz de un cabello espléndido.",
+      "Comienza con exfoliación purificante, hidroterapia con arco de agua tibia relajante, masaje craneal descontracturante, electroterapia y mascarilla de nutrición profunda."
+    ],
+    "benefits": [
+      "Desintoxicación del cuero cabelludo de excesos sebáceos y caspa",
+      "Estimulación profunda del crecimiento del cabello",
+      "Alivio del estrés mental y dolor de cabeza",
+      "Sensación de frescura y ligereza inigualable"
+    ],
+    "includes": [
+      "Sesión completa de 60 a 90 minutos en camilla con arco de agua",
+      "Masaje craneal, cervical y de hombros",
+      "Productos botánicos purificantes",
+      "Bebida de cortesía"
+    ],
+    "recommendations": "Nuestra experiencia capilar más elogiada en reseñas.",
+    "slug": "experiencia-capilar-scalp-balance-detox"
+  },
+  {
+    "id": "srv_color_1oz",
+    "name": "Color",
+    "categoryTitle": "Salón de belleza",
+    "categoryId": "salon-belleza",
+    "subcategoryName": "Peluquería y Estilismo",
+    "price": 5,
+    "duration": null,
+    "badge": "Coloración",
+    "image": "./assets/catalog/balayage-mechas-premium.webp",
+    "gallery": [
+      "./assets/catalog/balayage-mechas-premium.webp",
+      "./assets/peluqueria3_orig.jpg"
+    ],
+    "description": "Aplicación de tinte profesional, cobertura total de canas o baño de color para reavivar tonos y reflejos.",
+    "longDescription": [
+      "Coloración profesional con tintes que respetan la estructura capilar, garantizando tonos vibrantes, cobertura óptima de canas y brillo duradero."
+    ],
+    "benefits": [
+      "Cobertura perfecta de canas desde la raíz",
+      "Tonos intensos con reflejos luminosos",
+      "Fórmulas con agentes protectores del brillo"
+    ],
+    "includes": [
+      "Aplicación de coloración profesional",
+      "Lavado con champú post-color fijador",
+      "Bebida de cortesía"
+    ],
+    "recommendations": "Consulta con nuestra colorista para elegir el matiz perfecto.",
+    "slug": "color"
+  },
+  {
+    "id": "srv_decoloracion_1oz",
+    "name": "Decoloración",
+    "categoryTitle": "Salón de belleza",
+    "categoryId": "salon-belleza",
+    "subcategoryName": "Peluquería y Estilismo",
+    "price": 7,
+    "duration": null,
+    "badge": "Aclarado Técnico",
+    "image": "./assets/catalog/decoloracion-o-mechas-30-g.webp",
+    "gallery": [
+      "./assets/catalog/decoloracion-o-mechas-30-g.webp",
+      "./assets/peluqueria3_orig.jpg"
+    ],
+    "description": "Técnica de aclarado controlado para mechas, balayage o fondos de decoloración con protectores plex para cuidar la fibra capilar.",
+    "longDescription": [
+      "Proceso técnico de aclarado del cabello mediante decolorantes formulados con aditivos protectores que minimizan la agresión sobre la cutícula."
+    ],
+    "benefits": [
+      "Aclarado parejo y limpio para fondos rubios o fantasía",
+      "Cuidado de la fibra con aditivos protectores",
+      "Técnica personalizada para mechas o balayage"
+    ],
+    "includes": [
+      "Proceso de decoloración técnica",
+      "Lavado neutralizante y tratamiento protector",
+      "Bebida de cortesía"
+    ],
+    "recommendations": "Se sugiere acompañar con un tratamiento reconstructor capilar.",
+    "slug": "decoloracion"
+  },
+  {
+    "id": "srv_tratamientos_capilares",
+    "name": "Tratamientos capilares",
+    "categoryTitle": "Salón de belleza",
+    "categoryId": "salon-belleza",
+    "subcategoryName": "Peluquería y Estilismo",
+    "price": 10,
+    "duration": null,
+    "badge": "Reparación & Brillo",
+    "image": "./assets/catalog/tratamientos-capilares-4t.webp",
+    "gallery": [
+      "./assets/catalog/tratamientos-capilares-4t.webp",
+      "./assets/peluqueria2_orig.jpg"
+    ],
+    "description": "Ampollas nutritivas, cócteles de hidratación profunda y mascarillas de queratina para recuperar cabellos secos o castigados.",
+    "longDescription": [
+      "Protocolo de emergencia capilar para devolverle la vida a cabellos deshidratados, opacos o químicamente tratados con mascarillas y ampollas concentradas."
+    ],
+    "benefits": [
+      "Sellado de puntas abiertas y disminución de quiebre",
+      "Recuperación de la elasticidad y suavidad perdida",
+      "Nutrición profunda de la cutícula"
+    ],
+    "includes": [
+      "Diagnóstico de la hebra capilar",
+      "Aplicación de cóctel de mascarilla y ampolla térmica",
+      "Bebida de cortesía"
+    ],
+    "recommendations": "Excelente adición antes o después de cualquier peinado o corte.",
+    "slug": "tratamientos-capilares"
+  },
+  {
+    "id": "srv_pedicura_spa_90",
+    "name": "Pedicura Spa",
+    "categoryTitle": "Salón de belleza",
+    "categoryId": "salon-belleza",
+    "subcategoryName": "Manicura y Pedicura",
+    "price": 12,
+    "duration": "1 h 30 min",
+    "badge": "Pies Perfectos",
+    "image": "./assets/catalog/pedicura-spa-1-hora.webp",
+    "gallery": [
+      "./assets/catalog/pedicura-spa-1-hora.webp",
+      "./assets/pedicura_orig.jpg",
+      "./assets/pedicura2_orig.jpg"
+    ],
+    "description": "Cuidado completo para pies: remojo en sales, exfoliación, limado, tratamiento de cutículas, masaje relajante en pies y esmaltado.",
+    "longDescription": [
+      "Una hora y media de descanso para tus pies: baño en tina con sales aromáticas, limado y pulido de uñas, exfoliación con scrub de azúcar, masaje relajante y esmaltado tradicional o pulido natural."
+    ],
+    "benefits": [
+      "Eliminación de piel seca y callosidades suaves",
+      "Uñas perfectamente delineadas y limpias",
+      "Alivio del dolor y descanso en los pies",
+      "Esmaltado prolijo de larga duración"
+    ],
+    "includes": [
+      "90 minutos de pedicura spa completa",
+      "Exfoliación, masaje y esmaltado",
+      "Bebida de cortesía"
+    ],
+    "recommendations": "Traer calzado abierto para permitir el secado perfecto del esmalte.",
+    "slug": "pedicura-spa"
+  },
+  {
+    "id": "srv_anticallosidad_pies",
+    "name": "Tratamiento anti-callosidad para los pies",
+    "categoryTitle": "Salón de belleza",
+    "categoryId": "salon-belleza",
+    "subcategoryName": "Manicura y Pedicura",
+    "price": 15,
+    "duration": null,
+    "badge": "Podológico & Suavidad",
+    "image": "./assets/catalog/manicura-spa.webp",
+    "gallery": [
+      "./assets/catalog/manicura-spa.webp",
+      "./assets/pedicura2_orig.jpg"
+    ],
+    "description": "Tratamiento intensivo con lociones queratolíticas para ablandar y eliminar durezas y callosidades rebeldes en talones y plantas de los pies.",
+    "longDescription": [
+      "Protocolo intensivo enfocado en restaurar pies con durezas severas, hiperqueratosis o talones agrietados. Ablanda las capas córneas engrosadas para removerlas sin lastimar la piel sana."
+    ],
+    "benefits": [
+      "Eliminación eficaz de durezas gruesas y asperezas",
+      "Regeneración de talones agrietados",
+      "Sensación inmediata de pies suaves y ligeros"
+    ],
+    "includes": [
+      "Aplicación de loción emoliente queratolítica",
+      "Retirado técnico de callosidades e hidratación intensiva",
+      "Bebida de cortesía"
+    ],
+    "recommendations": "Ideal para pies castigados por el calzado cerrado o caminatas prolongadas.",
+    "slug": "tratamiento-anti-callosidad-para-los-pies"
+  },
+  {
+    "id": "srv_depilacion_axilas",
+    "name": "Depilación de axilas",
+    "categoryTitle": "Depilación",
+    "categoryId": "depilacion",
+    "subcategoryName": "Depilación con Cera",
+    "price": 7,
+    "duration": null,
+    "badge": "Cuidado Piel Suave",
+    "image": "./assets/catalog/depilacion-de-axilas-5my9n.webp",
+    "gallery": [
+      "./assets/catalog/depilacion-de-axilas-5my9n.webp",
+      "./assets/depilacion_orig.jpg"
+    ],
+    "description": "Depilación higiénica con cera tibia especial para zonas sensibles, garantizando una piel limpia, suave y libre de vello por semanas.",
+    "longDescription": [
+      "Depilación rápida y eficaz con ceras de baja temperatura formuladas con activos calmantes para evitar irritaciones en la delicada zona de las axilas."
+    ],
+    "benefits": [
+      "Extracción del vello desde la raíz",
+      "Piel suave sin cortes ni sombras de afeitado",
+      "Efecto duradero de 3 a 4 semanas"
+    ],
+    "includes": [
+      "Depilación con cera higiénica desechable",
+      "Loción calmante con aloe vera post-depilatoria",
+      "Bebida de cortesía"
+    ],
+    "recommendations": "No aplicar desodorantes con alcohol en las primeras 12 horas.",
+    "slug": "depilacion-de-axilas"
+  },
+  {
+    "id": "srv_depilacion_piernas",
+    "name": "Depilación de piernas",
+    "categoryTitle": "Depilación",
+    "categoryId": "depilacion",
+    "subcategoryName": "Depilación con Cera",
+    "price": 20,
+    "duration": null,
+    "badge": "Piernas de Seda",
+    "image": "./assets/catalog/depilacion-de-piernas-geakj.webp",
+    "gallery": [
+      "./assets/catalog/depilacion-de-piernas-geakj.webp",
+      "./assets/depilacion_orig.jpg"
+    ],
+    "description": "Depilación completa de piernas con cera tibia que retira el vello de raíz dejando las piernas suaves y sedosas.",
+    "longDescription": [
+      "Depilación integral de piernas (muslos, rodillas y pantorrillas) con cera de alta elasticidad. Arranca el vello desde el bulbo para debilitarlo progresivamente."
+    ],
+    "benefits": [
+      "Piernas tersas, libres de vello y suaves al tacto",
+      "Debilitamiento paulatino del grosor del vello",
+      "Cuidado de la circulación con ceras tibias"
+    ],
+    "includes": [
+      "Depilación completa de piernas",
+      "Aceite calmante post-depilación y masaje ligero",
+      "Bebida de cortesía"
+    ],
+    "recommendations": "Exfoliar las piernas 48 horas antes para evitar vellos encarnados.",
+    "slug": "depilacion-de-piernas"
+  },
+  {
+    "id": "srv_depilacion_cejas",
+    "name": "Depilación de cejas",
+    "categoryTitle": "Depilación",
+    "categoryId": "depilacion",
+    "subcategoryName": "Depilación con Cera",
+    "price": 2,
+    "duration": null,
+    "badge": "Diseño & Definición",
+    "image": "./assets/catalog/cejas-u.webp",
+    "gallery": [
+      "./assets/catalog/cejas-u.webp",
+      "./assets/pestanas_orig.jpg"
+    ],
+    "description": "Diseño y limpieza del arco de las cejas con cera y pinzas para realzar la mirada y armonizar las facciones del rostro.",
+    "longDescription": [
+      "Perfilado de cejas profesional con cera de precisión y pinza para retirar vellos dispersos y resaltar la arquitectura natural de tu mirada."
+    ],
+    "benefits": [
+      "Arco de cejas limpio, simétrico y definido",
+      "Realce inmediato de la mirada",
+      "Técnica rápida y poco dolorosa"
+    ],
+    "includes": [
+      "Limpieza y diseño de cejas",
+      "Gel descongestivo de manzanilla",
+      "Bebida de cortesía"
+    ],
+    "recommendations": "Mantener la forma cada 3 a 4 semanas.",
+    "slug": "depilacion-de-cejas"
+  },
+  {
+    "id": "srv_depilacion_bozo_menton",
+    "name": "Depilación de bozo y mentón",
+    "categoryTitle": "Depilación",
+    "categoryId": "depilacion",
+    "subcategoryName": "Depilación con Cera",
+    "price": 3,
+    "duration": null,
+    "badge": "Rostro Limpio",
+    "image": "./assets/catalog/bozo-y-menton.webp",
+    "gallery": [
+      "./assets/catalog/bozo-y-menton.webp",
+      "./assets/pestanas_orig.jpg"
+    ],
+    "description": "Depilación suave del labio superior y mentón con cera especial para el rostro sensible, dejando la piel limpia y tersa.",
+    "longDescription": [
+      "Remoción del vello facial indeseado en la zona del bozo y mentón con cera hipoalergénica de baja temperatura, evitando irritaciones y vellos enquistados."
+    ],
+    "benefits": [
+      "Rostro completamente limpio y libre de sombras",
+      "Mayor adherencia y acabado uniforme del maquillaje",
+      "Debilitamiento gradual del vello facial"
+    ],
+    "includes": [
+      "Depilación de labio superior y mentón",
+      "Tónico calmante refrescante",
+      "Bebida de cortesía"
+    ],
+    "recommendations": "Evitar el maquillaje directo en la zona las primeras horas.",
+    "slug": "depilacion-de-bozo-y-menton"
+  },
+  {
+    "id": "srv_taxi",
+    "name": "Servicio de taxi 🚕",
+    "categoryTitle": "Otros",
+    "categoryId": "otros",
+    "subcategoryName": "Servicios Complementarios",
+    "price": "Sin costo",
+    "duration": "Personalizado",
+    "badge": "Transporte Exclusivo",
+    "image": "./assets/servicio_taxi.jpg",
+    "gallery": [
+      "./assets/servicio_taxi.jpg",
+      "./assets/servicios_spa.jpg"
+    ],
+    "description": "\"¿No tienes cómo llegar? Nosotros te recogemos y te llevamos de regreso.\"",
+    "longDescription": [
+      "\"¿No tienes cómo llegar? Nosotros te recogemos y te llevamos de regreso.\"",
+      "Disfruta de la máxima comodidad desde que sales de tu casa o alojamiento. Coordinamos transporte privado climatizado para recogerte puntualmente antes de tu cita en Momentos Spa y llevarte de vuelta al finalizar tu sesión de bienestar."
+    ],
+    "benefits": [
+      "Recogida y regreso directo en tu domicilio, hotel o casa de renta",
+      "Vehículo privado con aire acondicionado y chofer puntual",
+      "Cero preocupaciones por buscar transporte o estacionamiento",
+      "Llegas a tu sesión totalmente relajado y puntual"
+    ],
+    "includes": [
+      "Coordinación personalizada de traslado ida y vuelta",
+      "Vehículo privado climatizado",
+      "Atención directa vía WhatsApp para acordar dirección y hora"
+    ],
+    "recommendations": "Solicita tu servicio de taxi con anticipación al coordinar tu cita por WhatsApp indicando tu dirección.",
+    "slug": "servicio-de-taxi",
+    "isTaxi": true
+  }
+];
 
-export function getServiceById(idOrSlug) {
-  if (!idOrSlug) return null;
-  return allServices.find(s => s.id === idOrSlug || s.slug === idOrSlug) || null;
+export function getServiceBySlug(slug) {
+  if (!slug) return null;
+  return allServices.find(s => s.slug === slug || s.id === slug);
+}
+
+export function getServiceById(id) {
+  if (!id) return null;
+  return allServices.find(s => s.id === id || s.slug === id);
 }

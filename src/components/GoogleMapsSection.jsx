@@ -57,9 +57,30 @@ export default function GoogleMapsSection() {
                   <span>{t('hoursTitle', 'Horario de Atención')}</span>
                 </div>
                 <p className="text-xs sm:text-sm text-stone-700 font-medium">
-                  {t('hoursDesc', 'Miércoles a Domingo: 10:00 AM - 7:00 PM (Lunes y Martes Cerrado)')}
+                  {t('hoursDesc', 'Miércoles a Domingo: 10:00 AM - 6:00 PM (Lunes y Martes Cerrado)')}
                 </p>
               </div>
+            </div>
+
+            {/* Servicio de Taxi Banner */}
+            <div className="p-5 rounded-3xl bg-amber-50/90 border border-amber-200/90 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm">
+              <div className="space-y-1 text-center sm:text-left">
+                <div className="flex items-center justify-center sm:justify-start gap-2 font-serif-title font-bold text-sm text-mahogany-950">
+                  <span className="text-lg">🚕</span>
+                  <span>Servicio de taxi</span>
+                </div>
+                <p className="text-xs text-stone-600">
+                  "¿No tienes cómo llegar? Nosotros te recogemos y te llevamos de regreso."
+                </p>
+              </div>
+              <a
+                href="https://wa.me/5359710688?text=Hola%20Momentos%20Spa%2C%20deseo%20solicitar%20el%20Servicio%20de%20taxi%20%F0%9F%9A%95%20para%20mi%20cita."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="shrink-0 px-4 py-2 rounded-full bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-bold transition-all shadow hover:scale-105 flex items-center gap-1.5"
+              >
+                <span>Pedir Taxi por WhatsApp</span>
+              </a>
             </div>
 
             <a

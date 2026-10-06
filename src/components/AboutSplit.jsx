@@ -78,9 +78,9 @@ export default function AboutSplit({ onOpenBooking, onNavigateToPage }) {
           <div className="pt-8 border-t border-stone-300/60 flex items-center justify-between">
             <div className="flex items-center gap-4">
               <img 
-                src="./assets/logo_dark.png" 
+                src="./assets/logo_emblem_gold.png" 
                 alt="Momentos Spa" 
-                className="w-12 h-12 rounded-full border border-stone-300 object-contain p-0.5 bg-white shadow-sm" 
+                className="w-12 h-12 rounded-full border border-stone-300 object-contain p-1.5 bg-cream-50/80 shadow-sm" 
               />
               <div>
                 <div className="font-serif-title font-bold text-stone-900 text-base">Momentos Spa Habana</div>

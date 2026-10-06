@@ -14,6 +14,7 @@ export default function BookingCalendarModal({ isOpen, onClose, preselectedServi
   const [selectedTimeSlot, setSelectedTimeSlot] = useState('');
   const [selectedTherapist, setSelectedTherapist] = useState('Cualquier terapeuta disponible');
   const [notes, setNotes] = useState('');
+  const [needTaxi, setNeedTaxi] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [bookingSuccess, setBookingSuccess] = useState(false);
 
@@ -114,18 +115,21 @@ export default function BookingCalendarModal({ isOpen, onClose, preselectedServi
       });
 
       // 2. Format structured WhatsApp message to +53 59710688
+      const formattedPrice = typeof selectedService.price === 'number' ? `$${selectedService.price} USD` : selectedService.price;
+      const durationLine = selectedService.duration ? `⏱️ *Duración:* ${selectedService.duration}\n` : '';
+      const taxiLine = (needTaxi || selectedService.isTaxi) ? '🚕 *Servicio de Taxi:* SOLICITADO (recogida y regreso)\n' : '';
+
       const waText = 
 `✨ *SOLICITUD DE RESERVA - MOMENTOS SPA* ✨
 👤 *Cliente:* ${user.name}
 📱 *Teléfono:* ${user.phone}
 📧 *Correo:* ${user.email}
 💆 *Servicio:* ${selectedService.name}
-⏱️ *Duración:* ${selectedService.duration}
-💰 *Tarifa:* $${selectedService.price} USD
+${durationLine}💰 *Tarifa:* ${formattedPrice}
 📅 *Fecha:* ${selectedDate}
 ⏰ *Hora:* ${selectedTimeSlot}
 👩‍⚕️ *Terapeuta:* ${selectedTherapist}
-📝 *Notas:* ${notes || 'Ninguna'}
+${taxiLine}📝 *Notas:* ${notes || 'Ninguna'}
 📍 *Sede:* Calle 44 #111 e/ 3ra y 1ra A, Miramar, La Habana`;
 
       const waUrl = `https://wa.me/5359710688?text=${encodeURIComponent(waText)}`;
@@ -235,8 +239,10 @@ export default function BookingCalendarModal({ isOpen, onClose, preselectedServi
                           </div>
                         </div>
                         <div className="mt-3 pt-2 border-t border-stone-200/50 flex items-center justify-between text-xs">
-                          <span>{srv.duration}</span>
-                          <span className="font-bold">${srv.price} USD</span>
+                          <span>{srv.duration || ''}</span>
+                          <span className="font-bold">
+                            {typeof srv.price === 'number' ? `$${srv.price} USD` : srv.price}
+                          </span>
                         </div>
                       </button>
                     ))}
@@ -253,7 +259,10 @@ export default function BookingCalendarModal({ isOpen, onClose, preselectedServi
                     <div>
                       <span className="text-[10px] font-bold uppercase tracking-wider text-stone-400">Tratamiento elegido</span>
                       <div className="font-bold text-sm text-stone-900">{selectedService?.name}</div>
-                      <div className="text-xs text-stone-500">{selectedService?.duration} • ${selectedService?.price} USD</div>
+                      <div className="text-xs text-stone-500">
+                        {selectedService?.duration ? `${selectedService.duration} • ` : ''}
+                        {typeof selectedService?.price === 'number' ? `$${selectedService.price} USD` : selectedService?.price}
+                      </div>
                     </div>
                     <button
                       onClick={() => setStep(1)}
@@ -396,6 +405,24 @@ export default function BookingCalendarModal({ isOpen, onClose, preselectedServi
                           className="w-full text-xs p-2.5 rounded-xl border border-stone-300 bg-white focus:outline-none focus:border-mahogany-900"
                         />
                       </div>
+
+                      {/* Servicio de Taxi Option */}
+                      <label className="flex items-start gap-3 p-3 bg-amber-50/80 rounded-xl border border-amber-200/90 cursor-pointer hover:bg-amber-100/70 transition-colors">
+                        <input
+                          type="checkbox"
+                          checked={needTaxi}
+                          onChange={(e) => setNeedTaxi(e.target.checked)}
+                          className="mt-0.5 w-4 h-4 rounded text-mahogany-900 focus:ring-gold cursor-pointer"
+                        />
+                        <div className="text-xs text-stone-700">
+                          <span className="font-bold text-mahogany-950 block">
+                            🚕 ¿Deseas solicitar Servicio de taxi para esta cita?
+                          </span>
+                          <span className="text-[11px] text-stone-500 block">
+                            "¿No tienes cómo llegar? Nosotros te recogemos y te llevamos de regreso."
+                          </span>
+                        </div>
+                      </label>
                     </div>
                   )}
 
@@ -465,7 +492,9 @@ export default function BookingCalendarModal({ isOpen, onClose, preselectedServi
                       </div>
                       <div>
                         <span className="text-stone-400 block text-[11px]">Tarifa</span>
-                        <strong className="text-mahogany-900">${selectedService?.price} USD</strong>
+                        <strong className="text-mahogany-900">
+                          {typeof selectedService?.price === 'number' ? `$${selectedService?.price} USD` : selectedService?.price}
+                        </strong>
                       </div>
                       <div>
                         <span className="text-stone-400 block text-[11px]">Fecha</span>

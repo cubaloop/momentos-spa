@@ -4,7 +4,7 @@ export const translations = {
     // Top Bar
     sanctuaryTitle: "Santuario de Bienestar en Miramar",
     addressShort: "Calle 44 #111 e/ 3ra y 1ra A, La Habana",
-    schedule: "Mié - Dom: 10:00 AM - 7:00 PM",
+    schedule: "Mié - Dom: 10:00 AM - 6:00 PM",
     openNow: "Abierto ahora",
     closedNow: "Cerrado ahora",
     cubaTime: "Hora Cuba",
@@ -72,7 +72,7 @@ export const translations = {
     metric3Sub: "Experiencias de bienestar completadas",
     metric4Num: "5 DÍAS",
     metric4Label: "MIÉ - DOM",
-    metric4Sub: "Horarios extendidos de 10am a 7pm",
+    metric4Sub: "Horario de 10:00 AM a 6:00 PM",
 
     // Packages
     packagesBadge: "⭐ EXPERIENCIAS EXCLUSIVAS",
@@ -161,7 +161,7 @@ export const translations = {
     faq1Q: "¿Cómo se confirma la reserva?",
     faq1A: "Al completar el formulario en la web, se envía tu solicitud directamente a nuestro WhatsApp oficial (+53 59710688), donde nuestra recepcionista te confirma la cita en pocos minutos.",
     faq2Q: "¿Cuáles son los días y horarios de apertura?",
-    faq2A: "Abrimos de Miércoles a Domingo de 10:00 AM a 7:00 PM. Lunes y Martes cerramos por mantenimiento general de instalaciones y descanso del equipo.",
+    faq2A: "Abrimos de Miércoles a Domingo de 10:00 AM a 6:00 PM. Lunes y Martes cerramos por mantenimiento general de instalaciones y descanso del equipo.",
     faq3Q: "¿Qué debo llevar a mi cita?",
     faq3A: "Nada en absoluto. En Momentos Spa te proporcionamos toallas precalentadas, batas de felpa, pantuflas desechables, gorros y productos de ducha botánicos de alta gama.",
     faq4Q: "¿Puedo reservar para dos personas en la misma cabina?",
@@ -180,12 +180,12 @@ export const translations = {
     phoneTitle: "Teléfono / WhatsApp",
     phoneDesc: "+53 59710688 (Atención continua)",
     hoursTitle: "Horario de Atención",
-    hoursDesc: "Miércoles a Domingo: 10:00 AM - 7:00 PM (Lunes y Martes Cerrado)",
+    hoursDesc: "Miércoles a Domingo: 10:00 AM - 6:00 PM (Lunes y Martes Cerrado)",
     mapsBtn: "Abrir en Google Maps",
     mapsDirections: "A sólo 2 cuadras de 3ra Avenida y a pocos minutos de los principales hoteles de Miramar.",
 
     // Footer
-    footerSlogan: "Santuario de salud, relajación y estética en Miramar, La Habana. Siempre pensando en ti.",
+    footerSlogan: "Santuario de salud, relajación y estética en Miramar, La Habana. Pensando en ti.",
     footerLinksTitle: "Navegación",
     footerContactTitle: "Contacto & Reservas",
     footerHoursTitle: "Días de Atención",

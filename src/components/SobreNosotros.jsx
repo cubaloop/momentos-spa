@@ -247,7 +247,7 @@ export default function SobreNosotros({ onBack, onOpenBooking }) {
               </div>
               <div className="flex items-center gap-3">
                 <Clock className="w-4 h-4 text-gold shrink-0" />
-                <span>Todos los días: 9:00 AM – 7:00 PM (Hora de Cuba)</span>
+                <span>Miércoles a Domingo: 10:00 AM – 6:00 PM (Lunes y Martes Cerrado)</span>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-gold shrink-0" />
@@ -257,9 +257,9 @@ export default function SobreNosotros({ onBack, onOpenBooking }) {
           </div>
 
           <div className="flex flex-col items-center justify-center space-y-4 bg-white/5 rounded-2xl p-6 border border-white/10 text-center">
-            <span className="text-gold font-serif-title italic text-lg">“Siempre pensando en ti”</span>
+            <span className="text-gold font-serif-title italic text-lg">“Pensando en ti”</span>
             <p className="text-xs text-cream-200/70 max-w-sm">
-              Coordina tu cita previa con anticipación para asegurar la cabina y el horario de tu preferencia.
+              Coordina tu cita previa con anticipación. Además contamos con <strong>Servicio de taxi 🚕</strong> para recogerte y llevarte de regreso.
             </p>
             <button
               onClick={() => onOpenBooking()}

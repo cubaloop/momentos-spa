@@ -8,7 +8,8 @@ export default function FaqSection() {
 
   const faqs = [
     { q: t('faq1Q', "¿Cómo se confirma la reserva?"), a: t('faq1A', "Al completar el formulario en la web, se envía tu solicitud directamente a nuestro WhatsApp oficial (+53 59710688), donde nuestra recepcionista te confirma la cita en pocos minutos.") },
-    { q: t('faq2Q', "¿Cuáles son los días y horarios de apertura?"), a: t('faq2A', "Abrimos de Miércoles a Domingo de 10:00 AM a 7:00 PM. Lunes y Martes cerramos por mantenimiento general de instalaciones y descanso del equipo.") },
+    { q: t('faq2Q', "¿Cuáles son los días y horarios de apertura?"), a: t('faq2A', "Abrimos de Miércoles a Domingo de 10:00 AM a 6:00 PM. Lunes y Martes cerramos por mantenimiento general de instalaciones y descanso del equipo.") },
+    { q: "¿Tienen servicio de transporte o taxi?", a: "\"¿No tienes cómo llegar? Nosotros te recogemos y te llevamos de regreso.\" Ofrecemos Servicio de taxi privado para trasladarte cómodamente antes y después de tu cita. Puedes solicitarlo al reservar por WhatsApp." },
     { q: t('faq3Q', "¿Qué debo llevar a mi cita?"), a: t('faq3A', "Nada en absoluto. En Momentos Spa te proporcionamos toallas precalentadas, batas de felpa, pantuflas desechables, gorros y productos de ducha botánicos de alta gama.") },
     { q: t('faq4Q', "¿Puedo reservar para dos personas en la misma cabina?"), a: t('faq4A', "¡Sí! Contamos con cabinas suites dobles especialmente diseñadas para parejas o amigos/as que deseen recibir su tratamiento al unísono.") },
     { q: t('faq5Q', "¿Dónde están ubicados exactamente en Miramar?"), a: t('faq5A', "Nos encontramos en Calle 44 #111 e/ 3ra y 1ra A, Miramar, Playa, La Habana. Contamos con parqueo privado vigilado gratuito para nuestros clientes.") },
