@@ -1068,7 +1068,7 @@ export const categoriesData = [
             "benefits": [
               "Transformación integral de pies a cabeza",
               "Máximo nivel de personalización de cada protocolo",
-              "Merienda gourmet saludable y bebidas ilimitadas",
+              "Merienda gourmet saludable y bebidas de cortesía",
               "Sensación de renacimiento físico y anímico"
             ],
             "includes": [
@@ -2808,7 +2808,7 @@ export const allServices = [
     "benefits": [
       "Transformación integral de pies a cabeza",
       "Máximo nivel de personalización de cada protocolo",
-      "Merienda gourmet saludable y bebidas ilimitadas",
+      "Merienda gourmet saludable y bebidas de cortesía",
       "Sensación de renacimiento físico y anímico"
     ],
     "includes": [
@@ -3424,12 +3424,22 @@ export const allServices = [
   }
 ];
 
+function getActiveServicesList() {
+  try {
+    const saved = typeof window !== 'undefined' ? localStorage.getItem('momentos_custom_services') : null;
+    if (saved) return JSON.parse(saved);
+  } catch (e) {}
+  return allServices;
+}
+
 export function getServiceBySlug(slug) {
   if (!slug) return null;
-  return allServices.find(s => s.slug === slug || s.id === slug);
+  const list = getActiveServicesList();
+  return list.find(s => s.slug === slug || s.id === slug) || allServices.find(s => s.slug === slug || s.id === slug);
 }
 
 export function getServiceById(id) {
   if (!id) return null;
-  return allServices.find(s => s.id === id || s.slug === id);
+  const list = getActiveServicesList();
+  return list.find(s => s.id === id || s.slug === id) || allServices.find(s => s.id === id || s.slug === id);
 }

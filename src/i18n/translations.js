@@ -2,7 +2,7 @@
 export const translations = {
   es: {
     // Top Bar
-    sanctuaryTitle: "Santuario de Bienestar en Miramar",
+    sanctuaryTitle: "Siempre pensando en ti",
     addressShort: "Calle 44 #111 e/ 3ra y 1ra A, La Habana",
     schedule: "Mié - Dom: 10:00 AM - 6:00 PM",
     openNow: "Abierto ahora",

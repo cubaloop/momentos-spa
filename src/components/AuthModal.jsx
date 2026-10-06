@@ -53,17 +53,6 @@ export default function AuthModal({ isOpen, onClose, initialMode = 'login', onOp
     }
   };
 
-  const handleQuickAdminLogin = async () => {
-    setEmail('admin@momentospahabana.com');
-    setPassword('admin123');
-    setLoading(true);
-    const res = await login('admin@momentospahabana.com', 'admin123');
-    setLoading(false);
-    if (res.success) {
-      onClose();
-      if (onOpenAdmin) onOpenAdmin();
-    }
-  };
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fade-in">
@@ -193,22 +182,6 @@ export default function AuthModal({ isOpen, onClose, initialMode = 'login', onOp
             {loading ? 'Validando...' : mode === 'login' ? 'Entrar a mi Cuenta' : 'Crear mi Cuenta'}
           </button>
 
-          {/* Quick 1-click Admin Access */}
-          {mode === 'login' && (
-            <div className="pt-2 border-t border-stone-100">
-              <button
-                type="button"
-                onClick={handleQuickAdminLogin}
-                className="w-full py-2.5 px-3 bg-cream-50 hover:bg-cream-100 border border-stone-200 rounded-xl text-stone-800 text-xs font-semibold flex items-center justify-between transition-all"
-              >
-                <div className="flex items-center gap-2">
-                  <ShieldCheck className="w-4 h-4 text-gold-dark" />
-                  <span>Acceso Rápido Administrador</span>
-                </div>
-                <ArrowRight className="w-3.5 h-3.5 text-stone-400" />
-              </button>
-            </div>
-          )}
 
         </form>
 

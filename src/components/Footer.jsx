@@ -12,12 +12,12 @@ export default function Footer({ onOpenAdmin, onNavigateToPage }) {
       <div className="w-full bg-[#200b0f] border-b border-[#3d161e] text-[#e8ded5] py-4 sm:py-5 px-4 transition-colors">
         <div className="max-w-4xl mx-auto flex flex-col items-center justify-center text-center space-y-2 sm:space-y-2.5">
           
-          {/* Line 1: Sanctuary Title & Lema */}
+          {/* Line 1: Slogan & Ubicación */}
           <div className="flex flex-wrap items-center justify-center gap-2 text-[#c2a280] text-xs sm:text-sm font-semibold tracking-[0.16em] uppercase">
             <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#c2a280]" />
-            <span>SANTUARIO DE BIENESTAR EN MIRAMAR</span>
+            <span className="text-gold font-serif-title normal-case italic text-base tracking-normal">“Siempre pensando en ti”</span>
             <span className="text-white/40">•</span>
-            <span className="text-gold normal-case font-serif-title italic text-sm tracking-normal">“Siempre pensando en ti”</span>
+            <span>Miramar, La Habana</span>
           </div>
 
           {/* Line 2: Schedule */}
@@ -186,13 +186,16 @@ export default function Footer({ onOpenAdmin, onNavigateToPage }) {
                 href="https://www.tripadvisor.es/Attraction_Review-g147271-d26792951-Reviews-Momentos_Spa-Havana_Ciudad_de_la_Habana_Province_Cuba.html"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#00aa6c]/15 hover:bg-[#00aa6c]/25 text-[#00af87] hover:text-white border border-[#00aa6c]/30 transition-all font-semibold text-[11px] group shadow-sm"
+                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#00AA6C]/20 hover:bg-[#00AA6C]/30 text-white border border-[#00AA6C]/50 transition-all font-semibold text-[11px] group shadow-sm hover:border-[#00AA6C]"
                 title="Ver reseñas de clientes en TripAdvisor"
               >
-                <svg className="w-4 h-4 shrink-0 fill-current text-[#00af87] group-hover:scale-110 transition-transform" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 4c-5.5 0-10 3.6-10 8 0 2.2 1.1 4.2 3 5.7-.3 1-.9 2.3-1.8 3.1 1.6 0 3.3-.6 4.4-1.6 1.4.5 2.9.8 4.4.8s3-.3 4.4-.8c1.1 1 2.8 1.6 4.4 1.6-.9-.8-1.5-2.1-1.8-3.1 1.9-1.5 3-3.5 3-5.7 0-4.4-4.5-8-10-8zm-4.5 10.5c-1.4 0-2.5-1.1-2.5-2.5s1.1-2.5 2.5-2.5 2.5 1.1 2.5 2.5-1.1 2.5-2.5 2.5zm9 0c-1.4 0-2.5-1.1-2.5-2.5s1.1-2.5 2.5-2.5 2.5 1.1 2.5 2.5-1.1 2.5-2.5 2.5zm-4.5-1.2l-1.5-2.3h3l-1.5 2.3z"/>
+                {/* Official TripAdvisor Icon */}
+                <svg className="w-5 h-5 shrink-0 group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fillRule="evenodd" clipRule="evenodd" d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm-5.75 8.25a3.75 3.75 0 117.5 0 3.75 3.75 0 01-7.5 0zm11.5 0a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM12 16.5l-2.25-3h4.5L12 16.5zM6.25 10.25a1.75 1.75 0 103.5 0 1.75 1.75 0 00-3.5 0zm11.5 0a1.75 1.75 0 10-3.5 0 1.75 1.75 0 003.5 0z" fill="#00AA6C"/>
+                  <circle cx="8" cy="10.25" r="0.8" fill="#14201B"/>
+                  <circle cx="16" cy="10.25" r="0.8" fill="#14201B"/>
                 </svg>
-                <span>Opiniones en TripAdvisor</span>
+                <span className="font-medium text-[#34e0a1] group-hover:text-white transition-colors">Opiniones en TripAdvisor</span>
               </a>
             </div>
 
@@ -214,7 +217,7 @@ export default function Footer({ onOpenAdmin, onNavigateToPage }) {
           <div className="flex flex-wrap items-center justify-center sm:justify-end gap-3 text-[11px]">
             <div className="flex items-center gap-1.5 text-gold">
               <Sparkles className="w-3 h-3" />
-              <span>Santuario de Bienestar en Miramar, La Habana</span>
+              <span>Siempre pensando en ti • Miramar, La Habana</span>
             </div>
             <span className="text-white/20 hidden sm:inline">•</span>
             <span className="text-cream-200/50">Developed by <strong className="text-cream-100 font-semibold">Tecnoemprende</strong></span>

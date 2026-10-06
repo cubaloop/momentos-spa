@@ -6,7 +6,8 @@ import { useLanguage } from '../context/LanguageContext';
 
 export default function BookingCalendarModal({ isOpen, onClose, preselectedService, initialCategoryId, onOpenAuth }) {
   const { user } = useAuth();
-  const { t } = useLanguage();
+  const { t, localizedServices } = useLanguage();
+  const availableServices = (localizedServices && localizedServices.length > 0) ? localizedServices : allServices;
 
   const [step, setStep] = useState(1);
   const [selectedService, setSelectedService] = useState(null);
@@ -23,7 +24,7 @@ export default function BookingCalendarModal({ isOpen, onClose, preselectedServi
 
   useEffect(() => {
     if (preselectedService) {
-      const found = allServices.find(s => s.name === preselectedService.name || s.id === preselectedService.id);
+      const found = availableServices.find(s => s.name === preselectedService.name || s.id === preselectedService.id);
       setSelectedService(found || preselectedService);
       setStep(2); // Jump to date selection if service already chosen
     } else {
@@ -31,7 +32,7 @@ export default function BookingCalendarModal({ isOpen, onClose, preselectedServi
       setStep(1);
     }
     setBookingSuccess(false);
-  }, [preselectedService, isOpen]);
+  }, [preselectedService, isOpen, availableServices]);
 
   if (!isOpen) return null;
 
@@ -219,7 +220,7 @@ ${taxiLine}📝 *Notas:* ${notes || 'Ninguna'}
                     Selecciona el tratamiento deseado:
                   </div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-h-96 overflow-y-auto pr-1">
-                    {allServices.map((srv) => (
+                    {availableServices.map((srv) => (
                       <button
                         key={srv.id}
                         onClick={() => {

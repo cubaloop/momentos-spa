@@ -1,7 +1,26 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Sparkles, Quote, CheckCircle2, ArrowRight } from 'lucide-react';
 
 export default function AboutSplit({ onOpenBooking, onNavigateToPage }) {
+  const [customTexts, setCustomTexts] = useState(() => {
+    try {
+      const saved = localStorage.getItem('momentos_site_content');
+      return saved ? JSON.parse(saved) : {};
+    } catch (e) {
+      return {};
+    }
+  });
+
+  useEffect(() => {
+    const handleUpdate = () => {
+      try {
+        const saved = localStorage.getItem('momentos_site_content');
+        if (saved) setCustomTexts(JSON.parse(saved));
+      } catch (e) {}
+    };
+    window.addEventListener('momentos_content_updated', handleUpdate);
+    return () => window.removeEventListener('momentos_content_updated', handleUpdate);
+  }, []);
   return (
     <section id="experiencias" className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
@@ -53,7 +72,7 @@ export default function AboutSplit({ onOpenBooking, onNavigateToPage }) {
           <div>
             <Quote className="w-10 h-10 text-mahogany-800/20 mb-4" />
             <p className="font-serif-title text-xl sm:text-2xl text-stone-900 italic leading-snug">
-              “Cuidar de tu salud y serenidad debe ser tan constante como tu respiración. Por eso en Momentos Spa nuestro lema es <strong>Siempre pensando en ti</strong>.”
+              {customTexts.aboutQuote ? `“${customTexts.aboutQuote}”` : "“Cuidar de tu salud y serenidad debe ser tan constante como tu respiración. Por eso en Momentos Spa nuestro lema es Siempre pensando en ti.”"}
             </p>
             <div className="mt-6 space-y-2.5 text-stone-700 text-xs sm:text-sm">
               <div className="flex items-center gap-2">

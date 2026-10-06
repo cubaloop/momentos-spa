@@ -1,17 +1,41 @@
-import React from 'react';
+import React, { useMemo, useState, useEffect } from 'react';
 import { Calendar, Check, ArrowRight, Eye, Sparkles } from 'lucide-react';
 import { allServices } from '../data/servicesData';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function DarkPackages({ onOpenBooking, onNavigateToService }) {
-  const packages = [
+  const { localizedServices } = useLanguage();
+  const currentServices = (localizedServices && localizedServices.length > 0) ? localizedServices : allServices;
+
+  const [customTexts, setCustomTexts] = useState(() => {
+    try {
+      const saved = localStorage.getItem('momentos_site_content');
+      return saved ? JSON.parse(saved) : {};
+    } catch (e) {
+      return {};
+    }
+  });
+
+  useEffect(() => {
+    const handleUpdate = () => {
+      try {
+        const saved = localStorage.getItem('momentos_site_content');
+        if (saved) setCustomTexts(JSON.parse(saved));
+      } catch (e) {}
+    };
+    window.addEventListener('momentos_content_updated', handleUpdate);
+    return () => window.removeEventListener('momentos_content_updated', handleUpdate);
+  }, []);
+
+  const basePackages = [
     {
       id: "srv_ritual_amor_pareja",
       badge: "❤️ MÁS POPULAR",
-      title: "Ritual de Amor & Relax en Pareja",
-      subtitle: "3 horas aprox. con piedras volcánicas, facial hidratante y jacuzzi privado",
-      price: 130,
-      duration: "3h aprox.",
-      image: "./assets/catalog/masaje-en-pareja-2-horas.webp",
+      defaultTitle: "Ritual de Amor & Relax en Pareja",
+      defaultSubtitle: "3 horas aprox. con piedras volcánicas, facial hidratante y jacuzzi privado",
+      defaultPrice: 130,
+      defaultDuration: "3h aprox.",
+      defaultImage: "./assets/catalog/masaje-en-pareja-2-horas.webp",
       popular: true,
       features: [
         "Ambiente romántico con velas y duchas dobles",
@@ -23,11 +47,11 @@ export default function DarkPackages({ onOpenBooking, onNavigateToService }) {
     {
       id: "srv_refugio_zen",
       badge: "⭐ MÁXIMA INMERSIÓN",
-      title: "Refugio Zen",
-      subtitle: "4 horas y 20 min aprox. de retiro integral y cuidado holístico",
-      price: 160,
-      duration: "4h 20 min",
-      image: "./assets/catalog/masaje-relajante-en-pareja-60min.webp",
+      defaultTitle: "Refugio Zen",
+      defaultSubtitle: "4 horas y 20 min aprox. de retiro integral y cuidado holístico",
+      defaultPrice: 200,
+      defaultDuration: "4h 20 min",
+      defaultImage: "./assets/catalog/masaje-relajante-en-pareja-60min.webp",
       popular: true,
       features: [
         "Masaje descontracturante y piedras calientes 2 horas",
@@ -39,11 +63,11 @@ export default function DarkPackages({ onOpenBooking, onNavigateToService }) {
     {
       id: "srv_plan_romantico",
       badge: "🍾 BOTELLA DE VINO",
-      title: "Plan Romántico",
-      subtitle: "2 horas aprox. con masaje de velas, facial y botella de vino",
-      price: 95,
-      duration: "2h aprox.",
-      image: "./assets/catalog/ritual-eternal-velvet-3-horas.webp",
+      defaultTitle: "Plan Romántico",
+      defaultSubtitle: "2 horas aprox. con masaje de velas, facial y botella de vino",
+      defaultPrice: 105,
+      defaultDuration: "2h aprox.",
+      defaultImage: "./assets/catalog/ritual-eternal-velvet-3-horas.webp",
       popular: false,
       features: [
         "Masaje con velas aromáticas tibias 30 min",
@@ -54,12 +78,28 @@ export default function DarkPackages({ onOpenBooking, onNavigateToService }) {
     }
   ];
 
+  // Merge with reactive services data so name, price, duration, image update instantly when admin edits them
+  const packages = useMemo(() => {
+    return basePackages.map(pkg => {
+      const match = currentServices.find(s => s.id === pkg.id);
+      return {
+        ...pkg,
+        title: match?.name || pkg.defaultTitle,
+        subtitle: match?.description ? match.description.slice(0, 95) + '...' : pkg.defaultSubtitle,
+        price: match?.price !== undefined ? match.price : pkg.defaultPrice,
+        duration: match?.duration || pkg.defaultDuration,
+        image: match?.image || pkg.defaultImage,
+        serviceObj: match
+      };
+    });
+  }, [currentServices]);
+
   const handlePackageClick = (pkg) => {
-    const matchedService = allServices.find(s => s.id === pkg.id);
+    const matchedService = pkg.serviceObj || currentServices.find(s => s.id === pkg.id);
     if (onNavigateToService && matchedService) {
       onNavigateToService(matchedService);
     } else if (onNavigateToService) {
-      onNavigateToService({ id: pkg.id, name: pkg.title });
+      onNavigateToService({ id: pkg.id, name: pkg.title, price: pkg.price, duration: pkg.duration });
     }
   };
 
@@ -75,10 +115,10 @@ export default function DarkPackages({ onOpenBooking, onNavigateToService }) {
             EXPERIENCIAS EXCLUSIVAS
           </span>
           <h2 className="font-serif-title text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
-            Nuestros Paquetes Signature Más Solicitados
+            {customTexts.packagesTitle || 'Nuestros Paquetes Signature Más Solicitados'}
           </h2>
           <p className="text-cream-200/80 text-sm sm:text-base">
-            Selección de experiencias sensoriales y combinadas diseñadas para brindar la máxima desconexión, privacidad y bienestar.
+            {customTexts.packagesSubtitle || 'Selección de experiencias sensoriales y combinadas diseñadas para brindar la máxima desconexión, privacidad y bienestar.'}
           </p>
         </div>
 
@@ -156,8 +196,8 @@ export default function DarkPackages({ onOpenBooking, onNavigateToService }) {
                 <div className="space-y-2 pt-4">
                   <button
                     onClick={() => {
-                      const matched = allServices.find(s => s.id === pkg.id);
-                      onOpenBooking(matched || { name: pkg.title, duration: pkg.duration, price: pkg.price });
+                      const matched = pkg.serviceObj || currentServices.find(s => s.id === pkg.id);
+                      onOpenBooking(matched || { id: pkg.id, name: pkg.title, duration: pkg.duration, price: pkg.price });
                     }}
                     className={`w-full py-3.5 rounded-full font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 shadow-lg ${
                       pkg.popular

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { categoriesData } from '../data/servicesData';
 import { Calendar, Clock, Sparkles, Eye, ChevronRight, MessageSquare } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
@@ -7,6 +7,26 @@ export default function ServicesCatalog({ onOpenBooking, onNavigateToService }) 
   const { t, localizedCategories } = useLanguage();
   const cats = localizedCategories && localizedCategories.length > 0 ? localizedCategories : categoriesData;
   const [selectedCatId, setSelectedCatId] = useState(cats[0].id);
+
+  const [customTexts, setCustomTexts] = useState(() => {
+    try {
+      const saved = localStorage.getItem('momentos_site_content');
+      return saved ? JSON.parse(saved) : {};
+    } catch (e) {
+      return {};
+    }
+  });
+
+  useEffect(() => {
+    const handleUpdate = () => {
+      try {
+        const saved = localStorage.getItem('momentos_site_content');
+        if (saved) setCustomTexts(JSON.parse(saved));
+      } catch (e) {}
+    };
+    window.addEventListener('momentos_content_updated', handleUpdate);
+    return () => window.removeEventListener('momentos_content_updated', handleUpdate);
+  }, []);
 
   const currentCat = cats.find(c => c.id === selectedCatId) || cats[0];
 
@@ -19,10 +39,10 @@ export default function ServicesCatalog({ onOpenBooking, onNavigateToService }) 
           {t('catalogTag', 'Catálogo Completo')}
         </span>
         <h2 className="font-serif-title text-3xl sm:text-4xl font-bold text-mahogany-950">
-          {t('catalogTitle', 'Tratamientos & Tarifas')}
+          {customTexts.catalogTitle || t('catalogTitle', 'Tratamientos & Tarifas')}
         </h2>
         <p className="text-stone-600 text-xs sm:text-sm">
-          {t('catalogSubtitle', 'Haz clic en cualquier servicio para abrir su página propia con fotos reales y explicación detallada.')}
+          {customTexts.catalogSubtitle || t('catalogSubtitle', 'Haz clic en cualquier servicio para abrir su página propia con fotos reales y explicación detallada.')}
         </p>
       </div>
 

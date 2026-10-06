@@ -24,10 +24,14 @@ export function AuthProvider({ children }) {
     const cleanEmail = (email || '').trim().toLowerCase();
     const cleanPass = (password || '').trim();
 
-    // 1. Direct check for Admin credentials
+    if (!cleanEmail || !cleanPass) {
+      return { success: false, error: 'Por favor ingresa tu correo y contraseña.' };
+    }
+
+    // 1. Direct check for Admin credentials (requiere email y contraseña válidos)
     if (
-      (cleanEmail === 'admin@momentospahabana.com' || cleanEmail === 'admin') &&
-      (cleanPass === 'admin123' || cleanPass === 'admin')
+      (cleanEmail === 'admin@momentospahabana.com' || cleanEmail === 'admin@negocio.com') &&
+      cleanPass === 'admin123'
     ) {
       const adminUser = {
         id: 'usr_admin',

@@ -6,6 +6,7 @@ import {
 import { categoriesData } from '../data/servicesData';
 import { useAuth } from '../context/AuthContext';
 import { useCubaStatus } from '../utils/cubaTime';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function Navbar({ 
   onOpenBooking, 
@@ -29,6 +30,7 @@ export default function Navbar({
   const megaMenuRef = useRef(null);
   const { user, logout } = useAuth();
   const { isOpen, statusText, detailText, havanaTimeString } = useCubaStatus();
+  const { localizedCategories } = useLanguage();
 
   // Close desktop mega menu on outside click
   useEffect(() => {
@@ -47,7 +49,7 @@ export default function Navbar({
     return () => { document.removeEventListener("mousedown", handleClickOutside); document.removeEventListener("mousedown", handleClickOutsideUserMenu); };
   }, []);
 
-  const cats = categoriesData || [];
+  const cats = (localizedCategories && localizedCategories.length > 0) ? localizedCategories : (categoriesData || []);
   const currentCat = cats[activeCategoryIndex] || cats[0];
 
   const handleServiceClick = (srv) => {

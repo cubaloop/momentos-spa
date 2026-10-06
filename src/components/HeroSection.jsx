@@ -1,7 +1,33 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Calendar, Star, CheckCircle2, ArrowRight, Sparkles } from 'lucide-react';
 
 export default function HeroSection({ onOpenBooking }) {
+  const defaultTexts = {
+    heroSlogan: "Siempre pensando en ti",
+    heroTitle: "El Arte del Bienestar & Relajación Absoluta",
+    heroSubtitle: "Sumérgete en un oasis sensorial privado en el corazón de Miramar. Masajes terapéuticos, tratamientos faciales, maderoterapia corporal, salón de belleza y paquetes para parejas diseñados para renovar tu cuerpo y espíritu."
+  };
+
+  const [texts, setTexts] = useState(() => {
+    try {
+      const saved = localStorage.getItem('momentos_site_content');
+      return saved ? { ...defaultTexts, ...JSON.parse(saved) } : defaultTexts;
+    } catch (e) {
+      return defaultTexts;
+    }
+  });
+
+  useEffect(() => {
+    const handleUpdate = () => {
+      try {
+        const saved = localStorage.getItem('momentos_site_content');
+        if (saved) setTexts(prev => ({ ...prev, ...JSON.parse(saved) }));
+      } catch (e) {}
+    };
+    window.addEventListener('momentos_content_updated', handleUpdate);
+    return () => window.removeEventListener('momentos_content_updated', handleUpdate);
+  }, []);
+
   return (
     <section className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-3 sm:pt-4 pb-10">
       
@@ -23,7 +49,7 @@ export default function HeroSection({ onOpenBooking }) {
           
           <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1 sm:py-1.5 rounded-full bg-black/50 backdrop-blur-md border border-white/20 text-gold text-[11px] sm:text-xs font-semibold tracking-wide shadow-md pointer-events-auto">
             <Sparkles className="w-3 h-3 text-gold" />
-            <span>SANTUARIO EN MIRAMAR, LA HABANA</span>
+            <span>MIRAMAR, LA HABANA</span>
             <span className="hidden sm:inline text-white/40">•</span>
             <span className="hidden sm:inline text-cream-200 font-normal">Calle 44 #111</span>
           </div>
@@ -43,17 +69,17 @@ export default function HeroSection({ onOpenBooking }) {
         
         {/* Official Slogan / Lema Oficial */}
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold/10 border border-gold/30 text-gold-dark font-serif-title italic text-sm sm:text-base font-medium shadow-sm">
-          <span>“Siempre pensando en ti”</span>
+          <span>“{texts.heroSlogan || 'Siempre pensando en ti'}”</span>
         </div>
 
         {/* Headline */}
         <h1 className="font-serif-title text-2xl sm:text-4xl lg:text-5xl font-bold text-stone-900 leading-[1.15] tracking-tight">
-          El Arte del Bienestar & <span className="text-gold-dark italic font-normal">Relajación Absoluta</span>
+          {texts.heroTitle || 'El Arte del Bienestar & Relajación Absoluta'}
         </h1>
 
         {/* Condensed Subtitle */}
         <p className="text-stone-600 text-xs sm:text-sm md:text-base font-normal leading-relaxed max-w-2xl mx-auto">
-          Sumérgete en un oasis sensorial privado en el corazón de Miramar. Masajes terapéuticos, tratamientos faciales, maderoterapia corporal, salón de belleza y paquetes para parejas diseñados para renovar tu cuerpo y espíritu.
+          {texts.heroSubtitle || 'Sumérgete en un oasis sensorial privado en el corazón de Miramar.'}
         </p>
 
         {/* CTAs */}

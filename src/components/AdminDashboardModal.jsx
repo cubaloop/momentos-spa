@@ -3,7 +3,7 @@ import {
   X, Users, Calendar, Search, Download, ShieldCheck, RefreshCw, 
   MessageSquare, Check, Clock, Plus, Edit2, Trash2, Tag, DollarSign, 
   Layers, Upload, Image as ImageIcon, Star, Eye, ImagePlus, AlertCircle,
-  Megaphone, BellRing, Save
+  Megaphone, BellRing, Save, FileText
 } from 'lucide-react';
 import { categoriesData, allServices } from '../data/servicesData';
 
@@ -77,6 +77,28 @@ export default function AdminDashboardModal({ isOpen, onClose }) {
     }
   });
   const [scheduleSaved, setScheduleSaved] = useState(false);
+
+  // Editable Texts & Headlines State
+  const defaultSiteContent = {
+    heroSlogan: "Siempre pensando en ti",
+    heroTitle: "El Arte del Bienestar & Relajación Absoluta",
+    heroSubtitle: "Sumérgete en un oasis sensorial privado en el corazón de Miramar. Masajes terapéuticos, tratamientos faciales, maderoterapia corporal, salón de belleza y paquetes para parejas diseñados para renovar tu cuerpo y espíritu.",
+    catalogTitle: "Tratamientos & Tarifas",
+    catalogSubtitle: "Haz clic en cualquier servicio para abrir su página propia con fotos reales y explicación detallada.",
+    packagesTitle: "Nuestros Paquetes Signature Más Solicitados",
+    packagesSubtitle: "Selección de experiencias sensoriales y combinadas diseñadas para brindar la máxima desconexión, privacidad y bienestar.",
+    aboutQuote: "Cuidar de tu salud y serenidad debe ser tan constante como tu respiración. Por eso en Momentos Spa nuestro lema es Siempre pensando en ti."
+  };
+
+  const [siteContent, setSiteContent] = useState(() => {
+    try {
+      const saved = localStorage.getItem('momentos_site_content');
+      return saved ? { ...defaultSiteContent, ...JSON.parse(saved) } : defaultSiteContent;
+    } catch (e) {
+      return defaultSiteContent;
+    }
+  });
+  const [siteContentSaved, setSiteContentSaved] = useState(false);
 
   const [searchTerm, setSearchTerm] = useState('');
   const [loading, setLoading] = useState(false);
@@ -281,6 +303,7 @@ export default function AdminDashboardModal({ isOpen, onClose }) {
       try {
         localStorage.setItem('momentos_custom_services', JSON.stringify(next));
       } catch (e) {}
+      window.dispatchEvent(new Event('momentos_services_updated'));
       return next;
     });
 
@@ -298,6 +321,7 @@ export default function AdminDashboardModal({ isOpen, onClose }) {
       try {
         localStorage.setItem('momentos_custom_services', JSON.stringify(next));
       } catch (e) {}
+      window.dispatchEvent(new Event('momentos_services_updated'));
       return next;
     });
   };
@@ -318,6 +342,16 @@ export default function AdminDashboardModal({ isOpen, onClose }) {
       setScheduleSaved(true);
       setTimeout(() => setScheduleSaved(false), 3000);
       window.dispatchEvent(new Event('momentos_schedule_updated'));
+    } catch (e) {}
+  };
+
+  const handleSaveSiteContent = (e) => {
+    e.preventDefault();
+    try {
+      localStorage.setItem('momentos_site_content', JSON.stringify(siteContent));
+      setSiteContentSaved(true);
+      setTimeout(() => setSiteContentSaved(false), 3000);
+      window.dispatchEvent(new Event('momentos_content_updated'));
     } catch (e) {}
   };
 
@@ -416,6 +450,18 @@ export default function AdminDashboardModal({ isOpen, onClose }) {
           >
             <Megaphone className="w-4 h-4 text-amber-600" />
             <span>Anuncios</span>
+          </button>
+
+          <button
+            onClick={() => setActiveTab('texts')}
+            className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition-all whitespace-nowrap ${
+              activeTab === 'texts'
+                ? 'bg-mahogany-950 text-white shadow'
+                : 'bg-stone-50 text-stone-700 hover:bg-stone-100 border border-stone-200'
+            }`}
+          >
+            <FileText className="w-4 h-4 text-gold-dark" />
+            <span>Textos & Encabezados</span>
           </button>
 
           <button
@@ -674,6 +720,145 @@ export default function AdminDashboardModal({ isOpen, onClose }) {
                     </span>
                   )}
                 </div>
+              </form>
+            </div>
+          </div>
+        )}
+
+        {/* TAB 3: TEXTOS & ENCABEZADOS DEL SITIO */}
+        {activeTab === 'texts' && (
+          <div className="max-w-3xl mx-auto space-y-6">
+            <div className="bg-white rounded-3xl p-8 border border-stone-200 shadow-sm space-y-6">
+              <div className="flex items-center gap-3 pb-4 border-b border-stone-200">
+                <div className="w-10 h-10 rounded-2xl bg-amber-500/10 text-gold-dark flex items-center justify-center">
+                  <FileText className="w-5 h-5 text-gold-dark" />
+                </div>
+                <div>
+                  <h3 className="font-serif-title font-bold text-xl text-mahogany-950">
+                    Editor de Textos & Encabezados
+                  </h3>
+                  <p className="text-xs text-stone-500 mt-1">
+                    Modifica en vivo los lemas, titulares de bienvenida, subtítulos de catálogo y textos principales de la página.
+                  </p>
+                </div>
+              </div>
+
+              <form onSubmit={handleSaveSiteContent} className="space-y-5">
+                
+                {/* Lema Oficial */}
+                <div className="space-y-1.5">
+                  <label className="text-xs font-bold text-stone-700 block">
+                    Lema Oficial del Spa:
+                  </label>
+                  <input
+                    type="text"
+                    value={siteContent.heroSlogan}
+                    onChange={(e) => setSiteContent({ ...siteContent, heroSlogan: e.target.value })}
+                    className="w-full text-xs p-3 rounded-xl border border-stone-300 focus:ring-2 focus:ring-gold outline-none"
+                    placeholder="Siempre pensando en ti"
+                  />
+                  <span className="text-[11px] text-stone-400">Aparece en la cabecera, pie de página y cintillo de presentación.</span>
+                </div>
+
+                {/* Titular Principal Hero */}
+                <div className="space-y-1.5">
+                  <label className="text-xs font-bold text-stone-700 block">
+                    Título Principal de Portada (Hero):
+                  </label>
+                  <input
+                    type="text"
+                    value={siteContent.heroTitle}
+                    onChange={(e) => setSiteContent({ ...siteContent, heroTitle: e.target.value })}
+                    className="w-full text-xs p-3 rounded-xl border border-stone-300 focus:ring-2 focus:ring-gold outline-none"
+                    placeholder="El Arte del Bienestar & Relajación Absoluta"
+                  />
+                </div>
+
+                {/* Subtítulo Hero */}
+                <div className="space-y-1.5">
+                  <label className="text-xs font-bold text-stone-700 block">
+                    Subtítulo Descriptivo de Bienvenida:
+                  </label>
+                  <textarea
+                    rows={3}
+                    value={siteContent.heroSubtitle}
+                    onChange={(e) => setSiteContent({ ...siteContent, heroSubtitle: e.target.value })}
+                    className="w-full text-xs p-3 rounded-xl border border-stone-300 focus:ring-2 focus:ring-gold outline-none leading-relaxed"
+                  />
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+                  {/* Título de Catálogo */}
+                  <div className="space-y-1.5">
+                    <label className="text-xs font-bold text-stone-700 block">
+                      Título Sección Catálogo:
+                    </label>
+                    <input
+                      type="text"
+                      value={siteContent.catalogTitle}
+                      onChange={(e) => setSiteContent({ ...siteContent, catalogTitle: e.target.value })}
+                      className="w-full text-xs p-3 rounded-xl border border-stone-300 focus:ring-2 focus:ring-gold outline-none"
+                    />
+                  </div>
+
+                  {/* Título de Paquetes */}
+                  <div className="space-y-1.5">
+                    <label className="text-xs font-bold text-stone-700 block">
+                      Título Sección Paquetes Signature:
+                    </label>
+                    <input
+                      type="text"
+                      value={siteContent.packagesTitle}
+                      onChange={(e) => setSiteContent({ ...siteContent, packagesTitle: e.target.value })}
+                      className="w-full text-xs p-3 rounded-xl border border-stone-300 focus:ring-2 focus:ring-gold outline-none"
+                    />
+                  </div>
+                </div>
+
+                {/* Subtítulo Catálogo */}
+                <div className="space-y-1.5">
+                  <label className="text-xs font-bold text-stone-700 block">
+                    Subtítulo Sección Catálogo:
+                  </label>
+                  <input
+                    type="text"
+                    value={siteContent.catalogSubtitle}
+                    onChange={(e) => setSiteContent({ ...siteContent, catalogSubtitle: e.target.value })}
+                    className="w-full text-xs p-3 rounded-xl border border-stone-300 focus:ring-2 focus:ring-gold outline-none"
+                  />
+                </div>
+
+                {/* Cita Sobre Nosotros */}
+                <div className="space-y-1.5">
+                  <label className="text-xs font-bold text-stone-700 block">
+                    Cita Destacada (Filosofía Momentos):
+                  </label>
+                  <textarea
+                    rows={2}
+                    value={siteContent.aboutQuote}
+                    onChange={(e) => setSiteContent({ ...siteContent, aboutQuote: e.target.value })}
+                    className="w-full text-xs p-3 rounded-xl border border-stone-300 focus:ring-2 focus:ring-gold outline-none leading-relaxed"
+                  />
+                </div>
+
+                {/* Botón Guardar */}
+                <div className="pt-3 flex items-center gap-4">
+                  <button
+                    type="submit"
+                    className="px-6 py-3 bg-mahogany-950 hover:bg-mahogany-900 text-white font-bold text-xs rounded-xl shadow flex items-center gap-2 transition-all hover:scale-105"
+                  >
+                    <Save className="w-4 h-4 text-gold" />
+                    <span>Guardar Cambios de Texto</span>
+                  </button>
+
+                  {siteContentSaved && (
+                    <span className="text-xs text-emerald-600 font-bold flex items-center gap-1 animate-fade-in">
+                      <Check className="w-4 h-4" />
+                      ¡Textos actualizados al instante en todo el sitio web!
+                    </span>
+                  )}
+                </div>
+
               </form>
             </div>
           </div>

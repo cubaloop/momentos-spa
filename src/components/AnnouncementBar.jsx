@@ -14,7 +14,7 @@ export default function AnnouncementBar({ onOpenBooking }) {
         {/* Left Side: Brand & Location */}
         <div className="flex flex-wrap items-center justify-center md:justify-start gap-2 font-medium">
           <span className="flex h-2 w-2 rounded-full bg-gold animate-pulse" />
-          <span className="text-gold uppercase tracking-wider font-semibold text-[11px]">{t('sanctuaryTitle', 'Santuario de Bienestar en Miramar')}</span>
+          <span className="text-gold uppercase tracking-wider font-semibold text-[11px]">{t('sanctuaryTitle', 'Siempre pensando en ti')}</span>
           <span className="hidden lg:inline text-white/40">|</span>
           <span className="hidden lg:inline text-white/90">{t('addressShort', 'Calle 44 #111 e/ 3ra y 1ra A, La Habana')}</span>
         </div>
