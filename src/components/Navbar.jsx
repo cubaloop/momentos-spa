@@ -1,7 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { 
   ChevronDown, Calendar, Phone, Menu, X, Clock, MapPin, 
-  Sparkles, CheckCircle2, ChevronRight, User, LogOut, ShieldCheck 
+  Sparkles, CheckCircle2, ChevronRight, User, LogOut, ShieldCheck,
+  Pencil, FileText
 } from 'lucide-react';
 import { categoriesData } from '../data/servicesData';
 import { useAuth } from '../context/AuthContext';
@@ -307,6 +308,29 @@ export default function Navbar({
           {/* Right Action Items */}
           <div className="hidden sm:flex items-center gap-3">
             
+            {/* Admin Quick Action Button: Pencil Icon to edit texts directly */}
+            {user && user.role === 'admin' && (
+              <div className="flex items-center gap-1.5">
+                <button
+                  onClick={() => onOpenAdmin && onOpenAdmin('texts')}
+                  title="Editar textos y encabezados de la página principal"
+                  className="p-2.5 rounded-full bg-gold/15 hover:bg-gold/30 text-gold-dark hover:text-mahogany-950 transition-all border border-gold/40 shadow-sm flex items-center justify-center group"
+                  aria-label="Editar textos de la página"
+                >
+                  <Pencil className="w-4 h-4 text-gold-dark group-hover:scale-110 transition-transform" />
+                </button>
+
+                <button
+                  onClick={() => onOpenAdmin && onOpenAdmin('services')}
+                  title="Abrir Panel de Administración"
+                  className="px-3 py-1.5 rounded-full bg-mahogany-950 hover:bg-mahogany-900 text-white font-bold text-xs flex items-center gap-1.5 shadow-sm border border-gold/30 transition-all"
+                >
+                  <ShieldCheck className="w-3.5 h-3.5 text-gold" />
+                  <span className="hidden xl:inline">Panel Admin</span>
+                </button>
+              </div>
+            )}
+
             {/* Standard User Icon Button */}
             <div className="relative" ref={userMenuRef}>
               <button
@@ -333,13 +357,23 @@ export default function Navbar({
                   </div>
 
                   {user.role === 'admin' && (
-                    <button
-                      onClick={() => { setUserMenuOpen(false); if (onOpenAdmin) onOpenAdmin(); }}
-                      className="w-full text-left p-2.5 rounded-xl bg-mahogany-950 hover:bg-mahogany-900 text-white font-bold flex items-center gap-2 transition-colors shadow-sm"
-                    >
-                      <ShieldCheck className="w-4 h-4 text-gold" />
-                      <span>Panel de Administración</span>
-                    </button>
+                    <div className="space-y-1 pt-1">
+                      <button
+                        onClick={() => { setUserMenuOpen(false); if (onOpenAdmin) onOpenAdmin('texts'); }}
+                        className="w-full text-left p-2.5 rounded-xl bg-gold/15 hover:bg-gold/25 text-mahogany-950 font-bold flex items-center gap-2 transition-colors border border-gold/30"
+                      >
+                        <Pencil className="w-4 h-4 text-gold-dark" />
+                        <span>Editar Textos de Portada</span>
+                      </button>
+
+                      <button
+                        onClick={() => { setUserMenuOpen(false); if (onOpenAdmin) onOpenAdmin('services'); }}
+                        className="w-full text-left p-2.5 rounded-xl bg-mahogany-950 hover:bg-mahogany-900 text-white font-bold flex items-center gap-2 transition-colors shadow-sm"
+                      >
+                        <ShieldCheck className="w-4 h-4 text-gold" />
+                        <span>Panel de Administración</span>
+                      </button>
+                    </div>
                   )}
 
                   <button
@@ -530,13 +564,23 @@ export default function Navbar({
                   </span>
                 </div>
                 {user.role === 'admin' && (
-                  <button
-                    onClick={() => { setMobileMenuOpen(false); if (onOpenAdmin) onOpenAdmin(); }}
-                    className="w-full py-2 bg-mahogany-950 text-white font-bold rounded-xl flex items-center justify-center gap-2 shadow-sm"
-                  >
-                    <ShieldCheck className="w-4 h-4 text-gold" />
-                    <span>Abrir Panel de Administración</span>
-                  </button>
+                  <div className="space-y-1.5 pt-1">
+                    <button
+                      onClick={() => { setMobileMenuOpen(false); if (onOpenAdmin) onOpenAdmin('texts'); }}
+                      className="w-full py-2.5 bg-gold/15 hover:bg-gold/25 text-mahogany-950 font-bold rounded-xl flex items-center justify-center gap-2 border border-gold/40 shadow-sm"
+                    >
+                      <Pencil className="w-4 h-4 text-gold-dark" />
+                      <span>Editar Textos de la Página (Lápiz)</span>
+                    </button>
+
+                    <button
+                      onClick={() => { setMobileMenuOpen(false); if (onOpenAdmin) onOpenAdmin('services'); }}
+                      className="w-full py-2.5 bg-mahogany-950 hover:bg-mahogany-900 text-white font-bold rounded-xl flex items-center justify-center gap-2 shadow-sm"
+                    >
+                      <ShieldCheck className="w-4 h-4 text-gold" />
+                      <span>Abrir Panel de Administración</span>
+                    </button>
+                  </div>
                 )}
                 <button
                   onClick={() => { setMobileMenuOpen(false); logout(); }}

@@ -22,6 +22,7 @@ import SobreNosotros from './components/SobreNosotros';
 import Blog from './components/Blog';
 import { getServiceById } from './data/servicesData';
 import { useAuth } from './context/AuthContext';
+import { Pencil } from 'lucide-react';
 
 export default function App() {
   const { user } = useAuth();
@@ -29,6 +30,7 @@ export default function App() {
   const [authModalOpen, setAuthModalOpen] = useState(false);
   const [authInitialMode, setAuthInitialMode] = useState('login');
   const [adminModalOpen, setAdminModalOpen] = useState(false);
+  const [adminModalTab, setAdminModalTab] = useState('services');
   const [preselectedService, setPreselectedService] = useState(null);
   const [initialCategoryId, setInitialCategoryId] = useState(null);
   
@@ -93,7 +95,8 @@ export default function App() {
     setAuthModalOpen(true);
   };
 
-  const handleOpenAdmin = () => {
+  const handleOpenAdmin = (tab = 'services') => {
+    setAdminModalTab(tab);
     if (user && user.role === 'admin') {
       setAdminModalOpen(true);
     } else {
@@ -190,13 +193,26 @@ export default function App() {
         )}
       </main>
 
+      {/* Floating Admin Quick Edit Pencil Button */}
+      {user && user.role === 'admin' && (
+        <button
+          onClick={() => handleOpenAdmin('texts')}
+          title="Modo Editor: Haz clic para editar textos y encabezados de la página principal"
+          className="fixed bottom-6 left-6 z-50 flex items-center gap-2 px-4 py-3 rounded-full bg-mahogany-950 hover:bg-black text-white font-bold text-xs shadow-2xl border-2 border-gold/70 transition-all duration-300 hover:scale-105 group"
+          aria-label="Editar textos de la página"
+        >
+          <div className="w-6 h-6 rounded-full bg-gold/20 flex items-center justify-center text-gold group-hover:scale-110 transition-transform">
+            <Pencil className="w-3.5 h-3.5" />
+          </div>
+          <span className="hidden sm:inline text-gold">Editar Textos</span>
+        </button>
+      )}
+
       {/* Floating WhatsApp Bubble to +53 59710688 */}
       <WhatsAppChatBubble />
 
       {/* Luxury Mega Footer */}
       <Footer 
-        onOpenBooking={() => handleOpenBooking()}
-        onOpenAdmin={handleOpenAdmin}
         onNavigateToPage={handleNavigateToPage}
       />
 
@@ -219,6 +235,7 @@ export default function App() {
       <AdminDashboardModal
         isOpen={adminModalOpen}
         onClose={() => setAdminModalOpen(false)}
+        initialTab={adminModalTab}
       />
 
     </div>

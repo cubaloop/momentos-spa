@@ -8,10 +8,16 @@ import {
 import { categoriesData, allServices } from '../data/servicesData';
 import { useAuth } from '../context/AuthContext';
 
-export default function AdminDashboardModal({ isOpen, onClose }) {
+export default function AdminDashboardModal({ isOpen, onClose, initialTab = 'services' }) {
   const { user } = useAuth();
-  // Tab states: 'services' | 'announcements' | 'clients' | 'bookings'
-  const [activeTab, setActiveTab] = useState('services');
+  // Tab states: 'services' | 'announcements' | 'texts' | 'schedule' | 'clients' | 'bookings'
+  const [activeTab, setActiveTab] = useState(initialTab);
+  
+  useEffect(() => {
+    if (isOpen && initialTab) {
+      setActiveTab(initialTab);
+    }
+  }, [isOpen, initialTab]);
   
   // Synchronous state initialization so it NEVER renders a blank screen
   const [services, setServices] = useState(() => {
