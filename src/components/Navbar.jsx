@@ -8,6 +8,7 @@ import { categoriesData } from '../data/servicesData';
 import { useAuth } from '../context/AuthContext';
 import { useCubaStatus } from '../utils/cubaTime';
 import { useLanguage } from '../context/LanguageContext';
+import { useEditableText } from '../context/EditableTextContext';
 
 export default function Navbar({ 
   onOpenBooking, 
@@ -30,6 +31,7 @@ export default function Navbar({
   
   const megaMenuRef = useRef(null);
   const { user, logout } = useAuth();
+  const { isEditingMode, toggleEditMode } = useEditableText();
   const { isOpen, statusText, detailText, havanaTimeString } = useCubaStatus();
   const { localizedCategories } = useLanguage();
 
@@ -312,12 +314,16 @@ export default function Navbar({
             {user && user.role === 'admin' && (
               <div className="flex items-center gap-1.5">
                 <button
-                  onClick={() => onOpenAdmin && onOpenAdmin('texts')}
-                  title="Editar textos y encabezados de la página principal"
-                  className="p-2.5 rounded-full bg-gold/15 hover:bg-gold/30 text-gold-dark hover:text-mahogany-950 transition-all border border-gold/40 shadow-sm flex items-center justify-center group"
+                  onClick={toggleEditMode}
+                  title={isEditingMode ? "Desactivar modo edición visual" : "Activar modo edición visual directa (Lápiz)"}
+                  className={`p-2.5 rounded-full transition-all border shadow-sm flex items-center justify-center group ${
+                    isEditingMode 
+                      ? 'bg-amber-600 text-white border-amber-300 ring-2 ring-amber-400' 
+                      : 'bg-gold/15 hover:bg-gold/30 text-gold-dark hover:text-mahogany-950 border-gold/40'
+                  }`}
                   aria-label="Editar textos de la página"
                 >
-                  <Pencil className="w-4 h-4 text-gold-dark group-hover:scale-110 transition-transform" />
+                  <Pencil className="w-4 h-4 group-hover:scale-110 transition-transform" />
                 </button>
 
                 <button
@@ -359,11 +365,15 @@ export default function Navbar({
                   {user.role === 'admin' && (
                     <div className="space-y-1 pt-1">
                       <button
-                        onClick={() => { setUserMenuOpen(false); if (onOpenAdmin) onOpenAdmin('texts'); }}
-                        className="w-full text-left p-2.5 rounded-xl bg-gold/15 hover:bg-gold/25 text-mahogany-950 font-bold flex items-center gap-2 transition-colors border border-gold/30"
+                        onClick={() => { setUserMenuOpen(false); toggleEditMode(); }}
+                        className={`w-full text-left p-2.5 rounded-xl font-bold flex items-center gap-2 transition-colors border ${
+                          isEditingMode 
+                            ? 'bg-amber-600 text-white border-amber-300' 
+                            : 'bg-gold/15 hover:bg-gold/25 text-mahogany-950 border-gold/30'
+                        }`}
                       >
-                        <Pencil className="w-4 h-4 text-gold-dark" />
-                        <span>Editar Textos de Portada</span>
+                        <Pencil className="w-4 h-4" />
+                        <span>{isEditingMode ? 'Desactivar Modo Edición' : 'Editar Textos en Pantalla'}</span>
                       </button>
 
                       <button
@@ -566,11 +576,15 @@ export default function Navbar({
                 {user.role === 'admin' && (
                   <div className="space-y-1.5 pt-1">
                     <button
-                      onClick={() => { setMobileMenuOpen(false); if (onOpenAdmin) onOpenAdmin('texts'); }}
-                      className="w-full py-2.5 bg-gold/15 hover:bg-gold/25 text-mahogany-950 font-bold rounded-xl flex items-center justify-center gap-2 border border-gold/40 shadow-sm"
+                      onClick={() => { setMobileMenuOpen(false); toggleEditMode(); }}
+                      className={`w-full py-2.5 font-bold rounded-xl flex items-center justify-center gap-2 border shadow-sm ${
+                        isEditingMode 
+                          ? 'bg-amber-600 text-white border-amber-300' 
+                          : 'bg-gold/15 hover:bg-gold/25 text-mahogany-950 border-gold/40'
+                      }`}
                     >
-                      <Pencil className="w-4 h-4 text-gold-dark" />
-                      <span>Editar Textos de la Página (Lápiz)</span>
+                      <Pencil className="w-4 h-4" />
+                      <span>{isEditingMode ? 'Desactivar Modo Edición' : 'Editar Textos en Pantalla (Lápiz)'}</span>
                     </button>
 
                     <button

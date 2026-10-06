@@ -1,25 +1,35 @@
 import React from 'react';
-import { Star, Quote } from 'lucide-react';
+import { Star } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
+import EditableText from './EditableText';
 
 export default function TestimonialsSection() {
   const { t } = useLanguage();
 
   const reviews = [
     {
-      name: t('review1Name', "Alejandro Gómez"),
-      location: t('review1Location', "La Habana, Cuba"),
-      text: t('review1Text', '"El Head Spa japonés es otro nivel. La cascada tibia de agua en el cuero cabelludo me quitó el dolor de cabeza y el estrés de semanas. La atención de las terapeutas es impecable."')
+      nameKey: 'review1Name',
+      nameDef: "Alejandro Gómez",
+      locKey: 'review1Location',
+      locDef: "La Habana, Cuba",
+      textKey: 'review1Text',
+      textDef: '"El Head Spa japonés es otro nivel. La cascada tibia de agua en el cuero cabelludo me quitó el dolor de cabeza y el estrés de semanas. La atención de las terapeutas es impecable."'
     },
     {
-      name: t('review2Name', "Claire Dupont"),
-      location: t('review2Location', "París, Francia"),
-      text: t('review2Text', '"Reservamos el paquete de pareja para nuestro aniversario durante nuestro viaje a La Habana. El jacuzzi privado, los masajes y la copa de vino crearon un recuerdo inolvidable."')
+      nameKey: 'review2Name',
+      nameDef: "Claire Dupont",
+      locKey: 'review2Location',
+      locDef: "París, Francia",
+      textKey: 'review2Text',
+      textDef: '"Reservamos el paquete de pareja para nuestro aniversario durante nuestro viaje a La Habana. El jacuzzi privado, los masajes y la copa de vino crearon un recuerdo inolvidable."'
     },
     {
-      name: t('review3Name', "Marco Rossi"),
-      location: t('review3Location', "Milán, Italia"),
-      text: t('review3Text', '"Excelente masaje descontracturante. La presión exacta y la cabina muy fresca y limpia. Sin duda el mejor spa de Miramar."')
+      nameKey: 'review3Name',
+      nameDef: "Marco Rossi",
+      locKey: 'review3Location',
+      locDef: "Milán, Italia",
+      textKey: 'review3Text',
+      textDef: '"Excelente masaje descontracturante. La presión exacta y la cabina muy fresca y limpia. Sin duda el mejor spa de Miramar."'
     }
   ];
 
@@ -29,14 +39,27 @@ export default function TestimonialsSection() {
         
         <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
           <span className="text-xs font-bold uppercase tracking-[0.25em] text-mahogany-700">
-            {t('testimonialsTag', 'TESTIMONIOS REALES')}
+            <EditableText
+              textKey="testimonialsTag"
+              defaultText="TESTIMONIOS REALES"
+              label="Etiqueta Superior Testimonios"
+            />
           </span>
-          <h2 className="font-serif-title text-3xl sm:text-4xl font-bold text-mahogany-950">
-            {t('testimonialsTitle', 'Lo Que Dicen Quienes Nos Visitan')}
-          </h2>
-          <p className="text-stone-600 text-xs sm:text-sm">
-            {t('testimonialsSubtitle', 'Más de 12,000 huéspedes locales e internacionales han encontrado su pausa en Miramar.')}
-          </p>
+          <EditableText
+            as="h2"
+            textKey="testimonialsTitle"
+            defaultText="Lo Que Dicen Quienes Nos Visitan"
+            className="font-serif-title text-3xl sm:text-4xl font-bold text-mahogany-950"
+            label="Título Testimonios"
+          />
+          <EditableText
+            as="p"
+            textKey="testimonialsSubtitle"
+            defaultText="Más de 12,000 huéspedes locales e internacionales han encontrado su pausa en Miramar."
+            className="text-stone-600 text-xs sm:text-sm"
+            multiline={true}
+            label="Subtítulo Testimonios"
+          />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -48,14 +71,31 @@ export default function TestimonialsSection() {
                     <Star key={i} className="w-4 h-4 fill-gold" />
                   ))}
                 </div>
-                <p className="text-stone-700 text-xs sm:text-sm leading-relaxed italic">
-                  {rev.text}
-                </p>
+                <EditableText
+                  as="p"
+                  textKey={rev.textKey}
+                  defaultText={rev.textDef}
+                  className="text-stone-700 text-xs sm:text-sm leading-relaxed italic"
+                  multiline={true}
+                  label={`Testimonio ${idx + 1} Opinión`}
+                />
               </div>
 
               <div className="pt-4 border-t border-stone-200/70">
-                <div className="font-serif-title font-bold text-sm text-stone-900">{rev.name}</div>
-                <div className="text-xs text-stone-500">{rev.location}</div>
+                <EditableText
+                  as="div"
+                  textKey={rev.nameKey}
+                  defaultText={rev.nameDef}
+                  className="font-serif-title font-bold text-sm text-stone-900"
+                  label={`Testimonio ${idx + 1} Nombre`}
+                />
+                <EditableText
+                  as="div"
+                  textKey={rev.locKey}
+                  defaultText={rev.locDef}
+                  className="text-xs text-stone-500"
+                  label={`Testimonio ${idx + 1} Ubicación`}
+                />
               </div>
             </div>
           ))}

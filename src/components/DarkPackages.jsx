@@ -2,6 +2,7 @@ import React, { useMemo, useState, useEffect } from 'react';
 import { Calendar, Check, ArrowRight, Eye, Sparkles } from 'lucide-react';
 import { allServices } from '../data/servicesData';
 import { useLanguage } from '../context/LanguageContext';
+import EditableText from './EditableText';
 
 export default function DarkPackages({ onOpenBooking, onNavigateToService }) {
   const { localizedServices } = useLanguage();
@@ -112,14 +113,27 @@ export default function DarkPackages({ onOpenBooking, onNavigateToService }) {
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
           <span className="text-xs font-bold uppercase tracking-[0.25em] text-gold flex items-center justify-center gap-1.5">
             <Sparkles className="w-3.5 h-3.5" />
-            EXPERIENCIAS EXCLUSIVAS
+            <EditableText
+              textKey="packagesBadge"
+              defaultText="EXPERIENCIAS EXCLUSIVAS"
+              label="Etiqueta Superior Paquetes"
+            />
           </span>
-          <h2 className="font-serif-title text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
-            {customTexts.packagesTitle || 'Nuestros Paquetes Signature Más Solicitados'}
-          </h2>
-          <p className="text-cream-200/80 text-sm sm:text-base">
-            {customTexts.packagesSubtitle || 'Selección de experiencias sensoriales y combinadas diseñadas para brindar la máxima desconexión, privacidad y bienestar.'}
-          </p>
+          <EditableText
+            as="h2"
+            textKey="packagesTitle"
+            defaultText="Nuestros Paquetes Signature Más Solicitados"
+            className="font-serif-title text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight"
+            label="Título Paquetes Signature"
+          />
+          <EditableText
+            as="p"
+            textKey="packagesSubtitle"
+            defaultText="Selección de experiencias sensoriales y combinadas diseñadas para brindar la máxima desconexión, privacidad y bienestar."
+            className="text-cream-200/80 text-sm sm:text-base"
+            multiline={true}
+            label="Subtítulo Paquetes Signature"
+          />
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">

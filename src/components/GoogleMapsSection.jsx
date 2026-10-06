@@ -1,6 +1,7 @@
 import React from 'react';
 import { MapPin, Phone, Clock, Navigation } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
+import EditableText from './EditableText';
 
 export default function GoogleMapsSection() {
   const { t } = useLanguage();
@@ -11,14 +12,27 @@ export default function GoogleMapsSection() {
         
         <div className="text-center max-w-2xl mx-auto mb-14 space-y-3">
           <span className="text-xs font-bold uppercase tracking-[0.25em] text-mahogany-700">
-            {t('locationTag', 'ENCUÉNTRANOS EN LA HABANA')}
+            <EditableText
+              textKey="locationTag"
+              defaultText="ENCUÉNTRANOS EN LA HABANA"
+              label="Etiqueta Superior Ubicación"
+            />
           </span>
-          <h2 className="font-serif-title text-3xl sm:text-4xl font-bold text-mahogany-950">
-            {t('locationTitle', 'Visítanos en el Corazón de Miramar')}
-          </h2>
-          <p className="text-stone-600 text-xs sm:text-sm">
-            {t('locationSubtitle', 'Una zona residencial tranquila, segura y rodeada de jardines en Calle 44 #111.')}
-          </p>
+          <EditableText
+            as="h2"
+            textKey="locationTitle"
+            defaultText="Visítanos en el Corazón de Miramar"
+            className="font-serif-title text-3xl sm:text-4xl font-bold text-mahogany-950"
+            label="Título Sección Ubicación"
+          />
+          <EditableText
+            as="p"
+            textKey="locationSubtitle"
+            defaultText="Una zona residencial tranquila, segura y rodeada de jardines en Calle 44 #111."
+            className="text-stone-600 text-xs sm:text-sm"
+            multiline={true}
+            label="Subtítulo Sección Ubicación"
+          />
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
@@ -28,82 +42,106 @@ export default function GoogleMapsSection() {
               <div className="p-6 rounded-3xl bg-cream-50 border border-stone-200 space-y-2">
                 <div className="flex items-center gap-2 text-mahogany-900 font-bold text-sm">
                   <MapPin className="w-4 h-4 text-gold" />
-                  <span>{t('addressTitle', 'Dirección')}</span>
+                  <EditableText
+                    textKey="addressTitle"
+                    defaultText="Dirección"
+                    label="Título Tarjeta Dirección"
+                  />
                 </div>
-                <p className="text-xs sm:text-sm text-stone-700 leading-relaxed">
-                  {t('addressDesc', 'Calle 44 #111 e/ 3ra y 1ra A, Miramar, Playa, La Habana, Cuba.')}
-                </p>
-                <p className="text-xs text-stone-500">
-                  {t('mapsDirections', 'A sólo 2 cuadras de 3ra Avenida y a pocos minutos de los principales hoteles de Miramar.')}
-                </p>
+                <EditableText
+                  as="p"
+                  textKey="addressDesc"
+                  defaultText="Calle 44 #111 e/ 3ra y 1ra A, Miramar, Playa, La Habana, Cuba."
+                  className="text-xs sm:text-sm text-stone-700 leading-relaxed font-medium"
+                  label="Texto Dirección"
+                />
+                <EditableText
+                  as="p"
+                  textKey="mapsDirections"
+                  defaultText="A sólo 2 cuadras de 3ra Avenida y a pocos minutos de los principales hoteles de Miramar."
+                  className="text-xs text-stone-500"
+                  multiline={true}
+                  label="Puntos de Referencia Dirección"
+                />
               </div>
 
               <div className="p-6 rounded-3xl bg-cream-50 border border-stone-200 space-y-2">
                 <div className="flex items-center gap-2 text-mahogany-900 font-bold text-sm">
                   <Phone className="w-4 h-4 text-gold" />
-                  <span>{t('phoneTitle', 'Teléfono / WhatsApp')}</span>
+                  <EditableText
+                    textKey="phoneTitle"
+                    defaultText="Teléfono / WhatsApp"
+                    label="Título Tarjeta Teléfono"
+                  />
                 </div>
-                <p className="text-xs sm:text-sm text-stone-700 font-mono font-semibold">
-                  +53 59710688
-                </p>
-                <p className="text-xs text-stone-500">
-                  {t('phoneDesc', '+53 59710688 (Atención continua)')}
-                </p>
+                <EditableText
+                  as="p"
+                  textKey="phoneDescNumber"
+                  defaultText="+53 59710688"
+                  className="text-xs sm:text-sm text-stone-700 font-mono font-semibold"
+                  label="Número Telefónico Mostrado"
+                />
+                <EditableText
+                  as="p"
+                  textKey="phoneDesc"
+                  defaultText="+53 59710688 (Atención continua)"
+                  className="text-xs text-stone-500"
+                  label="Detalle de Atención Telefónica"
+                />
               </div>
 
               <div className="p-6 rounded-3xl bg-cream-50 border border-stone-200 space-y-2">
                 <div className="flex items-center gap-2 text-mahogany-900 font-bold text-sm">
                   <Clock className="w-4 h-4 text-gold" />
-                  <span>{t('hoursTitle', 'Horario de Atención')}</span>
+                  <EditableText
+                    textKey="hoursTitle"
+                    defaultText="Horario de Atención"
+                    label="Título Tarjeta Horario"
+                  />
                 </div>
-                <p className="text-xs sm:text-sm text-stone-700 font-medium">
-                  {t('hoursDesc', 'Miércoles a Domingo: 10:00 AM - 6:00 PM (Lunes y Martes Cerrado)')}
-                </p>
+                <EditableText
+                  as="p"
+                  textKey="hoursDesc"
+                  defaultText="Miércoles a Domingo: 10:00 AM - 6:00 PM (Lunes y Martes Cerrado)"
+                  className="text-xs sm:text-sm text-stone-700 font-medium"
+                  label="Texto Horario de Atención"
+                />
+                <EditableText
+                  as="p"
+                  textKey="parkingDesc"
+                  defaultText="Parqueo vigilado gratuito frente a las instalaciones."
+                  className="text-xs text-stone-500"
+                  label="Texto Parqueo Vigilado"
+                />
               </div>
-            </div>
-
-            {/* Servicio de Taxi Banner */}
-            <div className="p-5 rounded-3xl bg-amber-50/90 border border-amber-200/90 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm">
-              <div className="space-y-1 text-center sm:text-left">
-                <div className="flex items-center justify-center sm:justify-start gap-2 font-serif-title font-bold text-sm text-mahogany-950">
-                  <span className="text-lg">🚕</span>
-                  <span>Servicio de taxi</span>
-                </div>
-                <p className="text-xs text-stone-600">
-                  "¿No tienes cómo llegar? Nosotros te recogemos y te llevamos de regreso."
-                </p>
-              </div>
-              <a
-                href="https://wa.me/5359710688?text=Hola%20Momentos%20Spa%2C%20deseo%20solicitar%20el%20Servicio%20de%20taxi%20%F0%9F%9A%95%20para%20mi%20cita."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="shrink-0 px-4 py-2 rounded-full bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-bold transition-all shadow hover:scale-105 flex items-center gap-1.5"
-              >
-                <span>Pedir Taxi por WhatsApp</span>
-              </a>
             </div>
 
             <a
-              href="https://maps.app.goo.gl/hhEppr8jVbSn3EaW6"
+              href="https://maps.google.com/?q=Momentos+Spa+Miramar+La+Habana"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full py-4 px-6 rounded-full bg-mahogany-950 hover:bg-mahogany-900 text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-lg transition-all hover:scale-105"
+              className="flex items-center justify-center gap-2 w-full py-4 bg-mahogany-950 hover:bg-black text-white font-bold text-xs sm:text-sm rounded-2xl shadow-lg transition-transform hover:scale-102 mt-4"
             >
               <Navigation className="w-4 h-4 text-gold" />
-              <span>{t('mapsBtn', 'Abrir en Google Maps')}</span>
+              <EditableText
+                textKey="mapsOpenBtn"
+                defaultText="Abrir en Google Maps"
+                label="Botón Abrir Google Maps"
+              />
             </a>
           </div>
 
-          <div className="lg:col-span-7 rounded-3xl overflow-hidden shadow-xl border border-stone-200 min-h-[360px]">
+          <div className="lg:col-span-7 min-h-[350px] lg:min-h-[420px] rounded-3xl overflow-hidden border border-stone-200 shadow-md">
             <iframe
-              title="Ubicación Momentos Spa Habana"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3670.364426543169!2d-82.42878642398573!3d23.120364979104077!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88cd774431bc89a7%3A0xe541c4d7d11df835!2sCalle%2044%20111%2C%20La%20Habana!5e0!3m2!1ses!2scu!4v1710000000000!5m2!1ses!2scu"
+              title="Ubicación de Momentos Spa en Google Maps"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3670.366224378873!2d-82.42859062391062!3d23.120286979105435!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88cd7728f3223019%3A0x633d7637841f4862!2sMomentos%20Spa!5e0!3m2!1ses!2ses!4v1711928392010!5m2!1ses!2ses"
               width="100%"
               height="100%"
               style={{ border: 0, minHeight: '380px' }}
               allowFullScreen=""
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
+              className="w-full h-full"
             />
           </div>
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Sparkles, Clock, CheckCircle2 } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
+import EditableText from './EditableText';
 
 export default function DayTimeline() {
   const { t } = useLanguage();
@@ -8,23 +9,31 @@ export default function DayTimeline() {
   const steps = [
     {
       step: "01",
-      title: t('time1Title', "10:00 AM • Llegada & Test Sensorial"),
-      desc: t('time1Desc', "Bienvenida en nuestro salón climatizado, infusión relajante y selección de aceites esenciales personalizados.")
+      titleKey: 'time1Title',
+      titleDef: "10:00 AM • Llegada & Test Sensorial",
+      descKey: 'time1Desc',
+      descDef: "Bienvenida en nuestro salón climatizado, infusión relajante y selección de aceites esenciales personalizados."
     },
     {
       step: "02",
-      title: t('time2Title', "10:30 AM • Terapia Principal en Cabina"),
-      desc: t('time2Desc', "Sesión de masaje terapéutico o Japanese Head Spa en camilla con toallas precalentadas.")
+      titleKey: 'time2Title',
+      titleDef: "10:30 AM • Terapia Principal en Cabina",
+      descKey: 'time2Desc',
+      descDef: "Sesión de masaje terapéutico o Japanese Head Spa en camilla con toallas precalentadas."
     },
     {
       step: "03",
-      title: t('time3Title', "11:45 AM • Circuito Termal & Jacuzzi"),
-      desc: t('time3Desc', "Inmersión en hidromasaje con sales marinas minerales y sesión de sauna seco de cedro.")
+      titleKey: 'time3Title',
+      titleDef: "11:45 AM • Circuito Termal & Jacuzzi",
+      descKey: 'time3Desc',
+      descDef: "Inmersión en hidromasaje con sales marinas minerales y sesión de sauna seco de cedro."
     },
     {
       step: "04",
-      title: t('time4Title', "12:30 PM • Reposo con Copa & Aperitivo"),
-      desc: t('time4Desc', "Degustación de frutas frescas, bombones y vino en nuestra terraza privada antes de regresar a la ciudad.")
+      titleKey: 'time4Title',
+      titleDef: "12:30 PM • Reposo con Copa & Aperitivo",
+      descKey: 'time4Desc',
+      descDef: "Degustación de frutas frescas, bombones y vino en nuestra terraza privada antes de regresar a la ciudad."
     }
   ];
 
@@ -34,14 +43,27 @@ export default function DayTimeline() {
         
         <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
           <span className="text-xs font-bold uppercase tracking-[0.25em] text-mahogany-700">
-            {t('timelineTag', 'TU VIAJE SENSORIAL')}
+            <EditableText
+              textKey="timelineTag"
+              defaultText="TU VIAJE SENSORIAL"
+              label="Etiqueta Superior Itinerario"
+            />
           </span>
-          <h2 className="font-serif-title text-3xl sm:text-4xl font-bold text-mahogany-950">
-            {t('timelineTitle', 'Tu Día Perfecto de Spa en 4 Fases')}
-          </h2>
-          <p className="text-stone-600 text-xs sm:text-sm">
-            {t('timelineSubtitle', 'Diseñado para que disfrutes sin prisas desde que entras por nuestro jardín en Miramar.')}
-          </p>
+          <EditableText
+            as="h2"
+            textKey="timelineTitle"
+            defaultText="Tu Día Perfecto de Spa en 4 Fases"
+            className="font-serif-title text-3xl sm:text-4xl font-bold text-mahogany-950"
+            label="Título Itinerario"
+          />
+          <EditableText
+            as="p"
+            textKey="timelineSubtitle"
+            defaultText="Diseñado para que disfrutes sin prisas desde que entras por nuestro jardín en Miramar."
+            className="text-stone-600 text-xs sm:text-sm"
+            multiline={true}
+            label="Subtítulo Itinerario"
+          />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
@@ -50,12 +72,21 @@ export default function DayTimeline() {
               <div className="w-12 h-12 rounded-2xl bg-mahogany-950 text-gold flex items-center justify-center font-serif-title font-bold text-lg shadow-sm">
                 {st.step}
               </div>
-              <h3 className="font-bold text-sm text-stone-900 leading-snug">
-                {st.title}
-              </h3>
-              <p className="text-xs text-stone-600 leading-relaxed">
-                {st.desc}
-              </p>
+              <EditableText
+                as="h3"
+                textKey={st.titleKey}
+                defaultText={st.titleDef}
+                className="font-bold text-sm text-stone-900 leading-snug"
+                label={`Fase ${st.step} Título`}
+              />
+              <EditableText
+                as="p"
+                textKey={st.descKey}
+                defaultText={st.descDef}
+                className="text-xs text-stone-600 leading-relaxed"
+                multiline={true}
+                label={`Fase ${st.step} Descripción`}
+              />
             </div>
           ))}
         </div>
