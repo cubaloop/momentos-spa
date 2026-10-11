@@ -190,11 +190,10 @@ export default function DarkPackages({ onOpenBooking, onNavigateToService }) {
                     {pkg.subtitle}
                   </p>
 
-                  <div className="flex items-baseline gap-2 mb-6 pb-6 border-b border-white/10">
-                    <span className="text-4xl font-serif-title font-bold text-gold">
-                      ${pkg.price}
+                  <div className="flex items-center gap-2 mb-6 pb-6 border-b border-white/10">
+                    <span className="text-sm font-semibold text-gold bg-gold/10 border border-gold/30 px-3.5 py-1 rounded-full uppercase tracking-wider">
+                      Ritual Signature • {pkg.duration}
                     </span>
-                    <span className="text-xs text-cream-200/60 uppercase">USD / {pkg.duration}</span>
                   </div>
 
                   <ul className="space-y-3 mb-8">

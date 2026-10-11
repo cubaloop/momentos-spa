@@ -125,7 +125,7 @@ export default function ServiceDetailPage({ service: rawService, onBack, onOpenB
         `Hola Momentos Spa, deseo solicitar el Servicio de taxi 🚕 para mi cita.`
       )}`
     : `https://wa.me/5359710688?text=${encodeURIComponent(
-        `Hola Momentos Spa, deseo consultar y reservar el servicio: "${service.name}"${service.duration ? ` (${service.duration})` : ''}${typeof service.price === 'number' ? ` - $${service.price} USD` : ''}. ¿Tienen disponibilidad próxima?`
+        `Hola Momentos Spa, deseo consultar y reservar el servicio: "${service.name}"${service.duration ? ` (${service.duration})` : ''}. ¿Tienen disponibilidad próxima?`
       )}`;
 
   return (
@@ -341,32 +341,16 @@ export default function ServiceDetailPage({ service: rawService, onBack, onOpenB
                 {service.name}
               </h1>
 
-              {/* Price & Duration banner */}
-              <div className="mt-4 p-4 rounded-2xl bg-white border border-stone-200/90 shadow-sm flex items-center justify-between">
-                <div>
-                  <span className="text-xs text-stone-500 uppercase tracking-wider block">Inversión</span>
-                  <div className="flex items-baseline gap-1">
-                    {typeof service.price === 'number' ? (
-                      <>
-                        <span className="text-3xl font-bold text-mahogany-950 font-serif-title">
-                          ${service.price}
-                        </span>
-                        <span className="text-xs text-stone-500 font-medium">USD</span>
-                      </>
-                    ) : (
-                      <span className="text-2xl font-bold text-stone-800 font-serif-title">
-                        {service.price}
-                      </span>
-                    )}
+              {/* Duration banner */}
+              {service.duration && (
+                <div className="mt-4 p-4 rounded-2xl bg-white border border-stone-200/90 shadow-sm flex items-center justify-between">
+                  <div className="flex items-center gap-2 text-stone-700">
+                    <Clock className="w-4 h-4 text-gold-dark" />
+                    <span className="text-xs font-semibold uppercase tracking-wider text-stone-500">Duración estimada</span>
                   </div>
+                  <span className="text-base font-bold text-stone-900 bg-cream-100 px-3.5 py-1 rounded-full border border-stone-200/70">{service.duration}</span>
                 </div>
-                {service.duration && (
-                  <div className="text-right border-l border-stone-200 pl-6">
-                    <span className="text-xs text-stone-500 uppercase tracking-wider block">Duración</span>
-                    <span className="text-lg font-bold text-stone-800">{service.duration}</span>
-                  </div>
-                )}
-              </div>
+              )}
             </div>
 
             {/* Description */}
@@ -527,9 +511,6 @@ export default function ServiceDetailPage({ service: rawService, onBack, onOpenB
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                   <span className="absolute bottom-2.5 left-3 text-[11px] font-bold text-white bg-black/50 backdrop-blur px-2.5 py-0.5 rounded-full">
                     {rel.duration}
-                  </span>
-                  <span className="absolute bottom-2.5 right-3 text-xs font-bold text-gold bg-mahogany-950/90 px-2.5 py-0.5 rounded-full border border-gold/30">
-                    ${rel.price} USD
                   </span>
                 </div>
                 <div className="p-4 flex-1 flex flex-col justify-between">

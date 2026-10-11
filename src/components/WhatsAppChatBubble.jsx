@@ -68,10 +68,10 @@ export default function WhatsAppChatBubble() {
                 {t('bubbleOption2', '💆‍♂️ Preguntar por paquetes para parejas')}
               </button>
               <button
-                onClick={() => handleSend("Hola, me gustaría saber más sobre el Japanese Head Spa y sus tarifas.")}
+                onClick={() => handleSend("Hola, me gustaría saber más sobre el Head Spa 360° y sus beneficios.")}
                 className="w-full text-left p-2 rounded-xl bg-white hover:bg-cream-100 border border-stone-200 text-stone-700 text-xs font-medium transition-colors"
               >
-                {t('bubbleOption3', '✨ Información de Japanese Head Spa')}
+                {t('bubbleOption3', '✨ Información de Head Spa 360°')}
               </button>
             </div>
 

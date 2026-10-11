@@ -11,12 +11,12 @@ export const catalogTranslations = {
       de: { title: "Spa & Therapeutische Massagen", subtitle: "Vollkommene Entspannung, Linderung von Muskelschmerzen und Energieausgleich", badge: "Am Beliebtesten" }
     },
     "head-spa": {
-      es: { title: "Japanese Head Spa & Capilar", subtitle: "El tratamiento viral de relajación sensorial con cascada de agua Halo", badge: "Tendencia Mundial" },
-      en: { title: "Japanese Head Spa & Scalp Care", subtitle: "The viral sensory relaxation treatment with warm Halo water cascade", badge: "Global Trend" },
-      it: { title: "Japanese Head Spa & Cura Capillare", subtitle: "Il trattamento virale di rilassamento sensoriale con cascata d'acqua Halo", badge: "Tendenza Globale" },
-      fr: { title: "Japanese Head Spa & Soin Capillaire", subtitle: "Le rituel viral de relaxation sensorielle avec cascade d'eau tiède Halo", badge: "Tendance Mondiale" },
-      ru: { title: "Японский Спа для Головы (Head Spa)", subtitle: "Сенсорное расслабление с теплой циркулярной водной аркой Halo", badge: "Мировой Тренд" },
-      de: { title: "Japanese Head Spa & Haarpflege", subtitle: "Die sensorische Entspannungsbehandlung mit warmer Halo-Wasserkaskade", badge: "Weltweiter Trend" }
+      es: { title: "Head Spa 360° & Capilar", subtitle: "El tratamiento viral de relajación sensorial con cascada de agua Halo", badge: "Tendencia Mundial" },
+      en: { title: "Head Spa 360° & Scalp Care", subtitle: "The viral sensory relaxation treatment with warm Halo water cascade", badge: "Global Trend" },
+      it: { title: "Head Spa 360° & Cura Capillare", subtitle: "Il trattamento virale di rilassamento sensoriale con cascata d'acqua Halo", badge: "Tendenza Globale" },
+      fr: { title: "Head Spa 360° & Soin Capillaire", subtitle: "Le rituel viral de relaxation sensorielle avec cascade d'eau tiède Halo", badge: "Tendance Mondiale" },
+      ru: { title: "Head Spa 360°", subtitle: "Сенсорное расслабление с теплой циркулярной водной аркой Halo", badge: "Мировой Тренд" },
+      de: { title: "Head Spa 360° & Haarpflege", subtitle: "Die sensorische Entspannungsbehandlung mit warmer Halo-Wasserkaskade", badge: "Weltweiter Trend" }
     },
     "faciales-corporales": {
       es: { title: "Tratamientos Faciales & Corporales", subtitle: "Cosmecéutica avanzada, limpieza ultrasónica y envolturas nutritivas", badge: "Rejuvenecedor" },
@@ -63,11 +63,11 @@ export const catalogTranslations = {
       de: { name: "Romantische Paar-Erlebnisse", description: "Private Suite für Paare mit synchroner Massage und Weinbegrüßung" }
     },
     "head-spa-japonés": {
-      es: { name: "Rituales de Head Spa Japonés", description: "Terapia holística para cuero cabelludo, cuello y mente con arcos de agua tibia" },
-      en: { name: "Japanese Head Spa Rituals", description: "Holistic scalp, neck and mental therapy with soothing warm water arches" },
-      it: { name: "Rituali Japanese Head Spa", description: "Terapia olistica per cuoio capelluto, cervicale e mente con archi d'acqua calda" },
-      fr: { name: "Rituels de Head Spa Japonais", description: "Soin holistique du cuir chevelu, de la nuque et de l'esprit par jets tièdes" },
-      ru: { name: "Ритуалы Японского Head Spa", description: "Холистическая терапия кожи головы, шеи и мыслей с теплой водной аркой" },
+      es: { name: "Rituales de Head Spa 360°", description: "Terapia holística para cuero cabelludo, cuello y mente con arcos de agua tibia" },
+      en: { name: "Head Spa 360° Rituals", description: "Holistic scalp, neck and mental therapy with soothing warm water arches" },
+      it: { name: "Rituali Head Spa 360°", description: "Terapia olistica per cuoio capelluto, cervicale e mente con archi d'acqua calda" },
+      fr: { name: "Rituels de Head Spa 360°", description: "Soin holistique du cuir chevelu, de la nuque et de l'esprit par jets tièdes" },
+      ru: { name: "Head Spa 360°", description: "Холистическая терапия кожи головы, шеи и мыслей с теплой водной аркой" },
       de: { name: "Japanische Head-Spa-Rituale", description: "Ganzheitliche Kopfhaut-, Nacken- und Tiefenentspannung mit warmen Wasserbögen" }
     },
     "tratamientos-faciales": {
@@ -195,20 +195,20 @@ export const catalogTranslations = {
       de: { name: "Romantische Auszeit & Spa", desc: "Das vollkommenste Paarerlebnis: Thermalkreislauf, Whirlpool mit Rosenblättern und Entspannungsmassage." }
     },
     "srv_headspa_tradicional": {
-      es: { name: "Japanese Head Spa Tradicional", desc: "Lavado terapéutico con agua tibia en cascada circular, masaje shiatsu en cuero cabelludo y nutrición capilar." },
-      en: { name: "Traditional Japanese Head Spa", desc: "Therapeutic warm circular waterfall scalp rinse, deep shiatsu cranial massage and herbal nourishment." },
-      it: { name: "Japanese Head Spa Tradizionale", desc: "Lavaggio terapeutico con cascata circolare calda, massaggio shiatsu cuoio capelluto e nutrizione." },
-      fr: { name: "Japanese Head Spa Traditionnel", desc: "Lavage thérapeutique sous arche d'eau tiède, massage crânien shiatsu et soin nutritif." },
+      es: { name: "Head Spa 360° Tradicional", desc: "Lavado terapéutico con agua tibia en cascada circular, masaje shiatsu en cuero cabelludo y nutrición capilar." },
+      en: { name: "Traditional Head Spa 360°", desc: "Therapeutic warm circular waterfall scalp rinse, deep shiatsu cranial massage and herbal nourishment." },
+      it: { name: "Head Spa 360° Tradizionale", desc: "Lavaggio terapeutico con cascata circolare calda, massaggio shiatsu cuoio capelluto e nutrizione." },
+      fr: { name: "Head Spa 360° Traditionnel", desc: "Lavage thérapeutique sous arche d'eau tiède, massage crânien shiatsu et soin nutritif." },
       ru: { name: "Традиционный Японский Head Spa", desc: "Теплый циркулярный душ-водопад, глубокий шиацу массаж головы и фитопитание волос." },
       de: { name: "Traditionelles Japanisches Head Spa", desc: "Therapeutische Kaskaden-Kopfhautspülung, tiefenwirksame Shiatsu-Kopfmassage und Haarnährpflege." }
     },
     "srv_headspa": {
-      es: { name: "Japanese Head Spa Premium", desc: "Experiencia completa de 75 min: cascada Halo, vapor de ozono purificante, masaje cervical y mascarilla facial." },
-      en: { name: "Japanese Head Spa Premium Experience", desc: "75-min full sensory ritual: Halo warm waterfall, ozone steam, cervical shiatsu and express facial mask." },
-      it: { name: "Japanese Head Spa Premium", desc: "Esperienza completa di 75 min: cascata Halo, vapore ozonizzato, massaggio cervicale e maschera viso." },
-      fr: { name: "Japanese Head Spa Expérience Premium", desc: "Rituel de 75 min : cascade Halo, vapeur d'ozone purifiante, shiatsu cervical et masque visage." },
+      es: { name: "Head Spa 360° Premium", desc: "Experiencia completa de 75 min: cascada Halo, vapor de ozono purificante, masaje cervical y mascarilla facial." },
+      en: { name: "Head Spa 360° Premium Experience", desc: "75-min full sensory ritual: Halo warm waterfall, ozone steam, cervical shiatsu and express facial mask." },
+      it: { name: "Head Spa 360° Premium", desc: "Esperienza completa di 75 min: cascata Halo, vapore ozonizzato, massaggio cervicale e maschera viso." },
+      fr: { name: "Head Spa 360° Expérience Premium", desc: "Rituel de 75 min : cascade Halo, vapeur d'ozone purifiante, shiatsu cervical et masque visage." },
       ru: { name: "Премиальный Японский Head Spa", desc: "Полный 75-мин ритуал: арка Halo, озоновый пар, массаж шейно-воротниковой зоны и маска для лица." },
-      de: { name: "Japanese Head Spa Premium", desc: "75-minütiges Komplettprogramm: Halo-Wasserkaskade, Ozonbedampfung, Nacken-Shiatsu und Gesichtsmaske." }
+      de: { name: "Head Spa 360° Premium", desc: "75-minütiges Komplettprogramm: Halo-Wasserkaskade, Ozonbedampfung, Nacken-Shiatsu und Gesichtsmaske." }
     },
     "srv_limpieza_facial": {
       es: { name: "Limpieza Facial Profunda Ultrasónica", desc: "Desincrustación de impurezas y puntos negros con espátula ultrasónica, vapor y mascarilla descongestiva." },

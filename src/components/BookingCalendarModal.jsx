@@ -116,7 +116,6 @@ export default function BookingCalendarModal({ isOpen, onClose, preselectedServi
       });
 
       // 2. Format structured WhatsApp message to +53 59710688
-      const formattedPrice = typeof selectedService.price === 'number' ? `$${selectedService.price} USD` : selectedService.price;
       const durationLine = selectedService.duration ? `⏱️ *Duración:* ${selectedService.duration}\n` : '';
       const taxiLine = (needTaxi || selectedService.isTaxi) ? '🚕 *Servicio de Taxi:* SOLICITADO (recogida y regreso)\n' : '';
 
@@ -126,8 +125,7 @@ export default function BookingCalendarModal({ isOpen, onClose, preselectedServi
 📱 *Teléfono:* ${user.phone}
 📧 *Correo:* ${user.email}
 💆 *Servicio:* ${selectedService.name}
-${durationLine}💰 *Tarifa:* ${formattedPrice}
-📅 *Fecha:* ${selectedDate}
+${durationLine}📅 *Fecha:* ${selectedDate}
 ⏰ *Hora:* ${selectedTimeSlot}
 👩‍⚕️ *Terapeuta:* ${selectedTherapist}
 ${taxiLine}📝 *Notas:* ${notes || 'Ninguna'}
@@ -239,11 +237,9 @@ ${taxiLine}📝 *Notas:* ${notes || 'Ninguna'}
                             {srv.description}
                           </div>
                         </div>
-                        <div className="mt-3 pt-2 border-t border-stone-200/50 flex items-center justify-between text-xs">
+                        <div className="mt-3 pt-2 border-t border-stone-200/50 flex items-center justify-between text-xs text-stone-500">
                           <span>{srv.duration || ''}</span>
-                          <span className="font-bold">
-                            {typeof srv.price === 'number' ? `$${srv.price} USD` : srv.price}
-                          </span>
+                          <span className="font-semibold text-mahogany-900">Cabina Privada</span>
                         </div>
                       </button>
                     ))}
@@ -261,8 +257,7 @@ ${taxiLine}📝 *Notas:* ${notes || 'Ninguna'}
                       <span className="text-[10px] font-bold uppercase tracking-wider text-stone-400">Tratamiento elegido</span>
                       <div className="font-bold text-sm text-stone-900">{selectedService?.name}</div>
                       <div className="text-xs text-stone-500">
-                        {selectedService?.duration ? `${selectedService.duration} • ` : ''}
-                        {typeof selectedService?.price === 'number' ? `$${selectedService.price} USD` : selectedService?.price}
+                        {selectedService?.duration ? `${selectedService.duration}` : ''}
                       </div>
                     </div>
                     <button
@@ -492,9 +487,9 @@ ${taxiLine}📝 *Notas:* ${notes || 'Ninguna'}
                         <strong>{selectedService?.name}</strong>
                       </div>
                       <div>
-                        <span className="text-stone-400 block text-[11px]">Tarifa</span>
+                        <span className="text-stone-400 block text-[11px]">Duración</span>
                         <strong className="text-mahogany-900">
-                          {typeof selectedService?.price === 'number' ? `$${selectedService?.price} USD` : selectedService?.price}
+                          {selectedService?.duration || 'Sesión en cabina'}
                         </strong>
                       </div>
                       <div>

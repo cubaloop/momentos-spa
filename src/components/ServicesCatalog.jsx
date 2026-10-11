@@ -124,11 +124,6 @@ export default function ServicesCatalog({ onOpenBooking, onNavigateToService }) 
                         )}
                       </div>
 
-                      <div className="absolute top-3 right-3 bg-white/95 backdrop-blur px-3 py-1.5 rounded-full shadow-lg border border-stone-200/50">
-                        <div className="text-xs font-extrabold text-mahogany-950 font-sans">
-                          ${srv.price} <span className="text-[10px] font-semibold text-stone-500">USD</span>
-                        </div>
-                      </div>
                     </div>
 
                     {/* Card Body */}

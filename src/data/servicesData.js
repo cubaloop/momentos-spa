@@ -1,4 +1,4 @@
-// Catálogo oficial maestro de Momentos Spa sincronizado con los 50 servicios oficiales
+// Catálogo oficial maestro de Momentos Spa sincronizado con los servicios oficiales
 // Lema: "Pensando en ti"
 // Todos los servicios incluyen bebida no alcohólica de cortesía (té, agua, café, jugo y refresco)
 
@@ -15,6 +15,55 @@ export const categoriesData = [
         "name": "Masajes Terapéuticos y Relajantes",
         "description": "Alivio de tensiones, relajación profunda y estimulación de la circulación",
         "services": [
+          {
+            "id": "srv_head_spa_360",
+            "name": "Head Spa 360°",
+            "categoryTitle": "Masajes",
+            "categoryId": "spa-masajes",
+            "subcategoryName": "Masajes Terapéuticos y Relajantes",
+            "price": 0,
+            "duration": "90 min",
+            "badge": "Signature",
+            "popular": true,
+            "image": "./assets/headspa_5.jpg",
+            "gallery": [
+              "./assets/headspa_5.jpg",
+              "./assets/headspa_1.jpg",
+              "./assets/headspa_2.jpg",
+              "./assets/headspa_3.jpg",
+              "./assets/headspa_4.jpg"
+            ],
+            "description": "Reinicio 360: Diagnóstico microscópico de cuero cabelludo con cámara HD, masaje corporal completo, facial hidratante iluminador, lavado profundo con arco Halo, mascarilla capilar, masaje de manos y pies con secado profesional.",
+            "longDescription": [
+              "Mira cómo es tu Reinicio 360 🪷:",
+              "🔬 FASE 1 - DIAGNÓSTICO: Empezamos analizando tu cuero cabelludo con cámara de alta definición. Te mostramos en pantalla el estado de tu raíz (grasa, resequedad o falta de oxígeno).",
+              "💆🏻‍♂️ FASE 2 - MASAJE CORPORAL: Te relajamos de arriba a abajo: cervicales, espalda y piernas. Soltamos toda la tensión acumulada por el estrés y las malas posturas.",
+              "🧖🏻‍♀️ FASE 3 - LIMPIEZA FACIAL: Te damos la vuelta y comenzamos con una limpieza facial hidratante para que tu piel también recupere su luz.",
+              "🌀 FASE 4 - LAVADO + MASAJE CAPILAR: Pasamos al lavado profundo con shampoo a tu medida. Aquí activamos la circulación con diferentes utensilios (cepillos, puntas de masaje, etc.) para hacer una limpieza profunda de folículos.",
+              "🤲 FASE 5 - MASCARILLA + MASAJE DE MANOS: Aplicamos mascarilla específica según tus necesidades. Mientras reposa, te damos un masaje relajante en manos y dedos (ideal si pasas horas en pantallas).",
+              "🦶 FASE 6 - LAVADO Y MASAJE DE PIES: Cerramos con un lavado de pies y masaje relajante que activa la circulación y termina de soltar todo el cuerpo.",
+              "💨 CIERRE - SECADO O HIDRATACIÓN DE BARBA: Terminamos con secado profesional o, si eres hombre, hidratación de barba con aceites esenciales.",
+              "☕ Y todo acompañado de tu bebida favorita (té, café, jugo, agua o refresco). ¿Te imaginas salir de aquí con el cuerpo suelto, la piel luminosa y el cabello de película? 😌"
+            ],
+            "benefits": [
+              "Diagnóstico capilar de alta definición con cámara en pantalla",
+              "Masaje corporal completo de cervicales, espalda y piernas",
+              "Limpieza facial hidratante iluminadora",
+              "Lavado profundo con arco Halo y utensilios de estimulación folicular",
+              "Mascarilla nutritiva + masaje relajante de manos y dedos",
+              "Lavado y masaje podal para alivio integral del cuerpo",
+              "Secado profesional o hidratación de barba con aceites esenciales"
+            ],
+            "includes": [
+              "Cabina privada sensorial climatizada",
+              "Cámara HD de diagnóstico capilar",
+              "Cascada circular de agua termal Halo",
+              "Tratamiento capilar y facial botánico",
+              "Bebida no alcohólica de cortesía (té, café, jugo, agua o refresco)"
+            ],
+            "recommendations": "Ideal para desconexión total del estrés acumulado, revitalización capilar y renovación profunda del cuerpo.",
+            "slug": "head-spa-360"
+          },
           {
             "id": "srv_masaje_relajante_30",
             "name": "Masaje relajante – 30 min",
@@ -1363,9 +1412,9 @@ export const categoriesData = [
               "./assets/catalog/experiencia-capilar-scalp-balance-detox-60-90.webp",
               "./assets/head_spa.jpg"
             ],
-            "description": "Ritual de bienestar inspirado en el Head Spa japonés: exfoliación del cuero cabelludo, masaje craneal con cascada de agua tibia, mascarilla botánica y alta frecuencia.",
+            "description": "Ritual de bienestar inspirado en el Head Spa 360°: exfoliación del cuero cabelludo, masaje craneal con cascada de agua tibia, mascarilla botánica y alta frecuencia.",
             "longDescription": [
-              "Nuestra joya del salón inspirada en los famosos Head Spas de Japón. Trata la salud del cuero cabelludo como la raíz de un cabello espléndido.",
+              "Nuestra joya del salón inspirada en los famosos Head Spa 360°. Trata la salud del cuero cabelludo como la raíz de un cabello espléndido.",
               "Comienza con exfoliación purificante, hidroterapia con arco de agua tibia relajante, masaje craneal descontracturante, electroterapia y mascarilla de nutrición profunda."
             ],
             "benefits": [
@@ -1697,6 +1746,53 @@ export const categoriesData = [
         "description": "Obsequios inolvidables y traslado cómodo puerta a puerta",
         "services": [
           {
+            "id": "srv_curso_masaje_corporal",
+            "name": "Curso básico de masaje corporal",
+            "categoryTitle": "Otros",
+            "categoryId": "otros",
+            "subcategoryName": "Servicios Complementarios",
+            "price": 0,
+            "duration": "Programa Intensivo",
+            "badge": "Certificación ABI",
+            "popular": true,
+            "image": "./assets/masaje_m01.jpg",
+            "gallery": [
+              "./assets/masaje_m01.jpg",
+              "./assets/masaje_relax.jpg",
+              "./assets/dsc_6328.jpg"
+            ],
+            "description": "Si quieres aprender una habilidad que puede ayudarte a generar ingresos, esta es tu oportunidad. Curso con certificación internacional avalado por la Academia Internacional Española ABI. Impartido por el profesor José Martín. CUPOS LIMITADOS.",
+            "longDescription": [
+              "Si quieres aprender una habilidad que puede ayudarte a generar ingresos, esta es tu oportunidad.",
+              "En este curso aprenderás:",
+              "✔ Evaluación profesional del paciente",
+              "✔ Anatomía aplicada para trabajar con seguridad",
+              "✔ Influencia fisiológica y psicológica del masaje",
+              "✔ Tratamientos específicos por áreas",
+              "✔ Masaje en silla ergonómica",
+              "📜 Certificación internacional avalado por la Academia Internacional Española ABI.",
+              "👨‍🏫 Impartido por el profesor José Martín con enfoque práctico para que puedas trabajar profesionalmente.",
+              "⚠️ CUPOS LIMITADOS."
+            ],
+            "benefits": [
+              "Evaluación profesional del paciente",
+              "Anatomía aplicada para trabajar con seguridad",
+              "Influencia fisiológica y psicológica del masaje",
+              "Tratamientos específicos por áreas",
+              "Masaje en silla ergonómica",
+              "Certificación internacional española (ABI)",
+              "Enfoque 100% práctico para salida laboral inmediata"
+            ],
+            "includes": [
+              "Certificación oficial avalada por la Academia Internacional Española ABI",
+              "Clases prácticas dirigidas por el profesor José Martín",
+              "Material de estudio y camilla ergonómica de práctica",
+              "Bebida de cortesía durante las jornadas lectivas"
+            ],
+            "recommendations": "Reserva tu plaza con antelación debido a cupos estrictamente limitados.",
+            "slug": "curso-basico-masaje-corporal"
+          },
+          {
             "id": "srv_tarjeta_regalo",
             "name": "Tarjeta de Regalo",
             "categoryTitle": "Otros",
@@ -1770,6 +1866,55 @@ export const categoriesData = [
 ];
 
 export const allServices = [
+  {
+    "id": "srv_head_spa_360",
+    "name": "Head Spa 360°",
+    "categoryTitle": "Masajes",
+    "categoryId": "spa-masajes",
+    "subcategoryName": "Masajes Terapéuticos y Relajantes",
+    "price": 0,
+    "duration": "90 min",
+    "badge": "Signature",
+    "popular": true,
+    "image": "./assets/headspa_5.jpg",
+    "gallery": [
+      "./assets/headspa_5.jpg",
+      "./assets/headspa_1.jpg",
+      "./assets/headspa_2.jpg",
+      "./assets/headspa_3.jpg",
+      "./assets/headspa_4.jpg"
+    ],
+    "description": "Reinicio 360: Diagnóstico microscópico de cuero cabelludo con cámara HD, masaje corporal completo, facial hidratante iluminador, lavado profundo con arco Halo, mascarilla capilar, masaje de manos y pies con secado profesional.",
+    "longDescription": [
+      "Mira cómo es tu Reinicio 360 🪷:",
+      "🔬 FASE 1 - DIAGNÓSTICO: Empezamos analizando tu cuero cabelludo con cámara de alta definición. Te mostramos en pantalla el estado de tu raíz (grasa, resequedad o falta de oxígeno).",
+      "💆🏻‍♂️ FASE 2 - MASAJE CORPORAL: Te relajamos de arriba a abajo: cervicales, espalda y piernas. Soltamos toda la tensión acumulada por el estrés y las malas posturas.",
+      "🧖🏻‍♀️ FASE 3 - LIMPIEZA FACIAL: Te damos la vuelta y comenzamos con una limpieza facial hidratante para que tu piel también recupere su luz.",
+      "🌀 FASE 4 - LAVADO + MASAJE CAPILAR: Pasamos al lavado profundo con shampoo a tu medida. Aquí activamos la circulación con diferentes utensilios (cepillos, puntas de masaje, etc.) para hacer una limpieza profunda de folículos.",
+      "🤲 FASE 5 - MASCARILLA + MASAJE DE MANOS: Aplicamos mascarilla específica según tus necesidades. Mientras reposa, te damos un masaje relajante en manos y dedos (ideal si pasas horas en pantallas).",
+      "🦶 FASE 6 - LAVADO Y MASAJE DE PIES: Cerramos con un lavado de pies y masaje relajante que activa la circulación y termina de soltar todo el cuerpo.",
+      "💨 CIERRE - SECADO O HIDRATACIÓN DE BARBA: Terminamos con secado profesional o, si eres hombre, hidratación de barba con aceites esenciales.",
+      "☕ Y todo acompañado de tu bebida favorita (té, café, jugo, agua o refresco). ¿Te imaginas salir de aquí con el cuerpo suelto, la piel luminosa y el cabello de película? 😌"
+    ],
+    "benefits": [
+      "Diagnóstico capilar de alta definición con cámara en pantalla",
+      "Masaje corporal completo de cervicales, espalda y piernas",
+      "Limpieza facial hidratante iluminadora",
+      "Lavado profundo con arco Halo y utensilios de estimulación folicular",
+      "Mascarilla nutritiva + masaje relajante de manos y dedos",
+      "Lavado y masaje podal para alivio integral del cuerpo",
+      "Secado profesional o hidratación de barba con aceites esenciales"
+    ],
+    "includes": [
+      "Cabina privada sensorial climatizada",
+      "Cámara HD de diagnóstico capilar",
+      "Cascada circular de agua termal Halo",
+      "Tratamiento capilar y facial botánico",
+      "Bebida no alcohólica de cortesía (té, café, jugo, agua o refresco)"
+    ],
+    "recommendations": "Ideal para desconexión total del estrés acumulado, revitalización capilar y renovación profunda del cuerpo.",
+    "slug": "head-spa-360"
+  },
   {
     "id": "srv_masaje_relajante_30",
     "name": "Masaje relajante – 30 min",
@@ -3087,9 +3232,9 @@ export const allServices = [
       "./assets/catalog/experiencia-capilar-scalp-balance-detox-60-90.webp",
       "./assets/head_spa.jpg"
     ],
-    "description": "Ritual de bienestar inspirado en el Head Spa japonés: exfoliación del cuero cabelludo, masaje craneal con cascada de agua tibia, mascarilla botánica y alta frecuencia.",
+    "description": "Ritual de bienestar inspirado en el Head Spa 360°: exfoliación del cuero cabelludo, masaje craneal con cascada de agua tibia, mascarilla botánica y alta frecuencia.",
     "longDescription": [
-      "Nuestra joya del salón inspirada en los famosos Head Spas de Japón. Trata la salud del cuero cabelludo como la raíz de un cabello espléndido.",
+      "Nuestra joya del salón inspirada en los famosos Head Spa 360°. Trata la salud del cuero cabelludo como la raíz de un cabello espléndido.",
       "Comienza con exfoliación purificante, hidroterapia con arco de agua tibia relajante, masaje craneal descontracturante, electroterapia y mascarilla de nutrición profunda."
     ],
     "benefits": [
@@ -3421,6 +3566,53 @@ export const allServices = [
     "recommendations": "Solicita tu servicio de taxi con anticipación al coordinar tu cita por WhatsApp indicando tu dirección.",
     "slug": "servicio-de-taxi",
     "isTaxi": true
+  },
+  {
+    "id": "srv_curso_masaje_corporal",
+    "name": "Curso básico de masaje corporal",
+    "categoryTitle": "Otros",
+    "categoryId": "otros",
+    "subcategoryName": "Servicios Complementarios",
+    "price": 0,
+    "duration": "Programa Intensivo",
+    "badge": "Certificación ABI",
+    "popular": true,
+    "image": "./assets/masaje_m01.jpg",
+    "gallery": [
+      "./assets/masaje_m01.jpg",
+      "./assets/masaje_relax.jpg",
+      "./assets/dsc_6328.jpg"
+    ],
+    "description": "Si quieres aprender una habilidad que puede ayudarte a generar ingresos, esta es tu oportunidad. Curso con certificación internacional avalado por la Academia Internacional Española ABI. Impartido por el profesor José Martín. CUPOS LIMITADOS.",
+    "longDescription": [
+      "Si quieres aprender una habilidad que puede ayudarte a generar ingresos, esta es tu oportunidad.",
+      "En este curso aprenderás:",
+      "✔ Evaluación profesional del paciente",
+      "✔ Anatomía aplicada para trabajar con seguridad",
+      "✔ Influencia fisiológica y psicológica del masaje",
+      "✔ Tratamientos específicos por áreas",
+      "✔ Masaje en silla ergonómica",
+      "📜 Certificación internacional avalado por la Academia Internacional Española ABI.",
+      "👨‍🏫 Impartido por el profesor José Martín con enfoque práctico para que puedas trabajar profesionalmente.",
+      "⚠️ CUPOS LIMITADOS."
+    ],
+    "benefits": [
+      "Evaluación profesional del paciente",
+      "Anatomía aplicada para trabajar con seguridad",
+      "Influencia fisiológica y psicológica del masaje",
+      "Tratamientos específicos por áreas",
+      "Masaje en silla ergonómica",
+      "Certificación internacional española (ABI)",
+      "Enfoque 100% práctico para salida laboral inmediata"
+    ],
+    "includes": [
+      "Certificación oficial avalada por la Academia Internacional Española ABI",
+      "Clases prácticas dirigidas por el profesor José Martín",
+      "Material de estudio y camilla ergonómica de práctica",
+      "Bebida de cortesía durante las jornadas lectivas"
+    ],
+    "recommendations": "Reserva tu plaza con antelación debido a cupos estrictamente limitados.",
+    "slug": "curso-basico-masaje-corporal"
   }
 ];
 

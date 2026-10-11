@@ -17,9 +17,9 @@ export default function ComparisonTable() {
     },
     {
       featureKey: 'compRow2Feature',
-      featureDef: "Japanese Head Spa",
+      featureDef: "Head Spa 360°",
       usKey: 'compRow2Us',
-      usDef: "Cascada Halo tibia y shiatsu capilar",
+      usDef: "Diagnóstico con microcámara, cascada Halo tibia y masaje integral",
       themKey: 'compRow2Them',
       themDef: "No disponible en la mayoría"
     },

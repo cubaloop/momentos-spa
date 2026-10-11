@@ -13,7 +13,7 @@ export default function TestimonialsSection() {
       locKey: 'review1Location',
       locDef: "La Habana, Cuba",
       textKey: 'review1Text',
-      textDef: '"El Head Spa japonés es otro nivel. La cascada tibia de agua en el cuero cabelludo me quitó el dolor de cabeza y el estrés de semanas. La atención de las terapeutas es impecable."'
+      textDef: '"El Head Spa 360° es otro nivel. La cascada tibia de agua en el cuero cabelludo y el masaje integral me quitaron el dolor de cabeza y el estrés de semanas. La atención de las terapeutas es impecable."'
     },
     {
       nameKey: 'review2Name',

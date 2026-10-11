@@ -240,8 +240,6 @@ export default function Navbar({
                                     </div>
                                     <div className="text-[11px] text-stone-400 mt-0.5 flex items-center gap-1.5">
                                       <span>{srv.duration}</span>
-                                      <span>•</span>
-                                      <span className="font-bold text-mahogany-800">${srv.price} USD</span>
                                     </div>
                                   </div>
                                   <button
@@ -529,7 +527,7 @@ export default function Navbar({
                                       )}
                                       <div>
                                         <div className="font-bold text-stone-900 line-clamp-1">{srv.name}</div>
-                                        <div className="text-[10px] text-stone-500">{srv.duration} • ${srv.price} USD</div>
+                                        <div className="text-[10px] text-stone-500">{srv.duration}</div>
                                       </div>
                                     </div>
                                     <button

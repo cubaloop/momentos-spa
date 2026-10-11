@@ -19,7 +19,7 @@ export default function DayTimeline() {
       titleKey: 'time2Title',
       titleDef: "10:30 AM • Terapia Principal en Cabina",
       descKey: 'time2Desc',
-      descDef: "Sesión de masaje terapéutico o Japanese Head Spa en camilla con toallas precalentadas."
+      descDef: "Sesión de masaje terapéutico o Head Spa 360° en camilla con toallas precalentadas."
     },
     {
       step: "03",
