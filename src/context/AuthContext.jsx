@@ -72,7 +72,7 @@ export function AuthProvider({ children }) {
       }
     } catch (e) {}
 
-    return { success: false, error: 'Correo o contraseña incorrectos. Para administrador: admin@momentospahabana.com / admin123' };
+    return { success: false, error: 'Correo electrónico o contraseña incorrectos. Por favor, verifica tus datos.' };
   };
 
   const register = async (nameOrObj, emailParam, phoneParam, passParam) => {

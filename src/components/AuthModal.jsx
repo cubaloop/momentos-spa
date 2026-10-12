@@ -136,7 +136,7 @@ export default function AuthModal({ isOpen, onClose, initialMode = 'login', onOp
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="cliente@correo.com o admin@momentospahabana.com"
+                placeholder="tu@correo.com"
                 className="w-full text-xs pl-9 pr-3 py-2.5 rounded-xl border border-stone-300 focus:outline-none focus:border-mahogany-900"
               />
             </div>
